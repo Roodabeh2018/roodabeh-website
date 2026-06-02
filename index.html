@@ -71,6 +71,13 @@
   .btn-primary:hover { background: #5a7db0; }
   .btn-ghost { background: transparent; border: 1px solid var(--border2); color: var(--muted); padding: 0.75rem 1.8rem; border-radius: 100px; font-size: 0.88rem; cursor: pointer; text-decoration: none; transition: all 0.2s; }
   .btn-ghost:hover { border-color: var(--muted); color: var(--text); }
+  .hero-sub { font-size: 0.88rem; color: var(--accent2); letter-spacing: 0.04em; margin-bottom: 1.8rem; font-style: italic; }
+  .hero-focus { margin-bottom: 2.5rem; }
+  .hero-focus-label { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.6rem; }
+  .hero-focus-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .focus-tag { font-size: 0.8rem; background: rgba(108,142,191,0.1); border: 1px solid rgba(108,142,191,0.3); border-radius: 100px; padding: 4px 12px; color: var(--accent); }
+  .btn-cv { background: transparent; border: 1px solid var(--accent2); color: var(--accent2); padding: 0.75rem 1.8rem; border-radius: 100px; font-size: 0.88rem; cursor: pointer; text-decoration: none; transition: all 0.2s; }
+  .btn-cv:hover { background: var(--accent2); color: #04342C; }
   .hero-scroll { margin-top: 5rem; display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 0.78rem; letter-spacing: 0.1em; }
   .hero-scroll::after { content: ''; display: block; width: 40px; height: 1px; background: var(--border2); }
 
@@ -84,6 +91,9 @@
   .meta-label { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
   .meta-value { font-size: 0.92rem; color: var(--text); }
   .meta-value a { color: var(--accent); text-decoration: none; }
+  .why-ai { margin-top: 1.8rem; padding: 1.2rem 1.4rem; background: rgba(108,142,191,0.06); border: 1px solid rgba(108,142,191,0.2); border-radius: 12px; }
+  .why-ai-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.7rem; }
+  .why-ai p { margin-bottom: 0 !important; }
 
   /* SKILLS */
   #skills { border-top: 1px solid var(--border); }
@@ -118,6 +128,18 @@
   .pub-year { font-size: 0.75rem; color: var(--accent); font-weight: 500; min-width: 36px; padding-top: 2px; }
   .pub-venue { font-size: 0.72rem; background: var(--bg3); border: 1px solid var(--border2); border-radius: 100px; padding: 2px 9px; color: var(--muted); white-space: nowrap; margin-bottom: 4px; display: inline-block; }
   .pub-title { font-size: 0.92rem; color: var(--text); }
+
+  /* TEACHING */
+  #teaching { border-top: 1px solid var(--border); }
+  .teaching-grid { display: flex; flex-direction: column; gap: 1rem; }
+  .teaching-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 14px; padding: 1.6rem 2rem; display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: start; transition: border-color 0.2s; }
+  .teaching-card:hover { border-color: var(--border2); }
+  .teaching-year { font-size: 0.75rem; color: var(--accent); font-weight: 500; white-space: nowrap; padding-top: 3px; min-width: 80px; }
+  .teaching-title { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+  .teaching-org { font-size: 0.8rem; color: var(--accent); margin-bottom: 0.7rem; }
+  .teaching-desc { font-size: 0.88rem; color: #8888a8; line-height: 1.65; margin-bottom: 0.8rem; }
+  .teaching-subjects { display: flex; flex-wrap: wrap; gap: 6px; }
+  .teaching-subject { font-size: 0.72rem; background: var(--bg3); border: 1px solid var(--border); border-radius: 100px; padding: 2px 9px; color: var(--muted); }
 
   /* BEYOND WORK */
   #beyond { border-top: 1px solid var(--border); }
@@ -185,21 +207,37 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#portfolio">Portfolio</a></li>
     <li><a href="#publications">Publications</a></li>
+    <li><a href="#teaching">Teaching</a></li>
     <li><a href="#beyond">Beyond Work</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="mailto:roodabeh.seif@gmail.com" class="nav-cta">Get in touch</a>
+  <div style="display:flex; gap:0.75rem; align-items:center;">
+    <a href="Roodabeh_Seif_CV.pdf" download class="btn-cv" style="padding:0.4rem 1rem; font-size:0.8rem;">⬇ CV</a>
+    <a href="mailto:roodabeh.seif@gmail.com" class="nav-cta">Get in touch</a>
+  </div>
 </nav>
 
 <!-- HERO -->
 <section id="hero" style="padding-left:4rem; padding-right:4rem;">
   <div class="hero-eyebrow fade-up">Available for new opportunities</div>
   <h1 class="hero-name fade-up delay-1">Roodabeh<br><span>Seif</span></h1>
-  <div class="hero-roles fade-up delay-2">Product Manager <span>·</span> UX Researcher <span>·</span> AI &amp; Digital Platforms</div>
+  <div class="hero-roles fade-up delay-2">AI Product Manager <span>·</span> UX Researcher</div>
+  <div class="hero-sub fade-up delay-2">PhD Researcher in Human-Centered AI and Digital Wellbeing</div>
   <p class="hero-tagline fade-up delay-3">Bridging people, technology, and AI to create <em>meaningful products</em> that solve complex problems and earn users' trust.</p>
+  <div class="hero-focus fade-up delay-3">
+    <div class="hero-focus-label">Current Focus</div>
+    <div class="hero-focus-tags">
+      <span class="focus-tag">AI Product Management</span>
+      <span class="focus-tag">Human-Centered AI</span>
+      <span class="focus-tag">Trustworthy AI</span>
+      <span class="focus-tag">Digital Platforms</span>
+      <span class="focus-tag">Product Discovery</span>
+    </div>
+  </div>
   <div class="hero-btns fade-up delay-4">
     <a href="#contact" class="btn-primary">Get in touch</a>
     <a href="#portfolio" class="btn-ghost">View my work</a>
+    <a href="Roodabeh_Seif_CV.pdf" download class="btn-cv">⬇ Download CV</a>
   </div>
   <div class="hero-scroll fade-up delay-4">Scroll to explore</div>
 </section>
@@ -210,20 +248,30 @@
   <h2 class="section-title">From engineering<br>to AI product thinking</h2>
   <div class="about-grid">
     <div class="about-text">
-      <p>I'm a <strong>Product Manager and UX Researcher</strong> with a background in Computer Science, Mechatronics Engineering, and Human–Computer Interaction.</p>
+      <p>I'm an <strong>AI Product Manager and UX Researcher</strong> with a background in Computer Science, Mechatronics Engineering, and Human–Computer Interaction. I am currently focusing on <strong>AI Product Management</strong> and the design of trustworthy AI-enabled products.</p>
       <p>My career started in engineering — fascinated by algorithms, robotics, and intelligent systems. Over time I became increasingly drawn to the <strong>people behind the technology</strong>, which led me into UX research and human-centered design.</p>
       <p>Eventually I realized what excites me most is bringing people, technology, and business goals together to create products that solve meaningful problems. That's what led me into <strong>Product Management</strong>.</p>
       <p>Today I work at the intersection of product strategy, user research, and emerging technologies — turning ambiguity into direction and helping multidisciplinary teams move from ideas to real-world impact.</p>
+      <p>Beyond product development, I have always been passionate about <strong>learning and teaching</strong>. Over the years, I have taught university students, school children, and adult learners — experiences that strengthened my ability to communicate complex ideas in simple and meaningful ways.</p>
       <p>A common thread throughout my work has been <strong>trust</strong>. Whether designing digital health solutions for older adults, researching security for vulnerable communities, or exploring AI-powered experiences, I keep returning to the same question: <em>How can we build technology that people not only use, but genuinely trust?</em></p>
+
+      <div class="why-ai">
+        <div class="why-ai-label">Why AI</div>
+        <p>My interest in AI grew from a simple observation: many of today's most important product decisions are no longer purely about interfaces or workflows, but about how intelligent systems support human decision-making. I am particularly interested in building AI-enabled products that remain <strong>transparent, trustworthy, and genuinely useful</strong> for people.</p>
+      </div>
     </div>
     <div class="about-meta">
       <div class="meta-card">
         <div class="meta-label">Current focus</div>
-        <div class="meta-value">AI Product Management · Trustworthy AI · Digital Platforms</div>
+        <div class="meta-value">AI Product Management · Human-Centered AI · Trustworthy AI · Digital Platforms · Product Discovery</div>
+      </div>
+      <div class="meta-card">
+        <div class="meta-label">Research</div>
+        <div class="meta-value">PhD Researcher in Human-Centered AI and Digital Wellbeing — University of Siegen</div>
       </div>
       <div class="meta-card">
         <div class="meta-label">Education</div>
-        <div class="meta-value">PhD Candidate, HCI — University of Siegen<br>M.Sc. Human–Computer Interaction<br>M.Sc. Mechatronics Engineering<br>B.Sc. Computer Science</div>
+        <div class="meta-value">M.Sc. Human–Computer Interaction<br>M.Sc. Mechatronics Engineering<br>B.Sc. Computer Science</div>
       </div>
       <div class="meta-card">
         <div class="meta-label">Languages</div>
@@ -299,16 +347,23 @@
         <span class="skill-tag">Docker</span>
       </div>
     </div>
+    <div class="skill-cat">
+      <div class="skill-cat-title">Teaching &amp; Facilitation</div>
+      <div class="skill-tags">
+        <span class="skill-tag">University Lecturing</span>
+        <span class="skill-tag">Workshop Facilitation</span>
+        <span class="skill-tag">Training Design</span>
+        <span class="skill-tag">Knowledge Transfer</span>
+        <span class="skill-tag">Mentoring</span>
+      </div>
+    </div>
   </div>
-
   <div class="section-tag" style="margin-top: 3rem;">Impact at a glance</div>
   <div class="impact-grid">
-    <div class="impact-card"><div class="impact-num">+25%</div><div class="impact-lbl">User Engagement</div></div>
-    <div class="impact-card"><div class="impact-num">+40%</div><div class="impact-lbl">Task Completion</div></div>
-    <div class="impact-card"><div class="impact-num">+30%</div><div class="impact-lbl">Feature Adoption</div></div>
-    <div class="impact-card"><div class="impact-num">−28%</div><div class="impact-lbl">User Error Rate</div></div>
-    <div class="impact-card"><div class="impact-num">200+</div><div class="impact-lbl">Users Trained</div></div>
-    <div class="impact-card"><div class="impact-num">3</div><div class="impact-lbl">On-time Release Cycles</div></div>
+    <div class="impact-card"><div class="impact-num">+25%</div><div class="impact-lbl">User Engagement<br><span style="font-size:0.65rem; color: var(--muted);">eVITA Project</span></div></div>
+    <div class="impact-card"><div class="impact-num">+40%</div><div class="impact-lbl">Task Completion<br><span style="font-size:0.65rem; color: var(--muted);">CrossComITS</span></div></div>
+    <div class="impact-card"><div class="impact-num">−28%</div><div class="impact-lbl">User Error Rate<br><span style="font-size:0.65rem; color: var(--muted);">eVITA Project</span></div></div>
+    <div class="impact-card"><div class="impact-num">200+</div><div class="impact-lbl">Users Trained<br><span style="font-size:0.65rem; color: var(--muted);">CrossComITS</span></div></div>
   </div>
 </section>
 
@@ -409,6 +464,11 @@
 <section id="publications">
   <div class="section-tag">Publications</div>
   <h2 class="section-title">Research &amp; writing</h2>
+  <div style="margin-bottom: 1.5rem;">
+    <a href="https://app.notion.com/p/Roodabeh-Seif-Portfolio-2574b21122ce808088bfee2cd37f9df6?source=copy_link" target="_blank" style="display:inline-flex; align-items:center; gap:8px; font-size:0.85rem; color:var(--accent2); text-decoration:none; border:1px solid rgba(93,202,165,0.3); padding: 6px 14px; border-radius:100px; transition: background 0.2s;">
+      🔗 View full portfolio on Notion
+    </a>
+  </div>
   <div class="pub-list">
     <div class="pub-item">
       <div class="pub-year">2026</div>
@@ -421,14 +481,18 @@
       <div class="pub-year">2023</div>
       <div>
         <span class="pub-venue">OzCHI 2023</span>
-        <div class="pub-title">Prototyping &amp; Evaluating the Bo App</div>
+        <div class="pub-title">Prototyping &amp; Evaluating the Bo App
+          <a href="Bo_App_OzCHI2023.pdf" target="_blank" style="margin-left:10px; font-size:0.72rem; color:var(--accent); border:1px solid rgba(108,142,191,0.3); padding:2px 8px; border-radius:100px; text-decoration:none;">⬇ PDF</a>
+        </div>
       </div>
     </div>
     <div class="pub-item">
       <div class="pub-year">—</div>
       <div>
         <span class="pub-venue">IJISA</span>
-        <div class="pub-title">Mobile Robot Path Planning (RRT*)</div>
+        <div class="pub-title">Mobile Robot Path Planning (RRT*)
+          <a href="Mobile_Robot_Path_Planning.pdf" target="_blank" style="margin-left:10px; font-size:0.72rem; color:var(--accent); border:1px solid rgba(108,142,191,0.3); padding:2px 8px; border-radius:100px; text-decoration:none;">⬇ PDF</a>
+        </div>
       </div>
     </div>
     <div class="pub-item">
@@ -442,9 +506,63 @@
       <div class="pub-year">ongoing</div>
       <div>
         <span class="pub-venue">PhD Research</span>
-        <div class="pub-title">Participatory digital design for migrant mental wellbeing</div>
+        <div class="pub-title">Participatory digital design for migrant mental wellbeing
+          <a href="Masters_Thesis_Roodabeh_Seif.pdf" target="_blank" style="margin-left:10px; font-size:0.72rem; color:var(--accent); border:1px solid rgba(108,142,191,0.3); padding:2px 8px; border-radius:100px; text-decoration:none;">⬇ Master's Thesis</a>
+        </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- TEACHING & MENTORING -->
+<section id="teaching">
+  <div class="section-tag">Teaching &amp; Mentoring</div>
+  <h2 class="section-title">Communicating complexity,<br>building capability</h2>
+  <div class="teaching-grid">
+
+    <div class="teaching-card">
+      <div class="teaching-year">2012–2013</div>
+      <div>
+        <div class="teaching-title">University Lecturer</div>
+        <div class="teaching-org">Islamic Azad University, Tehran West &amp; Karaj Branches — Iran</div>
+        <p class="teaching-desc">Taught undergraduate courses to technical students at age ~25, translating complex computer science topics into clear, practical knowledge. Prepared course materials, delivered lectures, and supported students in developing both technical and analytical skills.</p>
+        <div class="teaching-subjects">
+          <span class="teaching-subject">Data Structures</span>
+          <span class="teaching-subject">Computer Networks</span>
+          <span class="teaching-subject">Adobe Photoshop</span>
+          <span class="teaching-subject">Technical English</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="teaching-card">
+      <div class="teaching-year">2022</div>
+      <div>
+        <div class="teaching-title">Private Tutor</div>
+        <div class="teaching-org">Germany</div>
+        <p class="teaching-desc">Provided mathematics and English tutoring to primary school students, adapting teaching approaches to different learning needs and cultural backgrounds. An exercise in patience, empathy, and clear communication across language barriers.</p>
+        <div class="teaching-subjects">
+          <span class="teaching-subject">Mathematics</span>
+          <span class="teaching-subject">English</span>
+          <span class="teaching-subject">Cross-cultural Communication</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="teaching-card">
+      <div class="teaching-year">2025–present</div>
+      <div>
+        <div class="teaching-title">Meditation Instructor</div>
+        <div class="teaching-org">Online — Persian-speaking community</div>
+        <p class="teaching-desc">Facilitating online meditation sessions for Persian-speaking participants, helping individuals develop mindfulness, self-awareness, and emotional well-being practices. Combines 13+ years of personal practice with structured facilitation.</p>
+        <div class="teaching-subjects">
+          <span class="teaching-subject">Facilitation</span>
+          <span class="teaching-subject">Mindfulness</span>
+          <span class="teaching-subject">Online Delivery</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
