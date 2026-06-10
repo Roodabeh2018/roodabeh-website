@@ -80,6 +80,15 @@
   .btn-cv:hover { background: var(--accent2); color: #04342C; }
   .hero-scroll { margin-top: 5rem; display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 0.78rem; letter-spacing: 0.1em; }
   .hero-scroll::after { content: ''; display: block; width: 40px; height: 1px; background: var(--border2); }
+  .hero-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255,255,255,0.12);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+  margin-bottom: 2rem;
+}
 
   /* ABOUT */
   #about { border-top: 1px solid var(--border); }
@@ -219,8 +228,11 @@
 
 <!-- HERO -->
 <section id="hero" style="padding-left:4rem; padding-right:4rem;">
-  <div class="hero-eyebrow fade-up">Available for new opportunities</div>
-  <h1 class="hero-name fade-up delay-1">Roodabeh<br><span>Seif</span></h1>
+<div class="hero-eyebrow fade-up">Available for new opportunities</div>
+
+<img src="roodabeh-profile.jpg" alt="Roodabeh Seif" class="hero-photo fade-up delay-1">
+
+<h1 class="hero-name fade-up delay-1">Roodabeh<br><span>Seif</span></h1>
   <div class="hero-roles fade-up delay-2">AI Product Manager <span>·</span> UX Researcher</div>
   <div class="hero-sub fade-up delay-2">PhD Researcher in Human-Centered AI and Digital Wellbeing</div>
   <p class="hero-tagline fade-up delay-3">Bridging people, technology, and AI to create <em>meaningful products</em> that solve complex problems and earn users' trust.</p>
