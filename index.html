@@ -104,6 +104,32 @@
   .why-ai-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.7rem; }
   .why-ai p { margin-bottom: 0 !important; }
 
+  /* JOURNEY STRIP */
+  .about-lead { font-size: 1.05rem !important; color: var(--text) !important; }
+  .journey-strip { display: flex; align-items: stretch; gap: 0; margin: 2.2rem 0; flex-wrap: wrap; }
+  .journey-step { flex: 1; min-width: 130px; padding-right: 1.2rem; }
+  .journey-num { font-family: 'Syne', sans-serif; font-size: 0.78rem; font-weight: 700; color: var(--accent2); margin-bottom: 0.5rem; }
+  .journey-title { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 0.3rem; }
+  .journey-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
+  .journey-arrow { display: flex; align-items: flex-start; padding-top: 0.15rem; color: var(--border2); font-size: 1rem; margin-right: 1.2rem; }
+  @media (max-width: 768px) { .journey-arrow { display: none; } .journey-step { padding-right: 0; margin-bottom: 1rem; } }
+
+  /* HIGHLIGHT STRIP (condensed project teasers) */
+  .highlight-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; margin-bottom: 1.5rem; }
+  .highlight-card { display: block; background: var(--bg2); border: 1px solid var(--border); border-radius: 14px; padding: 1.8rem; text-decoration: none; transition: border-color 0.2s, transform 0.2s; }
+  .highlight-card:hover { border-color: var(--accent2); transform: translateY(-2px); }
+  .highlight-tag { font-size: 0.7rem; color: var(--accent2); letter-spacing: 0.06em; margin-bottom: 0.7rem; }
+  .highlight-title { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 600; color: var(--text); margin-bottom: 0.6rem; }
+  .highlight-desc { font-size: 0.88rem; color: #8888a8; line-height: 1.6; margin-bottom: 1.1rem; }
+  .highlight-link { font-size: 0.82rem; color: var(--accent); }
+
+  /* PORTFOLIO CTA */
+  .portfolio-cta { display: flex; align-items: center; justify-content: space-between; background: rgba(93,202,165,0.07); border: 1px solid rgba(93,202,165,0.4); border-radius: 16px; padding: 1.6rem 2rem; text-decoration: none; transition: background 0.2s; }
+  .portfolio-cta:hover { background: rgba(93,202,165,0.13); }
+  .portfolio-cta-title { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--text); }
+  .portfolio-cta-sub { font-size: 0.85rem; color: var(--muted); margin-top: 0.3rem; }
+  .portfolio-cta-arrow { font-size: 1.6rem; color: var(--accent2); }
+
   /* SKILLS */
   #skills { border-top: 1px solid var(--border); }
   .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 3rem; }
@@ -248,7 +274,7 @@
   </div>
   <div class="hero-btns fade-up delay-4">
     <a href="#contact" class="btn-primary">Get in touch</a>
-    <a href="#portfolio" class="btn-ghost">View my work</a>
+    <a href="#portfolio" class="btn-ghost">View Portfolio</a>
     <a href="Roodabeh_Seif_CV.pdf" download class="btn-cv">⬇ Download CV</a>
   </div>
   <div class="hero-scroll fade-up delay-4">Scroll to explore</div>
@@ -260,16 +286,39 @@
   <h2 class="section-title">From engineering<br>to AI product thinking</h2>
   <div class="about-grid">
     <div class="about-text">
-      <p>I'm an <strong>AI Product Manager and UX Researcher</strong> with a background in Computer Science, Mechatronics Engineering, and Human–Computer Interaction. I am currently focusing on <strong>AI Product Management</strong> and the design of trustworthy AI-enabled products.</p>
-      <p>My career started in engineering — fascinated by algorithms, robotics, and intelligent systems. Over time I became increasingly drawn to the <strong>people behind the technology</strong>, which led me into UX research and human-centered design.</p>
-      <p>Eventually I realized what excites me most is bringing people, technology, and business goals together to create products that solve meaningful problems. That's what led me into <strong>Product Management</strong>.</p>
-      <p>Today I work at the intersection of product strategy, user research, and emerging technologies — turning ambiguity into direction and helping multidisciplinary teams move from ideas to real-world impact.</p>
-      <p>Beyond product development, I have always been passionate about <strong>learning and teaching</strong>. Over the years, I have taught university students, school children, and adult learners — experiences that strengthened my ability to communicate complex ideas in simple and meaningful ways.</p>
-      <p>A common thread throughout my work has been <strong>trust</strong>. Whether designing digital health solutions for older adults, researching security for vulnerable communities, or exploring AI-powered experiences, I keep returning to the same question: <em>How can we build technology that people not only use, but genuinely trust?</em></p>
+      <p class="about-lead">I'm an <strong>AI Product Manager and UX Researcher</strong> working at the intersection of product strategy, user research, and emerging technology — turning ambiguity into direction, and helping teams move from ideas to real-world impact people actually trust.</p>
+
+      <div class="journey-strip">
+        <div class="journey-step">
+          <div class="journey-num">01</div>
+          <div class="journey-title">Engineering</div>
+          <div class="journey-desc">Algorithms, robotics, intelligent systems</div>
+        </div>
+        <div class="journey-arrow">→</div>
+        <div class="journey-step">
+          <div class="journey-num">02</div>
+          <div class="journey-title">UX Research</div>
+          <div class="journey-desc">The people behind the technology</div>
+        </div>
+        <div class="journey-arrow">→</div>
+        <div class="journey-step">
+          <div class="journey-num">03</div>
+          <div class="journey-title">Product</div>
+          <div class="journey-desc">People, tech, and business together</div>
+        </div>
+        <div class="journey-arrow">→</div>
+        <div class="journey-step">
+          <div class="journey-num">04</div>
+          <div class="journey-title">Today</div>
+          <div class="journey-desc">Trustworthy, human-centered AI</div>
+        </div>
+      </div>
+
+      <p>Whether it's digital health for older adults, security research for vulnerable communities, or AI-powered experiences, I keep returning to one question: <em>how do we build technology people don't just use, but trust?</em></p>
 
       <div class="why-ai">
         <div class="why-ai-label">Why AI</div>
-        <p>My interest in AI grew from a simple observation: many of today's most important product decisions are no longer purely about interfaces or workflows, but about how intelligent systems support human decision-making. I am particularly interested in building AI-enabled products that remain <strong>transparent, trustworthy, and genuinely useful</strong> for people.</p>
+        <p>Today's most important product decisions are no longer just about interfaces or workflows — they're about how intelligent systems support human decision-making. I focus on building AI-enabled products that stay <strong>transparent, trustworthy, and genuinely useful</strong>.</p>
       </div>
     </div>
     <div class="about-meta">
@@ -287,7 +336,7 @@
       </div>
       <div class="meta-card">
         <div class="meta-label">Languages</div>
-        <div class="meta-value">English C2 · German C1 · Persian Native</div>
+        <div class="meta-value">English C2 · German B2 (progressing toward C1) · Persian Native</div>
       </div>
       <div class="meta-card">
         <div class="meta-label">Location</div>
@@ -372,10 +421,10 @@
   </div>
   <div class="section-tag" style="margin-top: 3rem;">Impact at a glance</div>
   <div class="impact-grid">
-    <div class="impact-card"><div class="impact-num">+25%</div><div class="impact-lbl">User Engagement<br><span style="font-size:0.65rem; color: var(--muted);">eVITA Project</span></div></div>
-    <div class="impact-card"><div class="impact-num">+40%</div><div class="impact-lbl">Task Completion<br><span style="font-size:0.65rem; color: var(--muted);">CrossComITS</span></div></div>
-    <div class="impact-card"><div class="impact-num">−28%</div><div class="impact-lbl">User Error Rate<br><span style="font-size:0.65rem; color: var(--muted);">eVITA Project</span></div></div>
-    <div class="impact-card"><div class="impact-num">200+</div><div class="impact-lbl">Users Trained<br><span style="font-size:0.65rem; color: var(--muted);">CrossComITS</span></div></div>
+    <div class="impact-card"><div class="impact-num">~25%</div><div class="impact-lbl">Engagement Increase (est.)<br><span style="font-size:0.65rem; color: var(--muted);">CrossComITS</span></div></div>
+    <div class="impact-card"><div class="impact-num">~40%</div><div class="impact-lbl">Task Success Increase (est.)<br><span style="font-size:0.65rem; color: var(--muted);">CrossComITS</span></div></div>
+    <div class="impact-card"><div class="impact-num">~28%</div><div class="impact-lbl">Lower User Error (est.)<br><span style="font-size:0.65rem; color: var(--muted);">eVITA</span></div></div>
+    <div class="impact-card"><div class="impact-num">80+</div><div class="impact-lbl">Participants · 6 Nationalities<br><span style="font-size:0.65rem; color: var(--muted);">CrossComITS</span></div></div>
   </div>
 </section>
 
@@ -383,109 +432,36 @@
 <section id="portfolio">
   <div class="section-tag">Portfolio</div>
   <h2 class="section-title">Selected work</h2>
-  <div style="margin-bottom:2rem;">
-  <a href="https://app.notion.com/p/Smartphone-Caf-Building-Digital-Security-Literacy-Through-Participatory-Learning-2574b21122ce80c78af0f09cb1c9a951?source=copy_link" target="_blank" style="display:inline-flex; align-items:center; gap:8px; font-size:0.85rem; color:var(--accent2); text-decoration:none; border:1px solid rgba(93,202,165,0.3); padding:6px 14px; border-radius:100px;">
-    🎨 View UX & Design Work on Notion
-  </a>
-</div>
-  <div class="portfolio-grid">
+  <p style="color:#8888a8; font-size:0.97rem; max-width:600px; margin-bottom:2.2rem;">Two research-to-product case studies below. The full portfolio — process, evidence, and outcomes for every project — lives on my dedicated case-study site.</p>
 
-    <div class="project-card">
-      <div class="project-header">
-        <div class="project-title">CrossComITS</div>
-        <span class="project-badge">BMBF-funded · 2023–2025</span>
-      </div>
-      <div class="project-role">Technical Product Manager &amp; UX Researcher — University of Siegen</div>
-      <p class="project-desc">National cybersecurity and digital learning platform. Led end-to-end product delivery from roadmap to release, coordinating UX, engineering, research, and 3 external vendors within a cross-institutional matrix organisation.</p>
-      <div class="project-tags">
-        <span class="project-tag">Scrum</span><span class="project-tag">Jira</span><span class="project-tag">Stakeholder Management</span><span class="project-tag">KPI Dashboards</span><span class="project-tag">A/B Testing</span>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-header">
-        <div class="project-title">NEBULA</div>
-        <span class="project-badge">BMBF-funded · 2023–2025</span>
-      </div>
-      <div class="project-role">Product Manager &amp; UX Researcher</div>
-      <p class="project-desc">AI-supported product design platform. Delivered 2 validated MVP releases on schedule, applied prompt engineering to prototype conversational AI interfaces, and accelerated tool adoption through Change Management co-design workshops.</p>
-      <div class="project-tags">
-        <span class="project-tag">AI Product</span><span class="project-tag">Prompt Engineering</span><span class="project-tag">MVP</span><span class="project-tag">Change Management</span>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-header">
-        <div class="project-title">eVITA Virtual Coach</div>
-        <span class="project-badge eu">EU-funded · 2021–2023</span>
-      </div>
-      <div class="project-role">UX Researcher &amp; Designer</div>
-      <p class="project-desc">EU-funded cognitive training platform for older adults. Reduced user error rate by 28% and improved onboarding for 60+ participants by redesigning core flows and producing Figma prototypes. Cut requirement revision rounds by 40% via 8 co-design sessions.</p>
-      <div class="project-tags">
-        <span class="project-tag">Figma</span><span class="project-tag">Usability Testing</span><span class="project-tag">Co-design</span><span class="project-tag">Healthcare</span>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-header">
-        <div class="project-title">DCitizens</div>
-        <span class="project-badge eu">EU-funded · 2024–2025</span>
-      </div>
-      <div class="project-role">UX Researcher</div>
-      <p class="project-desc">EU-funded digital citizenship initiative. Reduced digital skill gaps by 45% across 3 partner organisations through structured training sessions whose insights fed directly into platform feature decisions.</p>
-      <div class="project-tags">
-        <span class="project-tag">User Research</span><span class="project-tag">Digital Literacy</span><span class="project-tag">Training</span>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-header">
-        <div class="project-title">Surveillance Beyond Borders</div>
-        <span class="project-badge">2024–2025</span>
-      </div>
-      <div class="project-role">Product Manager &amp; Designer</div>
-      <p class="project-desc">Privacy-aware digital safety platform. Defined product requirements and a scalable roadmap by translating qualitative user-behaviour analysis into use cases and clear interface descriptions between business and IT.</p>
-      <div class="project-tags">
-        <span class="project-tag">Privacy</span><span class="project-tag">Product Strategy</span><span class="project-tag">Requirements</span><span class="project-tag">Roadmap</span>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-header">
-        <div class="project-title">Operatis — Cybersecurity Data Integration</div>
-        <span class="project-badge">Internship · 2021</span>
-      </div>
-      <div class="project-role">Technical Intern — Operatis Startup, Germany</div>
-      <p class="project-desc">Supported data integration between cybersecurity platforms at a German startup. Processed cybersecurity data from US sources in JSON format, supported transformation into knowledge graph structures, and worked with Docker containers and Windows Server environments. This early exposure to cybersecurity infrastructure and data-driven systems directly informs my current focus on AI product management.</p>
-      <div class="project-tags">
-        <span class="project-tag">Cybersecurity</span><span class="project-tag">Docker</span><span class="project-tag">JSON / Data</span><span class="project-tag">Knowledge Graphs</span><span class="project-tag">Server Environments</span>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-header">
-        <div class="project-title">Educational Photography &amp; Video Production</div>
-        <span class="project-badge">Early Career</span>
-      </div>
-      <div class="project-role">Founder &amp; Creative Producer</div>
-      <p class="project-desc">During my late teenage years, I worked independently with schools to create photography and video content for students and school events — photographing and filming celebrations, editing the content, and producing interactive multimedia CDs for individual students and families. This early project developed my sense of storytelling, visual communication, and direct client coordination, and was my first experience of owning a creative process from start to finish.</p>
-      <div class="project-tags">
-        <span class="project-tag">Storytelling</span><span class="project-tag">Visual Communication</span><span class="project-tag">Project Ownership</span><span class="project-tag">Client Interaction</span>
-      </div>
-    </div>
-
+  <div class="highlight-strip">
+    <a href="https://digital-courgette-899506.framer.app/bo-app" target="_blank" class="highlight-card">
+      <div class="highlight-tag">CASE STUDY · UNIVERSITY OF SIEGEN</div>
+      <div class="highlight-title">Bo App</div>
+      <div class="highlight-desc">Cognitive training for older adults. Onboarding redesign took independent setup success from 1 of 4 to 3 of 3 users.</div>
+      <div class="highlight-link">View case study →</div>
+    </a>
+    <a href="https://digital-courgette-899506.framer.app/nebula" target="_blank" class="highlight-card">
+      <div class="highlight-tag">CASE STUDY · BMBF-FUNDED</div>
+      <div class="highlight-title">NEBULA</div>
+      <div class="highlight-desc">Research-to-requirements for a human-centered, AI-supported system — transparency, explainability, and user agency for trust-sensitive users.</div>
+      <div class="highlight-link">View case study →</div>
+    </a>
   </div>
+
+  <a href="https://digital-courgette-899506.framer.app" target="_blank" class="portfolio-cta">
+    <div>
+      <div class="portfolio-cta-title">View Full Portfolio</div>
+      <div class="portfolio-cta-sub">CrossComITS, Surveillance Beyond Borders, Retune, and more — with full process and evidence</div>
+    </div>
+    <div class="portfolio-cta-arrow">→</div>
+  </a>
 </section>
 
 <!-- PUBLICATIONS -->
 <section id="publications">
   <div class="section-tag">Publications</div>
   <h2 class="section-title">Research &amp; writing</h2>
-  <div style="margin-bottom: 1.5rem;">
-    <a href="https://app.notion.com/p/Roodabeh-Seif-Portfolio-2574b21122ce808088bfee2cd37f9df6?source=copy_link" target="_blank" style="display:inline-flex; align-items:center; gap:8px; font-size:0.85rem; color:var(--accent2); text-decoration:none; border:1px solid rgba(93,202,165,0.3); padding: 6px 14px; border-radius:100px; transition: background 0.2s;">
-      🔗 View full portfolio on Notion
-    </a>
-  </div>
   <div class="pub-list">
 
   <div class="pub-item">
@@ -507,11 +483,11 @@
   </div>
 
   <div class="pub-item">
-    <div class="pub-year">2023</div>
+    <div class="pub-year">2024</div>
     <div>
-      <span class="pub-venue">OzCHI 2023</span>
+      <span class="pub-venue">OzCHI 2024</span>
       <div class="pub-title">Prototyping &amp; Evaluating the Bo App
-        <a href="Bo_App_OzCHI2023.pdf" target="_blank" style="margin-left:10px; font-size:0.72rem; color:var(--accent); border:1px solid rgba(108,142,191,0.3); padding:2px 8px; border-radius:100px; text-decoration:none;">⬇ PDF</a>
+        <a href="Bo_App_OzCHI2024.pdf" target="_blank" style="margin-left:10px; font-size:0.72rem; color:var(--accent); border:1px solid rgba(108,142,191,0.3); padding:2px 8px; border-radius:100px; text-decoration:none;">⬇ PDF</a>
       </div>
     </div>
   </div>
@@ -535,6 +511,14 @@
   </div>
 
   <div class="pub-item">
+    <div class="pub-year">2026</div>
+    <div>
+      <span class="pub-venue">Book Chapter</span>
+      <div class="pub-title">Co-author — User-Centred AI for Combating Misinformation with Vulnerable Groups: Insights from the NEBULA Project</div>
+    </div>
+  </div>
+
+  <div class="pub-item">
     <div class="pub-year">ongoing</div>
     <div>
       <span class="pub-venue">PhD Research</span>
@@ -543,6 +527,8 @@
   </div>
 
 </div>
+</section>
+
 <!-- TEACHING & MENTORING -->
 <section id="teaching">
   <div class="section-tag">Teaching &amp; Mentoring</div>
