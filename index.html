@@ -130,6 +130,16 @@
   .portfolio-cta-sub { font-size: 0.85rem; color: var(--muted); margin-top: 0.3rem; }
   .portfolio-cta-arrow { font-size: 1.6rem; color: var(--accent2); }
 
+  /* TWO-TRACK PANELS */
+  .track-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.4rem; margin-bottom: 2.2rem; }
+  .track-panel { background: var(--bg2); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; display: flex; flex-direction: column; transition: border-color 0.2s; }
+  .track-panel:hover { border-color: var(--accent2); }
+  .track-label { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.8rem; }
+  .track-title { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 700; color: var(--text); margin-bottom: 0.8rem; }
+  .track-desc { font-size: 0.9rem; color: #8888a8; line-height: 1.6; margin-bottom: 1.5rem; flex-grow: 1; }
+  .track-cta { display: inline-flex; align-items: center; gap: 8px; font-size: 0.88rem; color: var(--accent2); text-decoration: none; border: 1px solid rgba(93,202,165,0.4); padding: 10px 18px; border-radius: 100px; transition: background 0.2s; align-self: flex-start; }
+  .track-cta:hover { background: rgba(93,202,165,0.13); }
+
   /* SKILLS */
   #skills { border-top: 1px solid var(--border); }
   .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 3rem; }
@@ -431,8 +441,23 @@
 <!-- PORTFOLIO -->
 <section id="portfolio">
   <div class="section-tag">Portfolio</div>
-  <h2 class="section-title">Selected work</h2>
-  <p style="color:#8888a8; font-size:0.97rem; max-width:600px; margin-bottom:2.2rem;">Two research-to-product case studies below. The full portfolio — process, evidence, and outcomes for every project — lives on my dedicated case-study site.</p>
+  <h2 class="section-title">Two tracks, one throughline</h2>
+  <p style="color:#8888a8; font-size:0.97rem; max-width:640px; margin-bottom:2rem;">I work across two connected but distinct practices. Pick the one relevant to your search — each has its own dedicated portfolio with full process and evidence.</p>
+
+  <div class="track-grid">
+    <div class="track-panel">
+      <div class="track-label">Track 1</div>
+      <div class="track-title">UX Research &amp; Product Design</div>
+      <div class="track-desc">Discovery, evidence, and interaction design — including Bo App (cognitive training onboarding, 1-of-4 to 3-of-3 result) and NEBULA (human-centered AI requirements).</div>
+      <a href="https://digital-courgette-899506.framer.app" target="_blank" class="track-cta">View UX Portfolio →</a>
+    </div>
+    <div class="track-panel">
+      <div class="track-label">Track 2</div>
+      <div class="track-title">AI Product Management</div>
+      <div class="track-desc">Requirements, MVP scope, and responsible-AI guardrails — including Retune and Ghesse Khouneh, defined from problem framing through build-ready specs.</div>
+      <a href="https://app.notion.com/p/Roodabeh-Seif-AI-Product-Manager-da24b21122ce8340bf1e012b3619be73?source=copy_link" target="_blank" class="track-cta">View AI PM Portfolio →</a>
+    </div>
+  </div>
 
   <div class="highlight-strip">
     <a href="https://digital-courgette-899506.framer.app/bo-app" target="_blank" class="highlight-card">
@@ -448,14 +473,6 @@
       <div class="highlight-link">View case study →</div>
     </a>
   </div>
-
-  <a href="https://digital-courgette-899506.framer.app" target="_blank" class="portfolio-cta">
-    <div>
-      <div class="portfolio-cta-title">View Full Portfolio</div>
-      <div class="portfolio-cta-sub">CrossComITS, Surveillance Beyond Borders, Retune, and more — with full process and evidence</div>
-    </div>
-    <div class="portfolio-cta-arrow">→</div>
-  </a>
 </section>
 
 <!-- PUBLICATIONS -->
