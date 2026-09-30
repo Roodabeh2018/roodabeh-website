@@ -7,831 +7,930 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-XSY363JH7F');
 </script>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Roodabeh Seif — Product Manager & UX Researcher</title>
+<title>Roodabeh Seif — AI Product Manager</title>
+<meta name="description" content="Roodabeh Seif — AI Product Manager with a UX research background. 0→1 AI products, requirements, AI guardrails and evaluation, human-centered AI. Case studies and publications.">
+<meta name="theme-color" content="#0d0d0f">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #08080f;
-    --bg2: #0e0e1a;
-    --bg3: #13131f;
-    --border: rgba(255,255,255,0.07);
-    --border2: rgba(255,255,255,0.12);
-    --text: #e8e8f0;
-    --muted: #7878a0;
-    --accent: #6c8ebf;
-    --accent2: #5DCAA5;
-    --accent3: #c084fc;
-  }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Inter', sans-serif;
-    font-weight: 300;
-    line-height: 1.7;
-    font-size: 16px;
-  }
+/* =====================================================================
+   DESIGN SYSTEM
+   1. Foundations   — tokens (colour, type, space, radius, layout, motion)
+   2. Base          — element defaults
+   3. Layout        — primitives (container, measure, section, grids, split)
+   4. Components    — button, chip, badge, card, section header,
+                      disclosure, table, navigation, figure
+   5. Patterns      — hero, project card, case hero, decision log,
+                      requirements, evidence, AI boundary, rows
+   6. Responsive & motion
+   Rule: components use semantic tokens only — no raw values.
+   ===================================================================== */
 
-  /* NAV */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 1.2rem 4rem;
-    background: rgba(8,8,15,0.85);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-  }
-  .nav-logo { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--text); letter-spacing: 0.05em; }
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.04em; transition: color 0.2s; }
-  .nav-links a:hover { color: var(--text); }
-  .nav-cta { background: transparent; border: 1px solid var(--accent); color: var(--accent); padding: 0.45rem 1.1rem; border-radius: 100px; font-size: 0.82rem; cursor: pointer; transition: all 0.2s; font-family: 'Inter', sans-serif; text-decoration: none; }
-  .nav-cta:hover { background: var(--accent); color: #fff; }
+/* ---------- 1. FOUNDATIONS ---------- */
+:root {
+  /* Colour — primitives (referenced only by semantic tokens below) */
+  --neutral-950: #0d0d0f;
+  --neutral-900: #141417;
+  --neutral-850: #1a1a1e;
+  --neutral-800: #212126;
+  --neutral-400: #9a9a95;
+  --neutral-200: #c6c6c1;
+  --neutral-50:  #ededea;
+  --sage-400: #8fcbb5;
+  --amber-300: #d8b57f;
+  --slate-300: #b3b6cc;
 
-  /* SECTIONS */
-  section { padding: 7rem 4rem; max-width: 1100px; margin: 0 auto; }
-  .section-tag { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent2); margin-bottom: 1rem; display: flex; align-items: center; gap: 8px; }
-  .section-tag::before { content: ''; display: block; width: 24px; height: 1px; background: var(--accent2); }
-  h2.section-title { font-family: 'Syne', sans-serif; font-size: 2.4rem; font-weight: 600; color: var(--text); margin-bottom: 1.5rem; line-height: 1.2; }
+  /* Colour — semantic */
+  --color-bg: var(--neutral-950);                 /* page background */
+  --color-surface: var(--neutral-900);            /* elevated surface: cards */
+  --color-surface-2: var(--neutral-850);          /* secondary surface: bands, decision cards */
+  --color-surface-hover: var(--neutral-800);      /* interactive hover fill */
+  --color-text: var(--neutral-50);                /* primary text */
+  --color-text-secondary: var(--neutral-200);     /* body copy */
+  --color-text-muted: var(--neutral-400);         /* labels, meta */
+  --color-border: rgba(255,255,255,0.16);         /* default / interactive border */
+  --color-border-subtle: rgba(255,255,255,0.08);  /* dividers, card outlines */
+  --color-accent: var(--sage-400);                /* the one accent */
+  --color-accent-surface: rgba(143,203,181,0.10);
+  --color-accent-border: rgba(143,203,181,0.40);
+  --color-on-accent: var(--neutral-950);
+  --color-focus: var(--sage-400);
 
-  /* HERO */
-  #hero {
-    min-height: 100vh; display: flex; flex-direction: column;
-    justify-content: center; padding-top: 6rem;
-    max-width: 1100px; margin: 0 auto;
-  }
-  .hero-eyebrow { font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent2); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px; }
-  .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--accent2); }
-  .hero-name { font-family: 'Syne', sans-serif; font-size: clamp(3rem, 7vw, 6rem); font-weight: 700; color: var(--text); line-height: 1; margin-bottom: 0.5rem; }
-  .hero-name span { color: var(--accent); }
-  .hero-roles { font-size: 0.9rem; color: var(--muted); letter-spacing: 0.08em; margin-bottom: 2rem; }
-  .hero-roles span { color: var(--accent2); margin: 0 0.5rem; }
-  .hero-tagline { font-size: 1.15rem; color: #b0b0c8; line-height: 1.75; max-width: 560px; margin-bottom: 3rem; font-weight: 300; }
-  .hero-tagline em { color: var(--accent2); font-style: normal; }
-  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .btn-primary { background: var(--accent); color: #fff; border: none; padding: 0.75rem 1.8rem; border-radius: 100px; font-size: 0.88rem; cursor: pointer; text-decoration: none; transition: all 0.2s; font-family: 'Inter', sans-serif; }
-  .btn-primary:hover { background: #5a7db0; }
-  .btn-ghost { background: transparent; border: 1px solid var(--border2); color: var(--muted); padding: 0.75rem 1.8rem; border-radius: 100px; font-size: 0.88rem; cursor: pointer; text-decoration: none; transition: all 0.2s; }
-  .btn-ghost:hover { border-color: var(--muted); color: var(--text); }
-  .hero-sub { font-size: 0.88rem; color: var(--accent2); letter-spacing: 0.04em; margin-bottom: 1.8rem; font-style: italic; }
-  .hero-focus { margin-bottom: 2.5rem; }
-  .hero-focus-label { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.6rem; }
-  .hero-focus-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-  .focus-tag { font-size: 0.8rem; background: rgba(108,142,191,0.1); border: 1px solid rgba(108,142,191,0.3); border-radius: 100px; padding: 4px 12px; color: var(--accent); }
-  .btn-cv { background: transparent; border: 1px solid var(--accent2); color: var(--accent2); padding: 0.75rem 1.8rem; border-radius: 100px; font-size: 0.88rem; cursor: pointer; text-decoration: none; transition: all 0.2s; }
-  .btn-cv:hover { background: var(--accent2); color: #04342C; }
-  .hero-scroll { margin-top: 5rem; display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 0.78rem; letter-spacing: 0.1em; }
-  .hero-scroll::after { content: ''; display: block; width: 40px; height: 1px; background: var(--border2); }
-  .hero-photo {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid rgba(255,255,255,0.12);
-  box-shadow: 0 18px 50px rgba(0,0,0,0.35);
-  margin-bottom: 2rem;
+  /* Colour — evidence states (colour + marker shape + text, never colour alone) */
+  --evidence-measured: var(--sage-400);
+  --evidence-estimated: var(--amber-300);
+  --evidence-programme: var(--slate-300);
+  --evidence-planned: var(--neutral-400);
+  --evidence-hypothesis: var(--neutral-200);
+
+  /* Typography — families */
+  --font-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Typography — scale */
+  --text-display: clamp(3rem, 6.4vw, 5.5rem);   /* hero name */
+  --text-h1: clamp(2.5rem, 5.2vw, 4rem);        /* case-study title */
+  --text-h2: clamp(1.875rem, 3.2vw, 2.5rem);    /* section heading */
+  --text-h3: 1.5rem;                            /* sub-section, lead statements */
+  --text-h4: 1.25rem;                           /* card titles */
+  --text-body-lg: 1.125rem;
+  --text-body: 1rem;
+  --text-body-sm: 0.875rem;
+  --text-label: 0.75rem;
+  --text-caption: 0.8125rem;
+
+  --leading-tight: 1.05;
+  --leading-heading: 1.2;
+  --leading-body: 1.65;
+  --tracking-label: 0.12em;
+
+  /* Spacing — 4px base */
+  --space-1: 4px;   --space-2: 8px;   --space-3: 12px;  --space-4: 16px;
+  --space-5: 24px;  --space-6: 32px;  --space-7: 48px;  --space-8: 64px;
+  --space-9: 96px;  --space-10: 128px;
+
+  /* Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-pill: 999px;
+
+  /* Borders */
+  --border-1: 1px;
+  --border-2: 2px;
+
+  /* Layout */
+  --container: 1160px;
+  --measure: 68ch;               /* readable line length, ~65–75 characters */
+  --gutter: var(--space-8);
+  --section-y: var(--space-10);
+  --nav-h: 72px;
+  --control-h: 44px;             /* WCAG 2.2 target size */
+  --control-h-sm: 36px;
+  --portrait-w: clamp(300px, 30vw, 400px);
+
+  /* Motion */
+  --ease: cubic-bezier(.2,.6,.2,1);
+  --duration: 180ms;
 }
 
-  /* ABOUT */
-  #about { border-top: 1px solid var(--border); }
-  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
-  .about-text p { color: #a0a0c0; margin-bottom: 1.2rem; font-size: 0.97rem; }
-  .about-text p strong { color: var(--text); font-weight: 500; }
-  .about-meta { display: flex; flex-direction: column; gap: 1rem; }
-  .meta-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem 1.4rem; }
-  .meta-label { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
-  .meta-value { font-size: 0.92rem; color: var(--text); }
-  .meta-value a { color: var(--accent); text-decoration: none; }
-  .why-ai { margin-top: 1.8rem; padding: 1.2rem 1.4rem; background: rgba(108,142,191,0.06); border: 1px solid rgba(108,142,191,0.2); border-radius: 12px; }
-  .why-ai-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.7rem; }
-  .why-ai p { margin-bottom: 0 !important; }
+/* ---------- 2. BASE ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + var(--space-4)); -webkit-text-size-adjust: 100%; }
+body { background: var(--color-bg); color: var(--color-text-secondary); font: 400 var(--text-body)/var(--leading-body) var(--font-sans); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+img { display: block; max-width: 100%; height: auto; }
+ul, ol { list-style: none; }
+h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 400; color: var(--color-text); line-height: var(--leading-heading); letter-spacing: -0.01em; }
+a { color: inherit; text-underline-offset: 3px; }
+button { font: inherit; color: inherit; }
+::selection { background: var(--color-accent); color: var(--color-on-accent); }
+:focus-visible { outline: var(--border-2) solid var(--color-focus); outline-offset: 3px; border-radius: var(--radius-sm); }
+[hidden] { display: none !important; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 
-  /* JOURNEY STRIP */
-  .about-lead { font-size: 1.05rem !important; color: var(--text) !important; }
-  .journey-strip { display: flex; align-items: stretch; gap: 0; margin: 2.2rem 0; flex-wrap: wrap; }
-  .journey-step { flex: 1; min-width: 130px; padding-right: 1.2rem; }
-  .journey-num { font-family: 'Syne', sans-serif; font-size: 0.78rem; font-weight: 700; color: var(--accent2); margin-bottom: 0.5rem; }
-  .journey-title { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 0.3rem; }
-  .journey-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
-  .journey-arrow { display: flex; align-items: flex-start; padding-top: 0.15rem; color: var(--border2); font-size: 1rem; margin-right: 1.2rem; }
-  @media (max-width: 768px) { .journey-arrow { display: none; } .journey-step { padding-right: 0; margin-bottom: 1rem; } }
+/* Type utilities — the only places font sizes are set */
+.type-display { font: 400 var(--text-display)/var(--leading-tight) var(--font-serif); letter-spacing: -0.025em; color: var(--color-text); }
+.type-h1 { font: 400 var(--text-h1)/var(--leading-tight) var(--font-serif); letter-spacing: -0.02em; color: var(--color-text); }
+.type-h2 { font: 400 var(--text-h2)/var(--leading-heading) var(--font-serif); color: var(--color-text); }
+.type-h3 { font: 400 var(--text-h3)/1.35 var(--font-serif); color: var(--color-text); }
+.type-h4 { font: 400 var(--text-h4)/1.3 var(--font-serif); color: var(--color-text); }
+.type-body-lg { font-size: var(--text-body-lg); line-height: 1.7; }
+.type-body { font-size: var(--text-body); }
+.type-body-sm { font-size: var(--text-body-sm); line-height: 1.55; }
+.type-label { font: 500 var(--text-label)/1.4 var(--font-sans); letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--color-text-muted); }
+.type-caption { font-size: var(--text-caption); line-height: 1.5; color: var(--color-text-muted); }
+.text-primary { color: var(--color-text); }
+.text-muted { color: var(--color-text-muted); }
+.text-accent { color: var(--color-accent); }
 
-  /* HIGHLIGHT STRIP (condensed project teasers) */
-  .highlight-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; margin-bottom: 1.5rem; }
-  .highlight-card { display: block; background: var(--bg2); border: 1px solid var(--border); border-radius: 14px; padding: 1.8rem; text-decoration: none; transition: border-color 0.2s, transform 0.2s; }
-  .highlight-card:hover { border-color: var(--accent2); transform: translateY(-2px); }
-  .highlight-tag { font-size: 0.7rem; color: var(--accent2); letter-spacing: 0.06em; margin-bottom: 0.7rem; }
-  .highlight-title { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 600; color: var(--text); margin-bottom: 0.6rem; }
-  .highlight-desc { font-size: 0.88rem; color: #8888a8; line-height: 1.6; margin-bottom: 1.1rem; }
-  .highlight-link { font-size: 0.82rem; color: var(--accent); }
+/* ---------- 3. LAYOUT PRIMITIVES ---------- */
+.container { width: 100%; max-width: calc(var(--container) + 2 * var(--gutter)); margin-inline: auto; padding-inline: var(--gutter); }
+.measure { max-width: var(--measure); }
+.section { padding-block: var(--section-y); }
+.section + .section, .divider-top { border-top: var(--border-1) solid var(--color-border-subtle); }
+.stack > * + * { margin-top: var(--space-4); }
+.stack-lg > * + * { margin-top: var(--space-6); }
+.grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5); }
+.grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-5); }
+.grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-5); }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: var(--space-5); }
+.split { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: var(--space-9); align-items: start; }
+.split-hero { display: grid; grid-template-columns: minmax(0, 1fr) var(--portrait-w); gap: var(--space-9); align-items: center; }
+.cluster { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center; }
+.cluster-lg { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
 
-  /* PORTFOLIO CTA */
-  .portfolio-cta { display: flex; align-items: center; justify-content: space-between; background: rgba(93,202,165,0.07); border: 1px solid rgba(93,202,165,0.4); border-radius: 16px; padding: 1.6rem 2rem; text-decoration: none; transition: background 0.2s; }
-  .portfolio-cta:hover { background: rgba(93,202,165,0.13); }
-  .portfolio-cta-title { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--text); }
-  .portfolio-cta-sub { font-size: 0.85rem; color: var(--muted); margin-top: 0.3rem; }
-  .portfolio-cta-arrow { font-size: 1.6rem; color: var(--accent2); }
+/* ---------- 4. COMPONENTS ---------- */
 
-  /* TWO-TRACK PANELS */
-  .track-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.4rem; margin-bottom: 2.2rem; }
-  .track-panel { background: var(--bg2); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; display: flex; flex-direction: column; transition: border-color 0.2s; }
-  .track-panel:hover { border-color: var(--accent2); }
-  .track-label { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent2); margin-bottom: 0.8rem; }
-  .track-title { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 700; color: var(--text); margin-bottom: 0.8rem; }
-  .track-desc { font-size: 0.9rem; color: #8888a8; line-height: 1.6; margin-bottom: 1.5rem; flex-grow: 1; }
-  .track-cta { display: inline-flex; align-items: center; gap: 8px; font-size: 0.88rem; color: var(--accent2); text-decoration: none; border: 1px solid rgba(93,202,165,0.4); padding: 10px 18px; border-radius: 100px; transition: background 0.2s; align-self: flex-start; }
-  .track-cta:hover { background: rgba(93,202,165,0.13); }
+/* 4.1 Button — primary / secondary / ghost / link */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
+  min-height: var(--control-h); padding: 0 var(--space-5);
+  border: var(--border-1) solid transparent; border-radius: var(--radius-md);
+  font: 500 var(--text-body-sm)/1 var(--font-sans); text-decoration: none; white-space: nowrap;
+  cursor: pointer; transition: background-color var(--duration) var(--ease), border-color var(--duration) var(--ease), color var(--duration) var(--ease), transform var(--duration) var(--ease);
+}
+.btn:active { transform: translateY(1px); }
+.btn:disabled, .btn[aria-disabled="true"] { opacity: .45; cursor: not-allowed; pointer-events: none; }
+.btn--sm { min-height: var(--control-h-sm); padding: 0 var(--space-4); }
+.btn--primary { background: var(--color-text); color: var(--color-bg); }
+.btn--primary:hover { background: var(--color-accent); }
+.btn--secondary { border-color: var(--color-border); color: var(--color-text); background: transparent; }
+.btn--secondary:hover { border-color: var(--color-text); background: var(--color-surface); }
+.btn--ghost { color: var(--color-text-secondary); background: transparent; }
+.btn--ghost:hover { color: var(--color-text); background: var(--color-surface); }
+.btn--link { min-height: auto; padding: 0; border: 0; color: var(--color-text); text-decoration: underline; text-decoration-color: var(--color-accent-border); }
+.btn--link:hover { color: var(--color-accent); text-decoration-color: var(--color-accent); }
+.btn .icon { color: var(--color-accent); transition: transform var(--duration) var(--ease); }
+.btn--primary .icon { color: currentColor; }
+.btn:hover .icon--forward { transform: translateX(2px); }
+.btn:hover .icon--back { transform: translateX(-2px); }
 
-  /* SKILLS */
-  #skills { border-top: 1px solid var(--border); }
-  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 3rem; }
-  .skill-cat { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 1.4rem; }
-  .skill-cat-title { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
-  .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-  .skill-tag { font-size: 0.78rem; background: var(--bg3); border: 1px solid var(--border); border-radius: 100px; padding: 3px 10px; color: #a0a0c0; }
-  .impact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; }
-  .impact-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 1.4rem; text-align: center; }
-  .impact-num { font-family: 'Syne', sans-serif; font-size: 1.8rem; font-weight: 700; color: var(--accent); }
-  .impact-lbl { font-size: 0.75rem; color: var(--muted); margin-top: 4px; }
+/* 4.2 Chip — neutral / accent / toggle */
+.chip {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  padding: var(--space-1) var(--space-3); border: var(--border-1) solid var(--color-border); border-radius: var(--radius-pill);
+  font: 400 var(--text-caption)/1.4 var(--font-sans); color: var(--color-text-secondary); background: transparent;
+}
+.chip--accent { border-color: var(--color-accent-border); color: var(--color-accent); }
+.chip--toggle { min-height: var(--control-h-sm); padding: 0 var(--space-4); font-weight: 500; cursor: pointer; transition: all var(--duration) var(--ease); }
+.chip--toggle:hover { color: var(--color-text); border-color: var(--color-text-muted); }
+.chip--toggle:active { transform: translateY(1px); }
+.chip--toggle[aria-pressed="true"] { background: var(--color-text); border-color: var(--color-text); color: var(--color-bg); }
 
-  /* PORTFOLIO */
-  #portfolio { border-top: 1px solid var(--border); }
-  .portfolio-grid { display: flex; flex-direction: column; gap: 1rem; }
-  .project-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 14px; padding: 1.8rem 2rem; transition: border-color 0.2s; }
-  .project-card:hover { border-color: var(--border2); }
-  .project-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 0.8rem; }
-  .project-title { font-family: 'Syne', sans-serif; font-size: 1.15rem; font-weight: 600; color: var(--text); }
-  .project-badge { font-size: 0.7rem; background: var(--bg3); border: 1px solid var(--border2); border-radius: 100px; padding: 3px 10px; color: var(--muted); white-space: nowrap; }
-  .project-badge.eu { color: var(--accent2); border-color: var(--accent2); }
-  .project-role { font-size: 0.8rem; color: var(--accent); margin-bottom: 0.8rem; }
-  .project-desc { font-size: 0.9rem; color: #8888a8; line-height: 1.65; margin-bottom: 1rem; }
-  .project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-  .project-tag { font-size: 0.72rem; background: var(--bg3); border: 1px solid var(--border); border-radius: 100px; padding: 2px 9px; color: var(--muted); }
+/* 4.3 Evidence badge — one component, five semantic variants */
+.badge { display: inline-flex; align-items: center; gap: var(--space-2); font: 500 var(--text-label)/1 var(--font-sans); letter-spacing: var(--tracking-label); text-transform: uppercase; white-space: nowrap; }
+.badge::before { content: ''; width: 8px; height: 8px; flex: none; border: var(--border-2) solid currentColor; border-radius: 50%; }
+.badge--measured { color: var(--evidence-measured); }
+.badge--measured::before { background: currentColor; }
+.badge--estimated { color: var(--evidence-estimated); }
+.badge--estimated::before { border-radius: 1px; transform: rotate(45deg); background: currentColor; width: 7px; height: 7px; }
+.badge--programme { color: var(--evidence-programme); }
+.badge--programme::before { border-radius: 1px; }
+.badge--planned { color: var(--evidence-planned); }
+.badge--planned::before { border-style: dashed; }
+.badge--hypothesis { color: var(--evidence-hypothesis); }
+.badge--hypothesis::before { border-width: var(--border-1); }
 
-  /* PUBLICATIONS */
-  #publications { border-top: 1px solid var(--border); }
-  .pub-list { display: flex; flex-direction: column; gap: 0.75rem; }
-  .pub-item { display: flex; align-items: flex-start; gap: 1.2rem; background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem 1.4rem; }
-  .pub-year { font-size: 0.75rem; color: var(--accent); font-weight: 500; min-width: 36px; padding-top: 2px; }
-  .pub-venue { font-size: 0.72rem; background: var(--bg3); border: 1px solid var(--border2); border-radius: 100px; padding: 2px 9px; color: var(--muted); white-space: nowrap; margin-bottom: 4px; display: inline-block; }
-  .pub-title { font-size: 0.92rem; color: var(--text); }
+/* 4.4 Card — base + variants */
+.card { background: var(--color-surface); border: var(--border-1) solid var(--color-border-subtle); border-radius: var(--radius-md); padding: var(--space-6); }
+.card__title { margin-bottom: var(--space-2); }
+.card__text { color: var(--color-text-secondary); }
+.card__footnote { margin-top: var(--space-4); padding-top: var(--space-4); border-top: var(--border-1) solid var(--color-border-subtle); }
+.card__footnote .type-label { display: block; color: var(--color-accent); margin-bottom: var(--space-2); }
+/* interactive cards (real links) share one hover/focus behaviour */
+a.card { display: flex; flex-direction: column; text-decoration: none; transition: border-color var(--duration) var(--ease), background-color var(--duration) var(--ease); }
+a.card:hover { border-color: var(--color-border); background: var(--color-surface-hover); }
+a.card:hover .card__title { color: var(--color-accent); }
+a.card:focus-visible { outline-offset: 4px; border-radius: var(--radius-md); }
+.card--principle { border-top: var(--border-2) solid var(--color-accent-border); }
+.card--decision { background: var(--color-surface-2); padding: 0; overflow: hidden; }
+.card--metric { display: flex; flex-direction: column; gap: var(--space-1); }
+.card--metric .metric__value { font: 400 var(--text-h1)/1 var(--font-serif); font-size: clamp(2rem, 3.4vw, 2.75rem); color: var(--color-text); margin-bottom: var(--space-3); font-variant-numeric: lining-nums; }
+.card--metric .badge { margin-top: auto; padding-top: var(--space-4); }
+.card--nav .type-h3 { margin-top: var(--space-2); }
 
-  /* TEACHING */
-  #teaching { border-top: 1px solid var(--border); }
-  .teaching-grid { display: flex; flex-direction: column; gap: 1rem; }
-  .teaching-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 14px; padding: 1.6rem 2rem; display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: start; transition: border-color 0.2s; }
-  .teaching-card:hover { border-color: var(--border2); }
-  .teaching-year { font-size: 0.75rem; color: var(--accent); font-weight: 500; white-space: nowrap; padding-top: 3px; min-width: 80px; }
-  .teaching-title { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 600; color: var(--text); margin-bottom: 3px; }
-  .teaching-org { font-size: 0.8rem; color: var(--accent); margin-bottom: 0.7rem; }
-  .teaching-desc { font-size: 0.88rem; color: #8888a8; line-height: 1.65; margin-bottom: 0.8rem; }
-  .teaching-subjects { display: flex; flex-wrap: wrap; gap: 6px; }
-  .teaching-subject { font-size: 0.72rem; background: var(--bg3); border: 1px solid var(--border); border-radius: 100px; padding: 2px 9px; color: var(--muted); }
+/* 4.5 Section header — eyebrow, heading, optional intro */
+.section-header { margin-bottom: var(--space-8); max-width: 820px; }
+.eyebrow { display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4); }
+.eyebrow::before { content: ''; width: var(--space-5); height: var(--border-1); background: var(--color-accent); flex: none; }
+.section-header .section-intro { margin-top: var(--space-5); color: var(--color-text-secondary); max-width: var(--measure); }
+.subsection { margin-top: var(--space-9); }
+.subsection:first-child { margin-top: 0; }
+.subsection-header { display: flex; align-items: baseline; gap: var(--space-3); padding-bottom: var(--space-4); margin-bottom: var(--space-6); border-bottom: var(--border-1) solid var(--color-border-subtle); }
+.subsection-header .type-label { color: var(--color-accent); }
+.subsection-intro { margin: calc(-1 * var(--space-2)) 0 var(--space-6); max-width: var(--measure); }
 
-  /* BEYOND WORK */
-  #beyond { border-top: 1px solid var(--border); }
-  .beyond-intro { font-size: 0.97rem; color: #8888a8; max-width: 600px; margin-bottom: 2.5rem; line-height: 1.7; }
-  .beyond-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
-  .beyond-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 1.4rem; transition: border-color 0.2s; }
-  .beyond-card:hover { border-color: var(--border2); }
-  .beyond-icon { font-size: 1.5rem; margin-bottom: 0.7rem; }
-  .beyond-name { font-size: 0.92rem; font-weight: 500; color: var(--text); margin-bottom: 0.3rem; }
-  .beyond-note { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
-  .beyond-quote { border-left: 2px solid var(--accent2); padding-left: 1.2rem; color: #8888a8; font-size: 0.92rem; font-style: italic; max-width: 560px; }
+/* 4.6 Disclosure — native details/summary */
+.disclosure { margin-top: var(--space-5); border: var(--border-1) solid var(--color-border-subtle); border-radius: var(--radius-md); background: var(--color-surface); }
+.disclosure > summary {
+  list-style: none; cursor: pointer; min-height: var(--control-h);
+  display: flex; align-items: center; justify-content: space-between; gap: var(--space-4);
+  padding: var(--space-3) var(--space-5); border-radius: var(--radius-md);
+  font: 500 var(--text-body-sm)/1.4 var(--font-sans); color: var(--color-text);
+  transition: background-color var(--duration) var(--ease);
+}
+.disclosure > summary::-webkit-details-marker { display: none; }
+.disclosure > summary::after { content: ''; width: 8px; height: 8px; flex: none; border-right: var(--border-2) solid var(--color-accent); border-bottom: var(--border-2) solid var(--color-accent); transform: rotate(45deg) translateY(-2px); transition: transform var(--duration) var(--ease); }
+.disclosure[open] > summary::after { transform: rotate(225deg) translateY(-2px); }
+.disclosure > summary:hover { background: var(--color-surface-hover); }
+.disclosure > summary:active { background: var(--color-surface-2); }
+.disclosure > summary .summary-meta { font-weight: 400; color: var(--color-text-muted); margin-left: var(--space-2); }
+.disclosure[open] > summary { border-bottom: var(--border-1) solid var(--color-border-subtle); border-radius: var(--radius-md) var(--radius-md) 0 0; }
+.disclosure__body { padding: var(--space-5); }
 
-  /* CONTACT */
-  #contact { border-top: 1px solid var(--border); }
-  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
-  .contact-intro { font-size: 0.97rem; color: #8888a8; line-height: 1.75; margin-bottom: 2rem; }
-  .contact-links { display: flex; flex-direction: column; gap: 0.75rem; }
-  .contact-link { display: flex; align-items: center; gap: 0.75rem; color: var(--muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
-  .contact-link:hover { color: var(--text); }
-  .contact-link-icon { width: 36px; height: 36px; background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
-  .contact-form { display: flex; flex-direction: column; gap: 0.9rem; }
-  .form-group input, .form-group textarea {
-    width: 100%; background: var(--bg2); border: 1px solid var(--border); border-radius: 10px;
-    padding: 0.8rem 1rem; color: var(--text); font-family: 'Inter', sans-serif; font-size: 0.88rem;
-    outline: none; transition: border-color 0.2s; resize: vertical;
-  }
-  .form-group input::placeholder, .form-group textarea::placeholder { color: var(--muted); }
-  .form-group input:focus, .form-group textarea:focus { border-color: var(--accent); }
-  .form-group textarea { min-height: 120px; }
-  .btn-submit { background: var(--accent2); color: #04342C; border: none; padding: 0.75rem 1.8rem; border-radius: 100px; font-size: 0.88rem; cursor: pointer; font-family: 'Inter', sans-serif; font-weight: 500; transition: opacity 0.2s; align-self: flex-start; }
-  .btn-submit:hover { opacity: 0.85; }
+/* 4.7 Table */
+.table-wrap { overflow-x: auto; }
+.table { width: 100%; border-collapse: collapse; font-size: var(--text-body-sm); line-height: 1.55; }
+.table caption { text-align: left; padding-bottom: var(--space-3); }
+.table th { text-align: left; padding: var(--space-3) var(--space-4) var(--space-3) 0; border-bottom: var(--border-1) solid var(--color-border); font: 500 var(--text-label)/1.4 var(--font-sans); letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--color-text-muted); }
+.table td { padding: var(--space-3) var(--space-4) var(--space-3) 0; border-bottom: var(--border-1) solid var(--color-border-subtle); vertical-align: top; color: var(--color-text-secondary); }
+.table td:first-child { color: var(--color-text); }
+.table th:last-child, .table td:last-child { padding-right: 0; }
 
-  /* FOOTER */
-  footer { border-top: 1px solid var(--border); padding: 2rem 4rem; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-  .footer-text { font-size: 0.8rem; color: var(--muted); }
+/* 4.8 Navigation */
+.skip-link { position: absolute; left: var(--space-4); top: calc(-1 * var(--space-9)); z-index: 200; background: var(--color-text); color: var(--color-bg); padding: var(--space-3) var(--space-4); border-radius: var(--radius-md); font-weight: 500; text-decoration: none; }
+.skip-link:focus { top: var(--space-3); }
+.site-nav { position: fixed; inset: 0 0 auto 0; z-index: 100; background: var(--color-bg); border-bottom: var(--border-1) solid var(--color-border-subtle); }
+.site-nav__inner { height: var(--nav-h); display: flex; align-items: center; justify-content: space-between; gap: var(--space-6); }
+.site-nav__brand { font: 400 var(--text-h4)/1 var(--font-serif); color: var(--color-text); text-decoration: none; }
+.site-nav__brand:hover { color: var(--color-accent); }
+.site-nav__links { display: flex; gap: var(--space-2); }
+.nav-link { display: inline-flex; align-items: center; min-height: var(--control-h-sm); padding: 0 var(--space-3); border-radius: var(--radius-sm); font-size: var(--text-body-sm); color: var(--color-text-muted); text-decoration: none; transition: color var(--duration) var(--ease), background-color var(--duration) var(--ease); }
+.nav-link:hover { color: var(--color-text); background: var(--color-surface); }
+.nav-link[aria-current="page"] { color: var(--color-text); }
+.site-nav__menu { display: none; position: relative; }
+.site-nav__menu > summary { list-style: none; }
+.site-nav__menu > summary::-webkit-details-marker { display: none; }
+.site-nav__menu-panel { position: absolute; right: 0; top: calc(100% + var(--space-2)); min-width: 220px; background: var(--color-surface); border: var(--border-1) solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-2); display: flex; flex-direction: column; }
+.site-nav__menu-panel .nav-link { min-height: var(--control-h); }
+.site-nav__actions { display: flex; gap: var(--space-3); align-items: center; }
 
-  /* DIVIDER LINE */
-  .line { width: 40px; height: 1px; background: var(--border2); display: inline-block; vertical-align: middle; margin-right: 8px; }
+/* 4.9 Figure & image */
+.figure { display: flex; flex-direction: column; gap: var(--space-3); }
+.figure img { width: 100%; border-radius: var(--radius-md); border: var(--border-1) solid var(--color-border-subtle); background: var(--color-surface); }
+.figure figcaption { font-size: var(--text-caption); color: var(--color-text-muted); max-width: var(--measure); }
+.placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-2); text-align: center; padding: var(--space-6); border: var(--border-1) dashed var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); color: var(--color-text-muted); font-size: var(--text-body-sm); aspect-ratio: 16 / 10; }
+.placeholder strong { color: var(--color-text); font-weight: 500; }
+.placeholder--warning { border-color: var(--evidence-estimated); color: var(--evidence-estimated); }
+.placeholder--warning strong { color: var(--evidence-estimated); }
 
-  /* ANIMATIONS */
-  @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
-  .fade-up { opacity: 0; animation: fadeUp 0.7s ease forwards; }
-  .delay-1 { animation-delay: 0.1s; }
-  .delay-2 { animation-delay: 0.25s; }
-  .delay-3 { animation-delay: 0.4s; }
-  .delay-4 { animation-delay: 0.55s; }
+/* 4.10 Callout & quote */
+.callout { padding: var(--space-4) var(--space-5); border-left: var(--border-2) solid var(--color-border); color: var(--color-text-secondary); max-width: var(--measure); font-size: var(--text-body-sm); }
+.pull-quote { border-left: var(--border-2) solid var(--color-accent); padding-left: var(--space-5); max-width: var(--measure); }
 
-  @media (max-width: 768px) {
-    nav { padding: 1rem 1.5rem; }
-    .nav-links { display: none; }
-    section { padding: 4rem 1.5rem; }
-    #hero { padding: 1.5rem; }
-    .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
-    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
-  }
+/* ---------- 5. PATTERNS ---------- */
+
+/* 5.1 Homepage hero — split layout with portrait */
+.hero { min-height: 100vh; padding-top: calc(var(--nav-h) + var(--space-9)); padding-bottom: var(--space-9); display: flex; align-items: center; }
+.hero .split-hero { width: 100%; }
+.hero__name { margin-bottom: var(--space-5); }
+.hero__name span { font-style: italic; color: var(--color-text-secondary); }
+.hero__role { font: 500 var(--text-body-lg)/1.4 var(--font-sans); color: var(--color-text); }
+.hero__sub { margin-top: var(--space-1); }
+.hero__statement { margin-top: var(--space-7); max-width: 34ch; }
+.hero__focus { margin-top: var(--space-7); }
+.hero__focus .type-label { display: block; margin-bottom: var(--space-3); }
+.hero__actions { margin-top: var(--space-7); }
+.hero__media { margin: 0; }
+.hero-portrait { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 20%; border-radius: var(--radius-lg); border: var(--border-1) solid var(--color-border-subtle); background: var(--color-surface); }
+.hero__media .placeholder { aspect-ratio: 4 / 5; border-radius: var(--radius-lg); }
+.hero__media figcaption { margin-top: var(--space-3); }
+
+/* 5.2 Project card */
+.card--project { padding: 0; overflow: hidden; }
+.card--project .card__media { aspect-ratio: 16 / 10; overflow: hidden; background: var(--color-surface-2); border-bottom: var(--border-1) solid var(--color-border-subtle); }
+.card--project .card__media img { width: 100%; height: 100%; object-fit: cover; border: 0; border-radius: 0; }
+.card--project .card__body { display: flex; flex-direction: column; flex: 1; padding: var(--space-6); }
+.card--project .card__meta { display: flex; justify-content: space-between; gap: var(--space-4); margin-bottom: var(--space-4); }
+.card--project .card__text { margin-bottom: var(--space-5); }
+.card__outcome { margin-top: auto; padding-top: var(--space-5); border-top: var(--border-1) solid var(--color-border-subtle); }
+.card__outcome .type-label { display: block; color: var(--color-accent); margin-bottom: var(--space-2); }
+.card__outcome p { color: var(--color-text); }
+.card__role { margin-top: var(--space-4); }
+.card__cta { margin-top: var(--space-5); font: 500 var(--text-body-sm)/1 var(--font-sans); color: var(--color-text); display: inline-flex; gap: var(--space-2); }
+.card__cta .icon { color: var(--color-accent); transition: transform var(--duration) var(--ease); }
+a.card:hover .card__cta .icon { transform: translateX(2px); }
+
+/* 5.3 Home: product lens, rows, meta lists */
+.lens { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-top: var(--border-1) solid var(--color-border); border-bottom: var(--border-1) solid var(--color-border-subtle); margin-bottom: var(--space-8); }
+.lens > li { padding: var(--space-5) var(--space-5) var(--space-6) 0; }
+.lens > li + li { padding-left: var(--space-5); border-left: var(--border-1) solid var(--color-border-subtle); }
+.lens .type-label { color: var(--color-accent); display: block; margin-bottom: var(--space-3); }
+.rows { border-top: var(--border-1) solid var(--color-border-subtle); }
+.row { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: var(--space-6); padding-block: var(--space-6); border-bottom: var(--border-1) solid var(--color-border-subtle); }
+.row__aside { padding-top: var(--space-1); }
+.row__title { margin-bottom: var(--space-1); }
+.row__sub { margin-bottom: var(--space-3); }
+.meta-list { border-top: var(--border-1) solid var(--color-border-subtle); }
+.meta-list > div { padding-block: var(--space-5); border-bottom: var(--border-1) solid var(--color-border-subtle); }
+.meta-list dt { margin-bottom: var(--space-2); }
+.meta-list dd { color: var(--color-text); }
+.meta-list dd li + li { margin-top: var(--space-1); }
+.link-list { border-top: var(--border-1) solid var(--color-border-subtle); }
+.link-list a { display: flex; align-items: center; gap: var(--space-4); min-height: var(--control-h); padding-block: var(--space-4); border-bottom: var(--border-1) solid var(--color-border-subtle); color: var(--color-text); text-decoration: none; transition: color var(--duration) var(--ease); }
+.link-list a:hover { color: var(--color-accent); }
+.link-list .type-label { width: var(--space-7); flex: none; }
+.journey { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: var(--border-1) solid var(--color-border-subtle); margin-block: var(--space-7); }
+.journey > li { padding: var(--space-4) var(--space-4) 0 0; }
+.journey > li:last-child .type-h4 { color: var(--color-accent); }
+.journey .type-label { display: block; margin-bottom: var(--space-2); }
+.pub-links { margin-top: var(--space-3); }
+.skill-group { border-top: var(--border-1) solid var(--color-border); padding-top: var(--space-5); }
+.skill-group .type-h4 { margin-bottom: var(--space-4); }
+.interest { display: grid; grid-template-columns: var(--space-6) minmax(0, 1fr); column-gap: var(--space-2); padding-block: var(--space-4); border-bottom: var(--border-1) solid var(--color-border-subtle); }
+.interest__icon { grid-row: span 2; filter: grayscale(1); }
+
+/* 5.4 Case-study hero */
+.case-hero { padding-top: calc(var(--nav-h) + var(--space-9)); padding-bottom: var(--space-8); }
+.case-hero__back { margin-bottom: var(--space-8); }
+.case-hero__title { margin-bottom: var(--space-5); }
+.case-hero__subtitle { color: var(--color-text-secondary); max-width: 36ch; }
+.key-results { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-top: var(--space-8); border-block: var(--border-1) solid var(--color-border); }
+.key-results > div { padding: var(--space-5) var(--space-5) var(--space-5) 0; }
+.key-results > div + div { padding-left: var(--space-5); border-left: var(--border-1) solid var(--color-border-subtle); }
+.key-results .badge { margin-bottom: var(--space-3); }
+.key-results strong { display: block; font: 400 var(--text-h2)/1 var(--font-serif); color: var(--color-text); margin-bottom: var(--space-2); font-variant-numeric: lining-nums; }
+.case-meta { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-6); margin-top: var(--space-7); }
+.case-meta dt { margin-bottom: var(--space-2); }
+.case-meta dd { color: var(--color-text); font-size: var(--text-body-sm); line-height: 1.55; }
+.case-hero .callout { margin-top: var(--space-7); }
+.case-hero__cover { margin-top: var(--space-8); }
+.band { background: var(--color-surface-2); border-block: var(--border-1) solid var(--color-border-subtle); }
+.band .grid-3 { padding-block: var(--space-8); gap: var(--space-7); }
+.band .type-label { display: block; color: var(--color-accent); margin-bottom: var(--space-3); }
+.band p { color: var(--color-text); }
+
+/* 5.5 Reading blocks */
+.prose p { max-width: var(--measure); font-size: var(--text-body-lg); line-height: 1.75; color: var(--color-text-secondary); }
+.prose p + p { margin-top: var(--space-5); }
+.prose .prose__lead { font: italic 400 var(--text-h3)/1.35 var(--font-serif); color: var(--color-text); margin-bottom: var(--space-6); }
+.insights { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--space-7); }
+.insight { padding-block: var(--space-6); border-top: var(--border-1) solid var(--color-border-subtle); }
+.insight .type-label { color: var(--color-accent); display: block; margin-bottom: var(--space-3); }
+.insight .type-h4 { margin-bottom: var(--space-2); }
+.chain { margin-bottom: var(--space-6); }
+.chain .sep { color: var(--color-text-muted); }
+
+/* 5.6 Decision log */
+.decision-list > * + * { margin-top: var(--space-4); }
+.decision__head { display: flex; align-items: baseline; gap: var(--space-4); padding: var(--space-5) var(--space-6); border-bottom: var(--border-1) solid var(--color-border-subtle); }
+.decision__head .badge { margin-left: auto; }
+.decision__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.decision__grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.decision__cell { padding: var(--space-5) var(--space-6) var(--space-6); }
+.decision__cell + .decision__cell { border-left: var(--border-1) solid var(--color-border-subtle); }
+.decision__cell .type-label { display: block; margin-bottom: var(--space-3); }
+.decision__cell p { font-size: var(--text-body-sm); line-height: 1.6; color: var(--color-text-secondary); }
+.decision__cell--decision { background: var(--color-accent-surface); box-shadow: inset var(--border-2) 0 0 var(--color-accent); }
+.decision__cell--decision .type-label { color: var(--color-accent); }
+.decision__cell--decision p { color: var(--color-text); }
+
+/* 5.7 Requirements block */
+.requirement { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: var(--space-5); padding-block: var(--space-5); border-top: var(--border-1) solid var(--color-border-subtle); }
+.requirement:first-child { border-top: 0; padding-top: 0; }
+.requirement__area { color: var(--color-accent); }
+.requirement dl { display: grid; gap: var(--space-3); }
+.requirement dl > div { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: var(--space-4); }
+.requirement dd { font-size: var(--text-body-sm); line-height: 1.6; color: var(--color-text-secondary); }
+.requirement dl > div:first-child dd { color: var(--color-text); }
+.card--requirement { background: var(--color-surface-2); box-shadow: inset var(--border-2) 0 0 var(--color-accent); }
+.card--requirement .requirement { padding-bottom: 0; }
+
+/* 5.8 Scope, evolution, ownership */
+.scope-list li { padding-block: var(--space-2); border-bottom: var(--border-1) solid var(--color-border-subtle); font-size: var(--text-body-sm); }
+.scope-list li:last-child { border-bottom: 0; }
+.card--scope-in { border-top: var(--border-2) solid var(--color-accent); }
+.card--scope-in .card__label { color: var(--color-accent); }
+.card--scope-out .scope-list li { color: var(--color-text-muted); }
+.card__label { display: block; margin-bottom: var(--space-4); }
+.evolution-step { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: var(--space-5); padding-block: var(--space-5); border-top: var(--border-1) solid var(--color-border-subtle); }
+.evolution-step:first-child { border-top: 0; padding-top: 0; }
+.evolution-step .badge { margin-top: var(--space-3); }
+.evolution-step dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4) var(--space-6); }
+.evolution-step dt { margin-bottom: var(--space-1); }
+.evolution-step dd { font-size: var(--text-body-sm); line-height: 1.6; }
+.owned { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--space-7); border-top: var(--border-1) solid var(--color-border-subtle); }
+.owned > div { padding-block: var(--space-4); border-bottom: var(--border-1) solid var(--color-border-subtle); }
+.owned dt { color: var(--color-text); font-weight: 500; margin-bottom: var(--space-1); }
+.owned dd { font-size: var(--text-body-sm); color: var(--color-text-muted); }
+
+/* 5.9 AI boundary */
+.layers { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: stretch; }
+.layers__arrow { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-2); padding-inline: var(--space-4); text-align: center; }
+.layers__arrow .icon { color: var(--color-accent); font-size: var(--text-h3); line-height: 1; }
+.card--layer-det { border-top: var(--border-2) solid var(--color-accent); }
+.card--layer-gen { border-top: var(--border-2) dashed var(--color-border); }
+.card--layer-det .card__label, .card--layer-gen .card__label { margin-bottom: var(--space-4); }
+.card--layer-gen .badge { margin-top: var(--space-4); }
+.check-list li, .cross-list li { display: flex; gap: var(--space-3); padding-block: var(--space-2); border-top: var(--border-1) solid var(--color-border-subtle); font-size: var(--text-body-sm); }
+.check-list li::before { content: '✓'; color: var(--color-accent); flex: none; }
+.cross-list li::before { content: '✕'; color: var(--evidence-estimated); flex: none; }
+.rule { margin-top: var(--space-6); display: flex; align-items: baseline; gap: var(--space-3); flex-wrap: wrap; }
+.rule .type-label { color: var(--color-accent); }
+
+/* 5.10 Evidence area */
+.legend { margin-top: var(--space-6); padding-top: var(--space-4); border-top: var(--border-1) solid var(--color-border-subtle); gap: var(--space-5); }
+
+/* 5.11 Artifacts */
+.figure-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-7) var(--space-5); }
+.figure-grid > .figure:first-child { grid-column: 1 / -1; }
+.screens { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-5); }
+.screens .figure img { border-radius: var(--radius-lg); border-color: var(--color-border); }
+
+/* 5.12 Pager */
+.pager { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5); }
+.pager a:last-child { text-align: right; align-items: flex-end; }
+
+.site-footer { border-top: var(--border-1) solid var(--color-border-subtle); }
+.site-footer .container { display: flex; justify-content: space-between; gap: var(--space-4); padding-block: var(--space-6); font-size: var(--text-caption); color: var(--color-text-muted); }
+
+/* ---------- 6. RESPONSIVE & MOTION ---------- */
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+#main > * { animation: fade-in 400ms var(--ease) both; }
+
+@media (max-width: 1024px) {
+  :root { --gutter: var(--space-6); --section-y: var(--space-9); --portrait-w: 300px; }
+  .split-hero { gap: var(--space-7); }
+  .split { gap: var(--space-7); }
+  .grid-3, .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lens { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .lens > li:nth-child(4) { border-left: 0; padding-left: 0; }
+  .lens > li:nth-child(n+4) { border-top: var(--border-1) solid var(--color-border-subtle); }
+  .case-meta { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .decision__grid, .decision__grid--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .decision__cell + .decision__cell { border-left: 0; }
+  .decision__cell:nth-child(even) { border-left: var(--border-1) solid var(--color-border-subtle); }
+  .decision__cell:nth-child(n+3) { border-top: var(--border-1) solid var(--color-border-subtle); }
+  .layers { grid-template-columns: minmax(0, 1fr); }
+  .layers__arrow { flex-direction: row; padding: var(--space-4) 0; }
+  .layers__arrow .icon { transform: rotate(90deg); }
+  .screens { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 860px) {
+  .site-nav__links { display: none; }
+  .site-nav__menu { display: block; }
+  .split-hero { grid-template-columns: minmax(0, 1fr); }
+  .hero { min-height: auto; }
+  .hero__media { order: -1; width: min(100%, 280px); }
+  .hero__statement { margin-top: var(--space-6); }
+}
+@media (max-width: 720px) {
+  :root { --gutter: var(--space-5); --section-y: var(--space-8); --nav-h: 64px; }
+  .grid-2, .grid-3, .grid-4, .split, .insights, .owned, .figure-grid, .pager, .journey { grid-template-columns: minmax(0, 1fr); }
+  .journey { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lens { grid-template-columns: minmax(0, 1fr); }
+  .lens > li, .lens > li + li { padding: var(--space-4) 0; border-left: 0; }
+  .lens > li + li { border-top: var(--border-1) solid var(--color-border-subtle); }
+  .row, .requirement, .evolution-step { grid-template-columns: minmax(0, 1fr); gap: var(--space-2); }
+  .requirement dl > div { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .evolution-step dl { grid-template-columns: minmax(0, 1fr); }
+  .decision__grid, .decision__grid--4 { grid-template-columns: minmax(0, 1fr); }
+  .decision__cell:nth-child(n) { border-left: 0; }
+  .decision__cell + .decision__cell { border-top: var(--border-1) solid var(--color-border-subtle); }
+  .decision__cell--decision { box-shadow: inset 0 var(--border-2) 0 var(--color-accent); }
+  .decision__head { flex-wrap: wrap; padding: var(--space-4) var(--space-5); }
+  .decision__head .badge { margin-left: 0; width: 100%; }
+  .decision__cell { padding: var(--space-4) var(--space-5) var(--space-5); }
+  .card { padding: var(--space-5); }
+  .card--project .card__body { padding: var(--space-5); }
+  .key-results { grid-template-columns: minmax(0, 1fr); }
+  .key-results > div, .key-results > div + div { padding: var(--space-4) 0; border-left: 0; }
+  .key-results > div + div { border-top: var(--border-1) solid var(--color-border-subtle); }
+  .band .grid-3 { gap: var(--space-6); padding-block: var(--space-7); }
+  .pager a:last-child { text-align: left; align-items: flex-start; }
+  .site-footer .container { flex-direction: column; }
+  .prose p { font-size: var(--text-body); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main" data-skip>Skip to content</a>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-logo">RS</div>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#portfolio">Portfolio</a></li>
-    <li><a href="#publications">Publications</a></li>
-    <li><a href="#teaching">Teaching</a></li>
-    <li><a href="#beyond">Beyond Work</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <div style="display:flex; gap:0.75rem; align-items:center;">
-   
-    <a href="mailto:roodabeh.seif@gmail.com" class="nav-cta">Get in touch</a>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section id="hero" style="padding-left:4rem; padding-right:4rem;">
-<div class="hero-eyebrow fade-up">Available for new opportunities</div>
-
-<img src="roodabeh-profile.jpg" alt="Roodabeh Seif" class="hero-photo fade-up delay-1">
-
-<h1 class="hero-name fade-up delay-1">Roodabeh<br><span>Seif</span></h1>
-  <div class="hero-roles fade-up delay-2">AI Product Manager <span>·</span> UX Researcher</div>
-  <div class="hero-sub fade-up delay-2">PhD Researcher in Human-Centered AI and Digital Wellbeing</div>
-  <p class="hero-tagline fade-up delay-3">Bridging people, technology, and AI to create <em>meaningful products</em> that solve complex problems and earn users' trust.</p>
-  <div class="hero-focus fade-up delay-3">
-    <div class="hero-focus-label">Current Focus</div>
-    <div class="hero-focus-tags">
-      <span class="focus-tag">AI Product Management</span>
-      <span class="focus-tag">Human-Centered AI</span>
-      <span class="focus-tag">Trustworthy AI</span>
-      <span class="focus-tag">Digital Platforms</span>
-      <span class="focus-tag">Product Discovery</span>
-    </div>
-  </div>
-  <div class="hero-btns fade-up delay-4">
-    <a href="#contact" class="btn-primary">Get in touch</a>
-    <a href="#portfolio" class="btn-ghost">View Portfolio</a>
-  
-  </div>
-  <div class="hero-scroll fade-up delay-4">Scroll to explore</div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="section-tag">About</div>
-  <h2 class="section-title">From engineering<br>to AI product thinking</h2>
-  <div class="about-grid">
-    <div class="about-text">
-      <p class="about-lead">I'm an <strong>AI Product Manager and UX Researcher</strong> working at the intersection of product strategy, user research, and emerging technology — turning ambiguity into direction, and helping teams move from ideas to real-world impact people actually trust.</p>
-
-      <div class="journey-strip">
-        <div class="journey-step">
-          <div class="journey-num">01</div>
-          <div class="journey-title">Engineering</div>
-          <div class="journey-desc">Algorithms, robotics, intelligent systems</div>
+<header class="site-nav">
+  <nav class="container site-nav__inner" aria-label="Main">
+    <a href="#/" class="site-nav__brand">Roodabeh Seif</a>
+    <ul class="site-nav__links">
+      <li><a class="nav-link" href="#work">Work</a></li>
+      <li><a class="nav-link" href="#approach">Approach</a></li>
+      <li><a class="nav-link" href="#about">About</a></li>
+      <li><a class="nav-link" href="#experience">Experience</a></li>
+      <li><a class="nav-link" href="#publications">Publications</a></li>
+      <li><a class="nav-link" href="#contact">Contact</a></li>
+    </ul>
+    <div class="site-nav__actions">
+      <a id="nav-cta" class="btn btn--secondary btn--sm" href="#">Get in touch</a>
+      <details class="site-nav__menu">
+        <summary class="btn btn--ghost btn--sm">Menu</summary>
+        <div class="site-nav__menu-panel">
+          <a class="nav-link" href="#work">Work</a>
+          <a class="nav-link" href="#approach">Approach</a>
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#experience">Experience</a>
+          <a class="nav-link" href="#publications">Publications</a>
+          <a class="nav-link" href="#contact">Contact</a>
         </div>
-        <div class="journey-arrow">→</div>
-        <div class="journey-step">
-          <div class="journey-num">02</div>
-          <div class="journey-title">UX Research</div>
-          <div class="journey-desc">The people behind the technology</div>
-        </div>
-        <div class="journey-arrow">→</div>
-        <div class="journey-step">
-          <div class="journey-num">03</div>
-          <div class="journey-title">Product</div>
-          <div class="journey-desc">People, tech, and business together</div>
-        </div>
-        <div class="journey-arrow">→</div>
-        <div class="journey-step">
-          <div class="journey-num">04</div>
-          <div class="journey-title">Today</div>
-          <div class="journey-desc">Trustworthy, human-centered AI</div>
-        </div>
-      </div>
-
-      <p>Whether it's digital health for older adults, security research for vulnerable communities, or AI-powered experiences, I keep returning to one question: <em>how do we build technology people don't just use, but trust?</em></p>
-
-      <div class="why-ai">
-        <div class="why-ai-label">Why AI</div>
-        <p>Today's most important product decisions are no longer just about interfaces or workflows — they're about how intelligent systems support human decision-making. I focus on building AI-enabled products that stay <strong>transparent, trustworthy, and genuinely useful</strong>.</p>
-      </div>
+      </details>
     </div>
-    <div class="about-meta">
-      <div class="meta-card">
-        <div class="meta-label">Current focus</div>
-        <div class="meta-value">AI Product Management · Human-Centered AI · Trustworthy AI · Digital Platforms · Product Discovery</div>
-      </div>
-      <div class="meta-card">
-        <div class="meta-label">Research</div>
-        <div class="meta-value">PhD Researcher in Human-Centered AI and Digital Wellbeing — University of Siegen</div>
-      </div>
-      <div class="meta-card">
-        <div class="meta-label">Education</div>
-        <div class="meta-value">M.Sc. Human–Computer Interaction<br>M.Sc. Mechatronics Engineering<br>B.Sc. Computer Science</div>
-      </div>
-      <div class="meta-card">
-        <div class="meta-label">Languages</div>
-        <div class="meta-value">English C2 · German B2 (progressing toward C1) · Persian Native</div>
-      </div>
-      <div class="meta-card">
-        <div class="meta-label">Location</div>
-        <div class="meta-value">Germany · Open to relocation</div>
-      </div>
-      <div class="meta-card">
-        <div class="meta-label">LinkedIn</div>
-        <div class="meta-value"><a href="https://linkedin.com/in/roodabeh-seif" target="_blank">linkedin.com/in/roodabeh-seif</a></div>
-      </div>
-    </div>
-  </div>
-</section>
+  </nav>
+</header>
 
-<!-- SKILLS -->
-<section id="skills">
-  <div class="section-tag">Skills</div>
-  <h2 class="section-title">What I bring<br>to the table</h2>
-  <div class="skills-grid">
-    <div class="skill-cat">
-      <div class="skill-cat-title">Product &amp; Strategy</div>
-      <div class="skill-tags">
-        <span class="skill-tag">Roadmapping</span>
-        <span class="skill-tag">Backlog Ownership</span>
-        <span class="skill-tag">Stakeholder Alignment</span>
-        <span class="skill-tag">KPI Tracking</span>
-        <span class="skill-tag">Agile / Scrum</span>
-        <span class="skill-tag">Change Management</span>
-        <span class="skill-tag">Requirements Analysis</span>
-      </div>
-    </div>
-    <div class="skill-cat">
-      <div class="skill-cat-title">UX Research</div>
-      <div class="skill-tags">
-        <span class="skill-tag">Usability Testing</span>
-        <span class="skill-tag">A/B Testing</span>
-        <span class="skill-tag">Co-design</span>
-        <span class="skill-tag">Stakeholder Interviews</span>
-        <span class="skill-tag">Mixed Methods</span>
-        <span class="skill-tag">MAXQDA</span>
-      </div>
-    </div>
-    <div class="skill-cat">
-      <div class="skill-cat-title">AI &amp; Digital</div>
-      <div class="skill-tags">
-        <span class="skill-tag">Prompt Engineering</span>
-        <span class="skill-tag">Gemini / GPT</span>
-        <span class="skill-tag">AI Product Design</span>
-        <span class="skill-tag">Midjourney</span>
-        <span class="skill-tag">GAMMA</span>
-      </div>
-    </div>
-    <div class="skill-cat">
-      <div class="skill-cat-title">Tools</div>
-      <div class="skill-tags">
-        <span class="skill-tag">Jira</span>
-        <span class="skill-tag">Figma</span>
-        <span class="skill-tag">Miro</span>
-        <span class="skill-tag">Adobe CC</span>
-      </div>
-    </div>
-    <div class="skill-cat">
-      <div class="skill-cat-title">Technical</div>
-      <div class="skill-tags">
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">HTML / CSS</span>
-        <span class="skill-tag">C++</span>
-        <span class="skill-tag">MATLAB</span>
-        <span class="skill-tag">Linux</span>
-        <span class="skill-tag">Docker</span>
-      </div>
-    </div>
-    <div class="skill-cat">
-      <div class="skill-cat-title">Teaching &amp; Facilitation</div>
-      <div class="skill-tags">
-        <span class="skill-tag">University Lecturing</span>
-        <span class="skill-tag">Workshop Facilitation</span>
-        <span class="skill-tag">Training Design</span>
-        <span class="skill-tag">Knowledge Transfer</span>
-        <span class="skill-tag">Mentoring</span>
-      </div>
-    </div>
-  </div>
-  <div class="section-tag" style="margin-top: 3rem;">Impact at a glance</div>
-  <div class="impact-grid">
-    <div class="impact-card"><div class="impact-num">~25%</div><div class="impact-lbl">Engagement Increase (est.)<br><span style="font-size:0.65rem; color: var(--muted);">CrossComITS</span></div></div>
-    <div class="impact-card"><div class="impact-num">~40%</div><div class="impact-lbl">Task Success Increase (est.)<br><span style="font-size:0.65rem; color: var(--muted);">CrossComITS</span></div></div>
-    <div class="impact-card"><div class="impact-num">~28%</div><div class="impact-lbl">Lower User Error (est.)<br><span style="font-size:0.65rem; color: var(--muted);">eVITA</span></div></div>
-    <div class="impact-card"><div class="impact-num">80+</div><div class="impact-lbl">Participants · 6 Nationalities<br><span style="font-size:0.65rem; color: var(--muted);">CrossComITS</span></div></div>
-  </div>
-</section>
+<main id="main" tabindex="-1"></main>
 
-<!-- PORTFOLIO -->
-<section id="portfolio">
-  <div class="section-tag">Portfolio</div>
-  <h2 class="section-title">Two tracks, one throughline</h2>
-  <p style="color:#8888a8; font-size:0.97rem; max-width:640px; margin-bottom:2rem;">I work across two connected but distinct practices. Pick the one relevant to your search — each has its own dedicated portfolio with full process and evidence.</p>
-
-  <div class="track-grid">
-    <div class="track-panel">
-      <div class="track-label">Track 1</div>
-      <div class="track-title">UX Research &amp; Product Design</div>
-      <div class="track-desc">Discovery, evidence, and interaction design — including Bo App (cognitive training onboarding, 1-of-4 to 3-of-3 result) and NEBULA (human-centered AI requirements).</div>
-      <a href="https://digital-courgette-899506.framer.app" target="_blank" class="track-cta">View UX Portfolio →</a>
-    </div>
-    <div class="track-panel">
-      <div class="track-label">Track 2</div>
-      <div class="track-title">AI Product Management</div>
-      <div class="track-desc">Requirements, MVP scope, and responsible-AI guardrails — including Retune and Ghesse Khouneh, defined from problem framing through build-ready specs.</div>
-      <a href="https://app.notion.com/p/Roodabeh-Seif-AI-Product-Manager-da24b21122ce8340bf1e012b3619be73?source=copy_link" target="_blank" class="track-cta">View AI PM Portfolio →</a>
-    </div>
-  </div>
-
-<div class="highlight-strip">
-
-  <!-- Bo App -->
-  <div class="highlight-card">
-
-    <div class="highlight-tag">
-      CASE STUDY · eVITA · UNIVERSITY OF SIEGEN
-    </div>
-
-    <div class="highlight-title">
-      Bo App
-    </div>
-
-    <div class="highlight-desc">
-      Cognitive training for older adults. Onboarding redesign took
-      independent setup success from 1 of 4 to 3 of 3 users.
-    </div>
-
-    <div style="display:flex; gap:14px; flex-wrap:wrap;">
-
-      <a href="https://digital-courgette-899506.framer.app/bo-app"
-         target="_blank"
-         class="highlight-link">
-        View my case study →
-      </a>
-
-      <a href="https://www.experienceandinteraction.com/evita"
-         target="_blank"
-         class="highlight-link"
-         style="color:var(--accent2);">
-        eVITA project ↗
-      </a>
-
-    </div>
-
-  </div>
-
-
-  <!-- NEBULA -->
-  <div class="highlight-card">
-
-    <div class="highlight-tag">
-      CASE STUDY · BMBF-FUNDED
-    </div>
-
-    <div class="highlight-title">
-      NEBULA
-    </div>
-
-    <div class="highlight-desc">
-      Research-to-requirements for a human-centered, AI-supported system —
-      transparency, explainability, and user agency for trust-sensitive users.
-    </div>
-
-    <div style="display:flex; gap:14px; flex-wrap:wrap;">
-
-      <a href="https://digital-courgette-899506.framer.app/nebula"
-         target="_blank"
-         class="highlight-link">
-        View my case study →
-      </a>
-
-      <a href="https://peasec.de/projects/nebula/"
-         target="_blank"
-         class="highlight-link"
-         style="color:var(--accent2);">
-        Official project ↗
-      </a>
-
-    </div>
-
-  </div>
-
-
-  <!-- CrossComITS -->
-  <div class="highlight-card">
-
-    <div class="highlight-tag">
-      RESEARCH PROJECT · BMBF-FUNDED
-    </div>
-
-    <div class="highlight-title">
-      CrossComITS
-    </div>
-
-    <div class="highlight-desc">
-      Human-centered cybersecurity research with vulnerable communities,
-      translating field research into learning formats, platform requirements,
-      and practical interventions.
-    </div>
-
-    <div style="display:flex; gap:14px; flex-wrap:wrap;">
-
-      <a href="https://crosscomits.de/"
-         target="_blank"
-         class="highlight-link"
-         style="color:var(--accent2);">
-        Official project ↗
-      </a>
-
-    </div>
-
-  </div>
-
-</div>
-
-</section>
-<section id="publications">
-  <div class="section-tag">Publications</div>
-  <h2 class="section-title">Research &amp; writing</h2>
-<div class="pub-list">
-
-  <!-- PhD Research -->
-  <div class="pub-item">
-    <div class="pub-year">ongoing</div>
-    <div>
-      <span class="pub-venue">PhD Research</span>
-      <div class="pub-title">
-        Participatory digital design for migrant mental wellbeing
-      </div>
-    </div>
-  </div>
-
-  <!-- PDC 2026 -->
-  <div class="pub-item">
-    <div class="pub-year">2026</div>
-    <div>
-      <span class="pub-venue">ACM PDC 2026</span>
-      <div class="pub-title">
-        Mediating Digital Security — Accepted
-        <a href="Mediating_Digital_Security_PDC2026.pdf"
-           target="_blank"
-           style="margin-left:10px; font-size:0.72rem; color:var(--accent); border:1px solid rgba(108,142,191,0.3); padding:2px 8px; border-radius:100px; text-decoration:none;">
-          ↓ PDF
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- CrossComITS Book -->
-  <div class="pub-item">
-    <div class="pub-year">2026</div>
-    <div>
-      <span class="pub-venue">Book Chapter</span>
-      <div class="pub-title">
-        Building Bridges, Not Barriers — pp. 151–180
-        <a href="CrossComITS_NEBULA_book.pdf"
-           target="_blank"
-           style="margin-left:10px; font-size:0.72rem; color:var(--accent); border:1px solid rgba(108,142,191,0.3); padding:2px 8px; border-radius:100px; text-decoration:none;">
-          ↓ PDF
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- NEBULA Book Chapter -->
-  <div class="pub-item">
-  <div class="pub-year">2026</div>
-  <div>
-    <span class="pub-venue">Book Chapter</span>
-    <div class="pub-title">
-      User-Centred AI for Combating Misinformation with Vulnerable Groups — pp. 227–252
-      <a href="CrossComITS_NEBULA_book.pdf"
-         target="_blank"
-         style="margin-left:10px; font-size:0.72rem; color:var(--accent); border:1px solid rgba(108,142,191,0.3); padding:2px 8px; border-radius:100px; text-decoration:none;">
-        ↓ PDF
-      </a>
-    </div>
-  </div>
-</div>
-
-  <!-- OzCHI 2024 -->
-  <div class="pub-item">
-    <div class="pub-year">2024</div>
-    <div>
-      <span class="pub-venue">OzCHI 2024</span>
-      <div class="pub-title">
-        Prototyping &amp; Evaluating the Bo App
-        <a href="Bo_App_OzCHI2024.pdf"
-           target="_blank"
-           style="margin-left:10px; font-size:0.72rem; color:var(--accent); border:1px solid rgba(108,142,191,0.3); padding:2px 8px; border-radius:100px; text-decoration:none;">
-          ↓ PDF
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Master's Thesis -->
-  <div class="pub-item">
-    <div class="pub-year">2023</div>
-    <div>
-      <span class="pub-venue">Master's Thesis</span>
-      <div class="pub-title">
-        Master's Thesis — Human–Computer Interaction
-        <a href="Master_Thesis_Roodabeh_Seif.pdf"
-           target="_blank"
-           style="margin-left:10px; font-size:0.72rem; color:var(--accent); border:1px solid rgba(108,142,191,0.3); padding:2px 8px; border-radius:100px; text-decoration:none;">
-          ↓ PDF
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- IJISA 2015 -->
-  <div class="pub-item">
-    <div class="pub-year">2015</div>
-    <div>
-      <span class="pub-venue">IJISA</span>
-      <div class="pub-title">
-        Mobile Robot Path Planning (RRT*)
-        <a href="Mobile_Robot_Path_Planning.pdf"
-           target="_blank"
-           style="margin-left:10px; font-size:0.72rem; color:var(--accent); border:1px solid rgba(108,142,191,0.3); padding:2px 8px; border-radius:100px; text-decoration:none;">
-          ↓ PDF
-        </a>
-      </div>
-    </div>
-  </div>
-
-</div>
-</section>
-<!-- TEACHING & MENTORING -->
-<section id="teaching">
-  <div class="section-tag">Teaching &amp; Mentoring</div>
-  <h2 class="section-title">Communicating complexity,<br>building capability</h2>
- <div class="teaching-grid">
-
-  <div class="teaching-card">
-    <div class="teaching-year">2025–present</div>
-    <div>
-      <div class="teaching-title">Meditation Instructor</div>
-      <div class="teaching-org">Online — Persian-speaking community</div>
-      <p class="teaching-desc">
-        Facilitating online meditation sessions for Persian-speaking participants,
-        helping individuals develop mindfulness, self-awareness, and emotional
-        well-being practices. Combines 13+ years of personal practice with structured facilitation.
-      </p>
-      <div class="teaching-subjects">
-        <span class="teaching-subject">Facilitation</span>
-        <span class="teaching-subject">Mindfulness</span>
-        <span class="teaching-subject">Online Delivery</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="teaching-card">
-    <div class="teaching-year">2022</div>
-    <div>
-      <div class="teaching-title">Private Tutor</div>
-      <div class="teaching-org">Germany</div>
-      <p class="teaching-desc">
-        Provided mathematics and English tutoring to primary school students,
-        adapting teaching approaches to different learning needs and cultural backgrounds.
-        An exercise in patience, empathy, and clear communication across language barriers.
-      </p>
-      <div class="teaching-subjects">
-        <span class="teaching-subject">Mathematics</span>
-        <span class="teaching-subject">English</span>
-        <span class="teaching-subject">Cross-cultural Communication</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="teaching-card">
-    <div class="teaching-year">2012–2013</div>
-    <div>
-      <div class="teaching-title">University Lecturer</div>
-      <div class="teaching-org">
-        Islamic Azad University, Tehran West &amp; Karaj Branches — Iran
-      </div>
-      <p class="teaching-desc">
-        Taught undergraduate courses to technical students at age ~25,
-        translating complex computer science topics into clear, practical knowledge.
-        Prepared course materials, delivered lectures, and supported students in developing
-        both technical and analytical skills.
-      </p>
-      <div class="teaching-subjects">
-        <span class="teaching-subject">Data Structures</span>
-        <span class="teaching-subject">Computer Networks</span>
-        <span class="teaching-subject">Adobe Photoshop</span>
-        <span class="teaching-subject">Technical English</span>
-      </div>
-    </div>
-  </div>
-
-</div>
-</section>
-
-<!-- BEYOND WORK -->
-<section id="beyond">
-  <div class="section-tag">Beyond Work</div>
-  <h2 class="section-title">Outside the office</h2>
-  <p class="beyond-intro">The same curiosity and creativity that drive my work as a product manager show up in everything I do outside of it. I believe that people who cultivate diverse interests tend to ask better questions, notice more, and build more human products.</p>
-  <div class="beyond-grid">
-    <div class="beyond-card">
-      <div class="beyond-icon">🎵</div>
-      <div class="beyond-name">Flute</div>
-      <div class="beyond-note">Studying flute for the past six months — and planning to continue. Music as a form of precision and patience.</div>
-    </div>
-    <div class="beyond-card">
-      <div class="beyond-icon">🎨</div>
-      <div class="beyond-name">Watercolor</div>
-      <div class="beyond-note">Visual creativity through painting — learning to see light, color, and space differently.</div>
-    </div>
-    <div class="beyond-card">
-      <div class="beyond-icon">📷</div>
-      <div class="beyond-name">Photography &amp; Film</div>
-      <div class="beyond-note">A long-term interest in capturing moments and telling stories through visual media.</div>
-    </div>
-    <div class="beyond-card">
-      <div class="beyond-icon">🏔️</div>
-      <div class="beyond-name">Hiking &amp; Nature</div>
-      <div class="beyond-note">Spending time outdoors and in nature — a necessary counterbalance to screen-heavy work.</div>
-    </div>
-    <div class="beyond-card">
-      <div class="beyond-icon">🧘</div>
-      <div class="beyond-name">Meditation</div>
-      <div class="beyond-note">A regular practice of over 13 years. Self-reflection and mindfulness as tools for clearer thinking.</div>
-    </div>
-    <div class="beyond-card">
-      <div class="beyond-icon">🍳</div>
-      <div class="beyond-name">Cooking</div>
-      <div class="beyond-note">Cooking as a creative and relaxing activity — experimenting with ingredients and processes.</div>
-    </div>
-  </div>
-  <div class="beyond-quote">
-    Creativity, curiosity, and self-reflection don't stay at home when I go to work. They show up in how I frame problems, listen to users, and build products that actually make sense for people.
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="section-tag">Contact</div>
-  <h2 class="section-title">Let's connect</h2>
-  <div class="contact-grid">
-    <div>
-      <p class="contact-intro">I'm currently open to opportunities in AI Product Management, UX Research, and human-centered digital products. For roles, projects, or collaborations, feel free to reach out by email or LinkedIn.</p>
-      <div class="contact-links">
-        <a href="mailto:roodabeh.seif@gmail.com" class="contact-link">
-          <div class="contact-link-icon">✉️</div>
-          roodabeh.seif@gmail.com
-        </a>
-        <a href="https://linkedin.com/in/roodabeh-seif" target="_blank" class="contact-link">
-          <div class="contact-link-icon">in</div>
-          linkedin.com/in/roodabeh-seif
-        </a>
-        <a class="contact-link">
-          <div class="contact-link-icon">📍</div>
-          Germany
-        </a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<footer>
-  <span class="footer-text">© 2025 Roodabeh Seif</span>
-  <span class="footer-text">Product Manager · UX Researcher · AI &amp; Digital Platforms</span>
+<footer class="site-footer">
+  <div class="container"><span id="foot-name"></span><span>AI Product · UX Research · Human-Centered AI</span></div>
 </footer>
 
+<script src="content.js"></script>
+<script>
+(function () {
+  const S = window.SITE, P = S.person, app = document.getElementById('main');
+  const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const pad = n => String(n).padStart(2, '0');
+  const ext = u => /^https?:/.test(u) ? ' target="_blank" rel="noopener"' : ' target="_blank"';
+  const list = (arr, fn) => (arr || []).map(fn).join('');
+  const PORTRAIT = 'roodabeh-profile.jpg';
+
+  /* ---------- component helpers (one source per component) ---------- */
+  // Evidence badge — content uses "validated" for measured evidence
+  const BADGE = { validated: ['measured', 'Measured'], estimated: ['estimated', 'Estimated'], programme: ['programme', 'Programme-level'], planned: ['planned', 'Planned'], hypothesis: ['hypothesis', 'Hypothesis'] };
+  const badge = s => BADGE[s] ? `<span class="badge badge--${BADGE[s][0]}">${BADGE[s][1]}</span>` : '';
+  const chip = (text, variant) => `<span class="chip${variant ? ' chip--' + variant : ''}">${esc(text)}</span>`;
+  const sectionHeader = (eyebrow, title, intro, level = 2) =>
+    `<div class="section-header"><p class="eyebrow type-label">${eyebrow}</p><h${level} class="type-h2">${title}</h${level}>${intro ? `<p class="section-intro type-body-lg">${esc(intro)}</p>` : ''}</div>`;
+  const disclosure = (label, meta, body) =>
+    `<details class="disclosure"><summary><span>${esc(label)}${meta ? `<span class="summary-meta">${esc(meta)}</span>` : ''}</span></summary><div class="disclosure__body">${body}</div></details>`;
+  const figure = (v) => `<figure class="figure">${v.file
+      ? `<img src="${esc(v.file)}" alt="${esc(v.caption)}" loading="lazy">`
+      : `<div class="placeholder"><strong>Image to add</strong>${esc(v.note || '')}</div>`}<figcaption>${esc(v.caption)}</figcaption></figure>`;
+
+  document.getElementById('nav-cta').href = 'mailto:' + P.email;
+  document.getElementById('foot-name').textContent = '© ' + new Date().getFullYear() + ' ' + P.name;
+
+  /* ---------------- HOME ---------------- */
+  function projectCard(p, i) {
+    const tracks = (p.track || []).slice().sort((a, b) => a === 'product' ? -1 : b === 'product' ? 1 : 0).map(t => t === 'research' ? 'UX Research' : 'Product & AI').join(' · ');
+    return `<a class="card card--project" href="#/work/${esc(p.slug)}" data-track="${esc((p.track || []).join(' '))}">
+      ${p.cover ? `<div class="card__media"><img src="${esc(p.cover)}" alt="" loading="lazy"></div>` : ''}
+      <div class="card__body">
+        <div class="card__meta"><span class="type-label">${esc(tracks)}</span><span class="type-label">${pad(i + 1)}</span></div>
+        <h3 class="card__title type-h3">${esc(p.title)}</h3>
+        <p class="card__text">${esc(p.subtitle)}</p>
+        <div class="card__outcome"><span class="type-label">Outcome</span><p class="type-body-sm">${esc(p.cardOutcome)}</p></div>
+        <p class="card__role type-caption">${esc(p.role)}</p>
+        <span class="card__cta">Read case study <span class="icon" aria-hidden="true">→</span></span>
+      </div></a>`;
+  }
+
+  function row(aside, title, sub, body, extra) {
+    return `<li class="row"><div class="row__aside type-body-sm text-muted">${aside}</div><div>
+      <h3 class="row__title type-h4">${title}</h3>${sub ? `<p class="row__sub type-body-sm text-muted">${sub}</p>` : ''}${body ? `<p class="measure">${body}</p>` : ''}${extra || ''}</div></li>`;
+  }
+
+  function home() {
+    const [first, ...rest] = P.name.split(' ');
+    const A = S.approach;
+    return `
+    <section class="hero container" aria-labelledby="hero-name">
+      <div class="split-hero">
+        <div class="hero__content">
+          <p class="eyebrow type-label">Available for new opportunities</p>
+          <h1 id="hero-name" class="hero__name type-display">${esc(first)} <span>${esc(rest.join(' '))}</span></h1>
+          <p class="hero__role">${P.roles.map(esc).join(' · ')}</p>
+          <p class="hero__sub type-body-sm text-muted">${esc(P.sub)}</p>
+          <p class="hero__statement type-h3">${esc(P.tagline)}</p>
+          <div class="hero__focus"><span class="type-label">Current focus</span><ul class="cluster">${list(P.focus, f => `<li>${chip(f)}</li>`)}</ul></div>
+          <div class="hero__actions cluster-lg">
+            <a href="#work" class="btn btn--primary">View selected work <span class="icon icon--forward" aria-hidden="true">→</span></a>
+            ${P.cv ? `<a href="${esc(P.cv)}" target="_blank" class="btn btn--secondary">Download CV</a>` : ''}
+            <a href="#contact" class="btn btn--ghost">Get in touch</a>
+          </div>
+        </div>
+        <figure class="hero__media">
+          <img src="${PORTRAIT}" alt="Portrait of Roodabeh Seif" class="hero-portrait" data-portrait>
+        </figure>
+      </div>
+    </section>
+
+    <section id="work" class="section container">
+      ${sectionHeader('Selected work', 'Research is where I understand the problem. Product is where I decide what to do about it.')}
+      <div class="cluster" role="group" aria-label="Filter case studies" style="margin-bottom: var(--space-7)">
+        <button type="button" class="chip chip--toggle" data-f="all" aria-pressed="true">All work</button>
+        <button type="button" class="chip chip--toggle" data-f="product" aria-pressed="false">Product &amp; AI</button>
+        <button type="button" class="chip chip--toggle" data-f="research" aria-pressed="false">UX Research</button>
+      </div>
+      <div class="card-grid">${list(S.projects, projectCard)}</div>
+    </section>
+
+    ${A ? `<section id="approach" class="section container">
+      ${sectionHeader('Approach', esc(A.title), A.intro)}
+      <ol class="lens">${list(A.lens, (l, i) => `<li><span class="type-label">${pad(i + 1)}</span><h3 class="type-h4">${esc(l.title)}</h3><p class="type-body-sm text-muted">${esc(l.text)}</p></li>`)}</ol>
+      <div class="grid-2">${list(A.principles, x => `<div class="card card--principle"><h3 class="card__title type-h4">${esc(x.title)}</h3><p class="card__text">${esc(x.text)}</p></div>`)}</div>
+    </section>` : ''}
+
+    <section id="about" class="section container">
+      ${sectionHeader('About', 'From engineering to AI product thinking')}
+      <div class="split">
+        <div>
+          <p class="type-h3 measure">${esc(S.about.lead)}</p>
+          <ol class="journey">${list(S.about.journey, (j, i) => `<li><span class="type-label">${pad(i + 1)}</span><p class="type-h4">${esc(j.title)}</p><p class="type-body-sm text-muted">${esc(j.desc)}</p></li>`)}</ol>
+          <p class="type-body-lg measure">${esc(S.about.body)}</p>
+          <div class="card card--principle" style="margin-top: var(--space-7)"><p class="type-label text-accent" style="margin-bottom: var(--space-3)">Why AI</p><p class="card__text">${esc(S.about.whyAI)}</p></div>
+        </div>
+        <dl class="meta-list">
+          <div><dt class="type-label">Education</dt><dd><ul>${list(S.about.education, e => `<li>${esc(e)}</li>`)}</ul></dd></div>
+          <div><dt class="type-label">Languages</dt><dd>${esc(S.about.languages)}</dd></div>
+          <div><dt class="type-label">Location</dt><dd>${esc(P.location)}</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="skills" class="section container">
+      ${sectionHeader('Skills', 'What I bring to the table')}
+      <div class="grid-3" style="row-gap: var(--space-7)">${list(S.skills, s => `<div class="skill-group"><h3 class="type-h4">${esc(s.title)}</h3><ul class="cluster">${list(s.items, x => `<li>${chip(x)}</li>`)}</ul></div>`)}</div>
+    </section>
+
+    <section id="experience" class="section container">
+      ${sectionHeader('Experience', 'Where I’ve worked')}
+      <ol class="rows">${list(S.experience, t => row(esc(t.when), esc(t.title), esc(t.org), esc(t.text)))}</ol>
+    </section>
+
+    <section id="publications" class="section container">
+      ${sectionHeader('Publications', 'Research &amp; writing')}
+      <ol class="rows">${list(S.publications, pub => row(esc(pub.year), esc(pub.title), esc(pub.venue),
+        '', `<div class="pub-links cluster-lg">${pub.note ? `<span class="type-body-sm text-muted">${esc(pub.note)}</span>` : ''}
+          ${pub.pdf ? `<a class="btn btn--secondary btn--sm" href="${esc(pub.pdf)}" target="_blank">PDF <span class="icon" aria-hidden="true">↓</span></a>` : ''}
+          ${pub.doi ? `<a class="btn btn--secondary btn--sm" href="${esc(pub.doi)}" target="_blank" rel="noopener">DOI <span class="icon" aria-hidden="true">↗</span></a>` : ''}</div>`))}</ol>
+      ${P.orcid ? `<p style="margin-top: var(--space-6)"><a class="btn btn--link" href="${esc(P.orcid)}" target="_blank" rel="noopener">Full list on ORCID ↗</a></p>` : ''}
+    </section>
+
+    <section id="teaching" class="section container">
+      ${sectionHeader('Teaching &amp; facilitation', 'Communicating complexity, building capability')}
+      <ol class="rows">${list(S.teaching, t => row(esc(t.when), esc(t.title), esc(t.org), esc(t.text)))}</ol>
+    </section>
+
+    <section id="beyond" class="section container">
+      ${sectionHeader('Beyond work', 'Outside the office', 'People who cultivate diverse interests tend to ask better questions, notice more, and build more human products.')}
+      <ul class="grid-3" style="row-gap: 0">${list(S.beyond, b => `<li class="interest"><span class="interest__icon" aria-hidden="true">${b.icon}</span><span class="text-primary" style="font-weight:500">${esc(b.name)}</span><span class="type-body-sm text-muted">${esc(b.note)}</span></li>`)}</ul>
+    </section>
+
+    <section id="contact" class="section container">
+      ${sectionHeader('Contact', 'Let’s connect')}
+      <div class="split">
+        <p class="type-h3 measure">I'm open to roles in AI Product Management, UX Research and human-centered digital products — and to research or project collaborations.</p>
+        <div class="link-list">
+          <a href="mailto:${esc(P.email)}"><span class="type-label">Mail</span>${esc(P.email)}</a>
+          <a href="${esc(P.linkedin)}" target="_blank" rel="noopener"><span class="type-label">In</span>${esc(P.linkedin.replace(/^https?:\/\//, ''))}</a>
+          ${P.orcid ? `<a href="${esc(P.orcid)}" target="_blank" rel="noopener"><span class="type-label">iD</span>ORCID</a>` : ''}
+        </div>
+      </div>
+    </section>`;
+  }
+
+  /* ---------------- CASE STUDY ---------------- */
+  function caseSection(n, label, title, body, intro) {
+    return `<section class="section container">${sectionHeader(`${n} · ${label}`, title, intro)}${body}</section>`;
+  }
+  function decisionCard(d, i, level) {
+    const h = level || 3;
+    return `<article class="card card--decision">
+      <div class="decision__head"><span class="type-label">${pad(i + 1)}</span><h${h} class="type-h4">${esc(d.title)}</h${h}>${badge(d.basis)}</div>
+      <div class="decision__grid${d.evidence ? ' decision__grid--4' : ''}">
+        <div class="decision__cell"><span class="type-label">Situation</span><p>${esc(d.situation)}</p></div>
+        ${d.evidence ? `<div class="decision__cell"><span class="type-label">Evidence</span><p>${esc(d.evidence)}</p></div>` : ''}
+        <div class="decision__cell decision__cell--decision"><span class="type-label">Decision</span><p>${esc(d.decision)}</p></div>
+        <div class="decision__cell"><span class="type-label">Why</span><p>${esc(d.why)}</p></div>
+      </div></article>`;
+  }
+  function requirement(r) {
+    return `<div class="requirement"><p class="requirement__area type-label">${esc(r.area)}</p><dl>
+      <div><dt class="type-label">Requirement</dt><dd>${esc(r.requirement)}</dd></div>
+      <div><dt class="type-label">Reason</dt><dd>${esc(r.reason)}</dd></div>
+      <div><dt class="type-label">Acceptance</dt><dd>${esc(r.acceptance)}</dd></div></dl></div>`;
+  }
+
+  // Product strategy & execution — every block optional
+  function strategy(s) {
+    const blocks = []; let n = 0;
+    const head = (t, intro) => `<div class="subsection-header"><span class="type-label">${String.fromCharCode(65 + n++)}</span><h3 class="type-h3">${esc(t)}</h3></div>${intro ? `<p class="subsection-intro">${esc(intro)}</p>` : ''}`;
+    const block = html => blocks.push(`<div class="subsection">${html}</div>`);
+
+    if (s.principleQuote) block(`<blockquote class="pull-quote"><p class="type-label text-accent" style="margin-bottom: var(--space-3)">Product principle</p><p class="type-h3">${esc(s.principleQuote)}</p></blockquote>`);
+
+    if (s.principles) block(`${head('Product principles', s.principlesIntro)}<div class="grid-2">${list(s.principles, x => `<div class="card card--principle">
+      <h4 class="card__title type-h4">${esc(x.title)}</h4><p class="card__text type-body-sm">${esc(x.text)}</p>
+      ${x.effect ? `<div class="card__footnote"><span class="type-label">Shaped</span><p class="type-body-sm text-primary">${esc(x.effect)}</p></div>` : ''}</div>`)}</div>`);
+
+    if (s.scope) {
+      const sc = s.scope;
+      const col = (label, items, kind, why) => `<div class="card card--scope-${kind}"><h4 class="card__label type-label">${esc(label)}</h4><ul class="scope-list">${list(items, x => `<li>${esc(x)}</li>`)}</ul>${why ? `<p class="card__footnote type-body-sm text-muted"><span class="text-primary">Why:</span> ${esc(why)}</p>` : ''}</div>`;
+      block(`${head(sc.title || 'MVP scope & trade-offs', sc.intro)}${sc.tiers
+        ? `<div class="grid-3">${list(sc.tiers, (t, i) => col(t.label, t.items, i === 0 ? 'in' : (t.out ? 'out' : 'later'), t.why))}</div>`
+        : `<div class="grid-2">${col('In the MVP', sc.included, 'in')}${col('Deliberately excluded', sc.excluded, 'out', sc.why)}</div>`}`);
+    }
+
+    if (s.decisionLog) {
+      const show = s.decisionShow || 3, top = s.decisionLog.slice(0, show), rest = s.decisionLog.slice(show);
+      block(`${head('Product decision log', s.decisionIntro)}<div class="decision-list">${list(top, (d, i) => decisionCard(d, i, 4))}</div>
+        ${rest.length ? disclosure('Full decision log', `${rest.length} more decisions`, `<div class="decision-list">${list(rest, (d, i) => decisionCard(d, i + show, 4))}</div>`) : ''}`);
+    }
+
+    if (s.requirements) {
+      const [first, ...others] = s.requirements;
+      block(`${head('Product mechanics & requirements', s.requirementsIntro)}<div class="card card--requirement">${requirement(first)}</div>
+        ${others.length ? disclosure('Selected requirements', `${others.length} more`, list(others, requirement)) : ''}`);
+    }
+
+    if (s.evolution) {
+      const chainItems = s.evolutionChain || s.evolution.map(e => e.stage);
+      block(`${head('Product evidence & evolution log', s.evolutionIntro)}
+        <ol class="chain cluster">${chainItems.map((c, i) => `<li class="cluster">${chip(c, i === chainItems.length - 1 ? 'accent' : '')}${i < chainItems.length - 1 ? '<span class="sep" aria-hidden="true">→</span>' : ''}</li>`).join('')}</ol>
+        ${disclosure('What each transition tested and changed', `${s.evolution.length} stages`, list(s.evolution, e => `<div class="evolution-step"><div><h4 class="type-h4">${esc(e.stage)}</h4>${badge(e.status)}</div>
+          <dl><div><dt class="type-label">Uncertainty</dt><dd>${esc(e.uncertainty)}</dd></div><div><dt class="type-label">Tested</dt><dd>${esc(e.tested)}</dd></div>
+          <div><dt class="type-label">Learned</dt><dd>${esc(e.learned)}</dd></div><div><dt class="type-label">Changed</dt><dd>${esc(e.changed)}</dd></div></dl></div>`))}`);
+    }
+
+    if (s.ai) {
+      const a = s.ai;
+      const layer = (L, kind) => `<div class="card card--layer-${kind}"><h4 class="card__title type-h4">${esc(L.label)}</h4><p class="card__label type-body-sm text-muted">${esc(L.role)}</p><ul class="check-list">${list(L.items, x => `<li>${esc(x)}</li>`)}</ul>${kind === 'gen' ? badge(a.status) : ''}</div>`;
+      const listCard = (L, cls) => `<div class="card"><h4 class="card__label type-label">${esc(L.label)}</h4><ul class="${cls}">${list(L.items, x => `<li>${esc(x)}</li>`)}</ul></div>`;
+      block(`${head(a.title || 'Responsible AI boundary', a.intro)}
+        ${a.deterministic ? `<div class="layers">${layer(a.deterministic, 'det')}<div class="layers__arrow"><span class="icon" aria-hidden="true">→</span><span class="type-label">Verified facts only</span></div>${layer(a.generative, 'gen')}</div>` : ''}
+        ${a.rule ? `<p class="rule"><span class="type-label">Rule</span><span class="type-h4">${esc(a.rule)}</span></p>` : ''}
+        ${a.may ? `<div class="grid-2" style="margin-top: var(--space-6)">${listCard(a.may, 'check-list')}${listCard(a.mustNot, 'cross-list')}</div>` : ''}
+        ${(a.prohibited || a.evals || a.human) ? disclosure(a.moreLabel || 'AI guardrails & evaluation', a.evals ? `${a.evals.length} ${a.evalsCount || 'release criteria'}` : '', `
+          ${(a.prohibited || a.human) ? `<div class="grid-2">${a.prohibited ? `<div><h4 class="type-label" style="margin-bottom: var(--space-3)">Prohibited AI behaviour</h4><ul class="cross-list">${list(a.prohibited, x => `<li>${esc(x)}</li>`)}</ul></div>` : ''}
+            ${a.human ? `<div><h4 class="type-label" style="margin-bottom: var(--space-3)">Human control</h4><ul class="check-list">${list(a.human, x => `<li>${esc(x)}</li>`)}</ul></div>` : ''}</div>` : ''}
+          ${a.evals ? `<div class="table-wrap" style="margin-top: var(--space-6)"><table class="table"><thead><tr><th scope="col">${esc(a.evalsHead ? a.evalsHead[0] : 'Criterion')}</th><th scope="col">${esc(a.evalsHead ? a.evalsHead[1] : 'Release expectation')}</th><th scope="col">Status</th></tr></thead><tbody>
+            ${list(a.evals, e => `<tr><td>${esc(e.metric)}</td><td>${esc(e.target)}</td><td>${badge(e.status)}</td></tr>`)}</tbody></table></div>` : ''}
+          ${a.note ? `<p class="type-caption measure" style="margin-top: var(--space-4)">${esc(a.note)}</p>` : ''}`) : ''}`);
+    }
+
+    if (s.owned) block(`${head(s.ownedTitle || 'What I owned', s.ownedIntro)}<dl class="owned">${list(s.owned, o => `<div><dt>${esc(o.item)}</dt>${o.detail ? `<dd>${esc(o.detail)}</dd>` : ''}</div>`)}</dl>`);
+
+    return blocks.join('');
+  }
+
+  function caseStudy(p) {
+    const idx = S.projects.indexOf(p), total = S.projects.length;
+    const prev = S.projects[(idx - 1 + total) % total], next = S.projects[(idx + 1) % total];
+    let k = 0; const num = () => pad(++k);
+    const out = [];
+    const keyResults = (p.evidence || []).slice(0, 3);
+
+    out.push(`
+    <section class="case-hero container" aria-labelledby="case-title">
+      <a href="#work" class="btn btn--link case-hero__back"><span class="icon icon--back" aria-hidden="true">←</span> All work</a>
+      <p class="eyebrow type-label">${esc(p.type)}</p>
+      <h1 id="case-title" class="case-hero__title type-h1">${esc(p.title)}</h1>
+      <p class="case-hero__subtitle type-h3">${esc(p.subtitle)}</p>
+      ${keyResults.length ? `<div class="key-results" role="list" aria-label="Key results">${list(keyResults, e => `<div role="listitem">${badge(e.status)}<strong>${esc(e.value)}</strong><span class="type-body-sm">${esc(e.label)}</span></div>`)}</div>` : ''}
+      <dl class="case-meta">
+        <div><dt class="type-label">Role</dt><dd>${esc(p.role)}</dd></div>
+        <div><dt class="type-label">Context${p.timeline ? ' · Timeline' : ''}</dt><dd>${esc(p.context)}${p.timeline ? '<br>' + esc(p.timeline) : ''}</dd></div>
+        <div><dt class="type-label">Methods</dt><dd>${esc((p.methods || []).join(' · '))}</dd></div>
+        <div><dt class="type-label">Status</dt><dd>${esc(p.status)}</dd></div>
+      </dl>
+      ${p.privacyNote ? `<p class="callout"><span class="type-label">Note</span><br>${esc(p.privacyNote)}</p>` : ''}
+      ${p.cover ? `<figure class="figure case-hero__cover"><img src="${esc(p.cover)}" alt="${esc(p.title)} — overview"></figure>` : ''}
+    </section>
+    <div class="band"><div class="container grid-3">
+      <div><h2 class="type-label">Challenge</h2><p>${esc(p.glance.challenge)}</p></div>
+      <div><h2 class="type-label">My contribution</h2><p>${esc(p.glance.contribution)}</p></div>
+      <div><h2 class="type-label">Outcome</h2><p>${esc(p.glance.outcome)}</p></div>
+    </div></div>`);
+
+    out.push(caseSection(num(), 'Context &amp; problem', 'What needed to change?',
+      `<div class="prose">${list(p.problem, (x, i) => `<p${i === 0 && p.slug === 'retune' ? ' class="prose__lead"' : ''}>${esc(x)}</p>`)}</div>`));
+
+    out.push(caseSection(num(), 'Research approach', 'Understanding the problem before designing the solution.',
+      (p.evolution ? `<ol class="chain cluster">${p.evolution.map((e, i, arr) => `<li class="cluster">${chip(e, i === arr.length - 1 ? 'accent' : '')}${i < arr.length - 1 ? '<span class="sep" aria-hidden="true">→</span>' : ''}</li>`).join('')}</ol>` : '') +
+      `<div class="grid-3">${list(p.approach, a => `<div class="card"><h3 class="card__title type-h4">${esc(a.title)}</h3><p class="card__text type-body-sm">${esc(a.text)}</p></div>`)}</div>`));
+
+    if (p.insights && p.insights.length) out.push(caseSection(num(), 'Key insights', esc(p.insightsTitle || 'What changed my understanding of the problem.'),
+      `<div class="insights">${list(p.insights, (x, i) => `<div class="insight"><span class="type-label">${pad(i + 1)}</span><h3 class="type-h4">${esc(x.title)}</h3><p class="type-body-sm">${esc(x.text)}</p></div>`)}</div>`));
+
+    if (p.decisions && p.decisions.length) out.push(caseSection(num(), 'Research → decisions', 'Research matters when it changes what gets built.',
+      `<div class="decision-list">${list(p.decisions, (d, i) => decisionCard(d, i, 3))}</div>`));
+
+    if (p.strategy) out.push(caseSection(num(), p.strategy.label || 'Product strategy &amp; execution', esc(p.strategy.title), strategy(p.strategy)));
+
+    const used = [...new Set((p.evidence || []).map(e => e.status).filter(Boolean))];
+    if (p.evidence && p.evidence.length) out.push(caseSection(num(), 'Evidence', 'What the evidence shows — and what kind of evidence it is.',
+      `<div class="grid-3">${list(p.evidence, e => `<div class="card card--metric"><span class="metric__value">${esc(e.value)}</span><span class="text-primary">${esc(e.label)}</span>${e.note ? `<span class="type-body-sm text-muted">${esc(e.note)}</span>` : ''}${badge(e.status)}</div>`)}</div>` +
+      (used.length > 1 ? `<div class="legend cluster"><span class="type-label">Evidence types:</span>${used.map(badge).join('')}</div>` : '')));
+
+    out.push(caseSection(num(), 'Outcome', 'Where it landed.',
+      `<div class="prose">${list(p.outcome, x => `<p>${esc(x)}</p>`)}</div>` +
+      (p.reflection ? `<blockquote class="pull-quote" style="margin-top: var(--space-7)"><p class="type-label" style="margin-bottom: var(--space-3)">Reflection</p><p class="type-h4">${esc(p.reflection)}</p></blockquote>` : '') +
+      (p.demonstrates ? `<div style="margin-top: var(--space-7)"><p class="type-label" style="margin-bottom: var(--space-3)">What this case demonstrates</p><ul class="cluster">${list(p.demonstrates, d => `<li>${chip(d)}</li>`)}</ul></div>` : '') +
+      (p.links && p.links.length ? `<div class="cluster-lg" style="margin-top: var(--space-7)">${list(p.links, l => `<a class="btn btn--secondary btn--sm" href="${esc(l.url)}"${ext(l.url)}>${esc(l.label)}</a>`)}</div>` : '')));
+
+    if ((p.visuals && p.visuals.length) || p.screens) out.push(caseSection(num(), 'Artifacts', 'From the work.',
+      `<div class="figure-grid">${list(p.visuals, figure)}${p.screens ? `<div class="screens">${list(p.screens, figure)}</div>` : ''}</div>`));
+
+    out.push(`<nav class="section container" aria-label="More case studies"><div class="pager">
+      <a class="card card--nav" href="#/work/${esc(prev.slug)}"><span class="type-label">← Previous</span><span class="card__title type-h3">${esc(prev.title)}</span></a>
+      <a class="card card--nav" href="#/work/${esc(next.slug)}"><span class="type-label">Next →</span><span class="card__title type-h3">${esc(next.title)}</span></a>
+    </div></nav>`);
+    return out.join('');
+  }
+
+  /* ---------------- PORTRAIT: visible when missing ---------------- */
+  function bindPortrait() {
+    const img = app.querySelector('[data-portrait]');
+    if (!img) return;
+    const fail = () => {
+      console.warn('[portfolio] Portrait image missing: ' + PORTRAIT + ' — place it next to index.html.');
+      const ph = document.createElement('div');
+      ph.className = 'placeholder placeholder--warning';
+      ph.setAttribute('role', 'img');
+      ph.setAttribute('aria-label', 'Portrait image missing: ' + PORTRAIT);
+      ph.innerHTML = '<strong>Portrait image missing:</strong><span>' + PORTRAIT + '</span>';
+      img.replaceWith(ph);
+    };
+    if (img.complete && img.naturalWidth === 0) fail(); else img.addEventListener('error', fail, { once: true });
+  }
+
+  /* ---------------- ROUTER ---------------- */
+  // #/work/<slug> → case study; anything else → home (and scroll to #section if given)
+  let onHome = false;
+  function setCurrent(slugView) {
+    document.querySelectorAll('.nav-link').forEach(a => a.removeAttribute('aria-current'));
+    if (slugView) document.querySelectorAll('.nav-link[href="#work"]').forEach(a => a.setAttribute('aria-current', 'page'));
+  }
+  function closeMenu() { const m = document.querySelector('.site-nav__menu'); if (m) m.open = false; }
+  function route() {
+    closeMenu();
+    const h = location.hash;
+    const m = h.match(/^#\/work\/([\w-]+)/);
+    if (m) {
+      const p = S.projects.find(x => x.slug === m[1]);
+      if (p) {
+        app.innerHTML = caseStudy(p); onHome = false; setCurrent(true);
+        document.title = p.title + ' — ' + P.name;
+        window.scrollTo(0, 0);
+        app.focus({ preventScroll: true });
+        return;
+      }
+    }
+    if (!onHome) { app.innerHTML = home(); onHome = true; bindFilters(); bindPortrait(); }
+    setCurrent(false);
+    document.title = P.name + ' — ' + P.roles.join(' & ');
+    const id = h.replace(/^#\/?/, '');
+    const el = id && document.getElementById(id);
+    if (el) requestAnimationFrame(() => el.scrollIntoView()); else if (h === '#/' || !h) window.scrollTo(0, 0);
+  }
+  function bindFilters() {
+    const btns = app.querySelectorAll('[data-f]'), cards = app.querySelectorAll('.card--project');
+    btns.forEach(b => b.addEventListener('click', () => {
+      btns.forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+      cards.forEach(c => { c.hidden = !(b.dataset.f === 'all' || c.dataset.track.split(' ').includes(b.dataset.f)); });
+    }));
+  }
+  // in-page section links on the home view scroll in place; skip link focuses main
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    if (a.hasAttribute('data-skip')) { e.preventDefault(); app.focus(); return; }
+    const id = a.getAttribute('href').slice(1);
+    if (id && !id.startsWith('/') && onHome) {
+      const el = document.getElementById(id);
+      if (el) { e.preventDefault(); closeMenu(); el.scrollIntoView(); history.replaceState(null, '', '#' + id); }
+    }
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+  window.addEventListener('hashchange', route);
+  route();
+})();
+</script>
 </body>
 </html>
