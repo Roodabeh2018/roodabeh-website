@@ -10,7 +10,7 @@
      so recruiters can see what kind of evidence each figure is.
      A decision's `basis` uses the same values to show how strong the
      evidence behind that decision is.
-   - Visuals: images live in the img/ folder. Leave `file: ""` to show a
+   - Visuals: images live in the main folder, next to index.html. Leave `file: ""` to show a
      placeholder with your note.
    - Optional `strategy` block on a project adds the "Product strategy &
      execution" section (principles, MVP scope, decision log,
@@ -111,7 +111,7 @@ window.SITE = {
       methods: ["Observation", "Survey", "Follow-up interviews", "Usability testing", "4-week pilot"],
       status: "Functional MVP · AI layer planned, not built",
       cardOutcome: "A functional MVP I built myself — with a deterministic data layer, per-activity privacy and a scoped, not-yet-built AI reflection.",
-      cover: "img/retune-cover.webp",
+      cover: "retune-cover.webp",
       glance: {
         challenge:
           "Habit apps assume life is stable. For people living through crisis, illness or migration, streaks and leaderboards turn one missed day into giving up entirely.",
@@ -384,15 +384,15 @@ window.SITE = {
         "Not every rule came from users. The 21-day cycle, for example, was my own design preference — so I'm now separating evidence-based decisions from assumptions I still need to test.",
       demonstrates: ["0→1 strategy and MVP definition", "Prioritisation — saying no", "Requirements into data and access logic", "Deterministic vs. GenAI architecture", "AI guardrails and evaluation before release"],
       visuals: [
-        { file: "img/retune-evolution.webp", caption: "Two fragmented practices — personal tracking and group accountability — converged into one MVP." },
-        { file: "img/retune-principles-to-mvp.webp", caption: "Principles translated into product decisions." },
-        { file: "img/retune-privacy-model.webp", caption: "Privacy is selected per activity: by name, anonymous completion, or private." }
+        { file: "retune-evolution.webp", caption: "Two fragmented practices — personal tracking and group accountability — converged into one MVP." },
+        { file: "retune-principles-to-mvp.webp", caption: "Principles translated into product decisions." },
+        { file: "retune-privacy-model.webp", caption: "Privacy is selected per activity: by name, anonymous completion, or private." }
       ],
       screens: [
-        { file: "img/retune-today.webp", caption: "Today — welcome back, no streak repair" },
-        { file: "img/retune-activities.webp", caption: "Activities — important, never ranked" },
-        { file: "img/retune-reports.webp", caption: "Reports — deterministic weekly data" },
-        { file: "img/retune-report-detail.webp", caption: "Report detail — activity and wellbeing context" }
+        { file: "retune-today.webp", caption: "Today — welcome back, no streak repair" },
+        { file: "retune-activities.webp", caption: "Activities — important, never ranked" },
+        { file: "retune-reports.webp", caption: "Reports — deterministic weekly data" },
+        { file: "retune-report-detail.webp", caption: "Report detail — activity and wellbeing context" }
       ],
       links: []
     },
@@ -412,7 +412,7 @@ window.SITE = {
       methods: ["Product discovery", "Workflow analysis", "Service design", "LLM use-case scoping"],
       status: "Discovery & MVP definition · AI product not yet built",
       cardOutcome: "A scoped facilitator-platform MVP with explicit rules for what AI may — and must never — do.",
-      cover: "img/gk-service-flow.webp",
+      cover: "gk-service-flow.webp",
       glance: {
         challenge:
           "How do we scale facilitator knowledge without turning a human-led learning service into an automated product?",
@@ -502,7 +502,7 @@ window.SITE = {
       ],
       demonstrates: ["Product discovery in a service context", "MVP prioritisation", "Responsible AI scoping", "Human-in-the-loop design"],
       visuals: [
-        { file: "img/gk-service-flow.webp", caption: "Human + AI service flow — AI supports preparation and reflection; the live session stays human-led." }
+        { file: "gk-service-flow.webp", caption: "Human + AI service flow — AI supports preparation and reflection; the live session stays human-led." }
       ],
       links: []
     },
@@ -522,7 +522,7 @@ window.SITE = {
       methods: ["Focus group", "Interviews", "Ethnography", "Workshops", "Requirements synthesis"],
       status: "Findings published — Springer book chapter (2026)",
       cardOutcome: "Research on trust translated into explainable, contestable, multilingual AI requirements — plus my own concept prototype.",
-      cover: "img/nebula-research-to-requirements.webp",
+      cover: "nebula-research-to-requirements.webp",
       glance: {
         challenge:
           "An AI tool can flag misinformation, but a verdict alone doesn't help people who have good reasons to distrust institutions and technology.",
@@ -572,10 +572,10 @@ window.SITE = {
         "Trust in AI cannot be designed as a confidence score alone. It depends on whether people can inspect evidence, understand uncertainty, question the system and keep meaningful control over the final decision.",
       demonstrates: ["Researching trust in AI with hard-to-reach groups", "Translating evidence into responsible-AI requirements", "Prototyping a concept from requirements", "Working inside a multi-partner consortium"],
       visuals: [
-        { file: "img/nebula-research-to-requirements.webp", caption: "How evidence shaped the requirements — and the value each one protects." },
-        { file: "img/nebula-research-ecosystem.webp", caption: "From situated experience to responsible-AI requirements." },
-        { file: "img/nebula-prototype-explainability.webp", caption: "My concept prototype — evidence stays inspectable, contestable and shareable." },
-        { file: "img/nebula-prototype-safeguards.webp", caption: "My concept prototype — responsible-AI principles made visible in the interface." }
+        { file: "nebula-research-to-requirements.webp", caption: "How evidence shaped the requirements — and the value each one protects." },
+        { file: "nebula-research-ecosystem.webp", caption: "From situated experience to responsible-AI requirements." },
+        { file: "nebula-prototype-explainability.webp", caption: "My concept prototype — evidence stays inspectable, contestable and shareable." },
+        { file: "nebula-prototype-safeguards.webp", caption: "My concept prototype — responsible-AI principles made visible in the interface." }
       ],
       links: [
         { label: "Springer chapter (DOI) ↗", url: "https://doi.org/10.1007/978-3-658-52212-4_10" },
@@ -598,7 +598,7 @@ window.SITE = {
       methods: ["Semi-structured interviews", "Grounded Theory-informed thematic analysis", "Trauma-informed research"],
       status: "Manuscript prepared for academic review · Prototype built", // CHECK: see conflict note below
       cardOutcome: "37 interviews distilled into five dynamics, a framework and prioritised safety concepts.",
-      cover: "img/sbb-five-dynamics.webp",
+      cover: "sbb-five-dynamics.webp",
       glance: {
         challenge:
           "People who leave authoritarian contexts often stay under digital surveillance. Their online lives are shaped by fear long after they have physically left.",
@@ -652,10 +652,10 @@ window.SITE = {
       ],
       demonstrates: ["Leading sensitive, trauma-informed research", "Theory-building from qualitative data", "Trust-and-safety product thinking", "Owning the path from research to a prototype"],
       visuals: [
-        { file: "img/sbb-five-dynamics.webp", caption: "Five core dynamics of transnational digital surveillance." },
-        { file: "img/sbb-ecology.webp", caption: "The Ecology of Digital Survival framework." },
-        { file: "img/sbb-phase2-evidence.webp", caption: "Phase II evidence snapshot (n = 14)." },
-        { file: "img/sbb-research-process.webp", caption: "Research process across both phases." }
+        { file: "sbb-five-dynamics.webp", caption: "Five core dynamics of transnational digital surveillance." },
+        { file: "sbb-ecology.webp", caption: "The Ecology of Digital Survival framework." },
+        { file: "sbb-phase2-evidence.webp", caption: "Phase II evidence snapshot (n = 14)." },
+        { file: "sbb-research-process.webp", caption: "Research process across both phases." }
       ],
       links: []
     },
@@ -675,7 +675,7 @@ window.SITE = {
       methods: ["Interviews", "Participatory co-design", "Observation", "Think-aloud usability testing"],
       status: "Published — OzCHI 2024 (Late-Breaking Work)",
       cardOutcome: "Independent sensor setup went from 1 of 4 to 3 of 3 users after the onboarding redesign.",
-      cover: "img/bo-app-screens.webp",
+      cover: "bo-app-screens.webp",
       glance: {
         challenge:
           "Bo App pairs a cognitive-training app with an fNIRS brain-sensing headband for non-medical training. Older adults struggled to set the sensor up without help.",
@@ -723,7 +723,7 @@ window.SITE = {
         "Accessibility for older adults is not simply a matter of increasing font sizes. It means reducing uncertainty, supporting confidence and translating unfamiliar technology into understandable actions.",
       demonstrates: ["Co-design with older adults", "Turning usability findings into prioritised design changes", "Honest, small-sample evidence reporting"],
       visuals: [
-        { file: "img/bo-app-screens.webp", caption: "Bo App — welcome, onboarding, feedback and brain FAQ screens." },
+        { file: "bo-app-screens.webp", caption: "Bo App — welcome, onboarding, feedback and brain FAQ screens." },
         { file: "", caption: "Before / after onboarding", note: "Export the early and redesigned prototype screenshots from your Framer page" },
         { file: "", caption: "Research process diagram", note: "Discover → co-design → test → iterate, with participant counts" }
       ],
@@ -749,7 +749,7 @@ window.SITE = {
       methods: ["Interviews", "Surveys", "Workshops", "Usability tests", "Participatory learning sessions"],
       status: "Published — ACM PDC 2026 & Springer chapter (first author)",
       cardOutcome: "Field research turned into a board game, metaphor cards and OER platform requirements.",
-      cover: "img/crosscomits-overview.webp",
+      cover: "crosscomits-overview.webp",
       glance: {
         challenge:
           "Cybersecurity advice is often correct but unusable for people with different languages, backgrounds and levels of digital literacy.",
@@ -786,11 +786,11 @@ window.SITE = {
       ],
       demonstrates: ["Coordinating research across a consortium", "Inclusive, participatory methods", "Turning research into requirements"],
       visuals: [
-        { file: "img/crosscomits-learning-artifacts.webp", caption: "Tangible materials turned security into a shared activity." },
-        { file: "img/crosscomits-findings.webp", caption: "Four principles across three different communities." },
-        { file: "img/crosscomits-oer.webp", caption: "A social OER infrastructure for security mediators." },
-        { file: "img/smartphone-cafe-evidence.webp", caption: "Smartphone Café — translating field evidence into design direction." },
-        { file: "img/smartphone-cafe-setting.webp", caption: "Smartphone Café — research embedded in a familiar community setting." }
+        { file: "crosscomits-learning-artifacts.webp", caption: "Tangible materials turned security into a shared activity." },
+        { file: "crosscomits-findings.webp", caption: "Four principles across three different communities." },
+        { file: "crosscomits-oer.webp", caption: "A social OER infrastructure for security mediators." },
+        { file: "smartphone-cafe-evidence.webp", caption: "Smartphone Café — translating field evidence into design direction." },
+        { file: "smartphone-cafe-setting.webp", caption: "Smartphone Café — research embedded in a familiar community setting." }
       ],
       links: [
         { label: "PDC 2026 paper (PDF)", url: "Mediating_Digital_Security_PDC2026.pdf" },
