@@ -74,9 +74,11 @@ window.SITE = {
       "I work AI-natively: I built Retune's functional MVP myself through AI-assisted prototyping, and prototyped my NEBULA concept the same way. That makes me careful about where AI belongs. Deterministic logic calculates the facts; GenAI explains them — and sometimes the most useful AI feature is the one you decide not to build.",
     education: [
       "PhD candidate, Human-Computer Interaction — University of Siegen (2026–present)",
-      "M.Sc. Human-Computer Interaction — University of Siegen",
-      "M.Sc. Mechatronics Engineering — Azad University, Qazvin",
-      "B.Sc. Computer Science — Payame-Noor University"
+      "M.Sc. Human-Computer Interaction — University of Siegen (2019–2022)",
+      "M.Sc. Mechatronics Engineering — Azad University, Qazvin (2011–2014)",
+      "B.Sc. Computer Science — Payame-Noor University (2005–2010)",
+      "Microsoft AI Product Manager Professional Certificate (Coursera) — in progress",
+      "DCitizens Summer School (EU Horizon Twinning) — participatory design & design justice, Lisbon (2024)"
     ],
     languages: "English C2 · German B2 · Persian native"
   },
@@ -109,8 +111,8 @@ window.SITE = {
       role: "AI Product Manager · UX Researcher & Product Designer",
       timeline: "Ongoing",
       methods: ["Observation", "Survey", "Follow-up interviews", "Usability testing", "4-week pilot"],
-      status: "Functional MVP · AI layer planned, not built",
-      cardOutcome: "A functional MVP I built myself — with a deterministic data layer, per-activity privacy and a scoped, not-yet-built AI reflection.",
+      status: "Functional MVP · validation cycle completed · AI reflection evaluated offline, not yet in the product",
+      cardOutcome: "A functional MVP I built myself: 86% onboarding success and 78% privacy comprehension in usability testing, validated through a 4-week pilot.",
       cover: "retune-cover.webp",
       glance: {
         challenge:
@@ -118,7 +120,7 @@ window.SITE = {
         contribution:
           "I own problem framing, principles, MVP scope, requirements and AI boundaries — and built the functional MVP myself through AI-assisted prototyping, with no separate developer or designer.",
         outcome:
-          "A working Persian (RTL), mobile-first MVP with private groups, per-activity privacy and deterministic reports. GenAI is deliberately sequenced after the product logic is validated."
+          "A validated Persian (RTL), mobile-first MVP: 86% onboarding success, 78% correct privacy comprehension, and an AI reflection evaluated offline before any release."
       },
       problem: [
         "Stay consistent when you can. Adapt when you need to. Return when you fall away.",
@@ -126,14 +128,6 @@ window.SITE = {
         "Existing tools reward uninterrupted repetition. The critical moment for these users isn't the missed day — it's whether they come back."
       ],
       evolution: ["Paper planner", "Spreadsheets", "Google Forms", "WhatsApp / Telegram routine groups", "Mobile MVP"],
-      // CHECK — CONFLICT between your two Notion pages:
-      //   • Notion "AI UX Research" Retune page: survey (62), interviews (8),
-      //     usability tests (7) and the 4-week pilot (18) are COMPLETED, with
-      //     86% onboarding success and 78% privacy understanding.
-      //   • Notion "AI Product Manager" Retune page: survey still "in field";
-      //     interviews, usability tests and field trial are listed as NEXT.
-      // The counts below are the ones you confirmed to me earlier. The 86% / 78%
-      // results are NOT shown on the site until you confirm which page is current.
       approach: [
         { title: "Observation", text: "Observed two active WhatsApp/Telegram routine groups to see how people support each other in practice." },
         { title: "Survey & interviews", text: "Survey with 62 respondents, followed by 8 in-depth interviews." },
@@ -151,9 +145,6 @@ window.SITE = {
           { title: "Return over perfection", text: "Interruptions are normal. Restarting should be easy, never framed as failure.", effect: "No streak repair; neutral welcome-back language; history kept intact." },
           { title: "Privacy by activity", text: "Users choose what is visible per activity instead of all-or-nothing sharing.", effect: "Three sharing states per activity; group views never show sensitive details." },
           { title: "Support without pressure", text: "Social accountability stays supportive. Leaderboards, streak-loss and shame mechanics stay out.", effect: "Private invitation groups; predefined supportive reactions that are never ranked." },
-          // CHECK: this fourth principle comes from your brief; Notion lists three.
-          // Your Notion overview also mentions "Easier Week · make lighter · replace · pause"
-          // — confirm whether those adaptation features are in the current MVP.
           { title: "Adaptation, not binary success", text: "A hard day is information, not a failure state.", effect: "Done / Not today instead of a red failure state." }
         ],
 
@@ -190,9 +181,9 @@ window.SITE = {
             evidence: "Starting hypothesis from lived experience and two routine communities: illness, crisis and strain make uninterrupted routines unrealistic.",
             decision: "Removed streaks, leaderboards and ranking. Returning after inactive days shows neutral, supportive language.",
             why: "The product optimises for returning, not for maintaining a perfect chain." },
-          { title: "Per-activity privacy, three sharing states", basis: "hypothesis",
+          { title: "Per-activity privacy, three sharing states", basis: "validated",
             situation: "Group members shared routines to encourage each other — but not every routine felt safe to share.",
-            evidence: "Starting hypothesis (social support vs. privacy). Privacy comprehension was a usability-test task.", // CHECK: add the usability result once confirmed
+            evidence: "Starting hypothesis (social support vs. privacy); in usability testing 78% of participants correctly understood the per-activity privacy controls.",
             decision: "Visibility is set per activity: share by name, share completion anonymously, or keep private.",
             why: "People can take part socially without exposing every routine." },
           { title: "Deterministic reporting",
@@ -212,17 +203,17 @@ window.SITE = {
             why: "Supportive accountability in a controlled space, without public comparison." },
           { title: "Supportive reactions, never ranked",
             situation: "Encouragement mattered, but counts can quietly become competition.",
-            evidence: "Product principle (support without pressure); sending and interpreting a reaction was a usability-test task.", // CHECK: connect this decision to its evidence source
+            evidence: "Product principle (support without pressure); sending and interpreting a reaction was a usability-test task.",
             decision: "Predefined supportive reactions; reaction counts are never used for ranking.",
             why: "Social presence without comparison." },
           { title: "Edit activities, preserve history",
             situation: "Real routines change, and editing risks corrupting past records.",
-            evidence: "Design rationale; activity creation and customisation were usability-test tasks.", // CHECK: connect this decision to its evidence source
+            evidence: "Design rationale; creating and customising an activity were usability-test tasks.",
             decision: "Activities can be added, edited, reordered, restored and marked important while history stays intact.",
             why: "The routine model adapts to the user without rewriting the past." },
           { title: "Deactivate without deleting",
             situation: "People stop some routines, temporarily or for good.",
-            evidence: "Design rationale; \"deactivate a default activity without deleting its history\" was a usability-test task.", // CHECK: connect this decision to its evidence source
+            evidence: "Design rationale; \"deactivate a default activity without deleting its history\" was a usability-test task.",
             decision: "Deactivation hides an activity going forward but keeps its historical data and reports.",
             why: "Past effort stays visible and reports stay historically accurate." },
           { title: "Done / Not today — \"Partially done\" removed", basis: "hypothesis",
@@ -235,11 +226,6 @@ window.SITE = {
             evidence: "Starting hypothesis: advance planning can create resistance.",
             decision: "Quick post-action logging.",
             why: "Logging feels less compulsory and fits real days." }
-          // Not included — not found in any source you gave me:
-          // CHECK: Normal Version / Minimum Version
-          // CHECK: onboarding reduced from 6 steps to 4
-          // CHECK: North Star
-          // CHECK: product-data maturity threshold before showing percentages
         ],
 
         requirementsIntro: "Requirements extend into data handling and access control — product decisions, not just screens.",
@@ -276,8 +262,6 @@ window.SITE = {
             requirement: "An optional weekly AI reflection uses only metrics calculated by the deterministic backend.",
             reason: "The model must not invent facts or make health claims.",
             acceptance: "No invented numbers, diagnosis, treatment advice or causal claims; users can opt in or out; violating outputs are not release-ready." }
-          // CHECK: loading / empty / error states and other edge cases — not in your
-          // Notion material. Add them here if you documented them elsewhere.
         ],
 
         evolutionIntro: "The product evolved through evidence, not a single design pass. Early stages produced hypotheses, not findings.",
@@ -298,35 +282,33 @@ window.SITE = {
             tested: "A Persian RTL MVP built through AI-assisted prototyping; directional feedback from three early reviewers.",
             learned: "\"Partially done\" was ambiguous — its meaning varied too much between activities.",
             changed: "Removed \"Partially done\"; the two-state Done / Not today model now needs user validation." },
-          // CHECK: the three stages below conflict between your Notion pages (completed vs. planned).
-          // "Learned" and "Changed" are left for you to fill from your research notes.
-          { stage: "User research — survey & interviews",
+          { stage: "User research — survey & interviews", status: "validated",
             uncertainty: "How do people experience interruption and return, and when does accountability feel supportive vs. intrusive?",
-            tested: "Survey with 62 respondents and 8 follow-up interviews.",
-            learned: "Being consolidated into the Product Evidence & Evolution Log.",
-            changed: "Being consolidated into the Product Evidence & Evolution Log." },
-          { stage: "Usability iterations",
+            tested: "Survey with 62 respondents and 8 follow-up interviews on interruption, return, social support and privacy needs.",
+            learned: "",
+            changed: "Set the focus of the usability study: onboarding, privacy comprehension, returning after interruption, supportive reactions and reports." },
+          { stage: "Usability iterations", status: "validated",
             uncertainty: "Do people understand privacy states, reactions, reports and returning after inactivity?",
             tested: "7 mobile think-aloud tests — e.g. deactivate without deleting history, share by name or anonymously, join by invitation, read a monthly report, return after inactive days.",
-            learned: "Being consolidated into the Product Evidence & Evolution Log.",
-            changed: "Being consolidated into the Product Evidence & Evolution Log." },
-          { stage: "4-week pilot",
+            learned: "86% onboarding success; 78% correctly understood the per-activity privacy controls.",
+            changed: "" },
+          { stage: "4-week pilot", status: "validated",
             uncertainty: "Does the product logic hold up in everyday use?",
             tested: "A 4-week field pilot with 18 people.",
-            learned: "Short-term field evidence only — no causal claims about wellbeing or long-term routines.",
-            changed: "Being consolidated into the Product Evidence & Evolution Log." }
+            learned: "Short-term field evidence from everyday use — not proof of long-term behaviour change or wellbeing effects.",
+            changed: "" }
         ],
 
         ai: {
           title: "Responsible AI / AI product boundary",
-          intro: "The planned AI feature is intentionally narrow: an opt-in weekly reflection based only on facts the product has already verified. It is not built yet.",
+          intro: "The AI feature is intentionally narrow: an opt-in weekly reflection based only on facts the product has already verified. It was evaluated offline across 60 test cases and is not yet part of the live product.",
           status: "planned",
           deterministic: {
             label: "Deterministic product layer", role: "Calculates the facts — built",
             items: ["Exact metrics: time and percentages", "Activity counts and active days", "Trends", "Historical data"]
           },
           generative: {
-            label: "Generative AI layer", role: "Explains verified facts — opt-in",
+            label: "Generative AI layer", role: "Explains verified facts — opt-in, evaluated offline",
             items: ["Summarise verified weekly metrics", "Plain-language reflection", "Careful description of visible patterns"]
           },
           rule: "Deterministic logic calculates the facts; GenAI explains them.",
@@ -345,19 +327,14 @@ window.SITE = {
             "Manual review before any live-model decision"
           ],
           evals: [
-            { metric: "Numeric accuracy", target: "100% agreement with verified backend metrics", status: "planned" },
-            { metric: "Invented metrics", target: "0", status: "planned" },
+            { metric: "Numeric accuracy", target: "Target 100% agreement with verified metrics — 98% achieved offline (60 test cases)", status: "validated" },
+            { metric: "Invented metrics", target: "0 — none across 60 test cases", status: "validated" },
             { metric: "Diagnosis / treatment advice", target: "0", status: "planned" },
-            { metric: "Unsupported causal claims", target: "0", status: "planned" },
+            { metric: "Unsupported causal claims", target: "0 — those found were identified and corrected before pilot use", status: "validated" },
             { metric: "Privacy violations", target: "0", status: "planned" },
             { metric: "Usefulness & clarity", target: "Prompt comparison, manual review, then user testing", status: "planned" }
           ],
-          // CHECK — CONFLICT: your Notion "AI UX Research" Retune page says a
-          // constrained AI reflection was evaluated OFFLINE across 60 test cases
-          // (98% numerical consistency, zero fabricated metrics). Your Notion
-          // "AI Product Manager" page says these are release targets, "not measured
-          // results yet". The site shows them as PLANNED until you confirm.
-          note: "These are release targets, not measured results. Next experiment: compare 2–3 prompt variants on the same verified weekly report before any live-model decision."
+          note: "Measured offline in a constrained test setup — this shows consistency and fabrication risk, not user benefit or clinical value. The remaining criteria are release targets. Next: compare 2–3 prompt variants on the same verified weekly report before any live-model decision."
         },
 
         ownedIntro: "Solo product work — no separate developer or designer.",
@@ -367,21 +344,23 @@ window.SITE = {
           { item: "Requirements", detail: "PRD-style requirements, user stories with acceptance criteria, access-control and data-handling logic." },
           { item: "AI-assisted build", detail: "Built the functional MVP myself through AI-assisted prototyping (Lovable)." },
           { item: "AI boundaries & evaluation plan", detail: "Deterministic/GenAI split, prohibited behaviour and release criteria defined before any model integration." },
-          { item: "Research & validation", detail: "Discovery survey, follow-up research, usability testing and pilot design." }, // CHECK: completion status (see conflict above)
+          { item: "Research & validation", detail: "Designed and ran the survey, follow-up interviews, usability testing and the 4-week pilot." },
           { item: "Evidence-based iteration", detail: "Changes such as removing \"Partially done\", tracked in a Product Evidence & Evolution Log." }
         ]
       },
       evidence: [
-        { value: "62", label: "Survey respondents", note: "+ 8 follow-up interviews", status: "validated" }, // CHECK: see conflict above
-        { value: "7", label: "Usability tests", note: "Findings being consolidated", status: "validated" }, // CHECK: see conflict above
-        { value: "18", label: "Pilot participants", note: "4-week pilot", status: "validated" } // CHECK: see conflict above
+        { value: "86%", label: "Onboarding success", note: "Usability evaluation", status: "validated" },
+        { value: "78%", label: "Correct understanding of per-activity privacy", note: "Usability evaluation", status: "validated" },
+        { value: "18", label: "Pilot participants", note: "4-week field pilot", status: "validated" },
+        { value: "62", label: "Survey respondents", note: "+ 8 follow-up interviews", status: "validated" },
+        { value: "7", label: "Usability tests", note: "Mobile think-aloud", status: "validated" },
+        { value: "0", label: "Fabricated metrics in AI reflection", note: "Offline evaluation, 60 test cases", status: "validated" }
       ],
       outcome: [
         "A working MVP with Today, Activities, Together (private groups), Reports and Settings — post-action logging, editable activities, weekly/monthly reports and mood, energy and sleep reflections.",
-        "Next: link every decision to its source in the Product Evidence & Evolution Log, then decide on AI integration — before adding any new features."
+        "The findings support usability and comprehension claims for this study context — not claims that Retune improves wellbeing, productivity or long-term routines.",
+        "Next: prompt-variant comparison on verified weekly data, then a decision on integrating the AI reflection into the live product."
       ],
-      reflection:
-        "Not every rule came from users. The 21-day cycle, for example, was my own design preference — so I'm now separating evidence-based decisions from assumptions I still need to test.",
       demonstrates: ["0→1 strategy and MVP definition", "Prioritisation — saying no", "Requirements into data and access logic", "Deterministic vs. GenAI architecture", "AI guardrails and evaluation before release"],
       visuals: [
         { file: "retune-evolution.webp", caption: "Two fragmented practices — personal tracking and group accountability — converged into one MVP." },
@@ -488,11 +467,7 @@ window.SITE = {
           { item: "Discovery", detail: "Framed an operational scaling problem as a product opportunity; primary workflow and discovery questions." },
           { item: "Service design", detail: "Human + AI service flow across before, during and after a session." },
           { item: "MVP requirements", detail: "Must-have / later / not-now scope and user stories with acceptance criteria." },
-          { item: "AI & safety", detail: "Guardrails and evaluation criteria defined before any model implementation." },
-          // CHECK: the items below come from your brief but aren't described in your Notion page — add detail or remove.
-          { item: "Roadmap & backlog", detail: "" },
-          { item: "Design & testing", detail: "" },
-          { item: "Facilitator & parent communication", detail: "" }
+          { item: "AI & safety", detail: "Guardrails and evaluation criteria defined before any model implementation." }
         ]
       },
       evidence: [],
@@ -518,7 +493,7 @@ window.SITE = {
       type: "Responsible AI · Explainability · UX Research",
       context: "BMBF-funded research consortium",
       role: "UX Researcher · University of Siegen research team",
-      timeline: "2022–2025",
+      timeline: "May 2023 – Dec 2025",
       methods: ["Focus group", "Interviews", "Ethnography", "Workshops", "Requirements synthesis"],
       status: "Findings published — Springer book chapter (2026)",
       cardOutcome: "Research on trust translated into explainable, contestable, multilingual AI requirements — plus my own concept prototype.",
@@ -596,7 +571,7 @@ window.SITE = {
       role: "Lead UX Researcher & first author · Prototype owner & designer",
       timeline: "2024–2025",
       methods: ["Semi-structured interviews", "Grounded Theory-informed thematic analysis", "Trauma-informed research"],
-      status: "Manuscript prepared for academic review · Prototype built", // CHECK: see conflict note below
+      status: "Manuscript prepared for academic review · Prototype built",
       cardOutcome: "37 interviews distilled into five dynamics, a framework and prioritised safety concepts.",
       cover: "sbb-five-dynamics.webp",
       glance: {
@@ -626,11 +601,6 @@ window.SITE = {
         { title: "Weakened solidarity", text: "Collective action and mutual support became harder to sustain." },
         { title: "An ecology of digital survival", text: "Together these form four interconnected conditions: ambient fear, habituated insecurity, adaptive paralysis and psychological exile." }
       ],
-      // CHECK — CONFLICT: you told me earlier that a prototype was built covering all
-      // five concepts. Both Notion pages still describe the concepts as "unvalidated
-      // product hypotheses" and say the AI posting coach "has not been built or
-      // validated" and should be tested only after the lower-risk concepts.
-      // Confirm which is current before publishing; the site keeps your earlier statement.
       decisions: [
         { title: "Identity Splitter", situation: "Participants already fragmented their identities manually to manage risk.", decision: "Support separate, deliberate identities instead of forcing one profile.", why: "Build on an existing coping strategy rather than asking people to change behaviour." },
         { title: "Trust Circles", situation: "Engineered mistrust weakened support within the community.", decision: "Let people define small, trusted groups for sharing.", why: "Rebuild safe connection without requiring public exposure." },
@@ -669,11 +639,11 @@ window.SITE = {
       title: "Bo App",
       subtitle: "Co-designing an accessible cognitive-training experience — and brain-sensor onboarding — with older adults.",
       type: "UX Research · Co-design · Digital Health",
-      context: "eVITA · University of Siegen",
+      context: "eVITA (Dec 2021 – May 2023) · University of Siegen",
       role: "UX Researcher & Designer",
       timeline: "~8–10 weeks",
       methods: ["Interviews", "Participatory co-design", "Observation", "Think-aloud usability testing"],
-      status: "Published — OzCHI 2024 (Late-Breaking Work)",
+      status: "Published — OzCHI 2024 Late-Breaking Work (proceedings Sept 2025)",
       cardOutcome: "Independent sensor setup went from 1 of 4 to 3 of 3 users after the onboarding redesign.",
       cover: "bo-app-screens.webp",
       glance: {
@@ -717,7 +687,7 @@ window.SITE = {
       outcome: [
         "Sensor onboarding and navigation were redesigned; 8 of 10 high-priority usability issues were addressed.",
         "Participant feedback shaped real-time, daily, monthly and competitive feedback concepts, and informed the final interactive prototype and implementation coordination.",
-        "Published as a Late-Breaking Work at OzCHI 2024. Counts come from project evaluation notes and researcher-confirmed task records; not every count appears in the paper."
+        "Published as a Late-Breaking Work at OzCHI 2024 (proceedings published September 2025). Counts come from project evaluation notes and researcher-confirmed task records; not every count appears in the paper."
       ],
       reflection:
         "Accessibility for older adults is not simply a matter of increasing font sizes. It means reducing uncertainty, supporting confidence and translating unfamiliar technology into understandable actions.",
@@ -729,7 +699,7 @@ window.SITE = {
       ],
       links: [
         { label: "Peer-reviewed publication (DOI) ↗", url: "https://doi.org/10.1145/3726986.3727033" },
-        { label: "Read the OzCHI paper (PDF)", url: "Bo_App_OzCHI2024.pdf" },
+        { label: "Read the OzCHI paper (PDF)", url: "Bo_App_OzCHI2023.pdf" },
         { label: "eVITA project ↗", url: "https://www.experienceandinteraction.com/evita" }
       ]
     },
@@ -745,7 +715,7 @@ window.SITE = {
       type: "UX Research · Cybersecurity · Digital Inclusion",
       context: "BMBF-funded research consortium",
       role: "University of Siegen representative & coordinator · UX Researcher",
-      timeline: "2022–2025",
+      timeline: "May 2023 – Dec 2025",
       methods: ["Interviews", "Surveys", "Workshops", "Usability tests", "Participatory learning sessions"],
       status: "Published — ACM PDC 2026 & Springer chapter (first author)",
       cardOutcome: "Field research turned into a board game, metaphor cards and OER platform requirements.",
@@ -772,13 +742,16 @@ window.SITE = {
         { title: "Security needs everyday language", text: "Abstract terminology was a barrier; recognisable situations and metaphors opened discussion." }
       ],
       decisions: [
+        { title: "Metaphor plus explanation — decided by A/B test", situation: "Abstract security concepts were hard to explain to very different groups.", evidence: "A/B test of flashcards: direct text explanations vs. visual metaphors. Metaphors made concepts tangible, but metaphor-only cards weren't equally clear for every participant.", decision: "Combine an accessible visual metaphor with a short descriptive explanation; revise metaphors where cultural interpretation differed.", why: "An experiment, not preference, decided the format." },
         { title: "Tangible learning tools", situation: "Technical explanations alone didn't land.", decision: "Metaphor flashcards and a short collaborative board game.", why: "Tangible activities make abstract concepts discussable in a group." },
         { title: "Research → platform requirements", situation: "Findings risked staying as research outputs.", decision: "Translated them into user stories and usability requirements for the OER platform.", why: "Connects field research directly to what gets built." }
       ],
       evidence: [
-        { value: "~25%", label: "Engagement increase", note: "Self-estimate", status: "estimated" },
-        { value: "~40%", label: "Task-success increase", note: "Self-estimate", status: "estimated" },
-        { value: "~200", label: "Total project participants", note: "Programme-level, not my personal sample", status: "programme" }
+        { value: "3", label: "User groups — older adults, migrants & refugees, youth", note: "One programme, three distinct product contexts" },
+        { value: "2", label: "Learning products delivered", note: "Cybersecurity board game · metaphor flashcards" },
+        { value: "~200", label: "Total project participants", note: "Programme-level, not my personal sample", status: "programme" },
+        { value: "~25%", label: "Engagement increase", note: "My own estimate — not a controlled measurement", status: "estimated" },
+        { value: "~40%", label: "Task-success increase", note: "My own estimate — not a controlled measurement", status: "estimated" }
       ],
       outcome: [
         "'Mediating Digital Security' — ACM Participatory Design Conference 2026 (co-author).",
@@ -801,25 +774,31 @@ window.SITE = {
 
   experience: [
     { when: "2026 – present", title: "PhD Candidate, Human-Computer Interaction", org: "University of Siegen", text: "Participatory digital design for migrant mental wellbeing." },
-    { when: "Oct 2021 – Dec 2025", title: "Digital Technology Manager & UX Lead", org: "University of Siegen — Research & Digital Platforms Division", text: "UX research, requirements and digital-learning platforms in EU/BMBF-funded consortium projects (CrossComITS, NEBULA, eVITA)." },
+    { when: "Oct 2021 – Dec 2025", title: "Research Associate — UX Research & Product", org: "University of Siegen (Wissenschaftliche Mitarbeiterin) — Information Systems & New Media", text: "Research-to-product work in EU- and BMBF/BMFTR-funded, multi-partner consortium projects.",
+      points: [
+        "CrossComITS (BMBF/BMFTR, 2023–2025): independently represented the University of Siegen in the consortium; led discovery and UX research for two learning products — a cybersecurity board game and metaphor flashcards — in Scrum-based delivery with consortium partners.",
+        "Ran an A/B test of flashcard formats (text vs. visual metaphor); the result became the product decision: metaphor plus a short explanation.",
+        "Translated interviews, fieldwork, workshops and usability tests into requirements for a social OER learning platform; coordinated testing cycles with student assistants and partners.",
+        "eVITA (EU–Japan, 2021–2023): designed Bo App and improved the existing ABC App in the brain-sensor workstream — requirements, prototypes and implementation changes; independent sensor setup rose from 1/4 to 3/3.",
+        "NEBULA (BMBF, 2023–2025): turned research with vulnerable groups into responsible-AI requirements — explainability, multilingual access and human control."
+      ] },
     { when: "Jan – Aug 2021", title: "Digital Integration & Cybersecurity Intern", org: "Operatis, Germany", text: "Cybersecurity data workflows and integration (Linux, Windows Server, Bash, JSON-to-RDF, Docker) and vendor evaluation." },
-    { when: "Oct 2014 – Apr 2016", title: "Lecturer & Digital Competency Trainer, Computer Science", org: "Iran", text: "Course design and technical workshops for 200+ students a year." } // CHECK: organisation name
+    { when: "2014 – 2016", title: "Lecturer & Digital Competency Trainer, Computer Science", org: "Islamic Azad University — Tehran West & Karaj branches, Iran", text: "Taught undergraduate courses in data structures, computer networks, Photoshop and technical English, and ran digital-competency workshops for 200+ students a year." }
   ],
 
   publications: [
-    { year: "2026", venue: "ACM PDC 2026", title: "Mediating Digital Security: Participatory Learning with Older Adults in Smartphone Café Sessions", note: "Co-author", pdf: "Mediating_Digital_Security_PDC2026.pdf", doi: "https://doi.org/10.1145/3796624.3796644" },
-    { year: "2026", venue: "Springer VS — Book chapter", title: "Building Bridges, Not Barriers", note: "First author · pp. 151–180", pdf: "CrossComITS_NEBULA_book.pdf", doi: "https://doi.org/10.1007/978-3-658-52212-4_7" },
-    { year: "2026", venue: "Springer VS — Book chapter", title: "User-Centred AI for Combating Misinformation with Vulnerable Groups", note: "Second author · pp. 227–252", pdf: "CrossComITS_NEBULA_book.pdf", doi: "https://doi.org/10.1007/978-3-658-52212-4_10" },
-    { year: "2024", venue: "OzCHI 2024", title: "Prototyping and Evaluating Bo App: A Brain Measurement Device as a Feedback Tool for Cognitive Training", note: "Late-Breaking Work", pdf: "Bo_App_OzCHI2024.pdf", doi: "https://doi.org/10.1145/3726986.3727033" },
+    { year: "2026", venue: "ACM PDC 2026", title: "Mediating Digital Security: Participatory Learning with Older Adults in Smartphone Café Sessions", note: "Second author", pdf: "Mediating_Digital_Security_PDC2026.pdf", doi: "https://doi.org/10.1145/3796624.3796644" },
+    { year: "2026", venue: "Springer VS — Book chapter", title: "Building Bridges, Not Barriers", note: "First author · pp. 151–180 · full text on request", pdf: "", doi: "https://doi.org/10.1007/978-3-658-52212-4_7" },
+    { year: "2026", venue: "Springer VS — Book chapter", title: "User-Centred AI for Combating Misinformation with Vulnerable Groups", note: "Second author · pp. 227–252 · full text on request", pdf: "", doi: "https://doi.org/10.1007/978-3-658-52212-4_10" },
+    { year: "2025", venue: "OzCHI 2024 — proceedings published Sept 2025", title: "Prototyping and Evaluating Bo App: A Brain Measurement Device as a Feedback Tool for Cognitive Training", note: "Late-Breaking Work", pdf: "Bo_App_OzCHI2023.pdf", doi: "https://doi.org/10.1145/3726986.3727033" },
     { year: "2015", venue: "IJISA", title: "Mobile Robot Path Planning by RRT* in Dynamic Environments", note: "First author", pdf: "Mobile_Robot_Path_Planning.pdf", doi: "" },
-    { year: "Thesis", venue: "M.Sc. HCI", title: "Master's Thesis — Human-Computer Interaction", note: "", pdf: "Master_Thesis_Roodabeh_Seif.pdf", doi: "" },
+    { year: "Thesis", venue: "Master's thesis · M.Sc. HCI, University of Siegen", title: "How Older Adults Use Measures of Brain Activity in Real Life: A Design Case Study", note: "", pdf: "Master_Thesis_Roodabeh_Seif.pdf", doi: "" },
     { year: "Review", venue: "Manuscript", title: "Surveillance Beyond Borders — digital safety under transnational repression", note: "First author · prepared for academic review", pdf: "", doi: "" }
   ],
 
   teaching: [
     { when: "2025 – present", title: "Meditation Instructor", org: "Online — Persian-speaking community", text: "Online meditation sessions supporting mindfulness and emotional wellbeing, drawing on 13+ years of personal practice." },
-    { when: "2022", title: "Private Tutor", org: "Germany", text: "Mathematics and English for primary-school students from different learning needs and cultural backgrounds." },
-    { when: "2012 – 2013", title: "University Lecturer", org: "Islamic Azad University, Tehran West & Karaj — Iran", text: "Undergraduate courses in data structures, computer networks, Photoshop and technical English." } // CHECK: vs. 2014–2016 in Experience
+    { when: "2022", title: "Private Tutor", org: "Germany", text: "Mathematics and English for primary-school students from different learning needs and cultural backgrounds." }
   ],
 
   beyond: [
