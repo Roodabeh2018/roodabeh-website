@@ -576,22 +576,21 @@ window.SITE = {
        ================================================================ */
     {
       slug: "dara",
-      draft: true, // CHECK: set to false once role, context and timeline are filled in
       track: ["product"],
       title: "DARA",
       subtitle: "Workplace wellbeing that helps people and teams — without turning wellbeing into surveillance.",
-      type: "Product Design · Workplace Wellbeing · Privacy by Design",
-      role: "",      // CHECK: your role
-      context: "",   // CHECK: context (personal concept? for whom?)
-      timeline: "",  // CHECK: when
-      status: "Functional browser demo",
+      type: "Product Design · Workplace Wellbeing · Privacy by Design · AI-assisted build",
+      role: "Product Designer & Product Owner — self-initiated, solo",
+      context: "Independent concept project · built with AI-assisted prototyping (Lovable)",
+      timeline: "2026 · concept to working demo in one day",
+      status: "Functional browser demo · concept stage, not yet user-tested",
       cardOutcome: "A two-sided wellbeing product: private tools for employees, and team insight for managers built only on aggregated, anonymised patterns.",
       cover: "dara-home.webp",
       glance: {
         challenge:
           "Wellbeing tools at work face a trust problem: employees won't share honestly if a manager might see it, yet managers need signals they can act on. The product had to serve both sides without exposing anyone.",
         contribution:
-          "", // CHECK: what you did
+          "My own idea, owned end to end: problem framing, privacy model, feature set, UX and interaction design — and I built the working demo myself through AI-assisted prototyping in Lovable.",
         outcome:
           "A functional browser demo with an employee view — check-in, conversation coach, reflection and a personal journey — and a manager view built only on aggregated, anonymised team patterns."
       },
@@ -675,7 +674,7 @@ window.SITE = {
       ],
       evidence: [],
       outcome: [],
-      demonstrates: ["Privacy by design for sensitive workplace data", "A two-sided product: individual value and team insight", "Anti-surveillance analytics — aggregation and anonymity thresholds", "Non-competitive engagement design", "Scoping a coaching feature with explicit limits"],
+      demonstrates: ["Taking a product from idea to working demo on my own, with AI-assisted prototyping", "Privacy by design for sensitive workplace data", "A two-sided product: individual value and team insight", "Anti-surveillance analytics — aggregation and anonymity thresholds", "Non-competitive engagement design", "Scoping a coaching feature with explicit limits"],
       visuals: [],
       links: []
     },
@@ -914,7 +913,7 @@ window.SITE = {
       context: "BMBF-funded research consortium",
       role: "University of Siegen representative & coordinator · UX Researcher",
       timeline: "May 2023 – Dec 2025",
-      methods: ["Interviews", "Surveys", "Workshops", "Usability tests", "Participatory learning sessions"],
+      methods: ["Interviews", "Surveys", "Workshops", "A/B testing", "Usability tests", "Participatory learning sessions", "Scrum-based agile delivery"],
       status: "Published — ACM PDC 2026 & Springer chapter (first author)",
       cardOutcome: "Field research turned into a board game, metaphor cards and OER platform requirements.",
       cover: "crosscomits-overview.webp",
@@ -922,7 +921,7 @@ window.SITE = {
         challenge:
           "Cybersecurity advice is often correct but unusable for people with different languages, backgrounds and levels of digital literacy.",
         contribution:
-          "I coordinated Siegen's research activities, ran user research and translated findings into learning formats and platform requirements across consortium partners.",
+          "I independently represented the University of Siegen in the consortium, ran user research, and translated findings into learning formats and platform requirements — working with the team in Scrum-based agile iterations.",
         outcome:
           "A board game, metaphor flashcards, OER platform requirements — and two 2026 publications."
       },
@@ -933,7 +932,8 @@ window.SITE = {
       approach: [
         { title: "Field research", text: "Interviews, surveys and workshops on everyday security questions and misconceptions." },
         { title: "Smartphone Café", text: "Participatory digital-security learning sessions with older adults." },
-        { title: "Usability testing", text: "Learning materials and platform concepts tested iteratively with target users." }
+        { title: "Usability testing", text: "Learning materials and platform concepts tested iteratively with target users." },
+        { title: "Scrum-based delivery", text: "Worked with the team in agile iterations: user needs → requirement → increment → usability testing → stakeholder feedback → prioritisation → next iteration." }
       ],
       insights: [
         { title: "People beat interfaces", text: "In the Smartphone Café, low-pressure human support and peer learning handled security uncertainty in ways interface simplification alone could not." },
