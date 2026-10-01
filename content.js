@@ -41,6 +41,13 @@ window.SITE = {
     linkedin: "https://linkedin.com/in/roodabeh-seif",
     orcid: "https://orcid.org/0009-0008-6459-9637",
     location: "Germany · Open to relocation",
+    // Short proof points shown under the hero statement
+    proof: [
+      "4+ years leading research-to-product work in EU- and BMBF/BMFTR-funded consortium projects",
+      "Project lead in a six-partner consortium (CrossComITS)",
+      "Coordinated student assistants and partner testing cycles",
+      "Taught and trained 200+ students a year"
+    ],
     cv: "" // e.g. "Roodabeh_Seif_CV.pdf" — leave empty to hide the CV button
   },
 
@@ -118,6 +125,7 @@ window.SITE = {
       methods: ["Observation", "Survey", "Follow-up interviews", "Usability testing", "4-week pilot"],
       status: "Functional MVP · validation cycle completed · AI reflection evaluated offline, not yet in the product",
       cardOutcome: "A functional MVP I built myself: 86% onboarding success and 78% privacy comprehension in usability testing, validated through a 4-week pilot.",
+      cardDecision: "Validate a deterministic MVP first; add GenAI only where research shows an unmet need.",
       cover: "retune-cover.webp",
       glance: {
         challenge:
@@ -405,6 +413,7 @@ window.SITE = {
         { label: "Status", value: "Bilingual prototype (Persian / English) · AI assistant mocked as a concept" }
       ],
       cardOutcome: "A facilitator platform that structures the session before, during and after — while stories, play and conversation stay between people.",
+      cardDecision: "AI supports preparation and reflection only; live sessions stay human-led.",
       cover: "gk-home.webp",
       glance: {
         challenge:
@@ -585,6 +594,7 @@ window.SITE = {
       timeline: "2026 · concept to working demo in one day",
       status: "Functional browser demo · concept stage, not yet user-tested",
       cardOutcome: "A two-sided wellbeing product: private tools for employees, and team insight for managers built only on aggregated, anonymised patterns.",
+      cardDecision: "Team insight only from five or more responses; individual data is never visible to managers.",
       cover: "dara-home.webp",
       glance: {
         challenge:
@@ -694,6 +704,7 @@ window.SITE = {
       methods: ["Focus group", "Interviews", "Ethnography", "Workshops", "Requirements synthesis"],
       status: "Findings published — Springer book chapter (2026)",
       cardOutcome: "Research on trust translated into explainable, contestable, multilingual AI requirements — plus my own concept prototype.",
+      cardDecision: "Every AI assessment shows its evidence and sources, and users can inspect and disagree with it.",
       cover: "nebula-research-to-requirements.webp",
       glance: {
         challenge:
@@ -770,6 +781,7 @@ window.SITE = {
       methods: ["Semi-structured interviews", "Grounded Theory-informed thematic analysis", "Trauma-informed research"],
       status: "Manuscript prepared for academic review · Prototype built",
       cardOutcome: "37 interviews distilled into five dynamics, a framework and prioritised safety concepts.",
+      cardDecision: "An AI posting coach that gives decision support — never a 'safe to post' verdict.",
       cover: "sbb-five-dynamics.webp",
       glance: {
         challenge:
@@ -842,6 +854,7 @@ window.SITE = {
       methods: ["Interviews", "Participatory co-design", "Observation", "Think-aloud usability testing"],
       status: "Published — OzCHI 2024 Late-Breaking Work (proceedings Sept 2025)",
       cardOutcome: "Independent sensor setup went from 1 of 4 to 3 of 3 users after the onboarding redesign.",
+      cardDecision: "Step-by-step visual sensor onboarding with an always-visible Back action.",
       cover: "bo-app-screens.webp",
       glance: {
         challenge:
@@ -916,6 +929,7 @@ window.SITE = {
       methods: ["Interviews", "Surveys", "Workshops", "A/B testing", "Usability tests", "Participatory learning sessions", "Scrum-based agile delivery"],
       status: "Published — ACM PDC 2026 & Springer chapter (first author)",
       cardOutcome: "Field research turned into a board game, metaphor cards and OER platform requirements.",
+      cardDecision: "An A/B test of flashcard formats decided the product: visual metaphor plus a short explanation.",
       cover: "crosscomits-overview.webp",
       glance: {
         challenge:
@@ -973,6 +987,10 @@ window.SITE = {
   /* Partner strip under the hero (logos). Logo images are stored at the
      bottom of this file in LOGOS — the name here must match a name there.
      Remove an item to hide it; an item without a matching logo shows as text. */
+  /* Homepage order: these case studies show first; every other published
+     project appears below under "More work". Use the project slugs. */
+  featured: ["crosscomits", "retune", "nebula", "bo-app"],
+
   partners: {
     label: "Projects, partners and funders I've worked with",
     items: [

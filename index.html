@@ -605,6 +605,15 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
   .quotes { grid-template-columns: 1fr; }
   .quote:first-child .quote__text { font-size: var(--text-body-lg); }
 }
+
+/* Hero proof points */
+.hero__proof { list-style: none; margin: var(--space-5) 0 0; padding: 0; display: grid; gap: var(--space-2); max-width: var(--measure); }
+.hero__proof li { position: relative; padding-left: var(--space-5); font-size: var(--text-body-sm); line-height: 1.5; color: var(--color-text-secondary); }
+.hero__proof li::before { content: ''; position: absolute; left: 0; top: 0.65em; width: var(--space-3); height: var(--border-1); background: var(--color-accent); }
+
+/* Card decision + More work */
+.card__decision { margin-top: var(--space-3); }
+.more-work__title { margin: var(--space-8) 0 var(--space-5); color: var(--color-text-secondary); }
 </style>
 </head>
 <body>
@@ -673,7 +682,8 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
   document.getElementById('foot-name').textContent = '© ' + new Date().getFullYear() + ' ' + P.name;
 
   /* ---------------- HOME ---------------- */
-  function projectCard(p, i) {
+  function projectCard(p, i, offset = 0) {
+    i = i + offset;
     const tracks = (p.track || []).slice().sort((a, b) => a === 'product' ? -1 : b === 'product' ? 1 : 0).map(t => t === 'research' ? 'UX Research' : 'Product & AI').join(' · ');
     return `<a class="card card--project" href="#/work/${esc(p.slug)}" data-track="${esc((p.track || []).join(' '))}">
       ${p.cover ? `<div class="card__media"><img src="${esc(p.cover)}" alt="" loading="lazy"></div>` : ''}
@@ -682,6 +692,7 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
         <h3 class="card__title type-h3">${esc(p.title)}</h3>
         <p class="card__text">${esc(p.subtitle)}</p>
         <div class="card__outcome"><span class="type-label">Outcome</span><p class="type-body-sm">${esc(p.cardOutcome)}</p></div>
+        ${p.cardDecision ? `<div class="card__outcome card__decision"><span class="type-label">Product decision</span><p class="type-body-sm">${esc(p.cardDecision)}</p></div>` : ''}
         <p class="card__role type-caption">${esc(p.role)}</p>
         <span class="card__cta">Read case study <span class="icon" aria-hidden="true">→</span></span>
       </div></a>`;
@@ -694,6 +705,9 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
 
   function home() {
     const [first, ...rest] = P.name.split(' ');
+    const featSlugs = S.featured || [];
+    const featuredList = featSlugs.length ? featSlugs.map(s => published.find(p => p.slug === s)).filter(Boolean) : published;
+    const moreList = published.filter(p => !featuredList.includes(p));
     const A = S.approach;
     return `
     <section class="hero container" aria-labelledby="hero-name">
@@ -704,6 +718,7 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
           <p class="hero__role">${P.roles.map(esc).join(' · ')}</p>
           <p class="hero__sub type-body-sm text-muted">${esc(P.sub)}</p>
           <p class="hero__statement type-h3">${esc(P.tagline)}</p>
+          ${P.proof && P.proof.length ? `<ul class="hero__proof">${list(P.proof, x => `<li>${esc(x)}</li>`)}</ul>` : ''}
           <div class="hero__focus"><span class="type-label">Current focus</span><ul class="cluster">${list(P.focus, f => `<li>${chip(f)}</li>`)}</ul></div>
           <div class="hero__actions cluster-lg">
             <a href="#work" class="btn btn--primary">View selected work <span class="icon icon--forward" aria-hidden="true">→</span></a>
@@ -729,7 +744,9 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
         <button type="button" class="chip chip--toggle" data-f="product" aria-pressed="false">Product &amp; AI</button>
         <button type="button" class="chip chip--toggle" data-f="research" aria-pressed="false">UX Research</button>
       </div>
-      <div class="card-grid">${list(published, projectCard)}</div>
+      <div class="card-grid">${list(featuredList, (p, n) => projectCard(p, n))}</div>
+      ${moreList.length ? `<h3 class="more-work__title type-h4">More work</h3>
+      <div class="card-grid">${list(moreList, (p, n) => projectCard(p, n, featuredList.length))}</div>` : ''}
     </section>
 
     ${A ? `<section id="approach" class="section container">
