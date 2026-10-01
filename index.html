@@ -14,6 +14,18 @@
 <title>Roodabeh Seif — AI Product Manager</title>
 <meta name="description" content="Roodabeh Seif — AI Product Manager with a UX research background. 0→1 AI products, requirements, AI guardrails and evaluation, human-centered AI. Case studies and publications.">
 <meta name="theme-color" content="#0d0d0f">
+<link rel="canonical" href="https://roodabehseif.com/">
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Roodabeh Seif">
+<meta property="og:title" content="Roodabeh Seif — AI Product Manager">
+<meta property="og:description" content="From complex human evidence to product requirements, prioritisation, responsible AI boundaries and defensible product decisions. Case studies: Retune, NEBULA, Bo App and more.">
+<meta property="og:url" content="https://roodabehseif.com/">
+<meta property="og:image" content="https://roodabehseif.com/roodabeh-profile.jpg">
+<meta property="og:image:alt" content="Portrait of Roodabeh Seif">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Roodabeh Seif — AI Product Manager">
+<meta name="twitter:description" content="AI Product Manager with a UX research background — 0→1 AI products, requirements, AI guardrails and evaluation.">
+<meta name="twitter:image" content="https://roodabehseif.com/roodabeh-profile.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -346,6 +358,10 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
 .row__aside { padding-top: var(--space-1); }
 .row__title { margin-bottom: var(--space-1); }
 .row__sub { margin-bottom: var(--space-3); }
+.row__points { margin-top: var(--space-4); max-width: var(--measure); }
+.row__points li { position: relative; padding-left: var(--space-5); font-size: var(--text-body-sm); line-height: 1.6; }
+.row__points li + li { margin-top: var(--space-3); }
+.row__points li::before { content: ''; position: absolute; left: 0; top: 0.7em; width: var(--space-2); height: var(--border-1); background: var(--color-accent); }
 .meta-list { border-top: var(--border-1) solid var(--color-border-subtle); }
 .meta-list > div { padding-block: var(--space-5); border-bottom: var(--border-1) solid var(--color-border-subtle); }
 .meta-list dt { margin-bottom: var(--space-2); }
@@ -370,12 +386,15 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
 .case-hero__back { margin-bottom: var(--space-8); }
 .case-hero__title { margin-bottom: var(--space-5); }
 .case-hero__subtitle { color: var(--color-text-secondary); max-width: 36ch; }
+.case-hero__alt { font: 400 var(--text-h3)/1.2 var(--font-serif); color: var(--color-text-muted); margin-left: var(--space-4); }
+.case-hero__lede { margin-top: var(--space-5); max-width: var(--measure); }
+.chip--draft { border-color: var(--evidence-estimated); color: var(--evidence-estimated); }
 .key-results { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-top: var(--space-8); border-block: var(--border-1) solid var(--color-border); }
 .key-results > div { padding: var(--space-5) var(--space-5) var(--space-5) 0; }
 .key-results > div + div { padding-left: var(--space-5); border-left: var(--border-1) solid var(--color-border-subtle); }
 .key-results .badge { margin-bottom: var(--space-3); }
 .key-results strong { display: block; font: 400 var(--text-h2)/1 var(--font-serif); color: var(--color-text); margin-bottom: var(--space-2); font-variant-numeric: lining-nums; }
-.case-meta { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-6); margin-top: var(--space-7); }
+.case-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: var(--space-6); margin-top: var(--space-7); }
 .case-meta dt { margin-bottom: var(--space-2); }
 .case-meta dd { color: var(--color-text); font-size: var(--text-body-sm); line-height: 1.55; }
 .case-hero .callout { margin-top: var(--space-7); }
@@ -402,6 +421,7 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
 .decision__head .badge { margin-left: auto; }
 .decision__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .decision__grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.decision__grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .decision__cell { padding: var(--space-5) var(--space-6) var(--space-6); }
 .decision__cell + .decision__cell { border-left: var(--border-1) solid var(--color-border-subtle); }
 .decision__cell .type-label { display: block; margin-bottom: var(--space-3); }
@@ -462,7 +482,33 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
 .screens { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-5); }
 .screens .figure img { border-radius: var(--radius-lg); border-color: var(--color-border); }
 
-/* 5.12 Pager */
+/* 5.12 Chapter blocks (journey, feature, columns, IA, lists) */
+.block + .block { margin-top: var(--space-8); }
+.block__label { display: block; margin-bottom: var(--space-4); }
+.journey-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: var(--space-5); }
+.journey-steps > li { padding-block: var(--space-5); border-top: var(--border-1) solid var(--color-border); }
+.journey-steps .type-label { color: var(--color-accent); display: block; margin-bottom: var(--space-2); }
+.journey-steps .type-h4 { margin-bottom: var(--space-2); }
+.feature { padding-top: var(--space-7); border-top: var(--border-1) solid var(--color-border-subtle); }
+.feature + .feature { margin-top: var(--space-9); }
+.feature__head { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: var(--space-7); margin-bottom: var(--space-6); }
+.feature__head .type-label { color: var(--color-accent); display: block; margin-bottom: var(--space-3); }
+.feature__head .type-h3 { margin-bottom: var(--space-3); }
+.feature__points li { padding-block: var(--space-2); border-bottom: var(--border-1) solid var(--color-border-subtle); font-size: var(--text-body-sm); }
+.feature__points li:first-child { border-top: var(--border-1) solid var(--color-border-subtle); }
+.feature .figure img { max-height: 760px; object-fit: contain; object-position: left top; background: var(--color-surface); }
+.ia-tree { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-4); }
+.ia-node { padding: var(--space-4) var(--space-5); border: var(--border-1) solid var(--color-border-subtle); border-radius: var(--radius-md); background: var(--color-surface); }
+.ia-node > span { color: var(--color-text); font-weight: 500; }
+.ia-node ul { margin-top: var(--space-3); padding-left: var(--space-4); border-left: var(--border-1) solid var(--color-accent-border); }
+.ia-node li { font-size: var(--text-body-sm); padding-block: var(--space-1); }
+.ia-root { margin-bottom: var(--space-4); }
+.step-list { counter-reset: step; }
+.step-list li { counter-increment: step; display: grid; grid-template-columns: var(--space-7) minmax(0, 1fr); padding-block: var(--space-3); border-bottom: var(--border-1) solid var(--color-border-subtle); }
+.step-list li::before { content: counter(step, decimal-leading-zero); font: 500 var(--text-label)/1.9 var(--font-sans); color: var(--color-accent); }
+.plain-list li { padding-block: var(--space-2); border-bottom: var(--border-1) solid var(--color-border-subtle); font-size: var(--text-body-sm); }
+
+/* 5.13 Pager */
 .pager { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5); }
 .pager a:last-child { text-align: right; align-items: flex-end; }
 
@@ -490,6 +536,9 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
   .layers__arrow { flex-direction: row; padding: var(--space-4) 0; }
   .layers__arrow .icon { transform: rotate(90deg); }
   .screens { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .journey-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ia-tree { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .feature__head { grid-template-columns: minmax(0, 1fr); gap: var(--space-5); }
 }
 @media (max-width: 860px) {
   .site-nav__links { display: none; }
@@ -525,6 +574,8 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
   .pager a:last-child { text-align: left; align-items: flex-start; }
   .site-footer .container { flex-direction: column; }
   .prose p { font-size: var(--text-body); }
+  .journey-steps, .ia-tree, .decision__grid--2 { grid-template-columns: minmax(0, 1fr); }
+  .case-hero__alt { display: block; margin: var(--space-2) 0 0; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -566,13 +617,15 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
 <main id="main" tabindex="-1"></main>
 
 <footer class="site-footer">
-  <div class="container"><span id="foot-name"></span><span>AI Product · UX Research · Human-Centered AI</span></div>
+  <div class="container"><span id="foot-name">© 2026 Roodabeh Seif</span><span>AI Product · UX Research · Human-Centered AI</span></div>
 </footer>
 
 <script src="content.js"></script>
 <script>
 (function () {
   const S = window.SITE, P = S.person, app = document.getElementById('main');
+  const showDrafts = !!window.SHOW_DRAFTS;
+  const published = S.projects.filter(p => showDrafts || !p.draft);
   const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const pad = n => String(n).padStart(2, '0');
   const ext = u => /^https?:/.test(u) ? ' target="_blank" rel="noopener"' : ' target="_blank"';
@@ -601,7 +654,7 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
     return `<a class="card card--project" href="#/work/${esc(p.slug)}" data-track="${esc((p.track || []).join(' '))}">
       ${p.cover ? `<div class="card__media"><img src="${esc(p.cover)}" alt="" loading="lazy"></div>` : ''}
       <div class="card__body">
-        <div class="card__meta"><span class="type-label">${esc(tracks)}</span><span class="type-label">${pad(i + 1)}</span></div>
+        <div class="card__meta"><span class="type-label">${esc(tracks)}</span>${p.draft ? '<span class="chip chip--draft">Draft — hidden on live site</span>' : `<span class="type-label">${pad(i + 1)}</span>`}</div>
         <h3 class="card__title type-h3">${esc(p.title)}</h3>
         <p class="card__text">${esc(p.subtitle)}</p>
         <div class="card__outcome"><span class="type-label">Outcome</span><p class="type-body-sm">${esc(p.cardOutcome)}</p></div>
@@ -630,7 +683,7 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
           <div class="hero__focus"><span class="type-label">Current focus</span><ul class="cluster">${list(P.focus, f => `<li>${chip(f)}</li>`)}</ul></div>
           <div class="hero__actions cluster-lg">
             <a href="#work" class="btn btn--primary">View selected work <span class="icon icon--forward" aria-hidden="true">→</span></a>
-            ${P.cv ? `<a href="${esc(P.cv)}" target="_blank" class="btn btn--secondary">Download CV</a>` : ''}
+            ${P.cv ? `<a href="${esc(P.cv)}" target="_blank" class="btn btn--secondary">Download CV</a>` : `<a href="mailto:${esc(P.email)}?subject=${encodeURIComponent('CV request')}" class="btn btn--secondary">Request a tailored CV</a>`}
             <a href="#contact" class="btn btn--ghost">Get in touch</a>
           </div>
         </div>
@@ -647,7 +700,7 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
         <button type="button" class="chip chip--toggle" data-f="product" aria-pressed="false">Product &amp; AI</button>
         <button type="button" class="chip chip--toggle" data-f="research" aria-pressed="false">UX Research</button>
       </div>
-      <div class="card-grid">${list(S.projects, projectCard)}</div>
+      <div class="card-grid">${list(published, projectCard)}</div>
     </section>
 
     ${A ? `<section id="approach" class="section container">
@@ -680,7 +733,7 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
 
     <section id="experience" class="section container">
       ${sectionHeader('Experience', 'Where I’ve worked')}
-      <ol class="rows">${list(S.experience, t => row(esc(t.when), esc(t.title), esc(t.org), esc(t.text)))}</ol>
+      <ol class="rows">${list(S.experience, t => row(esc(t.when), esc(t.title), esc(t.org), esc(t.text), t.points ? `<ul class="row__points">${list(t.points, x => `<li>${esc(x)}</li>`)}</ul>` : ''))}</ol>
     </section>
 
     <section id="publications" class="section container">
@@ -708,6 +761,7 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
         <p class="type-h3 measure">I'm open to roles in AI Product Management, UX Research and human-centered digital products — and to research or project collaborations.</p>
         <div class="link-list">
           <a href="mailto:${esc(P.email)}"><span class="type-label">Mail</span>${esc(P.email)}</a>
+          <a href="mailto:${esc(P.email)}?subject=${encodeURIComponent('CV request')}"><span class="type-label">CV</span>Tailored CV on request</a>
           <a href="${esc(P.linkedin)}" target="_blank" rel="noopener"><span class="type-label">In</span>${esc(P.linkedin.replace(/^https?:\/\//, ''))}</a>
           ${P.orcid ? `<a href="${esc(P.orcid)}" target="_blank" rel="noopener"><span class="type-label">iD</span>ORCID</a>` : ''}
         </div>
@@ -723,18 +777,62 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
     const h = level || 3;
     return `<article class="card card--decision">
       <div class="decision__head"><span class="type-label">${pad(i + 1)}</span><h${h} class="type-h4">${esc(d.title)}</h${h}>${badge(d.basis)}</div>
-      <div class="decision__grid${d.evidence ? ' decision__grid--4' : ''}">
-        <div class="decision__cell"><span class="type-label">Situation</span><p>${esc(d.situation)}</p></div>
-        ${d.evidence ? `<div class="decision__cell"><span class="type-label">Evidence</span><p>${esc(d.evidence)}</p></div>` : ''}
-        <div class="decision__cell decision__cell--decision"><span class="type-label">Decision</span><p>${esc(d.decision)}</p></div>
-        <div class="decision__cell"><span class="type-label">Why</span><p>${esc(d.why)}</p></div>
-      </div></article>`;
+      ${(() => { const cells = [['Situation', d.situation], ['Evidence', d.evidence], ['Decision', d.decision, true], ['Why', d.why]].filter(c => c[1]);
+        return `<div class="decision__grid${cells.length !== 3 ? ' decision__grid--' + cells.length : ''}">${cells.map(c => `<div class="decision__cell${c[2] ? ' decision__cell--decision' : ''}"><span class="type-label">${c[0]}</span><p>${esc(c[1])}</p></div>`).join('')}</div>`; })()}
+      </article>`;
   }
   function requirement(r) {
     return `<div class="requirement"><p class="requirement__area type-label">${esc(r.area)}</p><dl>
       <div><dt class="type-label">Requirement</dt><dd>${esc(r.requirement)}</dd></div>
       <div><dt class="type-label">Reason</dt><dd>${esc(r.reason)}</dd></div>
       <div><dt class="type-label">Acceptance</dt><dd>${esc(r.acceptance)}</dd></div></dl></div>`;
+  }
+
+  // AI boundary pattern — reused by strategy and chapters
+  function aiBoundary(a) {
+    const layer = (L, kind) => `<div class="card card--layer-${kind}"><h4 class="card__title type-h4">${esc(L.label)}</h4><p class="card__label type-body-sm text-muted">${esc(L.role)}</p><ul class="check-list">${list(L.items, x => `<li>${esc(x)}</li>`)}</ul>${kind === 'gen' ? badge(a.status) : ''}</div>`;
+    const listCard = (L, cls) => `<div class="card"><h4 class="card__label type-label">${esc(L.label)}</h4><ul class="${cls}">${list(L.items, x => `<li>${esc(x)}</li>`)}</ul></div>`;
+    return `${a.deterministic ? `<div class="layers">${layer(a.deterministic, 'det')}<div class="layers__arrow"><span class="icon" aria-hidden="true">→</span><span class="type-label">Verified facts only</span></div>${layer(a.generative, 'gen')}</div>` : ''}
+      ${a.rule ? `<p class="rule"><span class="type-label">Rule</span><span class="type-h4">${esc(a.rule)}</span></p>` : ''}
+      ${a.may ? `<div class="grid-2" style="margin-top: var(--space-6)">${listCard(a.may, 'check-list')}${listCard(a.mustNot, 'cross-list')}</div>` : ''}
+      ${(a.prohibited || a.evals || a.human) ? disclosure(a.moreLabel || 'AI guardrails & evaluation', a.evals ? `${a.evals.length} ${a.evalsCount || 'release criteria'}` : '', `
+        ${(a.prohibited || a.human) ? `<div class="grid-2">${a.prohibited ? `<div><h4 class="type-label" style="margin-bottom: var(--space-3)">Prohibited AI behaviour</h4><ul class="cross-list">${list(a.prohibited, x => `<li>${esc(x)}</li>`)}</ul></div>` : ''}
+          ${a.human ? `<div><h4 class="type-label" style="margin-bottom: var(--space-3)">Human control</h4><ul class="check-list">${list(a.human, x => `<li>${esc(x)}</li>`)}</ul></div>` : ''}</div>` : ''}
+        ${a.evals ? `<div class="table-wrap" style="margin-top: var(--space-6)"><table class="table"><thead><tr><th scope="col">${esc(a.evalsHead ? a.evalsHead[0] : 'Criterion')}</th><th scope="col">${esc(a.evalsHead ? a.evalsHead[1] : 'Release expectation')}</th><th scope="col">Status</th></tr></thead><tbody>
+          ${list(a.evals, e => `<tr><td>${esc(e.metric)}</td><td>${esc(e.target)}</td><td>${badge(e.status)}</td></tr>`)}</tbody></table></div>` : ''}
+        ${a.note ? `<p class="type-caption measure" style="margin-top: var(--space-4)">${esc(a.note)}</p>` : ''}`) : ''}`;
+  }
+
+  // Chapter blocks — generic, ordered content for case studies that use `chapters`
+  function renderBlock(b) {
+    const label = b.label ? `<span class="block__label type-label">${esc(b.label)}</span>` : '';
+    switch (b.type) {
+      case 'quote': return `<blockquote class="pull-quote block">${b.label ? `<p class="type-label text-accent" style="margin-bottom: var(--space-3)">${esc(b.label)}</p>` : ''}<p class="type-h3">${esc(b.text)}</p></blockquote>`;
+      case 'prose': return `<div class="prose block">${list(b.paragraphs, x => `<p>${esc(x)}</p>`)}</div>`;
+      case 'chips': return `<div class="block">${label}<ul class="cluster">${list(b.items, x => `<li>${chip(x)}</li>`)}</ul></div>`;
+      case 'list': {
+        const cls = { check: 'check-list', cross: 'cross-list', steps: 'step-list', plain: 'plain-list' }[b.style || 'plain'];
+        return `<div class="block${b.card ? ' card' : ''}">${label}${b.title ? `<h3 class="type-h4" style="margin-bottom: var(--space-4)">${esc(b.title)}</h3>` : ''}<ul class="${cls}">${list(b.items, x => `<li>${esc(x)}</li>`)}</ul>${b.status ? `<p style="margin-top: var(--space-4)">${badge(b.status)}</p>` : ''}${b.note ? `<p class="type-caption measure" style="margin-top: var(--space-4)">${esc(b.note)}</p>` : ''}</div>`;
+      }
+      case 'columns': {
+        const col = (c, i) => `<div class="card${c.accent ? ' card--layer-det' : (c.dashed ? ' card--layer-gen' : '')}">${c.label ? `<h3 class="card__label type-label${c.accent ? ' text-accent' : ''}">${esc(c.label)}</h3>` : ''}${c.title ? `<p class="card__title type-h4">${esc(c.title)}</p>` : ''}<ul class="${c.style === 'cross' ? 'cross-list' : (c.style === 'check' ? 'check-list' : 'plain-list')}">${list(c.items, x => `<li>${esc(x)}</li>`)}</ul>${c.why ? `<p class="card__footnote type-body-sm text-muted"><span class="text-primary">Why:</span> ${esc(c.why)}</p>` : ''}</div>`;
+        if (b.connector && b.cols.length === 2) return `<div class="block layers">${col(b.cols[0])}<div class="layers__arrow"><span class="icon" aria-hidden="true">↔</span><span class="type-label">${esc(b.connector)}</span></div>${col(b.cols[1])}</div>`;
+        return `<div class="block ${b.cols.length >= 3 ? 'grid-3' : 'grid-2'}">${list(b.cols, col)}</div>`;
+      }
+      case 'journey': return `<div class="block">${label}<ol class="journey-steps">${list(b.steps, (st, i) => `<li><span class="type-label">${pad(i + 1)}</span><h3 class="type-h4">${esc(st.title)}</h3><p class="type-body-sm">${esc(st.text)}</p></li>`)}</ol></div>`;
+      case 'feature': return `<article class="feature">
+          <div class="feature__head"><div>${b.label ? `<span class="type-label">${esc(b.label)}</span>` : ''}<h3 class="type-h3">${esc(b.title)}</h3><p class="measure">${esc(b.text)}</p></div>
+          ${b.points ? `<ul class="feature__points">${list(b.points, x => `<li>${esc(x)}</li>`)}</ul>` : '<div></div>'}</div>
+          ${(b.image !== undefined) ? figure({ file: b.image, caption: b.caption || '', note: b.note }) : ''}
+          ${b.screens ? `<div class="screens" style="margin-top: var(--space-5)">${list(b.screens, figure)}</div>` : ''}
+        </article>`;
+      case 'decisions': return `<div class="block decision-list">${list(b.items, (d, i) => decisionCard(d, i, 3))}</div>`;
+      case 'requirement': return `<div class="block card card--requirement">${requirement(b)}</div>`;
+      case 'ai': return `<div class="block">${aiBoundary(b)}</div>`;
+      case 'ia': return `<div class="block">${b.root ? `<p class="ia-root type-label">${esc(b.root)}</p>` : ''}<ul class="ia-tree">${list(b.nodes, n => `<li class="ia-node"><span>${esc(n.label)}</span>${n.children ? `<ul>${list(n.children, c => `<li>${esc(c)}</li>`)}</ul>` : ''}</li>`)}</ul></div>`;
+      case 'gallery': return `<div class="block figure-grid">${list(b.images, figure)}</div>`;
+      default: return '';
+    }
   }
 
   // Product strategy & execution — every block optional
@@ -774,25 +872,10 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
       block(`${head('Product evidence & evolution log', s.evolutionIntro)}
         <ol class="chain cluster">${chainItems.map((c, i) => `<li class="cluster">${chip(c, i === chainItems.length - 1 ? 'accent' : '')}${i < chainItems.length - 1 ? '<span class="sep" aria-hidden="true">→</span>' : ''}</li>`).join('')}</ol>
         ${disclosure('What each transition tested and changed', `${s.evolution.length} stages`, list(s.evolution, e => `<div class="evolution-step"><div><h4 class="type-h4">${esc(e.stage)}</h4>${badge(e.status)}</div>
-          <dl><div><dt class="type-label">Uncertainty</dt><dd>${esc(e.uncertainty)}</dd></div><div><dt class="type-label">Tested</dt><dd>${esc(e.tested)}</dd></div>
-          <div><dt class="type-label">Learned</dt><dd>${esc(e.learned)}</dd></div><div><dt class="type-label">Changed</dt><dd>${esc(e.changed)}</dd></div></dl></div>`))}`);
+          <dl>${[['Uncertainty', e.uncertainty], ['Tested', e.tested], ['Learned', e.learned], ['Changed', e.changed]].filter(f => f[1]).map(f => `<div><dt class="type-label">${f[0]}</dt><dd>${esc(f[1])}</dd></div>`).join('')}</dl></div>`))}`);
     }
 
-    if (s.ai) {
-      const a = s.ai;
-      const layer = (L, kind) => `<div class="card card--layer-${kind}"><h4 class="card__title type-h4">${esc(L.label)}</h4><p class="card__label type-body-sm text-muted">${esc(L.role)}</p><ul class="check-list">${list(L.items, x => `<li>${esc(x)}</li>`)}</ul>${kind === 'gen' ? badge(a.status) : ''}</div>`;
-      const listCard = (L, cls) => `<div class="card"><h4 class="card__label type-label">${esc(L.label)}</h4><ul class="${cls}">${list(L.items, x => `<li>${esc(x)}</li>`)}</ul></div>`;
-      block(`${head(a.title || 'Responsible AI boundary', a.intro)}
-        ${a.deterministic ? `<div class="layers">${layer(a.deterministic, 'det')}<div class="layers__arrow"><span class="icon" aria-hidden="true">→</span><span class="type-label">Verified facts only</span></div>${layer(a.generative, 'gen')}</div>` : ''}
-        ${a.rule ? `<p class="rule"><span class="type-label">Rule</span><span class="type-h4">${esc(a.rule)}</span></p>` : ''}
-        ${a.may ? `<div class="grid-2" style="margin-top: var(--space-6)">${listCard(a.may, 'check-list')}${listCard(a.mustNot, 'cross-list')}</div>` : ''}
-        ${(a.prohibited || a.evals || a.human) ? disclosure(a.moreLabel || 'AI guardrails & evaluation', a.evals ? `${a.evals.length} ${a.evalsCount || 'release criteria'}` : '', `
-          ${(a.prohibited || a.human) ? `<div class="grid-2">${a.prohibited ? `<div><h4 class="type-label" style="margin-bottom: var(--space-3)">Prohibited AI behaviour</h4><ul class="cross-list">${list(a.prohibited, x => `<li>${esc(x)}</li>`)}</ul></div>` : ''}
-            ${a.human ? `<div><h4 class="type-label" style="margin-bottom: var(--space-3)">Human control</h4><ul class="check-list">${list(a.human, x => `<li>${esc(x)}</li>`)}</ul></div>` : ''}</div>` : ''}
-          ${a.evals ? `<div class="table-wrap" style="margin-top: var(--space-6)"><table class="table"><thead><tr><th scope="col">${esc(a.evalsHead ? a.evalsHead[0] : 'Criterion')}</th><th scope="col">${esc(a.evalsHead ? a.evalsHead[1] : 'Release expectation')}</th><th scope="col">Status</th></tr></thead><tbody>
-            ${list(a.evals, e => `<tr><td>${esc(e.metric)}</td><td>${esc(e.target)}</td><td>${badge(e.status)}</td></tr>`)}</tbody></table></div>` : ''}
-          ${a.note ? `<p class="type-caption measure" style="margin-top: var(--space-4)">${esc(a.note)}</p>` : ''}`) : ''}`);
-    }
+    if (s.ai) block(`${head(s.ai.title || 'Responsible AI boundary', s.ai.intro)}${aiBoundary(s.ai)}`);
 
     if (s.owned) block(`${head(s.ownedTitle || 'What I owned', s.ownedIntro)}<dl class="owned">${list(s.owned, o => `<div><dt>${esc(o.item)}</dt>${o.detail ? `<dd>${esc(o.detail)}</dd>` : ''}</div>`)}</dl>`);
 
@@ -800,8 +883,9 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
   }
 
   function caseStudy(p) {
-    const idx = S.projects.indexOf(p), total = S.projects.length;
-    const prev = S.projects[(idx - 1 + total) % total], next = S.projects[(idx + 1) % total];
+    const seq = published.includes(p) ? published : S.projects;
+    const idx = seq.indexOf(p), total = seq.length;
+    const prev = seq[(idx - 1 + total) % total], next = seq[(idx + 1) % total];
     let k = 0; const num = () => pad(++k);
     const out = [];
     const keyResults = (p.evidence || []).slice(0, 3);
@@ -810,14 +894,16 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
     <section class="case-hero container" aria-labelledby="case-title">
       <a href="#work" class="btn btn--link case-hero__back"><span class="icon icon--back" aria-hidden="true">←</span> All work</a>
       <p class="eyebrow type-label">${esc(p.type)}</p>
-      <h1 id="case-title" class="case-hero__title type-h1">${esc(p.title)}</h1>
+      <h1 id="case-title" class="case-hero__title type-h1">${esc(p.title)}${p.altTitle ? `<span class="case-hero__alt" lang="fa" dir="rtl">${esc(p.altTitle)}</span>` : ''}</h1>
       <p class="case-hero__subtitle type-h3">${esc(p.subtitle)}</p>
+      ${p.lede ? `<p class="case-hero__lede type-body-lg">${esc(p.lede)}</p>` : ''}
       ${keyResults.length ? `<div class="key-results" role="list" aria-label="Key results">${list(keyResults, e => `<div role="listitem">${badge(e.status)}<strong>${esc(e.value)}</strong><span class="type-body-sm">${esc(e.label)}</span></div>`)}</div>` : ''}
-      <dl class="case-meta">
-        <div><dt class="type-label">Role</dt><dd>${esc(p.role)}</dd></div>
-        <div><dt class="type-label">Context${p.timeline ? ' · Timeline' : ''}</dt><dd>${esc(p.context)}${p.timeline ? '<br>' + esc(p.timeline) : ''}</dd></div>
-        <div><dt class="type-label">Methods</dt><dd>${esc((p.methods || []).join(' · '))}</dd></div>
-        <div><dt class="type-label">Status</dt><dd>${esc(p.status)}</dd></div>
+      <dl class="case-meta">${list((p.meta || [
+          { label: 'Role', value: p.role },
+          { label: 'Context' + (p.timeline ? ' · Timeline' : ''), value: [p.context, p.timeline].filter(Boolean).join('\n') },
+          { label: 'Methods', value: (p.methods || []).join(' · ') },
+          { label: 'Status', value: p.status }
+        ]).filter(m => m.value), m => `<div><dt class="type-label">${esc(m.label)}</dt><dd>${esc(m.value).replace(/\n/g, '<br>')}</dd></div>`)}
       </dl>
       ${p.privacyNote ? `<p class="callout"><span class="type-label">Note</span><br>${esc(p.privacyNote)}</p>` : ''}
       ${p.cover ? `<figure class="figure case-hero__cover"><img src="${esc(p.cover)}" alt="${esc(p.title)} — overview"></figure>` : ''}
@@ -829,9 +915,9 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
     </div></div>`);
 
     out.push(caseSection(num(), 'Context &amp; problem', 'What needed to change?',
-      `<div class="prose">${list(p.problem, (x, i) => `<p${i === 0 && p.slug === 'retune' ? ' class="prose__lead"' : ''}>${esc(x)}</p>`)}</div>`));
+      `<div class="prose">${list(p.problem, (x, i) => `<p${i === 0 && (p.problemLead || p.slug === 'retune') ? ' class="prose__lead"' : ''}>${esc(x)}</p>`)}</div>`));
 
-    out.push(caseSection(num(), 'Research approach', 'Understanding the problem before designing the solution.',
+    if (p.approach && p.approach.length) out.push(caseSection(num(), 'Research approach', 'Understanding the problem before designing the solution.',
       (p.evolution ? `<ol class="chain cluster">${p.evolution.map((e, i, arr) => `<li class="cluster">${chip(e, i === arr.length - 1 ? 'accent' : '')}${i < arr.length - 1 ? '<span class="sep" aria-hidden="true">→</span>' : ''}</li>`).join('')}</ol>` : '') +
       `<div class="grid-3">${list(p.approach, a => `<div class="card"><h3 class="card__title type-h4">${esc(a.title)}</h3><p class="card__text type-body-sm">${esc(a.text)}</p></div>`)}</div>`));
 
@@ -843,13 +929,15 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
 
     if (p.strategy) out.push(caseSection(num(), p.strategy.label || 'Product strategy &amp; execution', esc(p.strategy.title), strategy(p.strategy)));
 
+    list(p.chapters, ch => out.push(caseSection(num(), esc(ch.label), esc(ch.title), list(ch.blocks, renderBlock), ch.intro)));
+
     const used = [...new Set((p.evidence || []).map(e => e.status).filter(Boolean))];
     if (p.evidence && p.evidence.length) out.push(caseSection(num(), 'Evidence', 'What the evidence shows — and what kind of evidence it is.',
       `<div class="grid-3">${list(p.evidence, e => `<div class="card card--metric"><span class="metric__value">${esc(e.value)}</span><span class="text-primary">${esc(e.label)}</span>${e.note ? `<span class="type-body-sm text-muted">${esc(e.note)}</span>` : ''}${badge(e.status)}</div>`)}</div>` +
       (used.length > 1 ? `<div class="legend cluster"><span class="type-label">Evidence types:</span>${used.map(badge).join('')}</div>` : '')));
 
     out.push(caseSection(num(), 'Outcome', 'Where it landed.',
-      `<div class="prose">${list(p.outcome, x => `<p>${esc(x)}</p>`)}</div>` +
+      (p.outcome && p.outcome.length ? `<div class="prose">${list(p.outcome, x => `<p>${esc(x)}</p>`)}</div>` : '') +
       (p.reflection ? `<blockquote class="pull-quote" style="margin-top: var(--space-7)"><p class="type-label" style="margin-bottom: var(--space-3)">Reflection</p><p class="type-h4">${esc(p.reflection)}</p></blockquote>` : '') +
       (p.demonstrates ? `<div style="margin-top: var(--space-7)"><p class="type-label" style="margin-bottom: var(--space-3)">What this case demonstrates</p><ul class="cluster">${list(p.demonstrates, d => `<li>${chip(d)}</li>`)}</ul></div>` : '') +
       (p.links && p.links.length ? `<div class="cluster-lg" style="margin-top: var(--space-7)">${list(p.links, l => `<a class="btn btn--secondary btn--sm" href="${esc(l.url)}"${ext(l.url)}>${esc(l.label)}</a>`)}</div>` : '')));
