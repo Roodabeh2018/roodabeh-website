@@ -581,6 +581,30 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+/* Partner strip */
+.partners { padding-block: var(--space-7); border-block: var(--border-1) solid var(--color-border-subtle); }
+.partners .type-label { margin-bottom: var(--space-5); }
+.partners__list { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4) var(--space-7); list-style: none; margin: 0; padding: 0; }
+.partners__list a { text-decoration: none; }
+.partners__list span { color: var(--color-text-secondary); font-size: var(--text-body-sm); letter-spacing: 0.01em; transition: color var(--duration) var(--ease); }
+.partners__list a:hover span { color: var(--color-text); }
+.partners__list a:has(img) { display: flex; align-items: center; justify-content: center; height: 56px; padding: 8px 14px; background: #fff; border-radius: var(--radius-md); opacity: .92; transition: opacity var(--duration) var(--ease); }
+.partners__list a:has(img):hover { opacity: 1; }
+.partners__list img { display: block; height: 100%; max-height: 40px; max-width: 150px; width: auto; object-fit: contain; }
+.partners__list { gap: var(--space-4) !important; }
+
+/* Testimonials */
+.quotes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-6); }
+.quote { margin: 0; padding: var(--space-6); background: var(--color-surface); border: var(--border-1) solid var(--color-border-subtle); border-radius: var(--radius-lg); display: flex; flex-direction: column; justify-content: space-between; gap: var(--space-5); }
+.quote:first-child { grid-column: 1 / -1; }
+.quote:first-child .quote__text { font-size: var(--text-h4); }
+.quote__text { margin: 0; font-family: var(--font-serif); font-size: var(--text-body-lg); line-height: 1.5; color: var(--color-text); }
+.quote figcaption { display: flex; flex-direction: column; gap: 2px; padding-top: var(--space-4); border-top: var(--border-1) solid var(--color-border-subtle); }
+.quote__name { color: var(--color-text); font-weight: 500; }
+@media (max-width: 768px) {
+  .quotes { grid-template-columns: 1fr; }
+  .quote:first-child .quote__text { font-size: var(--text-body-lg); }
+}
 </style>
 </head>
 <body>
@@ -683,7 +707,7 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
           <div class="hero__focus"><span class="type-label">Current focus</span><ul class="cluster">${list(P.focus, f => `<li>${chip(f)}</li>`)}</ul></div>
           <div class="hero__actions cluster-lg">
             <a href="#work" class="btn btn--primary">View selected work <span class="icon icon--forward" aria-hidden="true">→</span></a>
-            ${P.cv ? `<a href="${esc(P.cv)}" target="_blank" class="btn btn--secondary">Download CV</a>` : `<a href="mailto:${esc(P.email)}?subject=${encodeURIComponent('CV request')}" class="btn btn--secondary">Request a tailored CV</a>`}
+            ${P.cv ? `<a href="${esc(P.cv)}" target="_blank" class="btn btn--secondary">Download CV</a>` : ''}
             <a href="#contact" class="btn btn--ghost">Get in touch</a>
           </div>
         </div>
@@ -692,6 +716,11 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
         </figure>
       </div>
     </section>
+
+    ${S.partners ? `<section class="container partners" aria-label="${esc(S.partners.label)}">
+      <p class="type-label text-muted">${esc(S.partners.label)}</p>
+      <ul class="partners__list">${list(S.partners.items, p => `<li>${p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener">` : ''}${p.logo ? `<img src="${esc(p.logo)}" alt="${esc(p.name)}" loading="lazy">` : `<span>${esc(p.name)}</span>`}${p.url ? '</a>' : ''}</li>`)}</ul>
+    </section>` : ''}
 
     <section id="work" class="section container">
       ${sectionHeader('Selected work', 'Research is where I understand the problem. Product is where I decide what to do about it.')}
@@ -736,6 +765,14 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
       <ol class="rows">${list(S.experience, t => row(esc(t.when), esc(t.title), esc(t.org), esc(t.text), t.points ? `<ul class="row__points">${list(t.points, x => `<li>${esc(x)}</li>`)}</ul>` : ''))}</ol>
     </section>
 
+    ${S.testimonials && S.testimonials.length ? `<section id="testimonials" class="section container">
+      ${sectionHeader('Testimonials', 'What colleagues say')}
+      <div class="quotes">${list(S.testimonials, q => `<figure class="quote">
+        <blockquote class="quote__text">“${esc(q.quote)}”</blockquote>
+        <figcaption><span class="quote__name">${esc(q.name)}</span><span class="type-body-sm text-muted">${esc(q.role)}</span>${q.relation ? `<span class="type-body-sm text-muted">${esc(q.relation)}</span>` : ''}</figcaption>
+      </figure>`)}</div>
+    </section>` : ''}
+
     <section id="publications" class="section container">
       ${sectionHeader('Publications', 'Research &amp; writing')}
       <ol class="rows">${list(S.publications, pub => row(esc(pub.year), esc(pub.title), esc(pub.venue),
@@ -761,7 +798,7 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
         <p class="type-h3 measure">I'm open to roles in AI Product Management, UX Research and human-centered digital products — and to research or project collaborations.</p>
         <div class="link-list">
           <a href="mailto:${esc(P.email)}"><span class="type-label">Mail</span>${esc(P.email)}</a>
-          <a href="mailto:${esc(P.email)}?subject=${encodeURIComponent('CV request')}"><span class="type-label">CV</span>Tailored CV on request</a>
+          ${P.cv ? `<a href="${esc(P.cv)}" target="_blank"><span class="type-label">CV</span>Download CV</a>` : ''}
           <a href="${esc(P.linkedin)}" target="_blank" rel="noopener"><span class="type-label">In</span>${esc(P.linkedin.replace(/^https?:\/\//, ''))}</a>
           ${P.orcid ? `<a href="${esc(P.orcid)}" target="_blank" rel="noopener"><span class="type-label">iD</span>ORCID</a>` : ''}
         </div>
