@@ -970,7 +970,33 @@ window.SITE = {
     }
   ],
 
-  experience: [
+    /* Partner strip under the hero. Names show as text.
+     To show a logo instead, put the image file next to index.html
+     and add  logo: "filename.png"  to that item. */
+  partners: {
+    label: "Partners and funders of projects I worked on",
+    items: [
+      { name: "University of Siegen", url: "https://www.uni-siegen.de" },
+      { name: "EU Horizon 2020", url: "https://www.e-vita.coach" },
+      { name: "BMFTR", url: "https://www.bmftr.bund.de" },
+      { name: "Tohoku University", url: "https://www.tohoku.ac.jp/en/" },
+      { name: "AIST Japan", url: "https://www.aist.go.jp/index_en.html" },
+      { name: "AP-HP Paris", url: "https://www.aphp.fr" },
+      { name: "Hochschule Bonn-Rhein-Sieg", url: "https://www.h-brs.de" },
+      { name: "Caritas", url: "https://www.caritasnet.de" }
+    ]
+  },
+
+  testimonials: [
+    { quote: "Roodabeh took on the project leadership in CrossComITS. She substantially shaped the project's content, actively co-designed the UX, evaluated the solutions together with users and co-authored scientific publications. She also contributed to third-party funding acquisition and grant proposals. What impressed me most was her ability to capture the needs of very different user groups precisely — which let her build practical, well-fitted solutions that worked not only on paper but convinced in real use.",
+      name: "Dr. Konstantin Aal", role: "Senior Researcher, University of Siegen", relation: "Managed Roodabeh directly · translated from German" }, // CHECK: ask Konstantin to approve the translation
+    { quote: "I had the pleasure of working with Roodabeh in the BMFTR-funded CrossComITS project, where we developed and conducted workshops with older adults on cybersecurity-related topics. She approached both the research process and the participants with great care, openness and respect.",
+      name: "Daniela Thomas", role: "Research Associate, CrossComITS partner organisation", relation: "Worked together across partner organisations" },
+    { quote: "Roodabeh is quick to learn, reliable in every sense, deeply skilled in UX research and design, and an excellent collaborator. I highly recommend her to any team looking for someone who can drive user-centered innovation while also uplifting the people around her.",
+      name: "Hina Firdaus", role: "Human-AI Collaboration & Research Infrastructure", relation: "Studied together" }
+  ],
+   
+   experience: [
     { when: "2026 – present", title: "PhD Candidate, Human-Computer Interaction", org: "University of Siegen", text: "Participatory digital design for migrant mental wellbeing." },
     { when: "Oct 2021 – Dec 2025", title: "Research Associate — UX Research & Product", org: "University of Siegen (Wissenschaftliche Mitarbeiterin) — Information Systems & New Media", text: "Research-to-product work in EU- and BMBF/BMFTR-funded, multi-partner consortium projects.",
       points: [
