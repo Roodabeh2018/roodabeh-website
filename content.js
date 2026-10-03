@@ -1,5 +1,5 @@
 /* =====================================================================
-   ROODABEH SEIF — PORTFOLIO CONTENT
+   ROODABEH SEIF, PORTFOLIO CONTENT
    ---------------------------------------------------------------------
    This is the ONLY file you need to edit to change text.
    - To add a case study: copy one object inside `projects`, give it a
@@ -32,7 +32,7 @@ window.SITE = {
   person: {
     name: "Roodabeh Seif",
     roles: ["AI Product Manager"],
-    sub: "UX research & HCI background · PhD researcher in Human-Centered AI and Digital Wellbeing",
+    sub: "with a UX research and HCI background",
     tagline:
       "I move from complex human evidence to product requirements, prioritisation, responsible AI boundaries and defensible product decisions.",
     focus: ["0→1 AI products", "GenAI use-case scoping", "AI evals & guardrails", "Human-in-the-loop", "Research-to-requirements"],
@@ -44,16 +44,17 @@ window.SITE = {
     // Short proof points shown under the hero statement
     proof: [
       "4+ years leading research-to-product work in EU- and BMBF/BMFTR-funded consortium projects",
-      "Project lead in a six-partner consortium (CrossComITS)",
-      "Coordinated student assistants and partner testing cycles",
+      "Project coordinator in a six-partner consortium (CrossComITS)",
+      "Led the student assistant team and mentored master's students",
+      "5 publications (ACM, Springer, IJISA)",
       "Taught and trained 200+ students a year"
     ],
-    cv: "" // e.g. "Roodabeh_Seif_CV.pdf" — leave empty to hide the CV button
+    cv: ""
   },
 
-  /* Home-page "Approach" section — wording from your Notion AI PM portfolio */
+  /* Home-page "Approach" section, wording from your Notion AI PM portfolio */
   approach: {
-    title: "How I decide what gets built — and where AI belongs",
+    title: "How I decide what gets built: and where AI belongs",
     intro:
       "My product lens runs from evidence to release. In sensitive contexts, AI is never the default solution: the product problem comes first.",
     lens: [
@@ -67,7 +68,7 @@ window.SITE = {
       { title: "AI only where it adds value", text: "I do not treat AI as the default solution. The product problem comes first." },
       { title: "Facts first, GenAI second", text: "Deterministic systems calculate verified facts; GenAI interprets or explains only where it adds useful flexibility." },
       { title: "Human control by design", text: "In sensitive contexts, users or trained humans keep final decision authority." },
-      { title: "Evaluate before release", text: "Accuracy, usefulness, unsupported claims, privacy and failure behaviour are product requirements — not afterthoughts." }
+      { title: "Evaluate before release", text: "Accuracy, usefulness, unsupported claims, privacy and failure behaviour are product requirements, not afterthoughts." }
     ]
   },
 
@@ -83,30 +84,31 @@ window.SITE = {
     body:
       "Whether it's cognitive training for older adults, digital safety for people living under surveillance, or a routine companion for life under stress, I keep returning to one question: how do we build technology people don't just use, but trust?",
     whyAI:
-      "I work AI-natively: I built Retune's functional MVP myself through AI-assisted prototyping, and prototyped my NEBULA concept the same way. That makes me careful about where AI belongs. Deterministic logic calculates the facts; GenAI explains them — and sometimes the most useful AI feature is the one you decide not to build.",
+      "I work AI-natively: I built Retune's functional MVP myself through AI-assisted prototyping, and prototyped my NEBULA concept the same way. That makes me careful about where AI belongs. Deterministic logic calculates the facts; GenAI explains them, and sometimes the most useful AI feature is the one you decide not to build.",
     education: [
-      "PhD candidate, Human-Computer Interaction — University of Siegen (2026–present)",
-      "M.Sc. Human-Computer Interaction — University of Siegen (2019–2022)",
-      "M.Sc. Mechatronics Engineering — Azad University, Qazvin (2011–2014)",
-      "B.Sc. Computer Science — Payame-Noor University (2005–2010)",
-      "Microsoft AI Product Manager Professional Certificate (Coursera) — in progress",
-      "DCitizens Summer School (EU Horizon Twinning) — participatory design & design justice, Lisbon (2024)"
+      "PhD candidate, Human-Computer Interaction, University of Siegen (2026–present)",
+      "M.Sc. Human-Computer Interaction, University of Siegen (2019–2022)",
+      "M.Sc. Mechatronics Engineering, Azad University, Qazvin (2011–2014). Research: mobile robot path planning with RRT* in MATLAB, published in IJISA 2015",
+      "B.Sc. Computer Science, Payame-Noor University (2005–2010)",
+      "Microsoft AI Product Manager Professional Certificate (Coursera), in progress",
+      "AI Consulting Bootcamp, Ironhack (Oct–Dec 2026)",
+      "DCitizens Summer School (EU Horizon Twinning), participatory design & design justice, Lisbon (2024)"
     ],
     languages: "English C2 · German B2 · Persian native"
   },
 
   skills: [
-    { title: "Product", items: ["Product Strategy", "Discovery", "MVP Scoping", "PRD-style Requirements", "User Stories & Acceptance Criteria", "Prioritisation", "Roadmapping", "Agile / Scrum", "Stakeholder Alignment"] },
+    { title: "Product", items: ["Product Strategy", "Discovery", "MVP Scoping", "PRD-style Requirements", "User Stories & Acceptance Criteria", "Backlog Prioritisation (Kanban, GitHub)", "Roadmapping", "Decision Logs", "Personas & Journey Mapping", "Agile / Scrum", "Stakeholder Alignment"] },
     { title: "AI Product", items: ["GenAI / LLM Use-case Scoping", "AI Evals", "Guardrails", "Human-in-the-Loop", "Deterministic vs. GenAI Architecture", "Prompt Evaluation", "Privacy by Design", "Explainability"] },
     { title: "UX Research", items: ["Semi-structured Interviews", "Participatory Co-design", "Think-aloud Usability Testing", "Thematic / Grounded Theory Analysis", "Trauma-informed Research", "Mixed Methods", "MAXQDA"] },
-    { title: "Tools", items: ["Jira", "Confluence", "Notion", "Miro", "Figma", "Lovable", "ChatGPT", "Adobe CC"] },
-    { title: "Technical", items: ["Python", "HTML / CSS", "MATLAB", "C++", "Linux", "Docker"] },
-    { title: "Facilitation", items: ["Workshops", "University Lecturing", "Training Design", "Train-the-Trainer"] }
+    { title: "Tools", items: ["Jira", "Confluence", "Notion", "Miro", "Figma", "Lovable", "ChatGPT", "GitHub", "MAXQDA", "Adobe CC", "Adobe XD"] },
+    { title: "Technical", items: ["Python", "Unity", "HTML / CSS", "MATLAB", "C++", "Linux", "Docker"] },
+    { title: "Facilitation", items: ["Workshops", "University Lecturing", "Training Design", "Train-the-Trainer", "Student Mentoring"] }
   ],
 
   /* ------------------------------------------------------------------
-     CASE STUDIES — shown in this order on the home page
-     track: "product" (Product & AI) and/or "research" (UX Research) —
+     CASE STUDIES, shown in this order on the home page
+     track: "product" (Product & AI) and/or "research" (UX Research) -
      used by the filter buttons on the home page.
      ------------------------------------------------------------------ */
   projects: [
@@ -115,9 +117,10 @@ window.SITE = {
        ================================================================ */
     {
       slug: "retune",
+      cardImage: "cover-retune.webp",
       track: ["product", "research"],
       title: "Retune",
-      subtitle: "A 0→1 routine companion for life under stress — return over perfection, facts before GenAI.",
+      subtitle: "A 0→1 routine companion for life under stress · return over perfection, facts before GenAI.",
       type: "0→1 AI Product · Behaviour Design · Wellbeing",
       context: "Independent, self-funded product",
       role: "AI Product Manager · UX Researcher & Product Designer",
@@ -131,14 +134,14 @@ window.SITE = {
         challenge:
           "Habit apps assume life is stable. For people living through crisis, illness or migration, streaks and leaderboards turn one missed day into giving up entirely.",
         contribution:
-          "I own problem framing, principles, MVP scope, requirements and AI boundaries — and built the functional MVP myself through AI-assisted prototyping, with no separate developer or designer.",
+          "I own problem framing, principles, MVP scope, requirements and AI boundaries, and built the functional MVP myself through AI-assisted prototyping, with no separate developer or designer.",
         outcome:
           "A validated Persian (RTL), mobile-first MVP: 86% onboarding success, 78% correct privacy comprehension, and an AI reflection evaluated offline before any release."
       },
       problem: [
         "Stay consistent when you can. Adapt when you need to. Return when you fall away.",
-        "Retune is for young Persian speakers — starting with students and migrants in Germany — whose routines are disrupted by illness, psychological strain, crisis or instability.",
-        "Existing tools reward uninterrupted repetition. The critical moment for these users isn't the missed day — it's whether they come back."
+        "Retune is for young Persian speakers, starting with students and migrants in Germany, whose routines are disrupted by illness, psychological strain, crisis or instability.",
+        "Existing tools reward uninterrupted repetition. The critical moment for these users isn't the missed day, it's whether they come back."
       ],
       evolution: ["Paper planner", "Spreadsheets", "Google Forms", "WhatsApp / Telegram routine groups", "Mobile MVP"],
       approach: [
@@ -162,7 +165,7 @@ window.SITE = {
         ],
 
         scope: {
-          intro: "The smallest set of capabilities needed to test the core value proposition — and an explicit list of what stays out.",
+          intro: "The smallest set of capabilities needed to test the core value proposition, and an explicit list of what stays out.",
           included: [
             "Daily post-action logging (Done / Not today)",
             "Sleep, mood and energy context",
@@ -186,7 +189,7 @@ window.SITE = {
           why: "Every exclusion protects a principle. GenAI is sequenced after the deterministic layer so its output can later be evaluated against reliable source metrics."
         },
 
-        decisionIntro: "Each decision records its evidence and how strong that evidence is. Several rest on starting hypotheses — they are labelled as such.",
+        decisionIntro: "Each decision records its evidence and how strong that evidence is. Several rest on starting hypotheses, they are labelled as such.",
         decisionShow: 3,
         decisionLog: [
           { title: "No streaks, leaderboards or ranking", basis: "hypothesis",
@@ -195,12 +198,12 @@ window.SITE = {
             decision: "Removed streaks, leaderboards and ranking. Returning after inactive days shows neutral, supportive language.",
             why: "The product optimises for returning, not for maintaining a perfect chain." },
           { title: "Per-activity privacy, three sharing states", basis: "validated",
-            situation: "Group members shared routines to encourage each other — but not every routine felt safe to share.",
+            situation: "Group members shared routines to encourage each other, but not every routine felt safe to share.",
             evidence: "Starting hypothesis (social support vs. privacy); in usability testing 78% of participants correctly understood the per-activity privacy controls.",
             decision: "Visibility is set per activity: share by name, share completion anonymously, or keep private.",
             why: "People can take part socially without exposing every routine." },
           { title: "Deterministic reporting",
-            situation: "Reports show time, percentages, active days and trends — facts users need to trust.",
+            situation: "Reports show time, percentages, active days and trends, facts users need to trust.",
             evidence: "Correctness must not vary between runs; language models cannot be relied on to calculate.",
             decision: "All metrics are calculated by deterministic logic, outside any LLM.",
             why: "Exact, reproducible facts become the reference any future AI output is evaluated against." },
@@ -229,7 +232,7 @@ window.SITE = {
             evidence: "Design rationale; \"deactivate a default activity without deleting its history\" was a usability-test task.",
             decision: "Deactivation hides an activity going forward but keeps its historical data and reports.",
             why: "Past effort stays visible and reports stay historically accurate." },
-          { title: "Done / Not today — \"Partially done\" removed", basis: "hypothesis",
+          { title: "Done / Not today · \"Partially done\" removed", basis: "hypothesis",
             situation: "A red failure state framed hard days as failure.",
             evidence: "\"Partially done\" was dropped because its meaning varied considerably between activities.",
             decision: "Two neutral states, Done / Not today, with no streak repair.",
@@ -241,7 +244,7 @@ window.SITE = {
             why: "Logging feels less compulsory and fits real days." }
         ],
 
-        requirementsIntro: "Requirements extend into data handling and access control — product decisions, not just screens.",
+        requirementsIntro: "Requirements extend into data handling and access control, product decisions, not just screens.",
         requirements: [
           { area: "Historical data",
             requirement: "A user can deactivate an activity without deleting its historical data.",
@@ -283,32 +286,32 @@ window.SITE = {
           { stage: "Paper planner, spreadsheets & Google Forms", status: "hypothesis",
             uncertainty: "Could small routines be sustained through private self-tracking alone?",
             tested: "Personal tracking across a paper planner, Excel and Google Forms.",
-            learned: "Records were fragmented, and a checkmark didn't capture effort — hard actions looked the same as easy ones.",
-            changed: "Became two starting hypotheses (effort and fragmentation) — not findings." },
+            learned: "Records were fragmented, and a checkmark didn't capture effort, hard actions looked the same as easy ones.",
+            changed: "Became two starting hypotheses (effort and fragmentation), not findings." },
           { stage: "WhatsApp / Telegram routine groups", status: "hypothesis",
-            uncertainty: "Does social accountability help — and when does it feel intrusive?",
+            uncertainty: "Does social accountability help: and when does it feel intrusive?",
             tested: "Participation in two Persian-speaking routine communities sharing exercise, meditation, reading and more.",
             learned: "Support was useful but lived apart from tracking; some routines felt safe to share, others sensitive; planning ahead could create resistance.",
             changed: "Per-activity privacy and post-action logging entered the MVP concept." },
           { stage: "Functional mobile MVP",
             uncertainty: "Can tracking, privacy, support and reporting live in one low-pressure product?",
             tested: "A Persian RTL MVP built through AI-assisted prototyping; directional feedback from three early reviewers.",
-            learned: "\"Partially done\" was ambiguous — its meaning varied too much between activities.",
+            learned: "\"Partially done\" was ambiguous, its meaning varied too much between activities.",
             changed: "Removed \"Partially done\"; the two-state Done / Not today model now needs user validation." },
-          { stage: "User research — survey & interviews", status: "validated",
+          { stage: "User research: survey & interviews", status: "validated",
             uncertainty: "How do people experience interruption and return, and when does accountability feel supportive vs. intrusive?",
             tested: "Survey with 62 respondents and 8 follow-up interviews on interruption, return, social support and privacy needs.",
             learned: "",
             changed: "Set the focus of the usability study: onboarding, privacy comprehension, returning after interruption, supportive reactions and reports." },
           { stage: "Usability iterations", status: "validated",
             uncertainty: "Do people understand privacy states, reactions, reports and returning after inactivity?",
-            tested: "7 mobile think-aloud tests — e.g. deactivate without deleting history, share by name or anonymously, join by invitation, read a monthly report, return after inactive days.",
+            tested: "7 mobile think-aloud tests, e.g. deactivate without deleting history, share by name or anonymously, join by invitation, read a monthly report, return after inactive days.",
             learned: "86% onboarding success; 78% correctly understood the per-activity privacy controls.",
             changed: "" },
           { stage: "4-week pilot", status: "validated",
             uncertainty: "Does the product logic hold up in everyday use?",
             tested: "A 4-week field pilot with 18 people.",
-            learned: "Short-term field evidence from everyday use — not proof of long-term behaviour change or wellbeing effects.",
+            learned: "Short-term field evidence from everyday use, not proof of long-term behaviour change or wellbeing effects.",
             changed: "" }
         ],
 
@@ -317,11 +320,11 @@ window.SITE = {
           intro: "The AI feature is intentionally narrow: an opt-in weekly reflection based only on facts the product has already verified. It was evaluated offline across 60 test cases and is not yet part of the live product.",
           status: "planned",
           deterministic: {
-            label: "Deterministic product layer", role: "Calculates the facts — built",
+            label: "Deterministic product layer", role: "Calculates the facts: built",
             items: ["Exact metrics: time and percentages", "Activity counts and active days", "Trends", "Historical data"]
           },
           generative: {
-            label: "Generative AI layer", role: "Explains verified facts — opt-in, evaluated offline",
+            label: "Generative AI layer", role: "Explains verified facts: opt-in, evaluated offline",
             items: ["Summarise verified weekly metrics", "Plain-language reflection", "Careful description of visible patterns"]
           },
           rule: "Deterministic logic calculates the facts; GenAI explains them.",
@@ -340,17 +343,17 @@ window.SITE = {
             "Manual review before any live-model decision"
           ],
           evals: [
-            { metric: "Numeric accuracy", target: "Target 100% agreement with verified metrics — 98% achieved offline (60 test cases)", status: "validated" },
-            { metric: "Invented metrics", target: "0 — none across 60 test cases", status: "validated" },
+            { metric: "Numeric accuracy", target: "Target 100% agreement with verified metrics, 98% achieved offline (60 test cases)", status: "validated" },
+            { metric: "Invented metrics", target: "0, none across 60 test cases", status: "validated" },
             { metric: "Diagnosis / treatment advice", target: "0", status: "planned" },
-            { metric: "Unsupported causal claims", target: "0 — those found were identified and corrected before pilot use", status: "validated" },
+            { metric: "Unsupported causal claims", target: "0, those found were identified and corrected before pilot use", status: "validated" },
             { metric: "Privacy violations", target: "0", status: "planned" },
             { metric: "Usefulness & clarity", target: "Prompt comparison, manual review, then user testing", status: "planned" }
           ],
-          note: "Measured offline in a constrained test setup — this shows consistency and fabrication risk, not user benefit or clinical value. The remaining criteria are release targets. Next: compare 2–3 prompt variants on the same verified weekly report before any live-model decision."
+          note: "Measured offline in a constrained test setup · this shows consistency and fabrication risk, not user benefit or clinical value. The remaining criteria are release targets. Next: compare 2–3 prompt variants on the same verified weekly report before any live-model decision."
         },
 
-        ownedIntro: "Solo product work — no separate developer or designer.",
+        ownedIntro: "Solo product work: no separate developer or designer.",
         owned: [
           { item: "Problem framing", detail: "Turned tensions observed in two routine communities into testable starting hypotheses." },
           { item: "Principles & MVP scope", detail: "Product principles, the MVP capability set and an explicit exclusion list." },
@@ -370,21 +373,21 @@ window.SITE = {
         { value: "0", label: "Fabricated metrics in AI reflection", note: "Offline evaluation, 60 test cases", status: "validated" }
       ],
       outcome: [
-        "A working MVP with Today, Activities, Together (private groups), Reports and Settings — post-action logging, editable activities, weekly/monthly reports and mood, energy and sleep reflections.",
-        "The findings support usability and comprehension claims for this study context — not claims that Retune improves wellbeing, productivity or long-term routines.",
+        "A working MVP with Today, Activities, Together (private groups), Reports and Settings, post-action logging, editable activities, weekly/monthly reports and mood, energy and sleep reflections.",
+        "The findings support usability and comprehension claims for this study context, not claims that Retune improves wellbeing, productivity or long-term routines.",
         "Next: prompt-variant comparison on verified weekly data, then a decision on integrating the AI reflection into the live product."
       ],
-      demonstrates: ["0→1 strategy and MVP definition", "Prioritisation — saying no", "Requirements into data and access logic", "Deterministic vs. GenAI architecture", "AI guardrails and evaluation before release"],
+      demonstrates: ["0→1 strategy and MVP definition", "Prioritisation: saying no", "Requirements into data and access logic", "Deterministic vs. GenAI architecture", "AI guardrails and evaluation before release"],
       visuals: [
-        { file: "retune-evolution.webp", caption: "Two fragmented practices — personal tracking and group accountability — converged into one MVP." },
+        { file: "retune-evolution.webp", caption: "Two fragmented practices: personal tracking and group accountability, converged into one MVP." },
         { file: "retune-principles-to-mvp.webp", caption: "Principles translated into product decisions." },
         { file: "retune-privacy-model.webp", caption: "Privacy is selected per activity: by name, anonymous completion, or private." }
       ],
       screens: [
-        { file: "retune-today.webp", caption: "Today — welcome back, no streak repair" },
-        { file: "retune-activities.webp", caption: "Activities — important, never ranked" },
-        { file: "retune-reports.webp", caption: "Reports — deterministic weekly data" },
-        { file: "retune-report-detail.webp", caption: "Report detail — activity and wellbeing context" }
+        { file: "retune-today.webp", caption: "Today: welcome back, no streak repair" },
+        { file: "retune-activities.webp", caption: "Activities: important, never ranked" },
+        { file: "retune-reports.webp", caption: "Reports: deterministic weekly data" },
+        { file: "retune-report-detail.webp", caption: "Report detail: activity and wellbeing context" }
       ],
       links: []
     },
@@ -396,11 +399,12 @@ window.SITE = {
        ================================================================ */
     {
       slug: "ghesse-khaneh",
+      cardImage: "cover-ghesse-khaneh.webp",
       track: ["product", "research"],
       title: "Ghesse Khaneh",
       altTitle: "قصه‌خونه",
-      subtitle: "Hybrid storytelling for life-skills learning.",
-      lede: "A facilitator-centered platform for designing and running storytelling-based learning experiences with children and parents.",
+      subtitle: "Hybrid interactive storytelling for life-skills learning.",
+      lede: "A facilitator-centered platform for designing and running interactive-storytelling learning experiences with children and parents.",
       type: "Product Design · UX Research · Hybrid Experience",
       role: "Product Designer / UX Researcher",
       context: "Independent, self-funded project",
@@ -412,21 +416,21 @@ window.SITE = {
         { label: "Platform", value: "Responsive web app" },
         { label: "Status", value: "Bilingual prototype (Persian / English) · AI assistant mocked as a concept" }
       ],
-      cardOutcome: "A facilitator platform that structures the session before, during and after — while stories, play and conversation stay between people.",
+      cardOutcome: "A facilitator platform that structures the session before, during and after, while stories, play and conversation stay between people.",
       cardDecision: "AI supports preparation and reflection only; live sessions stay human-led.",
       cover: "gk-home.webp",
       glance: {
         challenge:
-          "Facilitators juggle stories, objectives, questions, activities, role-play, materials, timing, observations and parent follow-up — knowledge scattered across documents, notes and personal experience.",
+          "Facilitators juggle stories, objectives, questions, activities, role-play, materials, timing, observations and parent follow-up, knowledge scattered across documents, notes and personal experience.",
         contribution:
           "Product concept, user and stakeholder needs, experience and information architecture, facilitator workflow and session journey, feature prioritisation, interaction and UI design, prototyping and evaluation planning.",
         outcome:
-          "A bilingual (Persian / English) responsive web-app prototype that supports the facilitator before, during and after each session — without turning the child's experience into screen time."
+          "A bilingual (Persian / English) responsive web-app prototype that supports the facilitator before, during and after each session, without turning the child's experience into screen time."
       },
       problemLead: true,
       problem: [
-        "How might we support facilitators in planning and delivering structured, engaging learning experiences — without turning the child's experience into another screen-based educational product?",
-        "Ghesse Khaneh is not a story-reading app for children. Its main users are facilitators who run structured life-skills sessions through storytelling, guided discussion, role-play, games, creative activities, reflection, observation and parent follow-up. The child is the beneficiary of the experience, not the primary digital user.",
+        "How might we support facilitators in planning and delivering structured, engaging learning experiences, without turning the child's experience into another screen-based educational product?",
+        "Ghesse Khaneh is not a story-reading app for children. Its main users are facilitators who run structured life-skills sessions through interactive storytelling, guided discussion, role-play, games, creative activities, reflection, observation and parent follow-up. The child is the beneficiary of the experience, not the primary digital user.",
         "Running one session means coordinating story selection, learning objectives, age appropriateness, questions, activities, role-play, materials, time, observations, parent follow-up and the next session. Without a structured system, that knowledge stays scattered and hard to pass on to new facilitators.",
         "The product had to support the facilitator while keeping the human relationship at the centre of the experience."
       ],
@@ -449,7 +453,7 @@ window.SITE = {
               { title: "Practice", text: "Explore the concept through games or role-play." },
               { title: "Create", text: "Let children express ideas through drawing, making or storytelling." },
               { title: "Reflect", text: "Discuss what happened and what the child noticed." },
-              { title: "Observe", text: "Capture meaningful observations — without diagnosing or scoring the child." },
+              { title: "Observe", text: "Capture meaningful observations: without diagnosing or scoring the child." },
               { title: "Plan next session", text: "Use previous observations to decide what should happen next." }
             ] }
           ] },
@@ -463,18 +467,18 @@ window.SITE = {
             { type: "feature", label: "Before", title: "Session builder",
               text: "Turns a learning objective into a complete facilitated session. The session is built as a learning journey, not a collection of disconnected activities.",
               points: ["Age, group size, topic and objective", "Duration and story", "Discussion questions", "Activity, role-play and creative task", "Materials and reflection prompts", "Parent follow-up"],
-              image: "gk-session-builder.webp", caption: "A structured way to turn learning objectives into a complete facilitated session — with a live outline and the mocked facilitator assistant." },
+              image: "gk-session-builder.webp", caption: "A structured way to turn learning objectives into a complete facilitated session, with a live outline and the mocked facilitator assistant." },
             { type: "feature", label: "Before", title: "Story, activity & role-play library",
               text: "Reusable content, so preparation doesn't start from zero and quality doesn't depend on one person's memory.",
-              points: ["Stories by age, topic, skill, emotional theme and duration", "Games — cognitive, physical and creative", "Role-play scenarios", "Templates"],
+              points: ["Stories by age, topic, skill, emotional theme and duration", "Games: cognitive, physical and creative", "Role-play scenarios", "Templates"],
               image: "gk-library.webp", caption: "Reusable content organised by age, theme, skill and emotion." },
             { type: "feature", label: "During", title: "Facilitator mode",
               text: "A simplified interface for running the live session. It shows only what the facilitator needs right now, reducing cognitive load while their attention stays on the children.",
               points: ["Current stage", "Facilitator instructions", "Question or activity", "Materials and timing", "Next / previous controls", "Quick observation notes"],
-              // CHECK: no Facilitator mode screenshot yet — add  image: "gk-facilitator-mode.webp"  when you have one
+              // CHECK: no Facilitator mode screenshot yet, add  image: "gk-facilitator-mode.webp"  when you have one
             },
             { type: "feature", label: "After", title: "Observation & reflection",
-              text: "Qualitative documentation helps facilitators learn from each session — without scoring or diagnosing children.",
+              text: "Qualitative documentation helps facilitators learn from each session, without scoring or diagnosing children.",
               points: ["What worked", "Where children disengaged", "Meaningful comments", "Difficult moments", "Topics worth revisiting", "Ideas for the next session"],
               image: "gk-reflections.webp", caption: "Five guided questions after each session; the assistant's suggested summary is a mock that does not replace professional judgement." },
             { type: "feature", label: "After", title: "Parent take-home",
@@ -482,9 +486,9 @@ window.SITE = {
               points: ["One conversation prompt", "One offline activity", "Brief guidance for the parent"],
               image: "gk-parent-takehome.webp", caption: "A printable, shareable card designed to work away from screens. \"A child may always choose whether to respond. This activity is not a test or assessment.\"" },
             { type: "feature", label: "Across sessions", title: "Programs",
-              text: "Several sessions form a learning program, so a group's learning builds over time — followed without points, rankings or competition.",
+              text: "Several sessions form a learning program, so a group's learning builds over time, followed without points, rankings or competition.",
               points: ["Example: Understanding Emotions", "1 · Recognising feelings", "2 · Naming feelings", "3 · Expressing feelings", "4 · Navigating strong feelings"],
-              image: "gk-programs.webp", caption: "Programs — connected sessions per group, with what comes next." }
+              image: "gk-programs.webp", caption: "Programs: connected sessions per group, with what comes next." }
           ] },
 
         { label: "Hybrid experience", title: "Designing beyond the screen.",
@@ -492,12 +496,12 @@ window.SITE = {
           blocks: [
             { type: "columns", connector: "supports",
               cols: [
-                { label: "Digital layer — the facilitator", accent: true, items: ["Preparation", "Structure", "Guidance", "Documentation", "Follow-up"] },
-                { label: "Human & offline layer — the session", items: ["Storytelling", "Discussion", "Games", "Role-play", "Drawing and making", "Parent–child interaction"] }
+                { label: "Digital layer · the facilitator", accent: true, items: ["Preparation", "Structure", "Guidance", "Documentation", "Follow-up"] },
+                { label: "Human & offline layer · the session", items: ["Storytelling", "Discussion", "Games", "Role-play", "Drawing and making", "Parent–child interaction"] }
               ] }
           ] },
 
-        { label: "AI assistant — concept", title: "AI stays behind the facilitator.",
+        { label: "AI assistant · concept", title: "AI stays behind the facilitator.",
           intro: "The AI assistant is a concept, not a built feature. Its role was defined before any model work.",
           blocks: [
             { type: "ai",
@@ -514,7 +518,7 @@ window.SITE = {
                 { metric: "Methodology consistency", target: "Whether sessions stay true to the method", status: "planned" },
                 { metric: "Safety violations", target: "Any unsafe or unsupported suggestion is a failure", status: "planned" }
               ],
-              note: "Planned measures — nothing has been measured yet." },
+              note: "Planned measures · nothing has been measured yet." },
             { type: "requirement", area: "AI-supported preparation",
               requirement: "As a facilitator, I want AI-assisted suggestions based on approved methodology and content, so I can prepare sessions faster while keeping final control.",
               reason: "Speed up preparation without moving judgement away from trained facilitators.",
@@ -538,9 +542,9 @@ window.SITE = {
               { title: "Avoid performance gamification", decision: "No points, rankings or streaks.", why: "Emotional learning and parent–child interaction should not become competitions or streak-based behaviour." },
               { title: "Observe, don't score", decision: "Facilitators capture qualitative observations instead of scoring children.", why: "Observations help plan future sessions without turning the product into a diagnostic tool." }
             ] },
-            // CHECK: MVP tiers come from your Notion page — confirm where Programs and Parent take-home sit
+            // CHECK: MVP tiers come from your Notion page, confirm where Programs and Parent take-home sit
             { type: "columns", cols: [
-              { label: "First MVP", accent: true, items: ["Session builder", "Approved story / activity library", "Lightweight facilitator mode", "Reflection"], why: "The repeatable preparation and reflection work — enough to test whether the method can travel to new facilitators." },
+              { label: "First MVP", accent: true, items: ["Session builder", "Approved story / activity library", "Lightweight facilitator mode", "Reflection"], why: "The repeatable preparation and reflection work, enough to test whether the method can travel to new facilitators." },
               { label: "Later", items: ["Facilitator onboarding", "Cross-session learning", "Branch-level quality support", "More advanced analytics or automation"], why: "Kept out until the core workflow is validated with current facilitators." },
               { label: "Not now", style: "cross", items: ["Direct child–AI interaction", "Diagnosis", "Treatment advice", "Autonomous psychological interpretation"], why: "Sensitive interpretation and final decisions stay with trained facilitators." }
             ] }
@@ -564,32 +568,33 @@ window.SITE = {
           intro: "The system was designed to support structured evaluation. No results are reported here because none have been measured yet. The first step is reconstructing real sessions with current facilitators to test the assumptions behind the MVP.",
           blocks: [
             { type: "list", style: "check", card: true, label: "Planned evaluation components", status: "planned",
-              items: ["Informed, revocable consent", "Pre / post assessment", "Session feedback", "Facilitator observations", "Parent feedback", "Usability testing", "Anonymised research data — no individual scores or child comparisons"] },
-            { type: "gallery", images: [{ file: "gk-research.webp", caption: "Research & evaluation — a structural preview with sample data. It makes no claims about validated instruments or outcomes." }] }
+              items: ["Informed, revocable consent", "Pre / post assessment", "Session feedback", "Facilitator observations", "Parent feedback", "Usability testing", "Anonymised research data: no individual scores or child comparisons"] },
+            { type: "gallery", images: [{ file: "gk-research.webp", caption: "Research & evaluation: a structural preview with sample data. It makes no claims about validated instruments or outcomes." }] }
           ] }
       ],
       evidence: [],
       outcome: [],
       reflection:
-        "Digitisation does not always mean moving the experience onto a screen. The strongest product decision was to keep human interaction at the centre and use technology to support the person facilitating it — the interface organises complexity in the background so the facilitator can focus on what is happening in front of them.",
+        "Digitisation does not always mean moving the experience onto a screen. The strongest product decision was to keep human interaction at the centre and use technology to support the person facilitating it, the interface organises complexity in the background so the facilitator can focus on what is happening in front of them.",
       demonstrates: ["Designing complex facilitator workflows", "Translating educational methodology into product architecture", "Hybrid digital / offline experiences", "Responsible AI product thinking", "Designing for children without making them the digital users", "Balancing structure with facilitator flexibility", "UX for sensitive interpersonal contexts", "Product thinking beyond individual screens"],
       visuals: [],
       links: []
     },
 
     /* ================================================================
-       DARA — workplace wellbeing
+       DARA, workplace wellbeing
        Source: your 17 screenshots only. Everything below describes what the
        product shows. Fields marked CHECK need your input.
        draft: true hides it from the live site until you confirm them.
        ================================================================ */
     {
       slug: "dara",
+      cardImage: "cover-dara.webp",
       track: ["product"],
       title: "DARA",
-      subtitle: "Workplace wellbeing that helps people and teams — without turning wellbeing into surveillance.",
+      subtitle: "Workplace wellbeing that helps people and teams · without turning wellbeing into surveillance.",
       type: "Product Design · Workplace Wellbeing · Privacy by Design · AI-assisted build",
-      role: "Product Designer & Product Owner — self-initiated, solo",
+      role: "Product Designer & Product Owner: self-initiated, solo",
       context: "Independent concept project · built with AI-assisted prototyping (Lovable)",
       timeline: "2026 · concept to working demo in one day",
       status: "Functional browser demo · concept stage, not yet user-tested",
@@ -600,30 +605,30 @@ window.SITE = {
         challenge:
           "Wellbeing tools at work face a trust problem: employees won't share honestly if a manager might see it, yet managers need signals they can act on. The product had to serve both sides without exposing anyone.",
         contribution:
-          "My own idea, owned end to end: problem framing, privacy model, feature set, UX and interaction design — and I built the working demo myself through AI-assisted prototyping in Lovable.",
+          "My own idea, owned end to end: problem framing, privacy model, feature set, UX and interaction design, and I built the working demo myself through AI-assisted prototyping in Lovable.",
         outcome:
-          "A functional browser demo with an employee view — check-in, conversation coach, reflection and a personal journey — and a manager view built only on aggregated, anonymised team patterns."
+          "A functional browser demo with an employee view, check-in, conversation coach, reflection and a personal journey, and a manager view built only on aggregated, anonymised team patterns."
       },
       problem: [
-        "DARA supports four dimensions of working life — Energy, Connection, Focus and Growth — through short daily check-ins, tools for difficult conversations and appreciation, reflective coaching and small team experiments.",
+        "DARA supports four dimensions of working life, Energy, Connection, Focus and Growth, through short daily check-ins, tools for difficult conversations and appreciation, reflective coaching and small team experiments.",
         "The core tension is trust. Employees need a genuinely private space; managers need to know when a team is struggling. DARA resolves this by separating the two completely: individuals see their own data, managers see only team-level patterns, and below five responses they see nothing at all.",
-        "DARA is explicitly not a medical, therapy or crisis service — a boundary stated on every page."
+        "DARA is explicitly not a medical, therapy or crisis service, a boundary stated on every page."
       ],
       chapters: [
         { label: "Design principle", title: "Managers see patterns, not people.",
           blocks: [
             { type: "columns", connector: "aggregated · anonymised · n ≥ 5",
               cols: [
-                { label: "Employee view — private", accent: true, items: ["Home — today's check-in, suggested action, gentle insight", "Check-in — daily, plus a weekly team pulse", "Connect — difficult-conversation coach, appreciation", "Coach — reflect with DARA, weekly reflection", "My Journey — actions and private badges", "Profile — goal, reminders, what DARA stores"] },
-                { label: "Manager view — team level only", items: ["Overview — team energy, workload, belonging, clarity", "Team Pulse — weekly averages and comment themes", "Team Actions — small experiments", "Insights — six weeks of team patterns", "Privacy"] }
+                { label: "Employee view · private", accent: true, items: ["Home: today's check-in, suggested action, gentle insight", "Check-in: daily, plus a weekly team pulse", "Connect: difficult-conversation coach, appreciation", "Coach: reflect with DARA, weekly reflection", "My Journey: actions and private badges", "Profile: goal, reminders, what DARA stores"] },
+                { label: "Manager view · team level only", items: ["Overview: team energy, workload, belonging, clarity", "Team Pulse: weekly averages and comment themes", "Team Actions: small experiments", "Insights: six weeks of team patterns", "Privacy"] }
               ] }
           ] },
 
         { label: "Employee experience", title: "Private tools that earn honest input.",
           blocks: [
             { type: "feature", label: "Onboarding", title: "Four screens, one promise",
-              text: "Onboarding introduces the four dimensions, states the privacy model up front and asks for one gentle goal — which can be changed at any time.",
-              points: ["Energy, Connection, Focus and Growth", "\"Progress comes from meaningful actions you choose — not from time spent in the app\"", "Private by default — managers only see aggregated, anonymised team patterns", "Choose a gentle goal"],
+              text: "Onboarding introduces the four dimensions, states the privacy model up front and asks for one gentle goal, which can be changed at any time.",
+              points: ["Energy, Connection, Focus and Growth", "\"Progress comes from meaningful actions you choose, not from time spent in the app\"", "Private by default: managers only see aggregated, anonymised team patterns", "Choose a gentle goal"],
               screens: [
                 { file: "dara-onboarding-1.webp", caption: "Welcome" },
                 { file: "dara-onboarding-2.webp", caption: "Four dimensions" },
@@ -632,24 +637,24 @@ window.SITE = {
               ] },
             { type: "feature", label: "Daily", title: "A 30-second check-in",
               text: "Energy, stress and focus in three taps, an optional main influence and a private note. A separate weekly pulse feeds only anonymised team averages.",
-              points: ["Energy, stress, focus", "Optional influence: workload, relationships, meetings, clarity, personal", "Private note", "Weekly team pulse — team averages only"],
-              image: "dara-checkin.webp", caption: "Daily check-in — private to the employee." },
+              points: ["Energy, stress, focus", "Optional influence: workload, relationships, meetings, clarity, personal", "Private note", "Weekly team pulse: team averages only"],
+              image: "dara-checkin.webp", caption: "Daily check-in: private to the employee." },
             { type: "feature", label: "Relationships", title: "Difficult conversations and appreciation",
-              text: "A four-step coach helps prepare a difficult conversation, starting with describing what happened \"the way a camera would record it\" — separating facts from interpretation. A second tool turns something a colleague did into specific recognition.",
+              text: "A four-step coach helps prepare a difficult conversation, starting with describing what happened \"the way a camera would record it\", separating facts from interpretation. A second tool turns something a colleague did into specific recognition.",
               points: ["Four structured preparation steps", "Facts before interpretation", "Specific appreciation"],
-              image: "dara-connect.webp", caption: "Connect — Difficult Conversation Coach, step 1 of 4." },
+              image: "dara-connect.webp", caption: "Connect: Difficult Conversation Coach, step 1 of 4." },
             { type: "feature", label: "Reflection", title: "Reflect with DARA",
               text: "A private space to think out loud. DARA mostly asks questions rather than giving answers, separates facts from interpretations and never labels people.",
               points: ["Reflective questions, no diagnosis", "No judgement of colleagues", "Never shared with the manager", "Clear signposting to emergency services and occupational health"],
-              image: "dara-coach.webp", caption: "Coach — reflective questions with explicit limits." },
+              image: "dara-coach.webp", caption: "Coach: reflective questions with explicit limits." },
             { type: "feature", label: "Progress", title: "A personal journey, not a score",
-              text: "Progress comes from meaningful actions the employee chose to take. There are no rankings, no comparisons and no penalties for quiet weeks — comeback milestones replace broken streaks.",
+              text: "Progress comes from meaningful actions the employee chose to take. There are no rankings, no comparisons and no penalties for quiet weeks, comeback milestones replace broken streaks.",
               points: ["Attention across the four dimensions", "Badges private to the employee", "\"Back on Track\" rewards returning after a quiet period", "Team achievements reflect collective participation only"],
-              image: "dara-journey.webp", caption: "My Journey — badges are never visible to managers or colleagues." },
-            { type: "feature", label: "Transparency", title: "What DARA stores — in plain language",
-              text: "The profile shows exactly what is stored and who can see it, alongside reminders that are \"gentle by design — nothing is escalated to anyone\".",
-              points: ["Check-ins, reflections and coaching — private to the account", "Weekly pulse — stored only as a team average", "Hidden entirely when fewer than five people respond"],
-              image: "dara-profile.webp", caption: "Profile — the data model explained to the person it concerns." }
+              image: "dara-journey.webp", caption: "My Journey: badges are never visible to managers or colleagues." },
+            { type: "feature", label: "Transparency", title: "What DARA stores · in plain language",
+              text: "The profile shows exactly what is stored and who can see it, alongside reminders that are \"gentle by design, nothing is escalated to anyone\".",
+              points: ["Check-ins, reflections and coaching, private to the account", "Weekly pulse: stored only as a team average", "Hidden entirely when fewer than five people respond"],
+              image: "dara-profile.webp", caption: "Profile: the data model explained to the person it concerns." }
           ] },
 
         { label: "Manager experience", title: "Team insight without individual exposure.",
@@ -657,17 +662,17 @@ window.SITE = {
             { type: "feature", label: "Overview", title: "Four team signals and one suggested action",
               text: "Managers see team energy, workload, belonging and clarity on a 1–5 scale, overall participation that is never broken down per person, and one suggested action based on aggregated patterns.",
               points: ["Participation shown only as a team total", "Groups under five responses stay hidden", "Suggested action explained in plain language"],
-              image: "dara-manager-overview.webp", caption: "Team overview — the anonymity threshold in action for a four-person sub-team." },
+              image: "dara-manager-overview.webp", caption: "Team overview: the anonymity threshold in action for a four-person sub-team." },
             { type: "feature", label: "Insights", title: "Interpretations, not conclusions",
-              text: "Six weeks of team trends, each with a short plain-language reading — framed as what a pattern may mean, never as a conclusion about individuals.",
-              image: "dara-insights.webp", caption: "Insights — aggregated team-level data only." },
+              text: "Six weeks of team trends, each with a short plain-language reading, framed as what a pattern may mean, never as a conclusion about individuals.",
+              image: "dara-insights.webp", caption: "Insights: aggregated team-level data only." },
             { type: "feature", label: "Team actions", title: "Small experiments, not programmes",
               text: "Each action is short, visible and easy to evaluate: why it may help, how to run it, and a follow-up question that the next weekly pulse answers.",
               points: ["Priority reset, meeting cleanup, appreciation ritual, focus block, team check-in, role clarity", "Each has a built-in follow-up question", "Never targeted at a named individual"],
-              image: "dara-team-actions.webp", caption: "Team actions — each experiment closes the loop at the next pulse." },
+              image: "dara-team-actions.webp", caption: "Team actions: each experiment closes the loop at the next pulse." },
             { type: "feature", label: "Team pulse", title: "Comments become themes, never quotes",
               text: "Open comments are summarised into themes and never linked to a person. Weekly averages appear only when at least five people have responded.",
-              image: "dara-team-pulse.webp", caption: "Team pulse — weekly averages and comment themes." }
+              image: "dara-team-pulse.webp", caption: "Team pulse: weekly averages and comment themes." }
           ] },
 
         { label: "Key product decisions", title: "Privacy and pressure, designed out.",
@@ -684,7 +689,7 @@ window.SITE = {
       ],
       evidence: [],
       outcome: [],
-      demonstrates: ["Taking a product from idea to working demo on my own, with AI-assisted prototyping", "Privacy by design for sensitive workplace data", "A two-sided product: individual value and team insight", "Anti-surveillance analytics — aggregation and anonymity thresholds", "Non-competitive engagement design", "Scoping a coaching feature with explicit limits"],
+      demonstrates: ["Taking a product from idea to working demo on my own, with AI-assisted prototyping", "Privacy by design for sensitive workplace data", "A two-sided product: individual value and team insight", "Anti-surveillance analytics: aggregation and anonymity thresholds", "Non-competitive engagement design", "Scoping a coaching feature with explicit limits"],
       visuals: [],
       links: []
     },
@@ -694,29 +699,30 @@ window.SITE = {
        ================================================================ */
     {
       slug: "nebula",
+      cardImage: "cover-nebula.webp",
       track: ["product", "research"],
       title: "NEBULA",
-      subtitle: "Explainable AI assistance for evaluating misinformation — without replacing human judgement.",
+      subtitle: "Explainable AI assistance for evaluating misinformation · without replacing human judgement.",
       type: "Responsible AI · Explainability · UX Research",
-      context: "BMBF-funded research consortium",
+      context: "BMBF-funded research consortium · paid position, University of Siegen",
       role: "UX Researcher · University of Siegen research team",
       timeline: "May 2023 – Dec 2025",
       methods: ["Focus group", "Interviews", "Ethnography", "Workshops", "Requirements synthesis"],
-      status: "Findings published — Springer book chapter (2026)",
-      cardOutcome: "Research on trust translated into explainable, contestable, multilingual AI requirements — plus my own concept prototype.",
+      status: "Findings published · Springer book chapter (2026)",
+      cardOutcome: "Research on trust translated into explainable, contestable, multilingual AI requirements, plus my own concept prototype.",
       cardDecision: "Every AI assessment shows its evidence and sources, and users can inspect and disagree with it.",
       cover: "nebula-research-to-requirements.webp",
       glance: {
         challenge:
           "An AI tool can flag misinformation, but a verdict alone doesn't help people who have good reasons to distrust institutions and technology.",
         contribution:
-          "I conducted user research with vulnerable groups and translated findings into responsible-AI requirements. I did not own the AI architecture, model development or product roadmap — those belonged to the wider consortium.",
+          "I conducted user research with vulnerable groups and translated findings into responsible-AI requirements. I did not own the AI architecture, model development or product roadmap, those belonged to the wider consortium.",
         outcome:
-          "Requirements for explainable, contestable, multilingual and human-controlled AI — published as a Springer chapter, and made tangible in my own concept prototype."
+          "Requirements for explainable, contestable, multilingual and human-controlled AI, published as a Springer chapter, and made tangible in my own concept prototype."
       },
       problem: [
         "Misinformation is not a simple true-or-false problem. Participants evaluated information across messaging apps, social media, video platforms, official websites, search results, friends, relatives and comment sections.",
-        "Verification required time, language ability, contextual knowledge, connectivity and digital confidence — exactly what the most exposed users often lack.",
+        "Verification required time, language ability, contextual knowledge, connectivity and digital confidence, exactly what the most exposed users often lack.",
         "Central question: how can AI help people evaluate questionable information while preserving agency, context, privacy and trust?"
       ],
       approach: [
@@ -741,24 +747,24 @@ window.SITE = {
       evidence: [
         { value: "7", label: "Focus-group participants", note: "My own research", status: "validated" },
         { value: "6 mo.", label: "Ethnography with older adults", note: "Smartphone Cafés", status: "validated" },
-        { value: "3", label: "Municipalities — youth workshops", note: "Wilnsdorf, Kreuztal, Hilchenbach", status: "validated" },
+        { value: "3", label: "Municipalities · youth workshops", note: "Wilnsdorf, Kreuztal, Hilchenbach", status: "validated" },
         { value: "~70", label: "Development points entered in Jira", note: "Consortium-level, not my individual delivery", status: "programme" },
         { value: "~90%", label: "Technical detection accuracy", note: "Consortium-level, not my output", status: "programme" }
       ],
       outcome: [
-        "The research contributed to a responsible interaction model where AI-supported assessment stays explainable, contestable, multilingual and connected to trusted social infrastructure — supporting informed human judgement rather than promising automated truth.",
+        "The research contributed to a responsible interaction model where AI-supported assessment stays explainable, contestable, multilingual and connected to trusted social infrastructure, supporting informed human judgement rather than promising automated truth.",
         "The wider consortium reflected these directions in a smartphone app, browser plugin and web application: multilingual interfaces, simple-language options, indicator-based hints, explanation views, established fact-checking services and institutional transparency.",
-        "I independently built an interaction prototype from the documented requirements — URL, text and image input with visible privacy limits, progressive explanation of uncertainty, claim-level assessment and inspectable evidence. It is not the consortium's official interface or a deployed detection system.",
+        "I independently built an interaction prototype from the documented requirements, URL, text and image input with visible privacy limits, progressive explanation of uncertainty, claim-level assessment and inspectable evidence. It is not the consortium's official interface or a deployed detection system.",
         "Published as 'User-Centred AI for Combating Misinformation with Vulnerable Groups' (Springer VS, 2026, second author)."
       ],
       reflection:
         "Trust in AI cannot be designed as a confidence score alone. It depends on whether people can inspect evidence, understand uncertainty, question the system and keep meaningful control over the final decision.",
       demonstrates: ["Researching trust in AI with hard-to-reach groups", "Translating evidence into responsible-AI requirements", "Prototyping a concept from requirements", "Working inside a multi-partner consortium"],
       visuals: [
-        { file: "nebula-research-to-requirements.webp", caption: "How evidence shaped the requirements — and the value each one protects." },
+        { file: "nebula-research-to-requirements.webp", caption: "How evidence shaped the requirements, and the value each one protects." },
         { file: "nebula-research-ecosystem.webp", caption: "From situated experience to responsible-AI requirements." },
-        { file: "nebula-prototype-explainability.webp", caption: "My concept prototype — evidence stays inspectable, contestable and shareable." },
-        { file: "nebula-prototype-safeguards.webp", caption: "My concept prototype — responsible-AI principles made visible in the interface." }
+        { file: "nebula-prototype-explainability.webp", caption: "My concept prototype: evidence stays inspectable, contestable and shareable." },
+        { file: "nebula-prototype-safeguards.webp", caption: "My concept prototype: responsible-AI principles made visible in the interface." }
       ],
       links: [
         { label: "Springer chapter (DOI) ↗", url: "https://doi.org/10.1007/978-3-658-52212-4_10" },
@@ -771,9 +777,10 @@ window.SITE = {
        ================================================================ */
     {
       slug: "surveillance-beyond-borders",
+      cardImage: "cover-surveillance.webp",
       track: ["research", "product"],
       title: "Surveillance Beyond Borders",
-      subtitle: "Digital safety under transnational repression — from 37 interviews to prioritised product opportunities.",
+      subtitle: "Digital safety under transnational repression · from 37 interviews to prioritised product opportunities.",
       type: "UX Research · Trust & Safety · Product Discovery",
       context: "Research stream within CrossComITS · University of Siegen",
       role: "Lead UX Researcher & first author · Prototype owner & designer",
@@ -781,7 +788,7 @@ window.SITE = {
       methods: ["Semi-structured interviews", "Grounded Theory-informed thematic analysis", "Trauma-informed research"],
       status: "Manuscript prepared for academic review · Prototype built",
       cardOutcome: "37 interviews distilled into five dynamics, a framework and prioritised safety concepts.",
-      cardDecision: "An AI posting coach that gives decision support — never a 'safe to post' verdict.",
+      cardDecision: "An AI posting coach that gives decision support, never a 'safe to post' verdict.",
       cover: "sbb-five-dynamics.webp",
       glance: {
         challenge:
@@ -795,7 +802,7 @@ window.SITE = {
         "To protect participants, this public version anonymises countries, state actors, platforms and identifying context.",
       problem: [
         "Most digital-safety guidance assumes a threat that stops at the border. For migrants from authoritarian contexts, surveillance, intimidation and mistrust follow them online.",
-        "The goal was to understand how people actually live with this risk — and what tools could support them without adding to their burden."
+        "The goal was to understand how people actually live with this risk, and what tools could support them without adding to their burden."
       ],
       approach: [
         { title: "Phase I", text: "23 interviews with migrants from a range of authoritarian contexts." },
@@ -844,16 +851,17 @@ window.SITE = {
        ================================================================ */
     {
       slug: "bo-app",
+      cardImage: "cover-bo-app.webp",
       track: ["research"],
       title: "Bo App",
-      subtitle: "Co-designing an accessible cognitive-training experience — and brain-sensor onboarding — with older adults.",
+      subtitle: "Co-designing an accessible cognitive-training experience, and brain-sensor onboarding, with older adults.",
       type: "UX Research · Co-design · Digital Health",
-      context: "eVITA (Dec 2021 – May 2023) · University of Siegen",
+      context: "eVITA (EU–Japan, Dec 2021 – May 2023) · NeU brain-sensor workstream · paid position, University of Siegen",
       role: "UX Researcher & Designer",
       timeline: "~8–10 weeks",
       methods: ["Interviews", "Participatory co-design", "Observation", "Think-aloud usability testing"],
-      status: "Published — OzCHI 2024 Late-Breaking Work (proceedings Sept 2025)",
-      cardOutcome: "Independent sensor setup went from 1 of 4 to 3 of 3 users after the onboarding redesign.",
+      status: "Published · OzCHI 2024 Late-Breaking Work (proceedings Sept 2025)",
+      cardOutcome: "Independent sensor setup rose from 25% to 100% after the onboarding redesign (1 of 4 users → 3 of 3 in retest).",
       cardDecision: "Step-by-step visual sensor onboarding with an always-visible Back action.",
       cover: "bo-app-screens.webp",
       glance: {
@@ -862,40 +870,41 @@ window.SITE = {
         contribution:
           "End to end: I planned and ran the research, facilitated co-design, prioritised usability problems, translated evidence into requirements, and designed, tested and retested the prototypes.",
         outcome:
-          "After redesign, all three retest participants completed sensor setup independently, with no navigation issues. Published at OzCHI 2024."
+          "After redesign, independent sensor setup rose from 25% to 100% (1 of 4 → 3 of 3 in retest), with zero navigation issues. Published at OzCHI 2024."
       },
       problem: [
-        "Older adults needed to use a mobile cognitive-training app and a brain-sensing device independently at home — making hardware setup, navigation and abstract brain-activity feedback understandable for users with varying digital confidence.",
+        "Older adults needed to use a mobile cognitive-training app and a brain-sensing device independently at home, making hardware setup, navigation and abstract brain-activity feedback understandable for users with varying digital confidence.",
         "Central question: how might we make unfamiliar brain-sensing technology feel understandable, manageable and motivating without making the experience clinical or stressful?",
         "Participants were active adults aged 60+ without dementia or MCI. Bo App was explored as a non-medical training and feedback concept, not a treatment.",
-        "In the first usability round, 3 of 4 testers needed assistance and 2 of 4 hit navigation or setup problems. Only 1 of 4 could set up the sensor alone."
+        "In the first usability round, 75% of testers needed assistance (3 of 4) and 50% hit navigation or setup problems (2 of 4). Only 25% could set up the sensor alone (1 of 4)."
       ],
       approach: [
         { title: "01 Discover", text: "Literature review, interviews and benchmarking." },
-        { title: "02 Co-design", text: "7 older adults aged 60–80 across 12 co-design sessions and 4 iterative rounds — roughly 22 hours." },
-        { title: "03 Test & iterate", text: "Think-aloud testing with the mobile prototype and sensor, then revised onboarding, navigation and feedback, followed by retesting." }
+        { title: "02 Co-design", text: "7 older adults aged 60–80 across 12 co-design sessions and 4 iterative rounds, roughly 22 hours." },
+        { title: "03 Test & iterate", text: "Interactive prototypes in Figma and Adobe XD. Think-aloud testing with the mobile prototype and the NeU brain activity sensor, then revised onboarding, navigation and feedback, followed by retesting." }
       ],
       insights: [
-        { title: "Hardware onboarding is part of the product", text: "Most failures happened before training started — while wearing and connecting unfamiliar hardware." },
+        { title: "Hardware onboarding is part of the product", text: "Most failures happened before training started, while wearing and connecting unfamiliar hardware." },
         { title: "Visual feedback makes brain activity understandable", text: "A growing plant/tree metaphor made abstract brain feedback more relatable." },
         { title: "Feedback preferences differ", text: "Some valued performance feedback; one participant found frequent feedback potentially stressful." },
         { title: "Progress cues support motivation", text: "A sense of progress helped keep people engaged." },
         { title: "Simplicity helps focus", text: "Minimal interfaces helped participants concentrate on essential information." }
       ],
       decisions: [
-        { title: "Step-by-step visual onboarding", situation: "Only 1 of 4 initial testers could set up the sensor independently.", evidence: "Participants struggled to connect and wear unfamiliar hardware, with unclear sequencing.", decision: "Step-by-step visual sensor onboarding with a clarified order of actions.", why: "Reducing ambiguity at each step targets the exact point where users failed." },
-        { title: "Persistent Back action", situation: "2 of 4 testers ran into navigation or setup issues.", evidence: "Insufficient navigation support created uncertainty.", decision: "An always-visible Back action and a simpler hierarchy.", why: "People explore more confidently when they know they can recover." },
+        { title: "Step-by-step visual onboarding", situation: "Only 25% of initial testers could set up the sensor independently (1 of 4).", evidence: "Participants struggled to connect and wear unfamiliar hardware, with unclear sequencing.", decision: "Step-by-step visual sensor onboarding with a clarified order of actions.", why: "Reducing ambiguity at each step targets the exact point where users failed." },
+        { title: "Persistent Back action", situation: "50% of testers ran into navigation or setup issues (2 of 4).", evidence: "Insufficient navigation support created uncertainty.", decision: "An always-visible Back action and a simpler hierarchy.", why: "People explore more confidently when they know they can recover." },
         { title: "Growing-tree & garden metaphors", situation: "Abstract biofeedback was hard to interpret.", evidence: "The tree metaphor made feedback relatable; the monthly garden concept came directly from participant feedback.", decision: "A growing tree for real-time feedback and a nurturing garden for monthly feedback.", why: "Familiar metaphors turn unfamiliar data into something people understand." },
         { title: "Customisable feedback", situation: "One feedback model didn't suit everyone.", evidence: "One participant found frequent performance feedback potentially stressful.", decision: "Feedback became customisable rather than one fixed model.", why: "Motivation without pressure." }
       ],
       evidence: [
-        { value: "1/4 → 3/3", label: "Independent sensor setup", note: "4 initial testers → 3 retest participants", status: "validated" },
+        { value: "25% → 100%", label: "Independent sensor setup", note: "1 of 4 initial testers → 3 of 3 in retest", status: "validated" },
+        { value: "75% → 0%", label: "Users needing assistance", note: "3 of 4 initial testers → 0 of 3 in retest", status: "validated" },
         { value: "0", label: "Navigation issues in the final retest", note: "3 retest participants", status: "validated" },
-        { value: "8 of 10", label: "High-priority issues addressed", note: "10 documented", status: "validated" },
+        { value: "80%", label: "High-priority issues resolved", note: "8 of 10 documented issues", status: "validated" },
         { value: "7", label: "Co-design participants (60–80)", note: "12 sessions, 4 rounds, ~22 h", status: "validated" }
       ],
       outcome: [
-        "Sensor onboarding and navigation were redesigned; 8 of 10 high-priority usability issues were addressed.",
+        "Sensor onboarding and navigation were redesigned; 80% of high-priority usability issues were resolved (8 of 10).",
         "Participant feedback shaped real-time, daily, monthly and competitive feedback concepts, and informed the final interactive prototype and implementation coordination.",
         "Published as a Late-Breaking Work at OzCHI 2024 (proceedings published September 2025). Counts come from project evaluation notes and researcher-confirmed task records; not every count appears in the paper."
       ],
@@ -903,7 +912,7 @@ window.SITE = {
         "Accessibility for older adults is not simply a matter of increasing font sizes. It means reducing uncertainty, supporting confidence and translating unfamiliar technology into understandable actions.",
       demonstrates: ["Co-design with older adults", "Turning usability findings into prioritised design changes", "Honest, small-sample evidence reporting"],
       visuals: [
-        { file: "bo-app-screens.webp", caption: "Bo App — welcome, onboarding, feedback and brain FAQ screens." },
+        { file: "bo-app-screens.webp", caption: "Bo App: welcome, onboarding, feedback and brain FAQ screens." },
         { file: "", caption: "Before / after onboarding", note: "Export the early and redesigned prototype screenshots from your Framer page" },
         { file: "", caption: "Research process diagram", note: "Discover → co-design → test → iterate, with participant counts" }
       ],
@@ -919,15 +928,16 @@ window.SITE = {
        ================================================================ */
     {
       slug: "crosscomits",
+      cardImage: "cover-crosscomits.webp",
       track: ["research"],
       title: "CrossComITS & Smartphone Café",
       subtitle: "Human-centered cybersecurity learning with migrants, refugees, older adults and young people.",
       type: "UX Research · Cybersecurity · Digital Inclusion",
-      context: "BMBF-funded research consortium",
-      role: "University of Siegen representative & coordinator · UX Researcher",
+      context: "BMBF-funded research consortium · paid position, University of Siegen",
+      role: "Project coordinator, leading the University of Siegen team and the partner team · UX Researcher",
       timeline: "May 2023 – Dec 2025",
-      methods: ["Interviews", "Surveys", "Workshops", "A/B testing", "Usability tests", "Participatory learning sessions", "Scrum-based agile delivery"],
-      status: "Published — ACM PDC 2026 & Springer chapter (first author)",
+      methods: ["Interviews", "Surveys", "Workshops", "A/B testing", "Usability tests", "Participatory learning sessions", "Scrum-based agile delivery", "Kanban backlog in GitHub", "Personas", "Journey mapping", "User stories & acceptance criteria"],
+      status: "Published · ACM PDC 2026 & Springer chapter (first author)",
       cardOutcome: "Field research turned into a board game, metaphor cards and OER platform requirements.",
       cardDecision: "An A/B test of flashcard formats decided the product: visual metaphor plus a short explanation.",
       cover: "crosscomits-overview.webp",
@@ -935,47 +945,51 @@ window.SITE = {
         challenge:
           "Cybersecurity advice is often correct but unusable for people with different languages, backgrounds and levels of digital literacy.",
         contribution:
-          "I independently represented the University of Siegen in the consortium, ran user research, and translated findings into learning formats and platform requirements — working with the team in Scrum-based agile iterations.",
+          "I coordinated the project, leading both the University of Siegen team and the partner team. I ran user research, translated findings into learning formats and platform requirements, and prioritised the backlog on a Kanban board in GitHub, working in Scrum-based agile iterations.",
         outcome:
-          "A board game, metaphor flashcards, OER platform requirements — and two 2026 publications."
+          "A board game, metaphor flashcards, OER platform requirements, and two 2026 publications."
       },
       problem: [
-        "The project had to reach very different groups — migrants, refugees, older adults and young people — without watering down the security content.",
+        "The project had to reach very different groups, migrants, refugees, older adults and young people, without watering down the security content.",
         "Research insights also had to shape a digital OER platform, not stay in reports."
       ],
       approach: [
         { title: "Field research", text: "Interviews, surveys and workshops on everyday security questions and misconceptions." },
         { title: "Smartphone Café", text: "Participatory digital-security learning sessions with older adults." },
         { title: "Usability testing", text: "Learning materials and platform concepts tested iteratively with target users." },
-        { title: "Scrum-based delivery", text: "Worked with the team in agile iterations: user needs → requirement → increment → usability testing → stakeholder feedback → prioritisation → next iteration." }
+        { title: "Scrum-based delivery", text: "Led the team in agile iterations: user needs → requirement → increment → usability testing → stakeholder feedback → prioritisation → next iteration." },
+        { title: "Backlog prioritisation", text: "Prioritised the backlog for both teams on a Kanban board in GitHub, so research findings became ordered, visible work." },
+        { title: "Personas & journey maps", text: "Condensed the field research into personas and journey maps for the three user groups, then into PRD-style requirements with user stories and acceptance criteria." },
+        { title: "Roadmap & decision logs", text: "Kept the roadmap and a decision log so priorities and trade-offs stayed visible across partners." },
+        { title: "Team leadership", text: "Led the student assistant team for the University of Siegen part of the project." }
       ],
       insights: [
         { title: "People beat interfaces", text: "In the Smartphone Café, low-pressure human support and peer learning handled security uncertainty in ways interface simplification alone could not." },
         { title: "Security needs everyday language", text: "Abstract terminology was a barrier; recognisable situations and metaphors opened discussion." }
       ],
       decisions: [
-        { title: "Metaphor plus explanation — decided by A/B test", situation: "Abstract security concepts were hard to explain to very different groups.", evidence: "A/B test of flashcards: direct text explanations vs. visual metaphors. Metaphors made concepts tangible, but metaphor-only cards weren't equally clear for every participant.", decision: "Combine an accessible visual metaphor with a short descriptive explanation; revise metaphors where cultural interpretation differed.", why: "An experiment, not preference, decided the format." },
+        { title: "Metaphor plus explanation · decided by A/B test", situation: "Abstract security concepts were hard to explain to very different groups.", evidence: "A/B test of flashcards: direct text explanations vs. visual metaphors. Metaphors made concepts tangible, but metaphor-only cards weren't equally clear for every participant.", decision: "Combine an accessible visual metaphor with a short descriptive explanation; revise metaphors where cultural interpretation differed.", why: "An experiment, not preference, decided the format." },
         { title: "Tangible learning tools", situation: "Technical explanations alone didn't land.", decision: "Metaphor flashcards and a short collaborative board game.", why: "Tangible activities make abstract concepts discussable in a group." },
         { title: "Research → platform requirements", situation: "Findings risked staying as research outputs.", decision: "Translated them into user stories and usability requirements for the OER platform.", why: "Connects field research directly to what gets built." }
       ],
       evidence: [
-        { value: "3", label: "User groups — older adults, migrants & refugees, youth", note: "One programme, three distinct product contexts" },
+        { value: "3", label: "User groups · older adults, migrants & refugees, youth", note: "One programme, three distinct product contexts" },
         { value: "2", label: "Learning products delivered", note: "Cybersecurity board game · metaphor flashcards" },
         { value: "~200", label: "Total project participants", note: "Programme-level, not my personal sample", status: "programme" },
-        { value: "~25%", label: "Engagement increase", note: "My own estimate — not a controlled measurement", status: "estimated" },
-        { value: "~40%", label: "Task-success increase", note: "My own estimate — not a controlled measurement", status: "estimated" }
+        { value: "~25%", label: "Engagement increase", note: "My own estimate · not a controlled measurement", status: "estimated" },
+        { value: "~40%", label: "Task-success increase", note: "My own estimate · not a controlled measurement", status: "estimated" }
       ],
       outcome: [
-        "'Mediating Digital Security' — ACM Participatory Design Conference 2026 (co-author).",
-        "'Building Bridges, Not Barriers' — Springer VS, 2026 (first author)."
+        "'Mediating Digital Security', ACM Participatory Design Conference 2026 (co-author).",
+        "'Building Bridges, Not Barriers', Springer VS, 2026 (first author)."
       ],
       demonstrates: ["Coordinating research across a consortium", "Inclusive, participatory methods", "Turning research into requirements"],
       visuals: [
         { file: "crosscomits-learning-artifacts.webp", caption: "Tangible materials turned security into a shared activity." },
         { file: "crosscomits-findings.webp", caption: "Four principles across three different communities." },
         { file: "crosscomits-oer.webp", caption: "A social OER infrastructure for security mediators." },
-        { file: "smartphone-cafe-evidence.webp", caption: "Smartphone Café — translating field evidence into design direction." },
-        { file: "smartphone-cafe-setting.webp", caption: "Smartphone Café — research embedded in a familiar community setting." }
+        { file: "smartphone-cafe-evidence.webp", caption: "Smartphone Café: translating field evidence into design direction." },
+        { file: "smartphone-cafe-setting.webp", caption: "Smartphone Café: research embedded in a familiar community setting." }
       ],
       links: [
         { label: "PDC 2026 paper (PDF)", url: "Mediating_Digital_Security_PDC2026.pdf" },
@@ -985,7 +999,7 @@ window.SITE = {
   ],
 
   /* Partner strip under the hero (logos). Logo images are stored at the
-     bottom of this file in LOGOS — the name here must match a name there.
+     bottom of this file in LOGOS, the name here must match a name there.
      Remove an item to hide it; an item without a matching logo shows as text. */
   /* Homepage order: these case studies show first; every other published
      project appears below under "More work". Use the project slugs. */
@@ -1011,40 +1025,45 @@ window.SITE = {
   },
 
   testimonials: [
-    { quote: "Roodabeh took on the project leadership in CrossComITS. She substantially shaped the project's content, actively co-designed the UX, evaluated the solutions together with users and co-authored scientific publications. She also contributed to third-party funding acquisition and grant proposals. What impressed me most was her ability to capture the needs of very different user groups precisely — which let her build practical, well-fitted solutions that worked not only on paper but convinced in real use.",
+    { quote: "Roodabeh took on the project leadership in CrossComITS. She substantially shaped the project's content, actively co-designed the UX, evaluated the solutions together with users and co-authored scientific publications. She also contributed to third-party funding acquisition and grant proposals. What impressed me most was her ability to capture the needs of very different user groups precisely, which let her build practical, well-fitted solutions that worked not only on paper but convinced in real use.",
       name: "Dr. Konstantin Aal", role: "Senior Researcher, University of Siegen", relation: "Managed Roodabeh directly · translated from German" }, // CHECK: ask Konstantin to approve the translation
     { quote: "I had the pleasure of working with Roodabeh in the BMFTR-funded CrossComITS project, where we developed and conducted workshops with older adults on cybersecurity-related topics. She approached both the research process and the participants with great care, openness and respect.",
-      name: "Daniela Thomas", role: "Research Associate, CrossComITS partner organisation", relation: "Worked together across partner organisations" },
+      name: "Daniela Thomas", role: "Research Associate: CrossComITS partner organisation", relation: "Worked together across partner organisations" },
     { quote: "Roodabeh is quick to learn, reliable in every sense, deeply skilled in UX research and design, and an excellent collaborator. I highly recommend her to any team looking for someone who can drive user-centered innovation while also uplifting the people around her.",
       name: "Hina Firdaus", role: "Human-AI Collaboration & Research Infrastructure", relation: "Studied together" }
   ],
 
   experience: [
     { when: "2026 – present", title: "PhD Candidate, Human-Computer Interaction", org: "University of Siegen", text: "Participatory digital design for migrant mental wellbeing." },
-    { when: "Oct 2021 – Dec 2025", title: "Research Associate — UX Research & Product", org: "University of Siegen (Wissenschaftliche Mitarbeiterin) — Information Systems & New Media", text: "Research-to-product work in EU- and BMBF/BMFTR-funded, multi-partner consortium projects.",
+    { when: "Oct 2021 – Dec 2025", title: "Research Associate · UX Research & Product", org: "University of Siegen (Wissenschaftliche Mitarbeiterin) · Information Systems & New Media", text: "Research-to-product work in EU- and BMBF/BMFTR-funded, multi-partner consortium projects.",
       points: [
-        "CrossComITS (BMBF/BMFTR, 2023–2025): project lead for the University of Siegen in a six-partner consortium; led discovery and UX research for two learning products — a cybersecurity board game and metaphor flashcards — in Scrum-based delivery, co-authored publications and contributed to grant proposals.",
-        "Ran an A/B test of flashcard formats (text vs. visual metaphor); the result became the product decision: metaphor plus a short explanation.",
-        "Translated interviews, fieldwork, workshops and usability tests into requirements for a social OER learning platform; coordinated testing cycles with student assistants and partners.",
-        "eVITA (EU–Japan, 2021–2023): designed Bo App and improved the existing ABC App in the brain-sensor workstream — requirements, prototypes and implementation changes; independent sensor setup rose from 1/4 to 3/3.",
-        "NEBULA (BMBF, 2023–2025): turned research with vulnerable groups into responsible-AI requirements — explainability, multilingual access and human control."
+        "CrossComITS (BMBF/BMFTR, 2023–2025): project coordinator in a six-partner consortium, leading the University of Siegen team and the partner team in Scrum-based delivery.",
+        "Led the student assistant team for the University of Siegen part of the project and coordinated testing cycles with student assistants and partners.",
+        "Maintained the roadmap and decision logs and prioritised the backlog on a Kanban board in GitHub.",
+        "Translated interviews, fieldwork, workshops and usability tests into personas, journey maps and PRD-style requirements with user stories and acceptance criteria for a social OER learning platform.",
+        "Delivered two learning products, a cybersecurity board game and metaphor flashcards. Ran an A/B test of flashcard formats (text vs. visual metaphor); the result became the product decision: metaphor plus a short explanation.",
+        "Co-authored two publications and contributed to grant proposals.",
+        "eVITA (EU–Japan, 2021–2023), brain-sensor workstream: improved the existing ABC App in Unity, a cognitive-training app driven by the NeU brain activity sensor (requirements, prototypes and implementation changes).",
+        "eVITA: designed Bo App for the same NeU sensor through interviews and real-time co-design with older adults, online and in person, with prototypes in Figma and Adobe XD. Participants could set up and use the sensor with Bo App alone: independent setup rose from 25% to 100% (1 of 4 users in the first test, 3 of 3 in the retest).",
+        "NEBULA (BMBF, 2023–2025): turned research with vulnerable groups into responsible-AI requirements: explainability, multilingual access and human control.",
+        "Mentored students in their master's theses and study projects."
       ] },
     { when: "Jan – Aug 2021", title: "Digital Integration & Cybersecurity Intern", org: "Operatis, Germany", text: "Cybersecurity data workflows and integration (Linux, Windows Server, Bash, JSON-to-RDF, Docker) and vendor evaluation." },
-    { when: "2014 – 2016", title: "Lecturer & Digital Competency Trainer, Computer Science", org: "Islamic Azad University — Tehran West & Karaj branches, Iran", text: "Taught undergraduate courses in data structures, computer networks, Photoshop and technical English, and ran digital-competency workshops for 200+ students a year." }
+    { when: "2014 – 2016", title: "Lecturer & Digital Competency Trainer, Computer Science", org: "Islamic Azad University · Tehran West & Karaj branches, Iran", text: "Taught undergraduate courses in data structures, computer networks, Photoshop and technical English, and ran digital-competency workshops for 200+ students a year." }
   ],
 
   publications: [
     { year: "2026", venue: "ACM PDC 2026", title: "Mediating Digital Security: Participatory Learning with Older Adults in Smartphone Café Sessions", note: "Second author", pdf: "Mediating_Digital_Security_PDC2026.pdf", doi: "https://doi.org/10.1145/3796624.3796644" },
-    { year: "2026", venue: "Springer VS — Book chapter", title: "Building Bridges, Not Barriers", note: "First author · pp. 151–180 · full text on request", pdf: "", doi: "https://doi.org/10.1007/978-3-658-52212-4_7" },
-    { year: "2026", venue: "Springer VS — Book chapter", title: "User-Centred AI for Combating Misinformation with Vulnerable Groups", note: "Second author · pp. 227–252 · full text on request", pdf: "", doi: "https://doi.org/10.1007/978-3-658-52212-4_10" },
-    { year: "2025", venue: "OzCHI 2024 — proceedings published Sept 2025", title: "Prototyping and Evaluating Bo App: A Brain Measurement Device as a Feedback Tool for Cognitive Training", note: "Late-Breaking Work", pdf: "Bo_App_OzCHI2023.pdf", doi: "https://doi.org/10.1145/3726986.3727033" },
+    { year: "2026", venue: "Springer VS · Book chapter", title: "Building Bridges, Not Barriers", note: "First author · pp. 151–180 · full text on request", pdf: "", doi: "https://doi.org/10.1007/978-3-658-52212-4_7" },
+    { year: "2026", venue: "Springer VS · Book chapter", title: "User-Centred AI for Combating Misinformation with Vulnerable Groups", note: "Second author · pp. 227–252 · full text on request", pdf: "", doi: "https://doi.org/10.1007/978-3-658-52212-4_10" },
+    { year: "2025", venue: "OzCHI 2024 · proceedings published Sept 2025", title: "Prototyping and Evaluating Bo App: A Brain Measurement Device as a Feedback Tool for Cognitive Training", note: "Late-Breaking Work", pdf: "Bo_App_OzCHI2023.pdf", doi: "https://doi.org/10.1145/3726986.3727033" },
     { year: "2015", venue: "IJISA", title: "Mobile Robot Path Planning by RRT* in Dynamic Environments", note: "First author", pdf: "Mobile_Robot_Path_Planning.pdf", doi: "" },
     { year: "Thesis", venue: "Master's thesis · M.Sc. HCI, University of Siegen", title: "How Older Adults Use Measures of Brain Activity in Real Life: A Design Case Study", note: "", pdf: "Master_Thesis_Roodabeh_Seif.pdf", doi: "" },
-    { year: "Review", venue: "Manuscript", title: "Surveillance Beyond Borders — digital safety under transnational repression", note: "First author · prepared for academic review", pdf: "", doi: "" }
+    { year: "Review", venue: "Manuscript", title: "Surveillance Beyond Borders · digital safety under transnational repression", note: "First author · prepared for academic review", pdf: "", doi: "" }
   ],
 
   teaching: [
-    { when: "2025 – present", title: "Meditation Instructor", org: "Online — Persian-speaking community", text: "Online meditation sessions supporting mindfulness and emotional wellbeing, drawing on 13+ years of personal practice." },
+    { when: "2025 – present", title: "Meditation Instructor", org: "Online · Persian-speaking community", text: "Online meditation sessions supporting mindfulness and emotional wellbeing, drawing on 13+ years of personal practice." },
     { when: "2022", title: "Private Tutor", org: "Germany", text: "Mathematics and English for primary-school students from different learning needs and cultural backgrounds." }
   ],
 
@@ -1059,7 +1078,7 @@ window.SITE = {
 };
 
 /* =====================================================================
-   LOGOS — image data for the partner strip. Generated; no need to edit.
+   LOGOS, image data for the partner strip. Generated; no need to edit.
    ===================================================================== */
 (function () {
   const LOGOS = {
