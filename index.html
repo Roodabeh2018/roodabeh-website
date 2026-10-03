@@ -53,6 +53,7 @@
   --neutral-400: #9a9a95;
   --neutral-200: #c6c6c1;
   --neutral-50:  #ededea;
+  --neutral-0:   #ffffff;
   --sage-400: #8fcbb5;
   --amber-300: #d8b57f;
   --slate-300: #b3b6cc;
@@ -72,6 +73,7 @@
   --color-accent-border: rgba(143,203,181,0.40);
   --color-on-accent: var(--neutral-950);
   --color-focus: var(--sage-400);
+  --color-logo-tile: var(--neutral-0);            /* white tile: partner logos have white backgrounds */
 
   /* Colour: evidence states (colour + marker shape + text, never colour alone) */
   --evidence-measured: var(--sage-400);
@@ -89,6 +91,7 @@
   --text-h1: clamp(2.5rem, 5.2vw, 4rem);        /* case-study title */
   --text-h2: clamp(1.875rem, 3.2vw, 2.5rem);    /* section heading */
   --text-h3: 1.5rem;                            /* sub-section, lead statements */
+  --text-metric: clamp(2rem, 3.4vw, 2.75rem);   /* big evidence numbers */
   --text-h4: 1.25rem;                           /* card titles */
   --text-body-lg: 1.125rem;
   --text-body: 1rem;
@@ -104,7 +107,7 @@
   /* Spacing: 4px base */
   --space-1: 4px;   --space-2: 8px;   --space-3: 12px;  --space-4: 16px;
   --space-5: 24px;  --space-6: 32px;  --space-7: 48px;  --space-8: 64px;
-  --space-9: 96px;  --space-10: 128px;
+  --space-9: 96px;
 
   /* Radius */
   --radius-sm: 4px;
@@ -125,6 +128,7 @@
   --nav-h: 72px;
   --control-h: 44px;             /* WCAG 2.2 target size */
   --control-h-sm: 36px;
+  --logo-tile-h: 56px;           /* partner logo tile */
   --portrait-w: clamp(300px, 30vw, 400px);
 
   /* Motion */
@@ -243,7 +247,7 @@ a.card:focus-visible { outline-offset: 4px; border-radius: var(--radius-md); }
 .card--principle { border-top: var(--border-2) solid var(--color-accent-border); }
 .card--decision { background: var(--color-surface-2); padding: 0; overflow: hidden; }
 .card--metric { display: flex; flex-direction: column; gap: var(--space-1); }
-.card--metric .metric__value { font: 400 var(--text-h1)/1 var(--font-serif); font-size: clamp(2rem, 3.4vw, 2.75rem); color: var(--color-text); margin-bottom: var(--space-3); font-variant-numeric: lining-nums; }
+.card--metric .metric__value { font: 400 var(--text-metric)/1 var(--font-serif); color: var(--color-text); margin-bottom: var(--space-3); font-variant-numeric: lining-nums; }
 .card--metric .badge { margin-top: auto; padding-top: var(--space-4); }
 .card--nav .type-h3 { margin-top: var(--space-2); }
 
@@ -293,7 +297,7 @@ a.card:focus-visible { outline-offset: 4px; border-radius: var(--radius-md); }
 .site-nav__brand { font: 400 var(--text-h4)/1 var(--font-serif); color: var(--color-text); text-decoration: none; }
 .site-nav__brand { display: inline-flex; align-items: center; gap: var(--space-3); }
 .site-nav__brand:hover { color: var(--color-accent); }
-.site-nav__logo { display: inline-grid; place-items: center; width: 2.25rem; height: 2.25rem; border: var(--border-1) solid var(--color-accent); border-radius: var(--radius-sm); color: var(--color-accent); font: 400 1rem/1 var(--font-serif); letter-spacing: 0.04em; }
+.site-nav__logo { display: inline-grid; place-items: center; width: var(--control-h-sm); height: var(--control-h-sm); border: var(--border-1) solid var(--color-accent); border-radius: var(--radius-sm); color: var(--color-accent); font: 400 var(--text-body)/1 var(--font-serif); letter-spacing: 0.04em; }
 @media (max-width: 480px) { .site-nav__name { display: none; } }
 .site-nav__links { display: flex; gap: var(--space-2); }
 .nav-link { display: inline-flex; align-items: center; min-height: var(--control-h-sm); padding: 0 var(--space-3); border-radius: var(--radius-sm); font-size: var(--text-body-sm); color: var(--color-text-muted); text-decoration: none; transition: color var(--duration) var(--ease), background-color var(--duration) var(--ease); }
@@ -588,14 +592,13 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
 /* Partner strip */
 .partners { padding-block: var(--space-7); border-block: var(--border-1) solid var(--color-border-subtle); }
 .partners .type-label { margin-bottom: var(--space-5); }
-.partners__list { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4) var(--space-7); list-style: none; margin: 0; padding: 0; }
+.partners__list { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4); list-style: none; margin: 0; padding: 0; }
 .partners__list a { text-decoration: none; }
 .partners__list span { color: var(--color-text-secondary); font-size: var(--text-body-sm); letter-spacing: 0.01em; transition: color var(--duration) var(--ease); }
 .partners__list a:hover span { color: var(--color-text); }
-.partners__list a:has(img) { display: flex; align-items: center; justify-content: center; height: 56px; padding: 8px 14px; background: #fff; border-radius: var(--radius-md); opacity: .92; transition: opacity var(--duration) var(--ease); }
+.partners__list a:has(img) { display: flex; align-items: center; justify-content: center; height: var(--logo-tile-h); padding: var(--space-2) var(--space-4); background: var(--color-logo-tile); border-radius: var(--radius-md); opacity: .92; transition: opacity var(--duration) var(--ease); }
 .partners__list a:has(img):hover { opacity: 1; }
 .partners__list img { display: block; height: 100%; max-height: 40px; max-width: 150px; width: auto; object-fit: contain; }
-.partners__list { gap: var(--space-4) !important; }
 
 /* Testimonials */
 .quotes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-6); }
@@ -618,6 +621,12 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
 /* Card decision + More work */
 .card__decision { margin-top: var(--space-3); }
 .more-work__title { margin: var(--space-8) 0 var(--space-5); color: var(--color-text-secondary); }
+
+/* Spacing utilities: one-off offsets, always from the spacing scale */
+.mt-4 { margin-top: var(--space-4); } .mt-5 { margin-top: var(--space-5); } .mt-6 { margin-top: var(--space-6); } .mt-7 { margin-top: var(--space-7); }
+.mb-3 { margin-bottom: var(--space-3); } .mb-4 { margin-bottom: var(--space-4); } .mb-7 { margin-bottom: var(--space-7); }
+.row-gap-0 { row-gap: 0; } .row-gap-7 { row-gap: var(--space-7); }
+.fw-medium { font-weight: 500; }
 </style>
 </head>
 <body>
@@ -742,7 +751,7 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
 
     <section id="work" class="section container">
       ${sectionHeader('Selected work', 'Research is where I understand the problem. Product is where I decide what to do about it.')}
-      <div class="cluster" role="group" aria-label="Filter case studies" style="margin-bottom: var(--space-7)">
+      <div class="cluster mb-7" role="group" aria-label="Filter case studies">
         <button type="button" class="chip chip--toggle" data-f="all" aria-pressed="true">All work</button>
         <button type="button" class="chip chip--toggle" data-f="product" aria-pressed="false">Product &amp; AI</button>
         <button type="button" class="chip chip--toggle" data-f="research" aria-pressed="false">UX Research</button>
@@ -777,7 +786,7 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
         '', `<div class="pub-links cluster-lg">${pub.note ? `<span class="type-body-sm text-muted">${esc(pub.note)}</span>` : ''}
           ${pub.pdf ? `<a class="btn btn--secondary btn--sm" href="${esc(pub.pdf)}" target="_blank">PDF <span class="icon" aria-hidden="true">↓</span></a>` : ''}
           ${pub.doi ? `<a class="btn btn--secondary btn--sm" href="${esc(pub.doi)}" target="_blank" rel="noopener">DOI <span class="icon" aria-hidden="true">↗</span></a>` : ''}</div>`))}</ol>
-      ${P.orcid ? `<p style="margin-top: var(--space-6)"><a class="btn btn--link" href="${esc(P.orcid)}" target="_blank" rel="noopener">Full list on ORCID ↗</a></p>` : ''}
+      ${P.orcid ? `<p class="mt-6"><a class="btn btn--link" href="${esc(P.orcid)}" target="_blank" rel="noopener">Full list on ORCID ↗</a></p>` : ''}
     </section>
 
     <section id="teaching" class="section container">
@@ -787,7 +796,7 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
 
     <section id="beyond" class="section container">
       ${sectionHeader('Beyond work', 'Outside the office', 'People who cultivate diverse interests tend to ask better questions, notice more, and build more human products.')}
-      <ul class="grid-3" style="row-gap: 0">${list(S.beyond, b => `<li class="interest"><span class="interest__icon" aria-hidden="true">${b.icon}</span><span class="text-primary" style="font-weight:500">${esc(b.name)}</span><span class="type-body-sm text-muted">${esc(b.note)}</span></li>`)}</ul>
+      <ul class="grid-3 row-gap-0">${list(S.beyond, b => `<li class="interest"><span class="interest__icon" aria-hidden="true">${b.icon}</span><span class="text-primary fw-medium">${esc(b.name)}</span><span class="type-body-sm text-muted">${esc(b.note)}</span></li>`)}</ul>
     </section>
 
     <section id="about" class="section container">
@@ -797,7 +806,7 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
           <p class="type-h3 measure">${esc(S.about.lead)}</p>
           <ol class="journey">${list(S.about.journey, (j, i) => `<li><span class="type-label">${pad(i + 1)}</span><p class="type-h4">${esc(j.title)}</p><p class="type-body-sm text-muted">${esc(j.desc)}</p></li>`)}</ol>
           <p class="type-body-lg measure">${esc(S.about.body)}</p>
-          <div class="card card--principle" style="margin-top: var(--space-7)"><p class="type-label text-accent" style="margin-bottom: var(--space-3)">Why AI</p><p class="card__text">${esc(S.about.whyAI)}</p></div>
+          <div class="card card--principle mt-7"><p class="type-label text-accent mb-3">Why AI</p><p class="card__text">${esc(S.about.whyAI)}</p></div>
         </div>
         <dl class="meta-list">
           <div><dt class="type-label">Education</dt><dd><ul>${list(S.about.education, e => `<li>${esc(e)}</li>`)}</ul></dd></div>
@@ -809,7 +818,7 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
 
     <section id="skills" class="section container">
       ${sectionHeader('Skills', 'What I bring to the table')}
-      <div class="grid-3" style="row-gap: var(--space-7)">${list(S.skills, s => `<div class="skill-group"><h3 class="type-h4">${esc(s.title)}</h3><ul class="cluster">${list(s.items, x => `<li>${chip(x)}</li>`)}</ul></div>`)}</div>
+      <div class="grid-3 row-gap-7">${list(S.skills, s => `<div class="skill-group"><h3 class="type-h4">${esc(s.title)}</h3><ul class="cluster">${list(s.items, x => `<li>${chip(x)}</li>`)}</ul></div>`)}</div>
     </section>
 
     <section id="contact" class="section container">
@@ -851,25 +860,25 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
     const listCard = (L, cls) => `<div class="card"><h4 class="card__label type-label">${esc(L.label)}</h4><ul class="${cls}">${list(L.items, x => `<li>${esc(x)}</li>`)}</ul></div>`;
     return `${a.deterministic ? `<div class="layers">${layer(a.deterministic, 'det')}<div class="layers__arrow"><span class="icon" aria-hidden="true">→</span><span class="type-label">Verified facts only</span></div>${layer(a.generative, 'gen')}</div>` : ''}
       ${a.rule ? `<p class="rule"><span class="type-label">Rule</span><span class="type-h4">${esc(a.rule)}</span></p>` : ''}
-      ${a.may ? `<div class="grid-2" style="margin-top: var(--space-6)">${listCard(a.may, 'check-list')}${listCard(a.mustNot, 'cross-list')}</div>` : ''}
+      ${a.may ? `<div class="grid-2 mt-6">${listCard(a.may, 'check-list')}${listCard(a.mustNot, 'cross-list')}</div>` : ''}
       ${(a.prohibited || a.evals || a.human) ? disclosure(a.moreLabel || 'AI guardrails & evaluation', a.evals ? `${a.evals.length} ${a.evalsCount || 'release criteria'}` : '', `
-        ${(a.prohibited || a.human) ? `<div class="grid-2">${a.prohibited ? `<div><h4 class="type-label" style="margin-bottom: var(--space-3)">Prohibited AI behaviour</h4><ul class="cross-list">${list(a.prohibited, x => `<li>${esc(x)}</li>`)}</ul></div>` : ''}
-          ${a.human ? `<div><h4 class="type-label" style="margin-bottom: var(--space-3)">Human control</h4><ul class="check-list">${list(a.human, x => `<li>${esc(x)}</li>`)}</ul></div>` : ''}</div>` : ''}
-        ${a.evals ? `<div class="table-wrap" style="margin-top: var(--space-6)"><table class="table"><thead><tr><th scope="col">${esc(a.evalsHead ? a.evalsHead[0] : 'Criterion')}</th><th scope="col">${esc(a.evalsHead ? a.evalsHead[1] : 'Release expectation')}</th><th scope="col">Status</th></tr></thead><tbody>
+        ${(a.prohibited || a.human) ? `<div class="grid-2">${a.prohibited ? `<div><h4 class="type-label mb-3">Prohibited AI behaviour</h4><ul class="cross-list">${list(a.prohibited, x => `<li>${esc(x)}</li>`)}</ul></div>` : ''}
+          ${a.human ? `<div><h4 class="type-label mb-3">Human control</h4><ul class="check-list">${list(a.human, x => `<li>${esc(x)}</li>`)}</ul></div>` : ''}</div>` : ''}
+        ${a.evals ? `<div class="table-wrap mt-6"><table class="table"><thead><tr><th scope="col">${esc(a.evalsHead ? a.evalsHead[0] : 'Criterion')}</th><th scope="col">${esc(a.evalsHead ? a.evalsHead[1] : 'Release expectation')}</th><th scope="col">Status</th></tr></thead><tbody>
           ${list(a.evals, e => `<tr><td>${esc(e.metric)}</td><td>${esc(e.target)}</td><td>${badge(e.status)}</td></tr>`)}</tbody></table></div>` : ''}
-        ${a.note ? `<p class="type-caption measure" style="margin-top: var(--space-4)">${esc(a.note)}</p>` : ''}`) : ''}`;
+        ${a.note ? `<p class="type-caption measure mt-4">${esc(a.note)}</p>` : ''}`) : ''}`;
   }
 
   // Chapter blocks: generic, ordered content for case studies that use `chapters`
   function renderBlock(b) {
     const label = b.label ? `<span class="block__label type-label">${esc(b.label)}</span>` : '';
     switch (b.type) {
-      case 'quote': return `<blockquote class="pull-quote block">${b.label ? `<p class="type-label text-accent" style="margin-bottom: var(--space-3)">${esc(b.label)}</p>` : ''}<p class="type-h3">${esc(b.text)}</p></blockquote>`;
+      case 'quote': return `<blockquote class="pull-quote block">${b.label ? `<p class="type-label text-accent mb-3">${esc(b.label)}</p>` : ''}<p class="type-h3">${esc(b.text)}</p></blockquote>`;
       case 'prose': return `<div class="prose block">${list(b.paragraphs, x => `<p>${esc(x)}</p>`)}</div>`;
       case 'chips': return `<div class="block">${label}<ul class="cluster">${list(b.items, x => `<li>${chip(x)}</li>`)}</ul></div>`;
       case 'list': {
         const cls = { check: 'check-list', cross: 'cross-list', steps: 'step-list', plain: 'plain-list' }[b.style || 'plain'];
-        return `<div class="block${b.card ? ' card' : ''}">${label}${b.title ? `<h3 class="type-h4" style="margin-bottom: var(--space-4)">${esc(b.title)}</h3>` : ''}<ul class="${cls}">${list(b.items, x => `<li>${esc(x)}</li>`)}</ul>${b.status ? `<p style="margin-top: var(--space-4)">${badge(b.status)}</p>` : ''}${b.note ? `<p class="type-caption measure" style="margin-top: var(--space-4)">${esc(b.note)}</p>` : ''}</div>`;
+        return `<div class="block${b.card ? ' card' : ''}">${label}${b.title ? `<h3 class="type-h4 mb-4">${esc(b.title)}</h3>` : ''}<ul class="${cls}">${list(b.items, x => `<li>${esc(x)}</li>`)}</ul>${b.status ? `<p class="mt-4">${badge(b.status)}</p>` : ''}${b.note ? `<p class="type-caption measure mt-4">${esc(b.note)}</p>` : ''}</div>`;
       }
       case 'columns': {
         const col = (c, i) => `<div class="card${c.accent ? ' card--layer-det' : (c.dashed ? ' card--layer-gen' : '')}">${c.label ? `<h3 class="card__label type-label${c.accent ? ' text-accent' : ''}">${esc(c.label)}</h3>` : ''}${c.title ? `<p class="card__title type-h4">${esc(c.title)}</p>` : ''}<ul class="${c.style === 'cross' ? 'cross-list' : (c.style === 'check' ? 'check-list' : 'plain-list')}">${list(c.items, x => `<li>${esc(x)}</li>`)}</ul>${c.why ? `<p class="card__footnote type-body-sm text-muted"><span class="text-primary">Why:</span> ${esc(c.why)}</p>` : ''}</div>`;
@@ -881,7 +890,7 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
           <div class="feature__head"><div>${b.label ? `<span class="type-label">${esc(b.label)}</span>` : ''}<h3 class="type-h3">${esc(b.title)}</h3><p class="measure">${esc(b.text)}</p></div>
           ${b.points ? `<ul class="feature__points">${list(b.points, x => `<li>${esc(x)}</li>`)}</ul>` : '<div></div>'}</div>
           ${(b.image !== undefined) ? figure({ file: b.image, caption: b.caption || '', note: b.note }) : ''}
-          ${b.screens ? `<div class="screens" style="margin-top: var(--space-5)">${list(b.screens, figure)}</div>` : ''}
+          ${b.screens ? `<div class="screens mt-5">${list(b.screens, figure)}</div>` : ''}
         </article>`;
       case 'decisions': return `<div class="block decision-list">${list(b.items, (d, i) => decisionCard(d, i, 3))}</div>`;
       case 'requirement': return `<div class="block card card--requirement">${requirement(b)}</div>`;
@@ -898,7 +907,7 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
     const head = (t, intro) => `<div class="subsection-header"><span class="type-label">${String.fromCharCode(65 + n++)}</span><h3 class="type-h3">${esc(t)}</h3></div>${intro ? `<p class="subsection-intro">${esc(intro)}</p>` : ''}`;
     const block = html => blocks.push(`<div class="subsection">${html}</div>`);
 
-    if (s.principleQuote) block(`<blockquote class="pull-quote"><p class="type-label text-accent" style="margin-bottom: var(--space-3)">Product principle</p><p class="type-h3">${esc(s.principleQuote)}</p></blockquote>`);
+    if (s.principleQuote) block(`<blockquote class="pull-quote"><p class="type-label text-accent mb-3">Product principle</p><p class="type-h3">${esc(s.principleQuote)}</p></blockquote>`);
 
     if (s.principles) block(`${head('Product principles', s.principlesIntro)}<div class="grid-2">${list(s.principles, x => `<div class="card card--principle">
       <h4 class="card__title type-h4">${esc(x.title)}</h4><p class="card__text type-body-sm">${esc(x.text)}</p>
@@ -995,9 +1004,9 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
 
     out.push(caseSection(num(), 'Outcome', 'Where it landed.',
       (p.outcome && p.outcome.length ? `<div class="prose">${list(p.outcome, x => `<p>${esc(x)}</p>`)}</div>` : '') +
-      (p.reflection ? `<blockquote class="pull-quote" style="margin-top: var(--space-7)"><p class="type-label" style="margin-bottom: var(--space-3)">Reflection</p><p class="type-h4">${esc(p.reflection)}</p></blockquote>` : '') +
-      (p.demonstrates ? `<div style="margin-top: var(--space-7)"><p class="type-label" style="margin-bottom: var(--space-3)">What this case demonstrates</p><ul class="cluster">${list(p.demonstrates, d => `<li>${chip(d)}</li>`)}</ul></div>` : '') +
-      (p.links && p.links.length ? `<div class="cluster-lg" style="margin-top: var(--space-7)">${list(p.links, l => `<a class="btn btn--secondary btn--sm" href="${esc(l.url)}"${ext(l.url)}>${esc(l.label)}</a>`)}</div>` : '')));
+      (p.reflection ? `<blockquote class="pull-quote mt-7"><p class="type-label mb-3">Reflection</p><p class="type-h4">${esc(p.reflection)}</p></blockquote>` : '') +
+      (p.demonstrates ? `<div class="mt-7"><p class="type-label mb-3">What this case demonstrates</p><ul class="cluster">${list(p.demonstrates, d => `<li>${chip(d)}</li>`)}</ul></div>` : '') +
+      (p.links && p.links.length ? `<div class="cluster-lg mt-7">${list(p.links, l => `<a class="btn btn--secondary btn--sm" href="${esc(l.url)}"${ext(l.url)}>${esc(l.label)}</a>`)}</div>` : '')));
 
     if ((p.visuals && p.visuals.length) || p.screens) out.push(caseSection(num(), 'Artifacts', 'From the work.',
       `<div class="figure-grid">${list(p.visuals, figure)}${p.screens ? `<div class="screens">${list(p.screens, figure)}</div>` : ''}</div>`));
