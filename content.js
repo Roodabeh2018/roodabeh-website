@@ -31,7 +31,7 @@
 window.SITE = {
   person: {
     name: "Roodabeh Seif",
-    roles: ["AI Product Manager"],
+    roles: ["AI-native Product Manager"],
     sub: "with a UX research and HCI background",
     tagline:
       "I move from complex human evidence to product requirements, prioritisation, responsible AI boundaries and defensible product decisions.",
@@ -74,7 +74,7 @@ window.SITE = {
 
   about: {
     lead:
-      "I'm an AI Product Manager with a background in UX research and HCI. I turn ambiguous user and business problems into clear product scope, buildable requirements, measurable AI quality criteria and responsible release decisions.",
+      "I'm an AI-native Product Manager with a background in UX research and HCI: I use AI tools across the whole product path, from research synthesis to building working MVPs myself, and I know where AI belongs in a product and where it does not. I turn ambiguous user and business problems into clear product scope, buildable requirements, measurable AI quality criteria and responsible release decisions.",
     journey: [
       { title: "Engineering", desc: "Algorithms, robotics, intelligent systems" },
       { title: "UX Research", desc: "The people behind the technology" },
@@ -125,7 +125,7 @@ window.SITE = {
       subtitle: "A 0→1 routine companion for life under stress · return over perfection, facts before GenAI.",
       type: "0→1 AI Product · Behaviour Design · Wellbeing",
       context: "Independent, self-funded product",
-      role: "AI Product Manager · UX Researcher & Product Designer",
+      role: "AI-native Product Manager · UX Researcher & Product Designer",
       timeline: "Ongoing",
       methods: ["Observation", "Survey", "Follow-up interviews", "Usability testing", "4-week pilot"],
       status: "Functional MVP · validation cycle completed · AI reflection evaluated offline, not yet in the product",
