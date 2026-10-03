@@ -40,7 +40,7 @@ window.SITE = {
     email: "roodabeh.seif@gmail.com",
     linkedin: "https://linkedin.com/in/roodabeh-seif",
     orcid: "https://orcid.org/0009-0008-6459-9637",
-    location: "Germany · Open to relocation",
+    location: "Berlin, Germany",
     // Short proof points shown under the hero statement
     proof: [
       "4+ years leading research-to-product work in EU- and BMBF/BMFTR-funded consortium projects",
@@ -91,7 +91,9 @@ window.SITE = {
       "M.Sc. Mechatronics Engineering, Azad University, Qazvin (2011–2014). Research: mobile robot path planning with RRT* in MATLAB, published in IJISA 2015",
       "B.Sc. Computer Science, Payame-Noor University (2005–2010)",
       "Microsoft AI Product Manager Professional Certificate (Coursera), in progress",
-      "AI Consulting Bootcamp, Ironhack (Oct–Dec 2026)",
+      "AI Consulting & Integration Bootcamp, Ironhack (Oct–Dec 2026, ongoing)",
+      "Enterprise Product Management Fundamentals (certificate)",
+      "Foundations of User Experience (UX) Design (certificate)",
       "DCitizens Summer School (EU Horizon Twinning), participatory design & design justice, Lisbon (2024)"
     ],
     languages: "English C2 · German B2 · Persian native"
@@ -856,7 +858,7 @@ window.SITE = {
       title: "Bo App",
       subtitle: "Co-designing an accessible cognitive-training experience, and brain-sensor onboarding, with older adults.",
       type: "UX Research · Co-design · Digital Health",
-      context: "eVITA (EU–Japan, Dec 2021 – May 2023) · NeU brain-sensor workstream · paid position, University of Siegen",
+      context: "eVITA (EU–Japan, Dec 2021 – May 2023) · NeU fNIRS brain-sensor workstream · paid position, University of Siegen",
       role: "UX Researcher & Designer",
       timeline: "~8–10 weeks",
       methods: ["Interviews", "Participatory co-design", "Observation", "Think-aloud usability testing"],
@@ -881,7 +883,7 @@ window.SITE = {
       approach: [
         { title: "01 Discover", text: "Literature review, interviews and benchmarking." },
         { title: "02 Co-design", text: "7 older adults aged 60–80 across 12 co-design sessions and 4 iterative rounds, roughly 22 hours." },
-        { title: "03 Test & iterate", text: "Interactive prototypes in Figma and Adobe XD. Think-aloud testing with the mobile prototype and the NeU brain activity sensor, then revised onboarding, navigation and feedback, followed by retesting." }
+        { title: "03 Test & iterate", text: "Interactive prototypes in Figma and Adobe XD. Think-aloud testing with the mobile prototype and the NeU fNIRS brain activity sensor, then revised onboarding, navigation and feedback, followed by retesting." }
       ],
       insights: [
         { title: "Hardware onboarding is part of the product", text: "Most failures happened before training started, while wearing and connecting unfamiliar hardware." },
@@ -1043,13 +1045,13 @@ window.SITE = {
         "Translated interviews, fieldwork, workshops and usability tests into personas, journey maps and PRD-style requirements with user stories and acceptance criteria for a social OER learning platform.",
         "Delivered two learning products, a cybersecurity board game and metaphor flashcards. Ran an A/B test of flashcard formats (text vs. visual metaphor); the result became the product decision: metaphor plus a short explanation.",
         "Co-authored two publications and contributed to grant proposals.",
-        "eVITA (EU–Japan, 2021–2023), brain-sensor workstream: improved the existing ABC App in Unity, a cognitive-training app driven by the NeU brain activity sensor (requirements, prototypes and implementation changes).",
-        "eVITA: designed Bo App for the same NeU sensor through interviews and real-time co-design with older adults, online and in person, with prototypes in Figma and Adobe XD. Participants could set up and use the sensor with Bo App alone: independent setup rose from 25% to 100% (1 of 4 users in the first test, 3 of 3 in the retest).",
+        "eVITA (EU–Japan, 2021–2023), brain-sensor workstream: improved the existing ABC App in Unity, a cognitive-training app driven by the NeU fNIRS brain activity sensor (requirements, prototypes and implementation changes).",
+        "eVITA: designed Bo App for the same NeU sensor through interviews and real-time co-design with older adults, online and in person, with prototypes in Figma and Adobe XD. Multilingual design for German, French, Italian and Japanese users. Participants could set up and use the sensor with Bo App alone: independent setup rose from 25% to 100% (1 of 4 users in the first test, 3 of 3 in the retest).",
         "NEBULA (BMBF, 2023–2025): turned research with vulnerable groups into responsible-AI requirements: explainability, multilingual access and human control.",
         "Mentored students in their master's theses and study projects."
       ] },
-    { when: "Jan – Aug 2021", title: "Digital Integration & Cybersecurity Intern", org: "Operatis, Germany", text: "Cybersecurity data workflows and integration (Linux, Windows Server, Bash, JSON-to-RDF, Docker) and vendor evaluation." },
-    { when: "2014 – 2016", title: "Lecturer & Digital Competency Trainer, Computer Science", org: "Islamic Azad University · Tehran West & Karaj branches, Iran", text: "Taught undergraduate courses in data structures, computer networks, Photoshop and technical English, and ran digital-competency workshops for 200+ students a year." }
+    { when: "Dec 2020 – Jul 2021", title: "Business & Data Analyst Intern, Cybersecurity", org: "Operatis Business Technology Consulting, Germany", text: "Analysed business processes and turned operational needs into requirements and workflows; supported evaluation, testing and rollout of IT and business software; prepared and validated data for integration and migration (knowledge graph, JSON-to-RDF, Linux, Bash, Docker); researched vendors and coordinated between clients, consultants and technical stakeholders." },
+    { when: "Oct 2015 – Dec 2017", title: "Lecturer & Digital Competency Trainer, Computer Science", org: "Islamic Azad University · Tehran West & Karaj branches, Iran", text: "Taught undergraduate courses in data structures, computer networks, Photoshop and technical English, and ran digital-competency workshops for 200+ students a year." }
   ],
 
   publications: [
