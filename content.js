@@ -120,6 +120,14 @@ window.SITE = {
     {
       slug: "retune",
       cardImage: "cover-retune.webp",
+      storyTitle: "A missed day should not end everything.",
+      story: [
+        { label: "Where it started", text: "Retune began with things I was already using: a paper planner, then Excel and forms for my own tracking, and two WhatsApp and Telegram groups where people encouraged each other to keep their routines.", image: "rt-evolution.webp", caption: "Two separate practices became one product." },
+        { label: "What went wrong", text: "Habit apps reward unbroken streaks. For young Persian speakers whose routines are interrupted by illness, strain or crisis, one missed day turns into giving up. The moment that matters is not the missed day. It is whether the person comes back.", image: "retune-today.webp", caption: "The Today screen welcomes people back instead of counting what they missed." },
+        { label: "The turning point", text: "The research pointed the same way three times: coming back matters more than streaks, support has to feel safe, and anything that ranks or shames works against the people Retune is for. Low pressure was not a feature. It was the product.", image: "rt-principles.webp", caption: "Three principles and what each one became in the MVP." },
+        { label: "What I decided", text: "No streaks and no leaderboards. Every activity gets its own privacy setting: share it by name, share it anonymously, or keep it private. Plain logic calculates the numbers, and the AI reflection is only allowed to explain them.", image: "rt-privacy.webp", caption: "Privacy is chosen per activity, not per account." },
+        { label: "What changed", text: "I built the MVP myself and tested it. In a four-week pilot with 18 people, 86% completed onboarding and 78% understood the per-activity privacy correctly. The AI reflection passed an offline test on 60 cases with no invented numbers, and it still stays out of the live product until the next comparison is done.", image: "retune-reports.webp", caption: "Weekly and monthly reports in the working MVP." }
+      ],
       track: ["product", "research"],
       title: "Retune",
       subtitle: "A 0→1 routine companion for life under stress · return over perfection, facts before GenAI.",
@@ -381,9 +389,9 @@ window.SITE = {
       ],
       demonstrates: ["0→1 strategy and MVP definition", "Prioritisation: saying no", "Requirements into data and access logic", "Deterministic vs. GenAI architecture", "AI guardrails and evaluation before release"],
       visuals: [
-        { file: "retune-evolution.webp", caption: "Two fragmented practices: personal tracking and group accountability, converged into one MVP." },
-        { file: "retune-principles-to-mvp.webp", caption: "Principles translated into product decisions." },
-        { file: "retune-privacy-model.webp", caption: "Privacy is selected per activity: by name, anonymous completion, or private." }
+        { file: "rt-evolution.webp", caption: "Two fragmented practices: personal tracking and group accountability, converged into one MVP." },
+        { file: "rt-principles.webp", caption: "Principles translated into product decisions." },
+        { file: "rt-privacy.webp", caption: "Privacy is selected per activity: by name, anonymous completion, or private." }
       ],
       screens: [
         { file: "retune-today.webp", caption: "Today: welcome back, no streak repair" },
@@ -402,6 +410,14 @@ window.SITE = {
     {
       slug: "ghesse-khaneh",
       cardImage: "cover-ghesse-khaneh.webp",
+      storyTitle: "The child is not the user.",
+      story: [
+        { label: "Where it started", text: "Ghesse Khaneh runs life-skills sessions for children through interactive storytelling, discussion, role-play and games. Running one session means juggling the story, the learning goals, questions, activities, materials, timing, observations and the follow-up with parents.", image: "gk-home.webp", caption: "The facilitator's home screen." },
+        { label: "What went wrong", text: "All of that knowledge lived in scattered documents, notes and the facilitator's own head. It was hard to repeat and harder still to hand over to a new facilitator.", image: "gk-session-builder.webp", caption: "The session builder brings the pieces of one session together." },
+        { label: "The turning point", text: "The obvious product was a story app for children. I decided against it. The child is the one who benefits, the facilitator is the one who needs help, and the value of a session is what happens between people in the room.", image: "gk-flow.webp", caption: "The facilitator leads; AI only assists before and after." },
+        { label: "What I decided", text: "The platform supports the facilitator before, during and after each session, and the live session stays human-led. The AI assistant is a concept that helps with preparation and reflection only. It does not diagnose and it never talks to children.", image: "gk-reflections.webp", caption: "Reflection after the session, with an optional suggested summary." },
+        { label: "What changed", text: "A bilingual prototype in Persian and English, with a session builder, a story library, programs, reflections, a take-home card for parents and a research view built so the product can be evaluated.", image: "gk-parent-takehome.webp", caption: "The parent take-home card carries the session into the family." }
+      ],
       track: ["product", "research"],
       title: "Ghesse Khaneh",
       altTitle: "قصه‌خونه",
@@ -592,6 +608,14 @@ window.SITE = {
     {
       slug: "dara",
       cardImage: "cover-dara.webp",
+      storyTitle: "Honest check-ins need a private room.",
+      story: [
+        { label: "Where it started", text: "DARA is my own idea: a workplace wellbeing product built around four parts of working life: energy, connection, focus and growth.", image: "dara-home.webp", caption: "The employee home screen." },
+        { label: "What went wrong", text: "Wellbeing tools at work have a trust problem. People will not answer honestly if a manager might see it, and managers still need to know when a team is struggling.", image: "dara-checkin.webp", caption: "A short daily check-in that only the employee sees." },
+        { label: "The turning point", text: "I stopped trying to balance the two sides and separated them completely. People see their own data. Managers see only team patterns, and with fewer than five responses they see nothing at all.", image: "dara-manager-overview.webp", caption: "The manager view shows the team, never a person." },
+        { label: "What I decided", text: "Employees get private check-ins, a coach for difficult conversations and space to reflect. Managers get an anonymised team pulse and small team experiments. There are no rankings and no comparisons, and every page says clearly that this is not therapy or a crisis service.", image: "dara-team-pulse.webp", caption: "Team pulse: weekly averages and themes, aggregated." },
+        { label: "What changed", text: "A working browser demo that I built in one day with Lovable. It is at concept stage and has not been tested with users yet.", image: "dara-journey.webp", caption: "My Journey: private progress, nothing shared." }
+      ],
       track: ["product"],
       title: "DARA",
       subtitle: "Workplace wellbeing that helps people and teams · without turning wellbeing into surveillance.",
@@ -702,6 +726,14 @@ window.SITE = {
     {
       slug: "nebula",
       cardImage: "cover-nebula.webp",
+      storyTitle: "A verdict is not an answer.",
+      story: [
+        { label: "Where it started", text: "NEBULA was a federally funded project building an AI tool to detect misinformation. My part was to find out what the people most exposed to it needed: older adults, migrants and refugees, and young people.", image: "nb-ecosystem.webp", caption: "From people and settings to product requirements." },
+        { label: "What I saw", text: "Nobody checked a claim in one place. People compared messaging apps, videos, official sites, friends and relatives. Checking took time, language skills and confidence, which is exactly what the most exposed users had least of." },
+        { label: "The turning point", text: "A bare \"fake\" or \"not fake\" label gave people no reason to trust it. They wanted reasons, sources, the uncertainty, and a way to disagree. And they trusted people they knew more than any automated result.", image: "nb-requirements.webp", caption: "Each design response answers a pattern from the research." },
+        { label: "What I decided", text: "I wrote the findings as requirements: show the evidence behind each assessment, let people inspect and contest it, offer several languages and plain wording, and make results easy to discuss with someone they trust.", image: "nebula-prototype-explainability.webp", caption: "My own prototype: evidence stays inspectable, contestable and shareable." },
+        { label: "What changed", text: "The consortium reflected these directions in its smartphone app, browser plugin and web application. I built my own interaction prototype from the requirements, and the research was published as a Springer chapter in 2026.", image: "nebula-prototype-safeguards.webp", caption: "Responsible-AI principles made visible in the interface." }
+      ],
       track: ["product", "research"],
       title: "NEBULA",
       subtitle: "Explainable AI assistance for evaluating misinformation · without replacing human judgement.",
@@ -713,7 +745,7 @@ window.SITE = {
       status: "Findings published · Springer book chapter (2026)",
       cardOutcome: "Research on trust translated into explainable, contestable, multilingual AI requirements, plus my own concept prototype.",
       cardDecision: "Every AI assessment shows its evidence and sources, and users can inspect and disagree with it.",
-      cover: "nebula-research-to-requirements.webp",
+      cover: "nb-requirements.webp",
       glance: {
         challenge:
           "An AI tool can flag misinformation, but a verdict alone doesn't help people who have good reasons to distrust institutions and technology.",
@@ -763,8 +795,8 @@ window.SITE = {
         "Trust in AI cannot be designed as a confidence score alone. It depends on whether people can inspect evidence, understand uncertainty, question the system and keep meaningful control over the final decision.",
       demonstrates: ["Researching trust in AI with hard-to-reach groups", "Translating evidence into responsible-AI requirements", "Prototyping a concept from requirements", "Working inside a multi-partner consortium"],
       visuals: [
-        { file: "nebula-research-to-requirements.webp", caption: "How evidence shaped the requirements, and the value each one protects." },
-        { file: "nebula-research-ecosystem.webp", caption: "From situated experience to responsible-AI requirements." },
+        { file: "nb-requirements.webp", caption: "How evidence shaped the requirements, and the value each one protects." },
+        { file: "nb-ecosystem.webp", caption: "From situated experience to responsible-AI requirements." },
         { file: "nebula-prototype-explainability.webp", caption: "My concept prototype: evidence stays inspectable, contestable and shareable." },
         { file: "nebula-prototype-safeguards.webp", caption: "My concept prototype: responsible-AI principles made visible in the interface." }
       ],
@@ -780,6 +812,14 @@ window.SITE = {
     {
       slug: "surveillance-beyond-borders",
       cardImage: "cover-surveillance.webp",
+      storyTitle: "Leaving the country did not end the watching.",
+      story: [
+        { label: "Where it started", text: "Most digital-safety advice assumes the threat stops at the border. For people who left authoritarian countries, surveillance, intimidation and mistrust follow them online.", image: "sbb-process.webp", caption: "Two interview phases, 37 interviews in total." },
+        { label: "What I heard", text: "In the second phase I spoke with 14 people from one diaspora community. 12 of them deliberately censored themselves online, 12 lived with constant surveillance anxiety, and 13 chose their platforms by risk.", image: "sbb-evidence.webp", caption: "Counts from a qualitative sample, not population estimates." },
+        { label: "The turning point", text: "These were not five separate problems. Self-censorship, mistrust, vigilance, split identities and weakened solidarity fed each other. People were not careless about safety. They kept taking part while exhausted by it.", image: "sbb-dynamics.webp", caption: "Five dynamics that reinforce one another." },
+        { label: "What I decided", text: "I built on what people already did. They split their identities by hand, so the prototype supports separate identities. They kept small circles of trust, so it has trust circles. An AI posting coach offers calm, context-aware support and never tells anyone a post is \"safe\".", image: "sbb-ecology.webp", caption: "The framework behind the concepts: the Ecology of Digital Survival." },
+        { label: "What changed", text: "A working prototype with five safety concepts, a framework that explains how the dynamics connect, and a manuscript prepared for academic review with me as first author." }
+      ],
       track: ["research", "product"],
       title: "Surveillance Beyond Borders",
       subtitle: "Digital safety under transnational repression · from 37 interviews to prioritised product opportunities.",
@@ -791,7 +831,7 @@ window.SITE = {
       status: "Manuscript prepared for academic review · Prototype built",
       cardOutcome: "37 interviews distilled into five dynamics, a framework and prioritised safety concepts.",
       cardDecision: "An AI posting coach that gives decision support, never a 'safe to post' verdict.",
-      cover: "sbb-five-dynamics.webp",
+      cover: "sbb-dynamics.webp",
       glance: {
         challenge:
           "People who leave authoritarian contexts often stay under digital surveillance. Their online lives are shaped by fear long after they have physically left.",
@@ -840,10 +880,10 @@ window.SITE = {
       ],
       demonstrates: ["Leading sensitive, trauma-informed research", "Theory-building from qualitative data", "Trust-and-safety product thinking", "Owning the path from research to a prototype"],
       visuals: [
-        { file: "sbb-five-dynamics.webp", caption: "Five core dynamics of transnational digital surveillance." },
+        { file: "sbb-dynamics.webp", caption: "Five core dynamics of transnational digital surveillance." },
         { file: "sbb-ecology.webp", caption: "The Ecology of Digital Survival framework." },
-        { file: "sbb-phase2-evidence.webp", caption: "Phase II evidence snapshot (n = 14)." },
-        { file: "sbb-research-process.webp", caption: "Research process across both phases." }
+        { file: "sbb-evidence.webp", caption: "Phase II evidence snapshot (n = 14)." },
+        { file: "sbb-process.webp", caption: "Research process across both phases." }
       ],
       links: []
     },
@@ -854,6 +894,14 @@ window.SITE = {
     {
       slug: "bo-app",
       cardImage: "cover-bo-app.webp",
+      storyTitle: "Seven older adults, one unfamiliar headband.",
+      story: [
+        { label: "Where it started", text: "Seven adults between 60 and 80 agreed to try something unfamiliar: a headband that measures brain activity, and an app that turns it into cognitive training they could do at home, without a researcher beside them.", image: "bo-app-screens.webp", caption: "Bo App: welcome, onboarding, feedback and brain FAQ screens." },
+        { label: "What went wrong", text: "In the first usability round, only 1 of 4 people could put the sensor on and connect it alone. Three needed my help and two got lost in the app. Most of the failures happened before any training had started." },
+        { label: "The turning point", text: "That changed what I thought the product was. I had been designing a training app. The participants were showing me that the product begins the moment someone picks up the headband, so setting up the hardware had to be designed as carefully as the training itself." },
+        { label: "What I decided", text: "I rebuilt the onboarding as visual steps in a fixed order and kept a Back action visible on every screen. Brain activity became a growing tree, and the monthly garden idea came straight from a participant. When one participant said frequent performance feedback could feel stressful, I made feedback adjustable." },
+        { label: "What changed", text: "In the retest, all 3 participants set up the sensor on their own. Nobody needed help and nobody got lost. 8 of 10 high-priority problems were resolved, and the work was published at OzCHI 2024.", image: "bo-before-after.webp", caption: "First test against retest, in counts." }
+      ],
       track: ["research"],
       title: "Bo App",
       subtitle: "Co-designing an accessible cognitive-training experience, and brain-sensor onboarding, with older adults.",
@@ -931,6 +979,14 @@ window.SITE = {
     {
       slug: "crosscomits",
       cardImage: "cover-crosscomits.webp",
+      storyTitle: "Correct advice that nobody could use.",
+      story: [
+        { label: "Where it started", text: "Cybersecurity advice is usually correct and still unusable. I joined a running six-partner project in 2023 as its coordinator. It had to reach three very different groups: older adults, migrants and refugees, and young people.", image: "cc-glance.webp", caption: "The programme at a glance. It ran from 2022 to 2025 with about 200 participants; I joined in May 2023." },
+        { label: "What I saw", text: "People rarely got stuck on the interface. They got stuck on the words, and on who was explaining them. They were more confident and more open to learning from someone they already knew, or someone introduced by a person they knew. Small talk about daily routines mattered, and so did shared events: at one, everyone cooked and ate together before any security topic came up.", image: "cc-playtest.webp", caption: "A board-game playtest with older adults. Faces are blurred." },
+        { label: "The turning point", text: "We put two kinds of flashcards on the table: plain text explanations and visual metaphors. The metaphors made the ideas tangible, but a picture on its own was not equally clear for everyone. Neither format won alone.", image: "cc-flashcards.webp", caption: "A/B testing metaphor cards against text cards." },
+        { label: "What I decided", text: "The product became a metaphor plus one short explanation on every card, and a board game that turns security into something a group does together. I turned the findings into personas, journey maps and user stories for the learning platform, and prioritised them on a Kanban board.", image: "cc-boardgame.webp", caption: "The cybersecurity board game in use." },
+        { label: "What changed", text: "Two learning products were delivered, the research became requirements for a social platform for security mediators, and the work was published twice in 2026: at ACM PDC and as a Springer chapter that I wrote as first author.", image: "cc-oer-home.webp", caption: "The open educational resources platform that the requirements fed into." }
+      ],
       track: ["research"],
       title: "CrossComITS & Smartphone Café",
       subtitle: "Human-centered cybersecurity learning with migrants, refugees, older adults and young people.",
@@ -942,7 +998,7 @@ window.SITE = {
       status: "Published · ACM PDC 2026 & Springer chapter (first author)",
       cardOutcome: "Field research turned into a board game, metaphor cards and OER platform requirements.",
       cardDecision: "An A/B test of flashcard formats decided the product: visual metaphor plus a short explanation.",
-      cover: "crosscomits-overview.webp",
+      cover: "cc-cover.webp",
       glance: {
         challenge:
           "Cybersecurity advice is often correct but unusable for people with different languages, backgrounds and levels of digital literacy.",
@@ -987,11 +1043,10 @@ window.SITE = {
       ],
       demonstrates: ["Coordinating research across a consortium", "Inclusive, participatory methods", "Turning research into requirements"],
       visuals: [
-        { file: "crosscomits-learning-artifacts.webp", caption: "Tangible materials turned security into a shared activity." },
-        { file: "crosscomits-findings.webp", caption: "Four principles across three different communities." },
-        { file: "crosscomits-oer.webp", caption: "A social OER infrastructure for security mediators." },
-        { file: "smartphone-cafe-evidence.webp", caption: "Smartphone Café: translating field evidence into design direction." },
-        { file: "smartphone-cafe-setting.webp", caption: "Smartphone Café: research embedded in a familiar community setting." }
+        { file: "cc-principles.webp", caption: "Four principles across three different communities." },
+        { file: "cc-quiz-phone.webp", caption: "The board-game questions as virtual cards, in German and English, next to the printed board." },
+        { file: "cc-oer-collections.webp", caption: "Platform: reusable collections and scenarios." },
+        { file: "cc-oer-people.webp", caption: "Platform: visible people and community expertise." }
       ],
       links: [
         { label: "PDC 2026 paper (PDF)", url: "Mediating_Digital_Security_PDC2026.pdf" },

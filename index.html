@@ -622,6 +622,28 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
 .card__decision { margin-top: var(--space-3); }
 .more-work__title { margin: var(--space-8) 0 var(--space-5); color: var(--color-text-secondary); }
 
+/* 5.x Story: the case told as a short narrative, one beat per step, each with its picture */
+.story { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-8); }
+.story__beat { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: var(--space-7); align-items: center; }
+.story__beat:nth-child(even) .story__body { order: 2; }
+.story__beat--text { grid-template-columns: minmax(0, 1fr); max-width: var(--measure); }
+.story__num { display: inline-grid; place-items: center; width: var(--control-h-sm); height: var(--control-h-sm); border: var(--border-1) solid var(--color-accent-border); border-radius: var(--radius-pill); color: var(--color-accent); font: 400 var(--text-body)/1 var(--font-serif); margin-bottom: var(--space-4); }
+.story__label { color: var(--color-accent); margin-bottom: var(--space-3); }
+.story__text { font: 400 var(--text-body-lg)/var(--leading-body) var(--font-sans); color: var(--color-text-secondary); }
+.story__beat:first-child .story__text { font: 400 var(--text-h3)/var(--leading-heading) var(--font-serif); color: var(--color-text); }
+.story__media img { cursor: zoom-in; max-height: 70vh; width: auto; max-width: 100%; margin-inline: auto; }
+.story__media { align-items: center; }
+.story__media figcaption { text-align: center; }
+@media (max-width: 860px) {
+  .story { gap: var(--space-7); }
+  .story__beat { grid-template-columns: minmax(0, 1fr); gap: var(--space-5); }
+  .story__beat:nth-child(even) .story__body { order: 0; }
+}
+/* Image zoom: click any case-study image to see it large */
+.zoom { position: fixed; inset: 0; z-index: 300; display: grid; place-items: center; padding: var(--space-5); background: var(--color-bg); cursor: zoom-out; }
+.zoom img { max-width: 100%; max-height: 100%; border-radius: var(--radius-md); }
+.figure img { cursor: zoom-in; }
+
 /* Spacing utilities: one-off offsets, always from the spacing scale */
 .mt-4 { margin-top: var(--space-4); } .mt-5 { margin-top: var(--space-5); } .mt-6 { margin-top: var(--space-6); } .mt-7 { margin-top: var(--space-7); }
 .mb-3 { margin-bottom: var(--space-3); } .mb-4 { margin-bottom: var(--space-4); } .mb-7 { margin-bottom: var(--space-7); }
@@ -692,6 +714,13 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
       : `<div class="placeholder"><strong>Image to add</strong>${esc(v.note || '')}</div>`}<figcaption>${esc(v.caption)}</figcaption></figure>`;
 
   document.getElementById('nav-cta').href = 'mailto:' + P.email;
+  document.addEventListener('click', e => {
+    const z = e.target.closest('.zoom'); if (z) { z.remove(); return; }
+    const img = e.target.closest('.figure img'); if (!img) return;
+    const o = document.createElement('div'); o.className = 'zoom'; o.setAttribute('role', 'dialog'); o.setAttribute('aria-label', 'Enlarged image, click to close');
+    const big = new Image(); big.src = img.currentSrc || img.src; big.alt = img.alt; o.appendChild(big); document.body.appendChild(o);
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { const z = document.querySelector('.zoom'); if (z) z.remove(); } });
   document.getElementById('foot-name').textContent = '© ' + new Date().getFullYear() + ' ' + P.name;
 
   /* ---------------- HOME ---------------- */
@@ -979,6 +1008,9 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
       <div><h2 class="type-label">My contribution</h2><p>${esc(p.glance.contribution)}</p></div>
       <div><h2 class="type-label">Outcome</h2><p>${esc(p.glance.outcome)}</p></div>
     </div></div>`);
+
+    if (p.story && p.story.length) out.push(caseSection(num(), 'The story', esc(p.storyTitle || 'How it unfolded.'),
+      `<ol class="story">${list(p.story, (b, i) => `<li class="story__beat${b.image ? '' : ' story__beat--text'}"><div class="story__body"><span class="story__num" aria-hidden="true">${i + 1}</span><p class="story__label type-label">${esc(b.label)}</p><p class="story__text">${esc(b.text)}</p></div>${b.image ? `<figure class="figure story__media"><img src="${esc(b.image)}" alt="${esc(b.alt || b.caption || '')}" loading="lazy">${b.caption ? `<figcaption>${esc(b.caption)}</figcaption>` : ''}</figure>` : ''}</li>`)}</ol>`));
 
     out.push(caseSection(num(), 'Context &amp; problem', 'What needed to change?',
       `<div class="prose">${list(p.problem, (x, i) => `<p${i === 0 && (p.problemLead || p.slug === 'retune') ? ' class="prose__lead"' : ''}>${esc(x)}</p>`)}</div>`));
