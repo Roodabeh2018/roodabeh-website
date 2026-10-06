@@ -49,7 +49,15 @@ window.SITE = {
       "5 publications (ACM, Springer, IJISA)",
       "Taught and trained 200+ students a year"
     ],
-    cv: ""
+    // The bold numbers under the hero
+    stats: [
+      { n: "4", plus: true, label: "Years in product projects", note: "EU, EU-Japan and German federally funded." },
+      { n: "3", label: "Products built end to end", note: "Retune, Ghesse Khaneh, DARA." },
+      { n: "6", label: "Partners coordinated", note: "Coordinator of the CrossComITS consortium." },
+      { n: "5", label: "Publications", note: "ACM, Springer and IJISA." },
+      { n: "200", plus: true, label: "Students taught a year", note: "As university lecturer and trainer." }
+    ],
+    cv: "Roodabeh_Seif_CV.pdf"
   },
 
   /* Home-page "Approach" section, wording from your Notion AI PM portfolio */
@@ -96,7 +104,20 @@ window.SITE = {
       "Foundations of User Experience (UX) Design (certificate)",
       "DCitizens Summer School (EU Horizon Twinning), participatory design & design justice, Lisbon (2024)"
     ],
-    languages: "English C2 · German B2 · Persian native"
+    languages: "English C2 · German B2 · Persian native",
+    // Short introduction and background facts on the About page
+    short: "I'm an AI-native Product Manager with a background in UX research and HCI. Whether it's cognitive training for older adults, digital safety for people living under surveillance, or a routine companion for life under stress, I keep returning to one question: how do we build technology people don't just use, but trust?",
+    facts: [
+      { title: "PhD candidate, Human-Computer Interaction", text: "University of Siegen, 2026 to present" },
+      { title: "M.Sc. Human-Computer Interaction", text: "University of Siegen, 2019 to 2022" },
+      { title: "M.Sc. Mechatronics Engineering", text: "Azad University, Qazvin, 2011 to 2014" },
+      { title: "B.Sc. Computer Science", text: "Payame-Noor University, 2005 to 2010" },
+      { title: "Languages", text: "English C2, German B2, Persian native" }
+    ]
+  },
+  research: {
+    title: "Research that ends up in products. Teaching that makes it stick.",
+    intro: "Five peer-reviewed publications with ACM, Springer and IJISA, alongside university teaching, thesis mentoring and community workshops."
   },
 
   skills: [
@@ -126,7 +147,7 @@ window.SITE = {
         { label: "What went wrong", text: "Habit apps reward unbroken streaks. For young Persian speakers whose routines are interrupted by illness, strain or crisis, one missed day turns into giving up. The moment that matters is not the missed day. It is whether the person comes back.", image: "retune-today.webp", caption: "The Today screen welcomes people back instead of counting what they missed." },
         { label: "The turning point", text: "The research pointed the same way three times: coming back matters more than streaks, support has to feel safe, and anything that ranks or shames works against the people Retune is for. Low pressure was not a feature. It was the product.", image: "rt-principles.webp", caption: "Three principles and what each one became in the MVP." },
         { label: "What I decided", text: "No streaks and no leaderboards. Every activity gets its own privacy setting: share it by name, share it anonymously, or keep it private. Plain logic calculates the numbers, and the AI reflection is only allowed to explain them.", image: "rt-privacy.webp", caption: "Privacy is chosen per activity, not per account." },
-        { label: "What changed", text: "I built the MVP myself and tested it. In a four-week pilot with 18 people, 86% completed onboarding and 78% understood the per-activity privacy correctly. The AI reflection passed an offline test on 60 cases with no invented numbers, and it still stays out of the live product until the next comparison is done.", image: "retune-reports.webp", caption: "Weekly and monthly reports in the working MVP." }
+        { label: "What changed", text: "I built the MVP myself and tested it. In usability testing, 86% completed onboarding and 78% understood the per-activity privacy correctly, and a four-week pilot with 18 people followed. The AI reflection passed an offline test on 60 cases with no invented numbers, and it still stays out of the live product until the next comparison is done.", image: "retune-reports.webp", caption: "Weekly and monthly reports in the working MVP." }
       ],
       track: ["product", "research"],
       title: "Retune",
@@ -962,9 +983,7 @@ window.SITE = {
         "Accessibility for older adults is not simply a matter of increasing font sizes. It means reducing uncertainty, supporting confidence and translating unfamiliar technology into understandable actions.",
       demonstrates: ["Co-design with older adults", "Turning usability findings into prioritised design changes", "Honest, small-sample evidence reporting"],
       visuals: [
-        { file: "bo-app-screens.webp", caption: "Bo App: welcome, onboarding, feedback and brain FAQ screens." },
-        { file: "", caption: "Before / after onboarding", note: "Export the early and redesigned prototype screenshots from your Framer page" },
-        { file: "", caption: "Research process diagram", note: "Discover → co-design → test → iterate, with participant counts" }
+        { file: "bo-app-screens.webp", caption: "Bo App: welcome, onboarding, feedback and brain FAQ screens." }
       ],
       links: [
         { label: "Peer-reviewed publication (DOI) ↗", url: "https://doi.org/10.1145/3726986.3727033" },
@@ -985,7 +1004,7 @@ window.SITE = {
         { label: "What I saw", text: "People rarely got stuck on the interface. They got stuck on the words, and on who was explaining them. They were more confident and more open to learning from someone they already knew, or someone introduced by a person they knew. Small talk about daily routines mattered, and so did shared events: at one, everyone cooked and ate together before any security topic came up.", image: "cc-playtest.webp", caption: "A board-game playtest with older adults. Faces are blurred." },
         { label: "The turning point", text: "We put two kinds of flashcards on the table: plain text explanations and visual metaphors. The metaphors made the ideas tangible, but a picture on its own was not equally clear for everyone. Neither format won alone.", image: "cc-flashcards.webp", caption: "A/B testing metaphor cards against text cards." },
         { label: "What I decided", text: "The product became a metaphor plus one short explanation on every card, and a board game that turns security into something a group does together. I turned the findings into personas, journey maps and user stories for the learning platform, and prioritised them on a Kanban board.", image: "cc-boardgame.webp", caption: "The cybersecurity board game in use." },
-        { label: "What changed", text: "Two learning products were delivered, the research became requirements for a social platform for security mediators, and the work was published twice in 2026: at ACM PDC and as a Springer chapter that I wrote as first author.", image: "cc-oer-home.webp", caption: "The open educational resources platform that the requirements fed into." }
+        { label: "What changed", text: "Three learning products were delivered: the board game, the metaphor flashcards, and a social learning platform for security mediators that was built from the research requirements. The work was published twice in 2026: at ACM PDC and as a Springer chapter that I wrote as first author.", image: "cc-oer-home.webp", caption: "The third product: the open educational resources platform." }
       ],
       track: ["research"],
       title: "CrossComITS & Smartphone Café",
@@ -996,7 +1015,7 @@ window.SITE = {
       timeline: "May 2023 – Dec 2025",
       methods: ["Interviews", "Surveys", "Workshops", "A/B testing", "Usability tests", "Participatory learning sessions", "Scrum-based agile delivery", "Kanban backlog in GitHub", "Personas", "Journey mapping", "User stories & acceptance criteria"],
       status: "Published · ACM PDC 2026 & Springer chapter (first author)",
-      cardOutcome: "Field research turned into a board game, metaphor cards and OER platform requirements.",
+      cardOutcome: "Field research turned into three learning products: a board game, metaphor cards and an OER learning platform.",
       cardDecision: "An A/B test of flashcard formats decided the product: visual metaphor plus a short explanation.",
       cover: "cc-cover.webp",
       glance: {
@@ -1005,7 +1024,7 @@ window.SITE = {
         contribution:
           "I coordinated the project, leading both the University of Siegen team and the partner team. I ran user research, translated findings into learning formats and platform requirements, and prioritised the backlog on a Kanban board in GitHub, working in Scrum-based agile iterations.",
         outcome:
-          "A board game, metaphor flashcards, OER platform requirements, and two 2026 publications."
+          "Three learning products (a board game, metaphor flashcards and an OER learning platform) and two 2026 publications."
       },
       problem: [
         "The project had to reach very different groups, migrants, refugees, older adults and young people, without watering down the security content.",
@@ -1032,7 +1051,7 @@ window.SITE = {
       ],
       evidence: [
         { value: "3", label: "User groups · older adults, migrants & refugees, youth", note: "One programme, three distinct product contexts" },
-        { value: "2", label: "Learning products delivered", note: "Cybersecurity board game · metaphor flashcards" },
+        { value: "3", label: "Learning products delivered", note: "Cybersecurity board game · metaphor flashcards · OER learning platform" },
         { value: "~200", label: "Total project participants", note: "Programme-level, not my personal sample", status: "programme" },
         { value: "~25%", label: "Engagement increase", note: "My own estimate · not a controlled measurement", status: "estimated" },
         { value: "~40%", label: "Task-success increase", note: "My own estimate · not a controlled measurement", status: "estimated" }
@@ -1060,7 +1079,7 @@ window.SITE = {
      Remove an item to hide it; an item without a matching logo shows as text. */
   /* Homepage order: these case studies show first; every other published
      project appears below under "More work". Use the project slugs. */
-  featured: ["crosscomits", "retune", "nebula", "bo-app"],
+  featured: ["bo-app", "crosscomits", "retune", "nebula", "dara"],
 
   partners: {
     label: "Projects, partners and funders I've worked with",
@@ -1083,6 +1102,7 @@ window.SITE = {
 
   testimonials: [
     { quote: "Roodabeh took on the project leadership in CrossComITS. She substantially shaped the project's content, actively co-designed the UX, evaluated the solutions together with users and co-authored scientific publications. She also contributed to third-party funding acquisition and grant proposals. What impressed me most was her ability to capture the needs of very different user groups precisely, which let her build practical, well-fitted solutions that worked not only on paper but convinced in real use.",
+      short: "What impressed me most was her ability to capture the needs of very different user groups precisely, which let her build practical, well-fitted solutions that worked not only on paper but convinced in real use.",
       name: "Dr. Konstantin Aal", role: "Senior Researcher, University of Siegen", relation: "Managed Roodabeh directly · translated from German" }, // CHECK: ask Konstantin to approve the translation
     { quote: "I had the pleasure of working with Roodabeh in the BMFTR-funded CrossComITS project, where we developed and conducted workshops with older adults on cybersecurity-related topics. She approached both the research process and the participants with great care, openness and respect.",
       name: "Daniela Thomas", role: "Research Associate: CrossComITS partner organisation", relation: "Worked together across partner organisations" },
@@ -1098,7 +1118,7 @@ window.SITE = {
         "Led the student assistant team for the University of Siegen part of the project and coordinated testing cycles with student assistants and partners.",
         "Maintained the roadmap and decision logs and prioritised the backlog on a Kanban board in GitHub.",
         "Translated interviews, fieldwork, workshops and usability tests into personas, journey maps and PRD-style requirements with user stories and acceptance criteria for a social OER learning platform.",
-        "Delivered two learning products, a cybersecurity board game and metaphor flashcards. Ran an A/B test of flashcard formats (text vs. visual metaphor); the result became the product decision: metaphor plus a short explanation.",
+        "Delivered three learning products: a cybersecurity board game, metaphor flashcards and an OER learning platform. Ran an A/B test of flashcard formats (text vs. visual metaphor); the result became the product decision: metaphor plus a short explanation.",
         "Co-authored two publications and contributed to grant proposals.",
         "eVITA (EU–Japan, 2021–2023), brain-sensor workstream: improved the existing ABC App in Unity, a cognitive-training app driven by the NeU fNIRS brain activity sensor (requirements, prototypes and implementation changes).",
         "eVITA: designed Bo App for the same NeU sensor through interviews and real-time co-design with older adults, online and in person, with prototypes in Figma and Adobe XD. Multilingual design for German, French, Italian and Japanese users. Participants could set up and use the sensor with Bo App alone: independent setup rose from 25% to 100% (1 of 4 users in the first test, 3 of 3 in the retest).",
@@ -1120,8 +1140,10 @@ window.SITE = {
   ],
 
   teaching: [
-    { when: "2025 – present", title: "Meditation Instructor", org: "Online · Persian-speaking community", text: "Online meditation sessions supporting mindfulness and emotional wellbeing, drawing on 13+ years of personal practice." },
-    { when: "2022", title: "Private Tutor", org: "Germany", text: "Mathematics and English for primary-school students from different learning needs and cultural backgrounds." }
+    { n: "200", plus: true, title: "University lecturer", where: "Islamic Azad University, Tehran West and Karaj, 2015 to 2017", text: "Undergraduate courses in data structures, computer networks, Photoshop and technical English, plus digital-competency workshops for 200+ students a year." },
+    { n: "M.Sc.", title: "Thesis mentoring and team lead", where: "University of Siegen, 2021 to 2025", text: "Mentored students in their master's theses and study projects, and led the student assistant team for the University of Siegen part of CrossComITS." },
+    { n: "3", title: "Workshops and learning products", where: "CrossComITS and Smartphone Café, 2023 to 2025", text: "Cybersecurity workshops with older adults, migrants and young people, built around a board game, metaphor flashcards and an open learning platform." },
+    { n: "13", plus: true, title: "Meditation instructor and tutor", where: "Online, Persian-speaking community, 2025 to present", text: "Online meditation sessions drawing on 13+ years of personal practice. Earlier: private tutoring in mathematics and English for primary-school students (2022)." }
   ],
 
   beyond: [

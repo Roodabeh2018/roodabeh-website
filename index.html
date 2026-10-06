@@ -46,17 +46,17 @@
 /* ---------- 1. FOUNDATIONS ---------- */
 :root {
   /* Colour: primitives (referenced only by semantic tokens below) */
-  --neutral-950: #0d0d0f;
-  --neutral-900: #141417;
-  --neutral-850: #1a1a1e;
-  --neutral-800: #212126;
+  --neutral-950: #000000;
+  --neutral-900: #0b0b0d;
+  --neutral-850: #121215;
+  --neutral-800: #1a1a1f;
   --neutral-400: #9a9a95;
   --neutral-200: #c6c6c1;
   --neutral-50:  #ededea;
   --neutral-0:   #ffffff;
-  --sage-400: #8fcbb5;
+  --turquoise-400: #1fbfb8;   /* Persian turquoise: primary colour */
   --amber-300: #d8b57f;
-  --slate-300: #b3b6cc;
+  --lavender-300: #b79bff;    /* second colour */
 
   /* Colour: semantic */
   --color-bg: var(--neutral-950);                 /* page background */
@@ -68,17 +68,18 @@
   --color-text-muted: var(--neutral-400);         /* labels, meta */
   --color-border: rgba(255,255,255,0.16);         /* default / interactive border */
   --color-border-subtle: rgba(255,255,255,0.08);  /* dividers, card outlines */
-  --color-accent: var(--sage-400);                /* the one accent */
-  --color-accent-surface: rgba(143,203,181,0.10);
-  --color-accent-border: rgba(143,203,181,0.40);
+  --color-accent: var(--turquoise-400);                /* primary accent */
+  --color-accent-2: var(--lavender-300);          /* second accent: labels, numbers */
+  --color-accent-surface: rgba(31,191,184,0.10);
+  --color-accent-border: rgba(31,191,184,0.40);
   --color-on-accent: var(--neutral-950);
-  --color-focus: var(--sage-400);
+  --color-focus: var(--turquoise-400);
   --color-logo-tile: var(--neutral-0);            /* white tile: partner logos have white backgrounds */
 
   /* Colour: evidence states (colour + marker shape + text, never colour alone) */
-  --evidence-measured: var(--sage-400);
+  --evidence-measured: var(--turquoise-400);
   --evidence-estimated: var(--amber-300);
-  --evidence-programme: var(--slate-300);
+  --evidence-programme: var(--lavender-300);
   --evidence-planned: var(--neutral-400);
   --evidence-hypothesis: var(--neutral-200);
 
@@ -194,8 +195,8 @@ button { font: inherit; color: inherit; }
 .btn:active { transform: translateY(1px); }
 .btn:disabled, .btn[aria-disabled="true"] { opacity: .45; cursor: not-allowed; pointer-events: none; }
 .btn--sm { min-height: var(--control-h-sm); padding: 0 var(--space-4); }
-.btn--primary { background: var(--color-text); color: var(--color-bg); }
-.btn--primary:hover { background: var(--color-accent); }
+.btn--primary { background: var(--color-accent); color: var(--color-on-accent); }
+.btn--primary:hover { background: var(--neutral-0); }
 .btn--secondary { border-color: var(--color-border); color: var(--color-text); background: transparent; }
 .btn--secondary:hover { border-color: var(--color-text); background: var(--color-surface); }
 .btn--ghost { color: var(--color-text-secondary); background: transparent; }
@@ -254,7 +255,7 @@ a.card:focus-visible { outline-offset: 4px; border-radius: var(--radius-md); }
 /* 4.5 Section header: eyebrow, heading, optional intro */
 .section-header { margin-bottom: var(--space-8); max-width: 820px; }
 .eyebrow { display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4); }
-.eyebrow::before { content: ''; width: var(--space-5); height: var(--border-1); background: var(--color-accent); flex: none; }
+.eyebrow { color: var(--color-accent-2); }
 .section-header .section-intro { margin-top: var(--space-5); color: var(--color-text-secondary); max-width: var(--measure); }
 .subsection { margin-top: var(--space-9); }
 .subsection:first-child { margin-top: 0; }
@@ -297,12 +298,12 @@ a.card:focus-visible { outline-offset: 4px; border-radius: var(--radius-md); }
 .site-nav__brand { font: 400 var(--text-h4)/1 var(--font-serif); color: var(--color-text); text-decoration: none; }
 .site-nav__brand { display: inline-flex; align-items: center; gap: var(--space-3); }
 .site-nav__brand:hover { color: var(--color-accent); }
-.site-nav__logo { display: inline-grid; place-items: center; width: var(--control-h-sm); height: var(--control-h-sm); border: var(--border-1) solid var(--color-accent); border-radius: var(--radius-sm); color: var(--color-accent); font: 400 var(--text-body)/1 var(--font-serif); letter-spacing: 0.04em; }
-@media (max-width: 480px) { .site-nav__name { display: none; } }
+.site-nav__logo { font: 400 var(--text-h2)/1 var(--font-serif); letter-spacing: -0.02em; color: var(--color-text); }
+.site-nav__logo i { color: var(--color-accent); }
 .site-nav__links { display: flex; gap: var(--space-2); }
 .nav-link { display: inline-flex; align-items: center; min-height: var(--control-h-sm); padding: 0 var(--space-3); border-radius: var(--radius-sm); font-size: var(--text-body-sm); color: var(--color-text-muted); text-decoration: none; transition: color var(--duration) var(--ease), background-color var(--duration) var(--ease); }
 .nav-link:hover { color: var(--color-text); background: var(--color-surface); }
-.nav-link[aria-current="page"] { color: var(--color-text); }
+.nav-link[aria-current="page"] { color: var(--color-accent); }
 .site-nav__menu { display: none; position: relative; }
 .site-nav__menu > summary { list-style: none; }
 .site-nav__menu > summary::-webkit-details-marker { display: none; }
@@ -326,13 +327,13 @@ a.card:focus-visible { outline-offset: 4px; border-radius: var(--radius-md); }
 /* ---------- 5. PATTERNS ---------- */
 
 /* 5.1 Homepage hero: split layout with portrait */
-.hero { min-height: 100vh; padding-top: calc(var(--nav-h) + var(--space-9)); padding-bottom: var(--space-9); display: flex; align-items: center; }
+.hero { padding-top: calc(var(--nav-h) + var(--space-8)); padding-bottom: var(--space-7); display: flex; align-items: center; }
 .hero .split-hero { width: 100%; }
 .hero__name { margin-bottom: var(--space-5); }
 .hero__name span { font-style: italic; color: var(--color-text-secondary); }
-.hero__role { font: 500 var(--text-body-lg)/1.4 var(--font-sans); color: var(--color-text); }
-.hero__sub { margin-top: var(--space-1); }
-.hero__statement { margin-top: var(--space-7); max-width: 34ch; }
+.hero__role { font: 500 var(--text-body-lg)/1.4 var(--font-sans); color: var(--color-accent); }
+.hero__sub { margin-top: var(--space-1); margin-bottom: var(--space-4); }
+.hero__statement { margin-top: var(--space-6); max-width: 34ch; }
 .hero__focus { margin-top: var(--space-7); }
 .hero__focus .type-label { display: block; margin-bottom: var(--space-3); }
 .hero__actions { margin-top: var(--space-7); }
@@ -357,10 +358,10 @@ a.card:focus-visible { outline-offset: 4px; border-radius: var(--radius-md); }
 a.card:hover .card__cta .icon { transform: translateX(2px); }
 
 /* 5.3 Home: product lens, rows, meta lists */
-.lens { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-top: var(--border-1) solid var(--color-border); border-bottom: var(--border-1) solid var(--color-border-subtle); margin-bottom: var(--space-8); }
+.lens { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-top: var(--border-1) solid var(--color-border); border-bottom: var(--border-1) solid var(--color-border-subtle); margin-bottom: 0; }
 .lens > li { padding: var(--space-5) var(--space-5) var(--space-6) 0; }
 .lens > li + li { padding-left: var(--space-5); border-left: var(--border-1) solid var(--color-border-subtle); }
-.lens .type-label { color: var(--color-accent); display: block; margin-bottom: var(--space-3); }
+.lens .type-label { color: var(--color-accent-2); display: block; margin-bottom: var(--space-3); }
 .rows { border-top: var(--border-1) solid var(--color-border-subtle); }
 .row { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: var(--space-6); padding-block: var(--space-6); border-bottom: var(--border-1) solid var(--color-border-subtle); }
 .row__aside { padding-top: var(--space-1); }
@@ -613,10 +614,6 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
   .quote:first-child .quote__text { font-size: var(--text-body-lg); }
 }
 
-/* Hero proof points */
-.hero__proof { list-style: none; margin: var(--space-5) 0 0; padding: 0; display: grid; gap: var(--space-2); max-width: var(--measure); }
-.hero__proof li { position: relative; padding-left: var(--space-5); font-size: var(--text-body-sm); line-height: 1.5; color: var(--color-text-secondary); }
-.hero__proof li::before { content: ''; position: absolute; left: 0; top: 0.65em; width: var(--space-3); height: var(--border-1); background: var(--color-accent); }
 
 /* Card decision + More work */
 .card__decision { margin-top: var(--space-3); }
@@ -644,6 +641,104 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
 .zoom img { max-width: 100%; max-height: 100%; border-radius: var(--radius-md); }
 .figure img { cursor: zoom-in; }
 
+/* ---------- Redesign: number band, logo row, Z work list, pages ---------- */
+.stats { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border: var(--border-1) solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: var(--space-8); }
+.stats > li { padding: var(--space-6) var(--space-5); border-left: var(--border-1) solid var(--color-border-subtle); }
+.stats > li:first-child { border-left: 0; }
+.stats__n { display: block; font: 600 var(--text-metric)/1 var(--font-sans); color: var(--color-text); letter-spacing: -0.02em; }
+.stats__n i { font-style: normal; color: var(--color-accent-2); }
+.stats__label { display: block; margin: var(--space-3) 0 var(--space-2); font-weight: 500; font-size: var(--text-body-lg); line-height: 1.3; color: var(--color-text-secondary); }
+.stats__note { display: block; font-size: var(--text-body-sm); line-height: 1.5; color: var(--color-text-muted); }
+
+.partners { overflow: hidden; }
+.partners .type-label { text-align: center; }
+.partners__track { display: flex; width: max-content; animation: marquee 48s linear infinite; }
+.partners__track:hover { animation-play-state: paused; }
+.partners__mask { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, var(--neutral-0) 10%, var(--neutral-0) 90%, transparent); mask-image: linear-gradient(90deg, transparent, var(--neutral-0) 10%, var(--neutral-0) 90%, transparent); }
+.partners__track .partners__list { flex-wrap: nowrap; gap: var(--space-7); padding-right: var(--space-7); }
+.partners__list span { white-space: nowrap; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+.zlist { display: grid; }
+.zrow { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: var(--space-8); align-items: center; min-height: min(84vh, 720px); padding-block: var(--space-7); border-top: var(--border-1) solid var(--color-border-subtle); }
+.zrow:first-child { border-top: 0; min-height: 0; padding-top: var(--space-4); }
+.zrow:nth-child(even) .zrow__media { order: 2; }
+.zrow__media { display: block; }
+.zrow__media img { width: 100%; border-radius: var(--radius-lg); border: var(--border-1) solid var(--color-border-subtle); transition: border-color var(--duration) var(--ease); }
+.zrow__media:hover img { border-color: var(--color-accent-border); }
+.zrow__n { color: var(--color-accent-2); }
+.zrow__title { font-size: var(--text-h2); margin: var(--space-3) 0 var(--space-2); }
+.zrow__title a { text-decoration: none; }
+.zrow__title a:hover { color: var(--color-accent); }
+.zrow__role { color: var(--color-accent); font-size: var(--text-body-sm); margin-bottom: var(--space-4); }
+.zrow__text { font-size: var(--text-body-lg); max-width: 46ch; margin-bottom: var(--space-4); }
+.zrow__outcome { color: var(--color-text); border-left: var(--border-2) solid var(--color-accent); padding-left: var(--space-4); max-width: 46ch; margin-bottom: var(--space-5); }
+.more-work__title { margin: var(--space-7) 0 var(--space-5); padding-top: var(--space-7); border-top: var(--border-1) solid var(--color-border-subtle); color: var(--color-text); font-size: var(--text-h3); }
+.more-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5); }
+.card__role { color: var(--color-accent); }
+
+#main:focus { outline: none; }
+.page { padding-top: calc(var(--nav-h) + var(--space-8)); padding-bottom: var(--space-8); }
+.page__title { font-size: var(--text-h1); line-height: 1.08; max-width: 20ch; margin-bottom: var(--space-5); }
+.page__lead { font-size: var(--text-body-lg); max-width: 58ch; }
+.page__section { margin-top: var(--space-9); }
+.page__section > h2 { margin-bottom: var(--space-6); }
+.page__actions { margin-top: var(--space-6); }
+.pub { display: grid; grid-template-columns: 120px minmax(0, 1fr) auto; gap: var(--space-6); align-items: center; padding-block: var(--space-5); border-top: var(--border-1) solid var(--color-border-subtle); }
+.pub:last-of-type { border-bottom: var(--border-1) solid var(--color-border-subtle); }
+.pub__year { font: 600 var(--text-h3)/1.1 var(--font-sans); color: var(--color-text); }
+.pub__title { font-size: var(--text-h4); margin-bottom: var(--space-1); }
+.pub__meta { font-size: var(--text-body-sm); color: var(--color-text-muted); }
+.pub__meta b { color: var(--color-accent); font-weight: 500; }
+.pub__links { display: flex; gap: var(--space-2); }
+.teach { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5); }
+.teach__card { border: var(--border-1) solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface); padding: var(--space-6); }
+.teach__n { display: block; font: 600 var(--text-metric)/1 var(--font-sans); color: var(--color-text); }
+.teach__n i { font-style: normal; color: var(--color-accent-2); }
+.teach__title { font-size: var(--text-h3); margin: var(--space-4) 0 var(--space-1); }
+.teach__where { color: var(--color-accent); font-size: var(--text-body-sm); margin-bottom: var(--space-3); }
+.about-top { display: grid; grid-template-columns: minmax(0, 1fr) var(--portrait-w); gap: var(--space-9); align-items: center; }
+.about-top img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 20%; border-radius: var(--radius-lg); }
+.page .journey { margin-block: 0; }
+.page .journey > li:last-child .type-h4 { color: var(--color-accent); }
+.page .journey .type-label { color: var(--color-accent-2); }
+.quotes3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-5); }
+.quote3 { display: flex; flex-direction: column; justify-content: space-between; gap: var(--space-5); border: var(--border-1) solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface); padding: var(--space-6); margin: 0; }
+.quote3 blockquote { font: 400 var(--text-body-lg)/1.55 var(--font-serif); color: var(--color-text); }
+.quote3 blockquote::before { content: '\201C'; display: block; font: 400 var(--text-h1)/0.7 var(--font-serif); color: var(--color-accent); margin-bottom: var(--space-2); }
+.quote3 figcaption { display: flex; flex-direction: column; gap: 2px; font-size: var(--text-body-sm); color: var(--color-text-muted); }
+.quote3 figcaption strong { color: var(--color-text); font-weight: 500; font-size: var(--text-body); }
+.facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--space-7); }
+.facts > div { padding-block: var(--space-4); border-top: var(--border-1) solid var(--color-border-subtle); }
+.facts dt { color: var(--color-text); font-weight: 500; }
+.facts dd { color: var(--color-text-muted); font-size: var(--text-body-sm); }
+@media (max-width: 1024px) {
+  .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .stats > li:nth-child(n+4) { border-top: var(--border-1) solid var(--color-border-subtle); }
+  .stats > li:nth-child(4) { border-left: 0; }
+  .zrow { gap: var(--space-7); min-height: 0; }
+  .quotes3 { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 860px) {
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stats > li { border-top: var(--border-1) solid var(--color-border-subtle); padding: var(--space-5) var(--space-4); }
+  .stats > li:nth-child(odd) { border-left: 0; }
+  .stats > li:nth-child(4) { border-left: var(--border-1) solid var(--color-border-subtle); }
+  .stats > li:nth-child(-n+2) { border-top: 0; }
+  .zrow { grid-template-columns: minmax(0, 1fr); gap: var(--space-5); padding-block: var(--space-6); }
+  .zrow:nth-child(even) .zrow__media { order: 0; }
+  .more-grid, .teach, .facts { grid-template-columns: minmax(0, 1fr); }
+  .about-top { grid-template-columns: minmax(0, 1fr); gap: var(--space-6); }
+  .about-top img { order: -1; width: min(100%, 280px); }
+  .pub { grid-template-columns: minmax(0, 1fr); gap: var(--space-3); }
+  .page .journey { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: var(--space-5); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .partners__track { width: auto; }
+  .partners__track .partners__list { flex-wrap: wrap; justify-content: center; gap: var(--space-4); padding-right: 0; }
+  .partners__track .partners__list[aria-hidden] { display: none; }
+}
+
 /* Spacing utilities: one-off offsets, always from the spacing scale */
 .mt-4 { margin-top: var(--space-4); } .mt-5 { margin-top: var(--space-5); } .mt-6 { margin-top: var(--space-6); } .mt-7 { margin-top: var(--space-7); }
 .mb-3 { margin-bottom: var(--space-3); } .mb-4 { margin-bottom: var(--space-4); } .mb-7 { margin-bottom: var(--space-7); }
@@ -656,26 +751,21 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
 
 <header class="site-nav">
   <nav class="container site-nav__inner" aria-label="Main">
-    <a href="#/" class="site-nav__brand" aria-label="Roodabeh Seif, home"><span class="site-nav__logo" aria-hidden="true">RS</span><span class="site-nav__name">Roodabeh Seif</span></a>
+    <a href="#/" class="site-nav__brand" aria-label="Roodabeh Seif, home"><span class="site-nav__logo" aria-hidden="true">R<i>S</i></span></a>
     <ul class="site-nav__links">
-      <li><a class="nav-link" href="#work">Work</a></li>
-      <li><a class="nav-link" href="#approach">Approach</a></li>
-      <li><a class="nav-link" href="#experience">Experience</a></li>
-      <li><a class="nav-link" href="#publications">Publications</a></li>
-      <li><a class="nav-link" href="#about">About</a></li>
-      <li><a class="nav-link" href="#contact">Contact</a></li>
+      <li><a class="nav-link" data-nav="work" href="#work">Work</a></li>
+      <li><a class="nav-link" data-nav="research" href="#/research">Research &amp; Teaching</a></li>
+      <li><a class="nav-link" data-nav="about" href="#/about">About</a></li>
     </ul>
     <div class="site-nav__actions">
-      <a id="nav-cta" class="btn btn--secondary btn--sm" href="#">Get in touch</a>
+      <a id="lang-switch" class="btn btn--ghost btn--sm" href="?lang=de" lang="de" aria-label="Deutsche Version">DE</a>
+      <a id="nav-cta" class="btn btn--secondary btn--sm" href="#contact">Get in touch</a>
       <details class="site-nav__menu">
         <summary class="btn btn--ghost btn--sm">Menu</summary>
         <div class="site-nav__menu-panel">
-          <a class="nav-link" href="#work">Work</a>
-          <a class="nav-link" href="#approach">Approach</a>
-          <a class="nav-link" href="#experience">Experience</a>
-          <a class="nav-link" href="#publications">Publications</a>
-          <a class="nav-link" href="#about">About</a>
-          <a class="nav-link" href="#contact">Contact</a>
+          <a class="nav-link" data-nav="work" href="#work">Work</a>
+          <a class="nav-link" data-nav="research" href="#/research">Research &amp; Teaching</a>
+          <a class="nav-link" data-nav="about" href="#/about">About</a>
         </div>
       </details>
     </div>
@@ -685,12 +775,58 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
 <main id="main" tabindex="-1"></main>
 
 <footer class="site-footer">
-  <div class="container"><span id="foot-name">© 2026 Roodabeh Seif</span><span>AI Product · UX Research · Human-Centered AI</span></div>
+  <div class="container"><span id="foot-name">© 2026 Roodabeh Seif</span><span>AI-native Product Manager, Berlin</span></div>
 </footer>
 
 <script src="content.js"></script>
+<script src="content.de.js"></script>
 <script>
 (function () {
+  /* ---- Language: English by default, German from the switch, a ?lang=de link or a German browser ---- */
+  const UI_DE = {"The story": "Die Geschichte", "Context & problem": "Kontext & Problem", "Research approach": "Forschungsansatz", "Key insights": "Zentrale Erkenntnisse", "Research → decisions": "Forschung → Entscheidungen", "Product strategy & execution": "Produktstrategie & Umsetzung", "Evidence": "Belege", "Outcome": "Ergebnis", "Artifacts": "Artefakte", "planned measures": "geplante Messgrößen", "release criteria": "Release-Kriterien", "stages": "Phasen", "more": "weitere", "more decisions": "weitere Entscheidungen", "AI guardrails & evaluation": "KI-Guardrails & Evaluation", "About": "Über mich", "Acceptance": "Abnahme", "All work": "Alle Projekte", "Approach": "Ansatz", "Available for new opportunities": "Offen für neue Aufgaben", "Beyond work": "Jenseits der Arbeit", "Challenge": "Herausforderung", "Changed": "Geändert", "Communicating complexity, building capability": "Komplexes vermitteln, Kompetenzen aufbauen", "Contact": "Kontakt", "Context · Timeline": "Kontext · Zeitraum", "Context": "Kontext", "Criterion": "Kriterium", "Current focus": "Aktueller Fokus", "Deliberately excluded": "Bewusst ausgeschlossen", "Education": "Ausbildung", "Estimated": "Geschätzt", "Evidence types:": "Arten von Belegen:", "Experience": "Erfahrung", "From engineering to AI product thinking": "Vom Ingenieurwesen zum KI-Produktdenken", "From the work.": "Aus der Arbeit.", "Full decision log": "Vollständiges Entscheidungsprotokoll", "Full list on ORCID ↗": "Vollständige Liste auf ORCID ↗", "Get in touch": "Kontakt aufnehmen", "Human control": "Menschliche Kontrolle", "Hypothesis": "Hypothese", "I'm open to roles in AI Product Management, UX Research and human-centered digital products, and to research or project collaborations.": "Ich bin offen für Rollen in AI Product Management, UX Research und menschzentrierten digitalen Produkten sowie für Forschungs- und Projektkooperationen.", "In the MVP": "Im MVP", "Languages": "Sprachen", "Learned": "Gelernt", "Let’s connect": "Lassen Sie uns sprechen", "Location": "Standort", "MVP scope & trade-offs": "MVP-Umfang & Abwägungen", "Mail": "E-Mail", "Measured": "Gemessen", "Menu": "Menü", "Methods": "Methoden", "More work": "Weitere Projekte", "My contribution": "Mein Beitrag", "Next →": "Weiter →", "← Previous": "← Zurück", "Note": "Hinweis", "Outside the office": "Außerhalb des Büros", "People who cultivate diverse interests tend to ask better questions, notice more, and build more human products.": "Wer vielfältige Interessen pflegt, stellt bessere Fragen, nimmt mehr wahr und baut menschlichere Produkte.", "Planned": "Geplant", "Product decision": "Produktentscheidung", "Product decision log": "Protokoll der Produktentscheidungen", "Product evidence & evolution log": "Belege & Entwicklung des Produkts", "Product mechanics & requirements": "Produktmechanik & Anforderungen", "Product principles": "Produktprinzipien", "Programme-level": "Programmebene", "Prohibited AI behaviour": "Untersagtes KI-Verhalten", "Publications": "Publikationen", "Read case study": "Fallstudie lesen", "Reason": "Grund", "Release expectation": "Release-Erwartung", "Research & writing": "Forschung & Publikationen", "Research is where I understand the problem. Product is where I decide what to do about it.": "In der Forschung verstehe ich das Problem. Im Produkt entscheide ich, was daraus folgt.", "Research matters when it changes what gets built.": "Forschung zählt, wenn sie verändert, was gebaut wird.", "Rule": "Regel", "Selected requirements": "Ausgewählte Anforderungen", "Selected work": "Ausgewählte Projekte", "Shaped": "Geprägt", "Situation": "Situation", "Skills": "Kompetenzen", "Skip to content": "Zum Inhalt springen", "Teaching & facilitation": "Lehre & Moderation", "Tested": "Getestet", "Testimonials": "Stimmen", "Uncertainty": "Unsicherheit", "Understanding the problem before designing the solution.": "Erst das Problem verstehen, dann die Lösung gestalten.", "Verified facts only": "Nur geprüfte Fakten", "View selected work": "Projekte ansehen", "What I bring to the table": "Was ich mitbringe", "What I owned": "Was ich verantwortet habe", "What changed my understanding of the problem.": "Was mein Verständnis des Problems verändert hat.", "What colleagues say": "Was Kolleginnen und Kollegen sagen", "What each transition tested and changed": "Was jeder Schritt getestet und verändert hat", "What needed to change?": "Was musste sich ändern?", "What the evidence shows, and what kind of evidence it is.": "Was die Belege zeigen und welcher Art sie sind.", "What this case demonstrates": "Was diese Fallstudie zeigt", "Where I’ve worked": "Wo ich gearbeitet habe", "Where it landed.": "Was daraus wurde.", "Why": "Warum", "Why AI": "Warum KI", "Why:": "Warum:", "Work": "Projekte", "How it unfolded.": "Wie es verlief.", "Product & AI": "Produkt & KI", "Product & AI · UX Research": "Produkt & KI · UX Research", "AI Product · UX Research · Human-Centered AI": "AI Product · UX Research · Human-Centered AI", "Filter case studies": "Fallstudien filtern", "Key results": "Wichtigste Ergebnisse", "Main": "Hauptnavigation", "More case studies": "Weitere Fallstudien", "Projects, partners and funders I've worked with": "Projekte, Partner und Förderer, mit denen ich gearbeitet habe", "Roodabeh Seif, home": "Roodabeh Seif, Startseite", "Enlarged image, click to close": "Vergrößertes Bild, zum Schließen klicken", "Decision": "Entscheidung", "Role": "Rolle", "Status": "Status", "Testimonial": "Stimme", "Responsible AI boundary": "Responsible-AI-Grenze", "All": "Alle", "Download CV": "Lebenslauf herunterladen", "CV": "Lebenslauf", "Reflection": "Reflexion", "Design principle": "Designprinzip", "In": "In", "PDF": "PDF", "DOI": "DOI"};
+  const LANG = (function () {
+    let l = new URLSearchParams(location.search).get('lang');
+    try { if (l) localStorage.setItem('lang', l); else l = localStorage.getItem('lang'); } catch (e) {}
+    if (!l) l = (navigator.language || 'en').toLowerCase().startsWith('de') ? 'de' : 'en';
+    return l === 'de' ? 'de' : 'en';
+  })();
+  const DE = LANG === 'de';
+  document.documentElement.lang = LANG;
+  if (DE && window.SITE_DE) {
+    const D = window.SITE_DE, KEEP = { slug: 1, cover: 1, cardImage: 1, image: 1, file: 1, url: 1, pdf: 1, doi: 1, photo: 1, email: 1, linkedin: 1, orcid: 1, logo: 1, cv: 1, altTitle: 1, track: 1 };
+    (function walk(o) {
+      for (const k in o) {
+        if (KEEP[k]) continue;
+        const v = o[k];
+        if (typeof v === 'string') { if (D[v]) o[k] = D[v]; }
+        else if (v && typeof v === 'object') walk(v);
+      }
+    })(window.SITE);
+  }
+  Object.assign(UI_DE, {"Research & Teaching": "Forschung & Lehre", "Peer-reviewed": "Begutachtete Publikationen", "Thesis and work in review": "Abschlussarbeit und Arbeiten in Begutachtung", "In review": "In Begutachtung", "Teaching": "Lehre", "Where I teach, mentor and facilitate": "Wo ich lehre, betreue und moderiere", "Background": "Hintergrund", "Education and languages": "Ausbildung und Sprachen", "Key numbers": "Wichtige Zahlen", "AI-native Product Manager, Berlin": "AI-native Product Managerin, Berlin", "I'm open to AI-native Product Manager roles, and to research or project collaborations.": "Ich bin offen für Rollen als AI-native Product Managerin sowie für Forschungs- und Projektkooperationen.", "Let’s connect": "Lass uns sprechen"});
+  /* Translate the labels the page prints itself, after each render */
+  function localize(root) {
+    if (!DE) return;
+    const tr = s => UI_DE[s] || null;
+    const tw = document.createTreeWalker(root, NodeFilter.SHOW_TEXT); let n; const nodes = [];
+    while ((n = tw.nextNode())) nodes.push(n);
+    nodes.forEach(n => {
+      const raw = n.nodeValue, t = raw.replace(/\s+/g, ' ').trim(); if (!t) return;
+      let out = tr(t);
+      if (!out) { const m = t.match(/^(\d+)( · | )(.+)$/); if (m && tr(m[3])) out = m[1] + m[2] + tr(m[3]); }
+      if (out) n.nodeValue = raw.replace(raw.trim(), out);
+    });
+    root.querySelectorAll('[aria-label]').forEach(e => { const v = tr(e.getAttribute('aria-label')); if (v) e.setAttribute('aria-label', v); });
+  }
+  /* No dashes on the page: ranges read "2019 to 2022", compounds use a hyphen */
+  function tidy(root) {
+    const to = DE ? ' bis ' : ' to ';
+    const tw = document.createTreeWalker(root, NodeFilter.SHOW_TEXT); let n;
+    while ((n = tw.nextNode())) {
+      const v = n.nodeValue; if (!/[\u2013\u2014]/.test(v)) continue;
+      n.nodeValue = v.replace(/(\d)\s?\u2013\s?(\d)/g, '$1' + to + '$2').replace(/\s\u2013\s/g, to).replace(/\u2013/g, '-').replace(/\s?\u2014\s?/g, ', ');
+    }
+  }
   const S = window.SITE, P = S.person, app = document.getElementById('main');
   const showDrafts = !!window.SHOW_DRAFTS;
   const published = S.projects.filter(p => showDrafts || !p.draft);
@@ -713,7 +849,13 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
       ? `<img src="${esc(v.file)}" alt="${esc(v.caption)}" loading="lazy">`
       : `<div class="placeholder"><strong>Image to add</strong>${esc(v.note || '')}</div>`}<figcaption>${esc(v.caption)}</figcaption></figure>`;
 
-  document.getElementById('nav-cta').href = 'mailto:' + P.email;
+  (function () {
+    const sw = document.getElementById('lang-switch'), other = DE ? 'en' : 'de';
+    sw.textContent = other.toUpperCase(); sw.lang = other; sw.setAttribute('aria-label', DE ? 'English version' : 'Deutsche Version');
+    sw.addEventListener('click', e => { e.preventDefault(); try { localStorage.setItem('lang', other); } catch (err) {} location.href = location.pathname + '?lang=' + other + location.hash; });
+    localize(document.querySelector('.site-nav')); const f = document.querySelector('footer'); if (f) localize(f);
+    const sk = document.querySelector('.skip-link'); if (sk) localize(sk.parentNode === document.body ? sk : sk.parentNode);
+  })();
   document.addEventListener('click', e => {
     const z = e.target.closest('.zoom'); if (z) { z.remove(); return; }
     const img = e.target.closest('.figure img'); if (!img) return;
@@ -724,20 +866,29 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
   document.getElementById('foot-name').textContent = '© ' + new Date().getFullYear() + ' ' + P.name;
 
   /* ---------------- HOME ---------------- */
-  function projectCard(p, i, offset = 0) {
-    i = i + offset;
-    const tracks = (p.track || []).slice().sort((a, b) => a === 'product' ? -1 : b === 'product' ? 1 : 0).map(t => t === 'research' ? 'UX Research' : 'Product & AI').join(' · ');
-    return `<a class="card card--project" href="#/work/${esc(p.slug)}" data-track="${esc((p.track || []).join(' '))}">
+  const soft = s => esc(s).replace(/ · /g, ', ');
+  function projectCard(p) {
+    return `<a class="card card--project" href="#/work/${esc(p.slug)}">
       ${(p.cardImage || p.cover) ? `<div class="card__media"><img src="${esc(p.cardImage || p.cover)}" alt="" loading="lazy"></div>` : ''}
       <div class="card__body">
-        <div class="card__meta"><span class="type-label">${esc(tracks)}</span>${p.draft ? '<span class="chip chip--draft">Draft: hidden on live site</span>' : `<span class="type-label">${pad(i + 1)}</span>`}</div>
         <h3 class="card__title type-h3">${esc(p.title)}</h3>
-        <p class="card__text">${esc(p.subtitle)}</p>
-        <div class="card__outcome"><span class="type-label">Outcome</span><p class="type-body-sm">${esc(p.cardOutcome)}</p></div>
-        ${p.cardDecision ? `<div class="card__outcome card__decision"><span class="type-label">Product decision</span><p class="type-body-sm">${esc(p.cardDecision)}</p></div>` : ''}
-        <p class="card__role type-caption">${esc(p.role)}</p>
+        <p class="card__role type-caption mb-3">${soft(p.role)}</p>
+        <p class="card__text">${soft(p.subtitle)}</p>
         <span class="card__cta">Read case study <span class="icon" aria-hidden="true">→</span></span>
       </div></a>`;
+  }
+  function zRow(p, i, total) {
+    const href = '#/work/' + esc(p.slug);
+    return `<article class="zrow">
+      <a class="zrow__media" href="${href}" tabindex="-1" aria-hidden="true">${(p.cardImage || p.cover) ? `<img src="${esc(p.cardImage || p.cover)}" alt="" loading="lazy">` : ''}</a>
+      <div class="zrow__body">
+        <span class="zrow__n type-label">${pad(i + 1)} / ${pad(total)}</span>
+        <h3 class="zrow__title"><a href="${href}">${esc(p.title)}</a></h3>
+        <p class="zrow__role">${soft(p.role)}</p>
+        <p class="zrow__text">${soft(p.subtitle)}</p>
+        <p class="zrow__outcome">${esc(p.cardOutcome)}</p>
+        <a class="btn btn--primary" href="${href}">Read case study <span class="icon icon--forward" aria-hidden="true">→</span></a>
+      </div></article>`;
   }
 
   function row(aside, title, sub, body, extra) {
@@ -755,16 +906,13 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
     <section class="hero container" aria-labelledby="hero-name">
       <div class="split-hero">
         <div class="hero__content">
-          <p class="eyebrow type-label">Available for new opportunities</p>
-          <h1 id="hero-name" class="hero__name type-display">${esc(first)} <span>${esc(rest.join(' '))}</span></h1>
-          <p class="hero__role">${P.roles.map(esc).join(' · ')}</p>
+          <p class="hero__role">${P.roles.map(esc).join(', ')}</p>
           <p class="hero__sub type-body-sm text-muted">${esc(P.sub)}</p>
+          <h1 id="hero-name" class="hero__name type-display">${esc(first)} <span>${esc(rest.join(' '))}</span></h1>
           <p class="hero__statement type-h3">${esc(P.tagline)}</p>
-          ${P.proof && P.proof.length ? `<ul class="hero__proof">${list(P.proof, x => `<li>${esc(x)}</li>`)}</ul>` : ''}
           <div class="hero__focus"><span class="type-label">Current focus</span><ul class="cluster">${list(P.focus, f => `<li>${chip(f)}</li>`)}</ul></div>
           <div class="hero__actions cluster-lg">
             <a href="#work" class="btn btn--primary">View selected work <span class="icon icon--forward" aria-hidden="true">→</span></a>
-            ${P.cv ? `<a href="${esc(P.cv)}" target="_blank" class="btn btn--secondary">Download CV</a>` : ''}
           </div>
         </div>
         <figure class="hero__media">
@@ -773,87 +921,29 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
       </div>
     </section>
 
+    ${P.stats && P.stats.length ? `<div class="container"><ul class="stats" aria-label="Key numbers">${list(P.stats, s => `<li><span class="stats__n">${esc(s.n)}${s.plus ? '<i>+</i>' : ''}</span><span class="stats__label">${esc(s.label)}</span><span class="stats__note">${esc(s.note)}</span></li>`)}</ul></div>` : ''}
+
     ${S.partners ? `<section class="container partners" aria-label="${esc(S.partners.label)}">
       <p class="type-label text-muted">${esc(S.partners.label)}</p>
-      <ul class="partners__list">${list(S.partners.items, p => `<li>${p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener">` : ''}${p.logo ? `<img src="${esc(p.logo)}" alt="${esc(p.name)}" loading="lazy">` : `<span>${esc(p.name)}</span>`}${p.url ? '</a>' : ''}</li>`)}</ul>
+      <div class="partners__mask"><div class="partners__track"><ul class="partners__list">${list(S.partners.items, p => `<li>${p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener">` : ''}${p.logo ? `<img src="${esc(p.logo)}" alt="${esc(p.name)}" loading="lazy">` : `<span>${esc(p.name)}</span>`}${p.url ? '</a>' : ''}</li>`)}</ul><ul class="partners__list" aria-hidden="true">${list(S.partners.items, p => `<li>${p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener" tabindex="-1">` : ''}${p.logo ? `<img src="${esc(p.logo)}" alt="" loading="lazy">` : `<span>${esc(p.name)}</span>`}${p.url ? '</a>' : ''}</li>`)}</ul></div></div>
     </section>` : ''}
 
     <section id="work" class="section container">
-      ${sectionHeader('Selected work', 'Research is where I understand the problem. Product is where I decide what to do about it.')}
-      <div class="cluster mb-7" role="group" aria-label="Filter case studies">
-        <button type="button" class="chip chip--toggle" data-f="all" aria-pressed="true">All work</button>
-        <button type="button" class="chip chip--toggle" data-f="product" aria-pressed="false">Product &amp; AI</button>
-        <button type="button" class="chip chip--toggle" data-f="research" aria-pressed="false">UX Research</button>
-      </div>
-      <div class="card-grid">${list(featuredList, (p, n) => projectCard(p, n))}</div>
-      ${moreList.length ? `<h3 class="more-work__title type-h4">More work</h3>
-      <div class="card-grid">${list(moreList, (p, n) => projectCard(p, n, featuredList.length))}</div>` : ''}
+      <div class="section-header"><h2 class="type-h2">Selected work</h2></div>
+      <div class="zlist">${list(featuredList, (p, n) => zRow(p, n, featuredList.length))}</div>
+      ${moreList.length ? `<h3 class="more-work__title">More work</h3>
+      <div class="more-grid">${list(moreList, p => projectCard(p))}</div>` : ''}
     </section>
 
     ${A ? `<section id="approach" class="section container">
       ${sectionHeader('Approach', esc(A.title), A.intro)}
       <ol class="lens">${list(A.lens, (l, i) => `<li><span class="type-label">${pad(i + 1)}</span><h3 class="type-h4">${esc(l.title)}</h3><p class="type-body-sm text-muted">${esc(l.text)}</p></li>`)}</ol>
-      <div class="grid-2">${list(A.principles, x => `<div class="card card--principle"><h3 class="card__title type-h4">${esc(x.title)}</h3><p class="card__text">${esc(x.text)}</p></div>`)}</div>
     </section>` : ''}
-
-    <section id="experience" class="section container">
-      ${sectionHeader('Experience', 'Where I’ve worked')}
-      <ol class="rows">${list(S.experience, t => row(esc(t.when), esc(t.title), esc(t.org), esc(t.text), t.points ? `<ul class="row__points">${list(t.points, x => `<li>${esc(x)}</li>`)}</ul>` : ''))}</ol>
-    </section>
-
-    ${S.testimonials && S.testimonials.length ? `<section id="testimonials" class="section container">
-      ${sectionHeader('Testimonials', 'What colleagues say')}
-      <div class="quotes">${list(S.testimonials, q => `<figure class="quote">
-        <blockquote class="quote__text">“${esc(q.quote)}”</blockquote>
-        <figcaption><span class="quote__name">${esc(q.name)}</span><span class="type-body-sm text-muted">${esc(q.role)}</span>${q.relation ? `<span class="type-body-sm text-muted">${esc(q.relation)}</span>` : ''}</figcaption>
-      </figure>`)}</div>
-    </section>` : ''}
-
-    <section id="publications" class="section container">
-      ${sectionHeader('Publications', 'Research &amp; writing')}
-      <ol class="rows">${list(S.publications, pub => row(esc(pub.year), esc(pub.title), esc(pub.venue),
-        '', `<div class="pub-links cluster-lg">${pub.note ? `<span class="type-body-sm text-muted">${esc(pub.note)}</span>` : ''}
-          ${pub.pdf ? `<a class="btn btn--secondary btn--sm" href="${esc(pub.pdf)}" target="_blank">PDF <span class="icon" aria-hidden="true">↓</span></a>` : ''}
-          ${pub.doi ? `<a class="btn btn--secondary btn--sm" href="${esc(pub.doi)}" target="_blank" rel="noopener">DOI <span class="icon" aria-hidden="true">↗</span></a>` : ''}</div>`))}</ol>
-      ${P.orcid ? `<p class="mt-6"><a class="btn btn--link" href="${esc(P.orcid)}" target="_blank" rel="noopener">Full list on ORCID ↗</a></p>` : ''}
-    </section>
-
-    <section id="teaching" class="section container">
-      ${sectionHeader('Teaching &amp; facilitation', 'Communicating complexity, building capability')}
-      <ol class="rows">${list(S.teaching, t => row(esc(t.when), esc(t.title), esc(t.org), esc(t.text)))}</ol>
-    </section>
-
-    <section id="beyond" class="section container">
-      ${sectionHeader('Beyond work', 'Outside the office', 'People who cultivate diverse interests tend to ask better questions, notice more, and build more human products.')}
-      <ul class="grid-3 row-gap-0">${list(S.beyond, b => `<li class="interest"><span class="interest__icon" aria-hidden="true">${b.icon}</span><span class="text-primary fw-medium">${esc(b.name)}</span><span class="type-body-sm text-muted">${esc(b.note)}</span></li>`)}</ul>
-    </section>
-
-    <section id="about" class="section container">
-      ${sectionHeader('About', 'From engineering to AI product thinking')}
-      <div class="split">
-        <div>
-          <p class="type-h3 measure">${esc(S.about.lead)}</p>
-          <ol class="journey">${list(S.about.journey, (j, i) => `<li><span class="type-label">${pad(i + 1)}</span><p class="type-h4">${esc(j.title)}</p><p class="type-body-sm text-muted">${esc(j.desc)}</p></li>`)}</ol>
-          <p class="type-body-lg measure">${esc(S.about.body)}</p>
-          <div class="card card--principle mt-7"><p class="type-label text-accent mb-3">Why AI</p><p class="card__text">${esc(S.about.whyAI)}</p></div>
-        </div>
-        <dl class="meta-list">
-          <div><dt class="type-label">Education</dt><dd><ul>${list(S.about.education, e => `<li>${esc(e)}</li>`)}</ul></dd></div>
-          <div><dt class="type-label">Languages</dt><dd>${esc(S.about.languages)}</dd></div>
-          <div><dt class="type-label">Location</dt><dd>${esc(P.location)}</dd></div>
-        </dl>
-      </div>
-    </section>
-
-    <section id="skills" class="section container">
-      ${sectionHeader('Skills', 'What I bring to the table')}
-      <div class="grid-3 row-gap-7">${list(S.skills, s => `<div class="skill-group"><h3 class="type-h4">${esc(s.title)}</h3><ul class="cluster">${list(s.items, x => `<li>${chip(x)}</li>`)}</ul></div>`)}</div>
-    </section>
 
     <section id="contact" class="section container">
       ${sectionHeader('Contact', 'Let’s connect')}
       <div class="split">
-        <p class="type-h3 measure">I'm open to roles in AI Product Management, UX Research and human-centered digital products, and to research or project collaborations.</p>
+        <p class="type-h3 measure">I'm open to AI-native Product Manager roles, and to research or project collaborations.</p>
         <div class="link-list">
           <a href="mailto:${esc(P.email)}"><span class="type-label">Mail</span>${esc(P.email)}</a>
           ${P.cv ? `<a href="${esc(P.cv)}" target="_blank"><span class="type-label">CV</span>Download CV</a>` : ''}
@@ -862,6 +952,65 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
         </div>
       </div>
     </section>`;
+  }
+
+
+  /* ---------------- RESEARCH & TEACHING ---------------- */
+  function pubRow(pub) {
+    const label = /^\d/.test(pub.year) ? pub.year : (pub.year === 'Thesis' ? '2022' : 'In review');
+    const parts = String(pub.note || '').split(' · ');
+    return `<li class="pub"><span class="pub__year">${esc(label)}</span>
+      <div><h3 class="pub__title">${esc(pub.title)}</h3><p class="pub__meta">${esc(pub.venue)}${parts[0] ? `, <b>${esc(parts[0])}</b>` : ''}${parts.slice(1).map(x => ', ' + esc(x)).join('')}</p></div>
+      <div class="pub__links">${pub.pdf ? `<a class="btn btn--secondary btn--sm" href="${esc(pub.pdf)}" target="_blank">PDF <span class="icon" aria-hidden="true">↓</span></a>` : ''}${pub.doi ? `<a class="btn btn--secondary btn--sm" href="${esc(pub.doi)}" target="_blank" rel="noopener">DOI <span class="icon" aria-hidden="true">↗</span></a>` : ''}</div></li>`;
+  }
+  function researchPage() {
+    const R = S.research || {}, peer = S.publications.filter(p => /^\d/.test(p.year)), other = S.publications.filter(p => !/^\d/.test(p.year));
+    return `<div class="container page">
+      <p class="eyebrow type-label">Research &amp; Teaching</p>
+      <h1 class="page__title">${esc(R.title)}</h1>
+      <p class="page__lead">${esc(R.intro)}</p>
+      <section class="page__section" id="publications"><p class="eyebrow type-label">Publications</p><h2 class="type-h2">Peer-reviewed</h2>
+        <ol>${list(peer, pubRow)}</ol>
+        ${P.orcid ? `<p class="mt-5"><a class="btn btn--secondary btn--sm" href="${esc(P.orcid)}" target="_blank" rel="noopener">Full list on ORCID ↗</a></p>` : ''}
+      </section>
+      ${other.length ? `<section class="page__section"><h2 class="type-h2">Thesis and work in review</h2><ol>${list(other, pubRow)}</ol></section>` : ''}
+      <section class="page__section" id="teaching"><p class="eyebrow type-label">Teaching</p><h2 class="type-h2">Where I teach, mentor and facilitate</h2>
+        <div class="teach">${list(S.teaching, t => `<article class="teach__card"><span class="teach__n">${esc(t.n)}${t.plus ? '<i>+</i>' : ''}</span><h3 class="teach__title">${esc(t.title)}</h3><p class="teach__where">${esc(t.where)}</p><p>${esc(t.text)}</p></article>`)}</div>
+      </section>
+    </div>`;
+  }
+
+  /* ---------------- ABOUT ---------------- */
+  function aboutPage() {
+    const A = S.about;
+    return `<div class="container page">
+      <div class="about-top">
+        <div><p class="eyebrow type-label">About</p>
+          <h1 class="page__title">From engineering to AI product thinking</h1>
+          <p class="page__lead">${esc(A.short)}</p>
+          <div class="page__actions cluster-lg">
+            ${P.cv ? `<a href="${esc(P.cv)}" target="_blank" class="btn btn--primary">Download CV <span class="icon" aria-hidden="true">↓</span></a>` : ''}
+            <a href="mailto:${esc(P.email)}" class="btn btn--secondary">Get in touch</a>
+          </div>
+        </div>
+        <img src="${PORTRAIT}" alt="Portrait of Roodabeh Seif">
+      </div>
+      <section class="page__section"><ol class="journey">${list(A.journey, (j, i) => `<li><span class="type-label">${pad(i + 1)}</span><p class="type-h4">${esc(j.title)}</p><p class="type-body-sm text-muted">${esc(j.desc)}</p></li>`)}</ol></section>
+      <section class="page__section" id="skills"><p class="eyebrow type-label">Skills</p><h2 class="type-h2">What I bring to the table</h2>
+        <div class="grid-3 row-gap-7">${list(S.skills, s => `<div class="skill-group"><h3 class="type-h4">${esc(s.title)}</h3><ul class="cluster">${list(s.items, x => `<li>${chip(x)}</li>`)}</ul></div>`)}</div>
+      </section>
+      ${S.testimonials && S.testimonials.length ? `<section class="page__section" id="testimonials"><p class="eyebrow type-label">Testimonials</p><h2 class="type-h2">What colleagues say</h2>
+        <div class="quotes3">${list(S.testimonials, q => `<figure class="quote3"><blockquote>${esc(q.short || q.quote)}</blockquote>
+          <figcaption><strong>${esc(q.name)}</strong><span>${esc(q.role)}</span>${q.relation ? `<span>${esc(q.relation)}</span>` : ''}</figcaption></figure>`)}</div>
+      </section>` : ''}
+      <section class="page__section"><p class="eyebrow type-label">Background</p><h2 class="type-h2">Education and languages</h2>
+        <dl class="facts">${list(A.facts, f => `<div><dt>${esc(f.title)}</dt><dd>${esc(f.text)}</dd></div>`)}
+          <div><dt>Location</dt><dd>${esc(P.location)}</dd></div></dl>
+      </section>
+      <section class="page__section" id="beyond"><p class="eyebrow type-label">Beyond work</p><h2 class="type-h2">Outside the office</h2>
+        <ul class="grid-3 row-gap-0">${list(S.beyond, b => `<li class="interest"><span class="interest__icon" aria-hidden="true">${b.icon}</span><span class="text-primary fw-medium">${esc(b.name)}</span><span class="type-body-sm text-muted">${esc(b.note)}</span></li>`)}</ul>
+      </section>
+    </div>`;
   }
 
   /* ---------------- CASE STUDY ---------------- */
@@ -1069,38 +1218,35 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
   /* ---------------- ROUTER ---------------- */
   // #/work/<slug> → case study; anything else → home (and scroll to #section if given)
   let onHome = false;
-  function setCurrent(slugView) {
-    document.querySelectorAll('.nav-link').forEach(a => a.removeAttribute('aria-current'));
-    if (slugView) document.querySelectorAll('.nav-link[href="#work"]').forEach(a => a.setAttribute('aria-current', 'page'));
+  const OLD = { publications: 'research', teaching: 'research', about: 'about', skills: 'about', testimonials: 'about', beyond: 'about', experience: 'about' };
+  function setCurrent(key) {
+    document.querySelectorAll('.nav-link').forEach(a => { if (a.dataset.nav === key) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
   }
   function closeMenu() { const m = document.querySelector('.site-nav__menu'); if (m) m.open = false; }
+  function show(html, key, title) {
+    app.innerHTML = html; localize(app); tidy(app); onHome = false; setCurrent(key);
+    document.title = title + ' | ' + P.name;
+    window.scrollTo(0, 0);
+    app.focus({ preventScroll: true });
+  }
   function route() {
     closeMenu();
-    const h = location.hash;
+    let h = location.hash;
+    const old = OLD[h.replace(/^#\/?/, '')];
+    if (old && !/^#\/(research|about)$/.test(h)) { history.replaceState(null, '', '#/' + old); h = '#/' + old; }
     const m = h.match(/^#\/work\/([\w-]+)/);
     if (m) {
       const p = S.projects.find(x => x.slug === m[1]);
-      if (p) {
-        app.innerHTML = caseStudy(p); onHome = false; setCurrent(true);
-        document.title = p.title + ' | ' + P.name;
-        window.scrollTo(0, 0);
-        app.focus({ preventScroll: true });
-        return;
-      }
+      if (p) { show(caseStudy(p), 'work', p.title); return; }
     }
-    if (!onHome) { app.innerHTML = home(); onHome = true; bindFilters(); bindPortrait(); }
-    setCurrent(false);
+    if (h === '#/research') { show(researchPage(), 'research', DE ? 'Forschung & Lehre' : 'Research & Teaching'); return; }
+    if (h === '#/about') { show(aboutPage(), 'about', DE ? 'Über mich' : 'About'); return; }
+    if (!onHome) { app.innerHTML = home(); localize(app); tidy(app); onHome = true; bindPortrait(); }
+    setCurrent('');
     document.title = P.name + ' | ' + P.roles.join(' & ');
     const id = h.replace(/^#\/?/, '');
     const el = id && document.getElementById(id);
     if (el) requestAnimationFrame(() => el.scrollIntoView()); else if (h === '#/' || !h) window.scrollTo(0, 0);
-  }
-  function bindFilters() {
-    const btns = app.querySelectorAll('[data-f]'), cards = app.querySelectorAll('.card--project');
-    btns.forEach(b => b.addEventListener('click', () => {
-      btns.forEach(x => x.setAttribute('aria-pressed', String(x === b)));
-      cards.forEach(c => { c.hidden = !(b.dataset.f === 'all' || c.dataset.track.split(' ').includes(b.dataset.f)); });
-    }));
   }
   // in-page section links on the home view scroll in place; skip link focuses main
   document.addEventListener('click', e => {
