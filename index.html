@@ -298,9 +298,10 @@ a.card:focus-visible { outline-offset: 4px; border-radius: var(--radius-md); }
 .site-nav__brand { font: 400 var(--text-h4)/1 var(--font-serif); color: var(--color-text); text-decoration: none; }
 .site-nav__brand { display: inline-flex; align-items: center; gap: var(--space-3); }
 .site-nav__brand:hover { color: var(--color-accent); }
-.site-nav__logo { font: 400 var(--text-h2)/1 var(--font-serif); letter-spacing: -0.02em; color: var(--color-text); }
-.site-nav__logo i { color: var(--color-accent); }
-.site-nav__links { display: flex; gap: var(--space-2); }
+.site-nav__logo { font: 400 var(--text-h2)/1 var(--font-serif); letter-spacing: -0.02em; color: var(--color-accent); }
+.flag { display: block; width: var(--space-5); height: var(--space-4); border-radius: var(--radius-sm); border: var(--border-1) solid var(--color-border); }
+.site-nav__logo i { color: var(--color-accent-2); }
+.site-nav__links { display: flex; gap: var(--space-2); margin-left: auto; }
 .nav-link { display: inline-flex; align-items: center; min-height: var(--control-h-sm); padding: 0 var(--space-3); border-radius: var(--radius-sm); font-size: var(--text-body-sm); color: var(--color-text-muted); text-decoration: none; transition: color var(--duration) var(--ease), background-color var(--duration) var(--ease); }
 .nav-link:hover { color: var(--color-text); background: var(--color-surface); }
 .nav-link[aria-current="page"] { color: var(--color-accent); }
@@ -331,7 +332,7 @@ a.card:focus-visible { outline-offset: 4px; border-radius: var(--radius-md); }
 .hero .split-hero { width: 100%; }
 .hero__name { margin-bottom: var(--space-5); }
 .hero__name span { font-style: italic; color: var(--color-text-secondary); }
-.hero__role { font: 500 var(--text-body-lg)/1.4 var(--font-sans); color: var(--color-accent); }
+.hero__role { font: 500 var(--text-body-lg)/1.4 var(--font-sans); color: var(--color-accent-2); }
 .hero__sub { margin-top: var(--space-1); margin-bottom: var(--space-4); }
 .hero__statement { margin-top: var(--space-6); max-width: 34ch; }
 .hero__focus { margin-top: var(--space-7); }
@@ -660,8 +661,12 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 .zlist { display: grid; }
-.zrow { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: var(--space-8); align-items: center; padding-block: var(--space-7); border-top: var(--border-1) solid var(--color-border-subtle); }
-.zrow:first-child { border-top: 0; padding-top: var(--space-4); }
+.work__title { color: var(--color-accent-2); }
+.contact-links { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-5); }
+.contact-links__in { color: var(--color-accent); font-weight: 500; text-decoration: none; }
+.contact-links__in:hover { text-decoration: underline; }
+.zrow { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: var(--space-8); align-items: center; padding-block: var(--space-7); }
+.zrow:first-child { padding-top: var(--space-4); }
 .zrow:nth-child(even) .zrow__media { order: 2; }
 .zrow__media { display: block; }
 .zrow__media img { width: 100%; border-radius: var(--radius-lg); border: var(--border-1) solid var(--color-border-subtle); transition: border-color var(--duration) var(--ease); }
@@ -671,8 +676,8 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
 .zrow__title a { text-decoration: none; }
 .zrow__title a:hover { color: var(--color-accent); }
 .zrow__role { color: var(--color-accent); font-size: var(--text-body-sm); margin-bottom: var(--space-4); }
-.zrow__text { font-size: var(--text-body-lg); max-width: 46ch; margin-bottom: var(--space-4); }
-.zrow__outcome { color: var(--color-text); border-left: var(--border-2) solid var(--color-accent); padding-left: var(--space-4); max-width: 46ch; margin-bottom: var(--space-5); }
+.zrow__text { font-size: var(--text-body-lg); max-width: 46ch; margin-bottom: var(--space-4); color: var(--color-text-muted); }
+.zrow__outcome { color: var(--color-text-muted); border-left: var(--border-2) solid var(--color-accent); padding-left: var(--space-4); max-width: 46ch; margin-bottom: var(--space-5); }
 .more-work__title { margin: var(--space-7) 0 var(--space-5); padding-top: var(--space-7); border-top: var(--border-1) solid var(--color-border-subtle); color: var(--color-text); font-size: var(--text-h3); }
 .more-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5); }
 .card__role { color: var(--color-accent); }
@@ -702,6 +707,16 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
 .page .journey { margin-block: 0; }
 .page .journey > li:last-child .type-h4 { color: var(--color-accent); }
 .page .journey .type-label { color: var(--color-accent-2); }
+.path { display: grid; max-width: 760px; }
+.path__step { display: grid; grid-template-columns: var(--control-h) minmax(0, 1fr); gap: var(--space-5); padding-bottom: var(--space-7); position: relative; }
+.path__step::before { content: ''; position: absolute; left: calc(var(--control-h) / 2); top: var(--control-h); bottom: 0; width: var(--border-1); background: var(--color-border); }
+.path__step:last-child { padding-bottom: 0; }
+.path__step:last-child::before { display: none; }
+.path__n { display: grid; place-items: center; width: var(--control-h); height: var(--control-h); border: var(--border-1) solid var(--color-accent-border); border-radius: var(--radius-pill); color: var(--color-accent); font: 600 var(--text-body)/1 var(--font-sans); background: var(--color-bg); position: relative; }
+.path__step:last-child .path__n { background: var(--color-accent); color: var(--color-on-accent); border-color: var(--color-accent); }
+.path__when { color: var(--color-accent-2); margin-bottom: var(--space-1); }
+.path__title { font-size: var(--text-h3); margin-bottom: var(--space-2); }
+.path__text { font-size: var(--text-body-lg); color: var(--color-text-secondary); }
 .quotes3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-5); }
 .quote3 { display: flex; flex-direction: column; justify-content: space-between; gap: var(--space-5); border: var(--border-1) solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface); padding: var(--space-6); margin: 0; }
 .quote3 blockquote { font: 400 var(--text-body-lg)/1.55 var(--font-serif); color: var(--color-text); }
@@ -733,6 +748,7 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
   .pub { grid-template-columns: minmax(0, 1fr); gap: var(--space-3); }
   .page .journey { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: var(--space-5); }
 }
+@media (max-width: 560px) { #nav-cta { display: none; } }
 @media (prefers-reduced-motion: reduce) {
   .partners__track { width: auto; }
   .partners__track .partners__list { flex-wrap: wrap; justify-content: center; gap: var(--space-4); padding-right: 0; }
@@ -758,7 +774,7 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
       <li><a class="nav-link" data-nav="about" href="#/about">About</a></li>
     </ul>
     <div class="site-nav__actions">
-      <a id="lang-switch" class="btn btn--ghost btn--sm" href="?lang=de" lang="de" aria-label="Deutsche Version">DE</a>
+      <a id="lang-switch" class="btn btn--ghost btn--sm" href="?lang=de" lang="de" aria-label="Deutsche Version"><svg class="flag" viewBox="0 0 24 16" aria-hidden="true"><rect width="24" height="16" fill="#000"/><rect y="5.33" width="24" height="5.34" fill="#dd0000"/><rect y="10.67" width="24" height="5.33" fill="#ffce00"/></svg></a>
       <a id="nav-cta" class="btn btn--secondary btn--sm" href="#contact">Get in touch</a>
       <details class="site-nav__menu">
         <summary class="btn btn--ghost btn--sm">Menu</summary>
@@ -766,6 +782,7 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
           <a class="nav-link" data-nav="work" href="#work">Work</a>
           <a class="nav-link" data-nav="research" href="#/research">Research &amp; Teaching</a>
           <a class="nav-link" data-nav="about" href="#/about">About</a>
+          <a class="nav-link" href="#contact">Get in touch</a>
         </div>
       </details>
     </div>
@@ -783,7 +800,7 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
 <script>
 (function () {
   /* ---- Language: English by default, German from the switch, a ?lang=de link or a German browser ---- */
-  const UI_DE = {"The story": "Die Geschichte", "Context & problem": "Kontext & Problem", "Research approach": "Forschungsansatz", "Key insights": "Zentrale Erkenntnisse", "Research → decisions": "Forschung → Entscheidungen", "Product strategy & execution": "Produktstrategie & Umsetzung", "Evidence": "Belege", "Outcome": "Ergebnis", "Artifacts": "Artefakte", "planned measures": "geplante Messgrößen", "release criteria": "Release-Kriterien", "stages": "Phasen", "more": "weitere", "more decisions": "weitere Entscheidungen", "AI guardrails & evaluation": "KI-Guardrails & Evaluation", "About": "Über mich", "Acceptance": "Abnahme", "All work": "Alle Projekte", "Approach": "Ansatz", "Available for new opportunities": "Offen für neue Aufgaben", "Beyond work": "Jenseits der Arbeit", "Challenge": "Herausforderung", "Changed": "Geändert", "Communicating complexity, building capability": "Komplexes vermitteln, Kompetenzen aufbauen", "Contact": "Kontakt", "Context · Timeline": "Kontext · Zeitraum", "Context": "Kontext", "Criterion": "Kriterium", "Current focus": "Aktueller Fokus", "Deliberately excluded": "Bewusst ausgeschlossen", "Education": "Ausbildung", "Estimated": "Geschätzt", "Evidence types:": "Arten von Belegen:", "Experience": "Erfahrung", "From engineering to AI product thinking": "Vom Ingenieurwesen zum KI-Produktdenken", "From the work.": "Aus der Arbeit.", "Full decision log": "Vollständiges Entscheidungsprotokoll", "Full list on ORCID ↗": "Vollständige Liste auf ORCID ↗", "Get in touch": "Kontakt aufnehmen", "Human control": "Menschliche Kontrolle", "Hypothesis": "Hypothese", "I'm open to roles in AI Product Management, UX Research and human-centered digital products, and to research or project collaborations.": "Ich bin offen für Rollen in AI Product Management, UX Research und menschzentrierten digitalen Produkten sowie für Forschungs- und Projektkooperationen.", "In the MVP": "Im MVP", "Languages": "Sprachen", "Learned": "Gelernt", "Let’s connect": "Lassen Sie uns sprechen", "Location": "Standort", "MVP scope & trade-offs": "MVP-Umfang & Abwägungen", "Mail": "E-Mail", "Measured": "Gemessen", "Menu": "Menü", "Methods": "Methoden", "More work": "Weitere Projekte", "My contribution": "Mein Beitrag", "Next →": "Weiter →", "← Previous": "← Zurück", "Note": "Hinweis", "Outside the office": "Außerhalb des Büros", "People who cultivate diverse interests tend to ask better questions, notice more, and build more human products.": "Wer vielfältige Interessen pflegt, stellt bessere Fragen, nimmt mehr wahr und baut menschlichere Produkte.", "Planned": "Geplant", "Product decision": "Produktentscheidung", "Product decision log": "Protokoll der Produktentscheidungen", "Product evidence & evolution log": "Belege & Entwicklung des Produkts", "Product mechanics & requirements": "Produktmechanik & Anforderungen", "Product principles": "Produktprinzipien", "Programme-level": "Programmebene", "Prohibited AI behaviour": "Untersagtes KI-Verhalten", "Publications": "Publikationen", "Read case study": "Fallstudie lesen", "Reason": "Grund", "Release expectation": "Release-Erwartung", "Research & writing": "Forschung & Publikationen", "Research is where I understand the problem. Product is where I decide what to do about it.": "In der Forschung verstehe ich das Problem. Im Produkt entscheide ich, was daraus folgt.", "Research matters when it changes what gets built.": "Forschung zählt, wenn sie verändert, was gebaut wird.", "Rule": "Regel", "Selected requirements": "Ausgewählte Anforderungen", "Selected work": "Ausgewählte Projekte", "Shaped": "Geprägt", "Situation": "Situation", "Skills": "Kompetenzen", "Skip to content": "Zum Inhalt springen", "Teaching & facilitation": "Lehre & Moderation", "Tested": "Getestet", "Testimonials": "Stimmen", "Uncertainty": "Unsicherheit", "Understanding the problem before designing the solution.": "Erst das Problem verstehen, dann die Lösung gestalten.", "Verified facts only": "Nur geprüfte Fakten", "View selected work": "Projekte ansehen", "What I bring to the table": "Was ich mitbringe", "What I owned": "Was ich verantwortet habe", "What changed my understanding of the problem.": "Was mein Verständnis des Problems verändert hat.", "What colleagues say": "Was Kolleginnen und Kollegen sagen", "What each transition tested and changed": "Was jeder Schritt getestet und verändert hat", "What needed to change?": "Was musste sich ändern?", "What the evidence shows, and what kind of evidence it is.": "Was die Belege zeigen und welcher Art sie sind.", "What this case demonstrates": "Was diese Fallstudie zeigt", "Where I’ve worked": "Wo ich gearbeitet habe", "Where it landed.": "Was daraus wurde.", "Why": "Warum", "Why AI": "Warum KI", "Why:": "Warum:", "Work": "Projekte", "How it unfolded.": "Wie es verlief.", "Product & AI": "Produkt & KI", "Product & AI · UX Research": "Produkt & KI · UX Research", "AI Product · UX Research · Human-Centered AI": "AI Product · UX Research · Human-Centered AI", "Filter case studies": "Fallstudien filtern", "Key results": "Wichtigste Ergebnisse", "Main": "Hauptnavigation", "More case studies": "Weitere Fallstudien", "Projects, partners and funders I've worked with": "Projekte, Partner und Förderer, mit denen ich gearbeitet habe", "Roodabeh Seif, home": "Roodabeh Seif, Startseite", "Enlarged image, click to close": "Vergrößertes Bild, zum Schließen klicken", "Decision": "Entscheidung", "Role": "Rolle", "Status": "Status", "Testimonial": "Stimme", "Responsible AI boundary": "Responsible-AI-Grenze", "All": "Alle", "Download CV": "Lebenslauf herunterladen", "CV": "Lebenslauf", "Reflection": "Reflexion", "Design principle": "Designprinzip", "In": "In", "PDF": "PDF", "DOI": "DOI"};
+  const UI_DE = {"The story": "Die Geschichte", "Context & problem": "Kontext & Problem", "Research approach": "Forschungsansatz", "Key insights": "Zentrale Erkenntnisse", "Research → decisions": "Forschung → Entscheidungen", "Product strategy & execution": "Produktstrategie & Umsetzung", "Evidence": "Belege", "Outcome": "Ergebnis", "Artifacts": "Artefakte", "planned measures": "geplante Messgrößen", "release criteria": "Release-Kriterien", "stages": "Phasen", "more": "weitere", "more decisions": "weitere Entscheidungen", "AI guardrails & evaluation": "KI-Guardrails & Evaluation", "About": "Über mich", "Acceptance": "Abnahme", "All work": "Alle Projekte", "Approach": "Ansatz", "Available for new opportunities": "Offen für neue Aufgaben", "Beyond work": "Jenseits der Arbeit", "Challenge": "Herausforderung", "Changed": "Geändert", "Communicating complexity, building capability": "Komplexes vermitteln, Kompetenzen aufbauen", "Contact": "Kontakt", "Context · Timeline": "Kontext · Zeitraum", "Context": "Kontext", "Criterion": "Kriterium", "Current focus": "Aktueller Fokus", "Deliberately excluded": "Bewusst ausgeschlossen", "Education": "Ausbildung", "Estimated": "Geschätzt", "Evidence types:": "Arten von Belegen:", "Experience": "Erfahrung", "From engineering to AI product thinking": "Vom Ingenieurwesen zum KI-Produktdenken", "From the work.": "Aus der Arbeit.", "Full decision log": "Vollständiges Entscheidungsprotokoll", "Full list on ORCID ↗": "Vollständige Liste auf ORCID ↗", "Get in touch": "Kontakt aufnehmen", "Human control": "Menschliche Kontrolle", "Hypothesis": "Hypothese", "I'm open to roles in AI Product Management, UX Research and human-centered digital products, and to research or project collaborations.": "Ich bin offen für Rollen in AI Product Management, UX Research und menschzentrierten digitalen Produkten sowie für Forschungs- und Projektkooperationen.", "In the MVP": "Im MVP", "Languages": "Sprachen", "Learned": "Gelernt", "Let’s connect": "Lassen Sie uns sprechen", "Location": "Standort", "MVP scope & trade-offs": "MVP-Umfang & Abwägungen", "Mail": "E-Mail", "Measured": "Gemessen", "Menu": "Menü", "Methods": "Methoden", "More work": "Weitere Projekte", "My contribution": "Mein Beitrag", "Next →": "Weiter →", "← Previous": "← Zurück", "Note": "Hinweis", "Outside the office": "Außerhalb des Büros", "People who cultivate diverse interests tend to ask better questions, notice more, and build more human products.": "Wer vielfältige Interessen pflegt, stellt bessere Fragen, nimmt mehr wahr und baut menschlichere Produkte.", "Planned": "Geplant", "Product decision": "Produktentscheidung", "Product decision log": "Protokoll der Produktentscheidungen", "Product evidence & evolution log": "Belege & Entwicklung des Produkts", "Product mechanics & requirements": "Produktmechanik & Anforderungen", "Product principles": "Produktprinzipien", "Programme-level": "Programmebene", "Prohibited AI behaviour": "Untersagtes KI-Verhalten", "Publications": "Publikationen", "Read case study": "Fallstudie lesen", "Reason": "Grund", "Release expectation": "Release-Erwartung", "Research & writing": "Forschung & Publikationen", "Research is where I understand the problem. Product is where I decide what to do about it.": "In der Forschung verstehe ich das Problem. Im Produkt entscheide ich, was daraus folgt.", "Research matters when it changes what gets built.": "Forschung zählt, wenn sie verändert, was gebaut wird.", "Rule": "Regel", "Selected requirements": "Ausgewählte Anforderungen", "Selected work": "Ausgewählte Projekte", "Shaped": "Geprägt", "Situation": "Situation", "Skills": "Kompetenzen", "Skip to content": "Zum Inhalt springen", "Teaching & facilitation": "Lehre & Moderation", "Tested": "Getestet", "Testimonials": "Stimmen", "Uncertainty": "Unsicherheit", "Understanding the problem before designing the solution.": "Erst das Problem verstehen, dann die Lösung gestalten.", "Verified facts only": "Nur geprüfte Fakten", "View selected work": "Projekte ansehen", "What I bring to the table": "Was ich mitbringe", "What I owned": "Was ich verantwortet habe", "What changed my understanding of the problem.": "Was mein Verständnis des Problems verändert hat.", "What colleagues say": "Was Kolleginnen und Kollegen sagen", "What each transition tested and changed": "Was jeder Schritt getestet und verändert hat", "What needed to change?": "Was musste sich ändern?", "What the evidence shows, and what kind of evidence it is.": "Was die Belege zeigen und welcher Art sie sind.", "What this case demonstrates": "Was diese Fallstudie zeigt", "Where I’ve worked": "Wo ich gearbeitet habe", "Where it landed.": "Was daraus wurde.", "Why": "Warum", "Why AI": "Warum KI", "Why:": "Warum:", "Work": "Projekte", "How it unfolded.": "Wie es verlief.", "Product & AI": "Produkt & KI", "Product & AI · UX Research": "Produkt & KI · UX Research", "AI Product · UX Research · Human-Centered AI": "AI Product · UX Research · Human-Centered AI", "Filter case studies": "Fallstudien filtern", "Key results": "Wichtigste Ergebnisse", "Main": "Hauptnavigation", "More case studies": "Weitere Fallstudien", "Projects, partners and funders I've worked with": "Projekte, Partner und Förderer, mit denen ich gearbeitet habe", "Roodabeh Seif, home": "Roodabeh Seif, Startseite", "Enlarged image, click to close": "Vergrößertes Bild, zum Schließen klicken", "Decision": "Entscheidung", "Role": "Rolle", "Status": "Status", "Testimonial": "Stimme", "Responsible AI boundary": "Responsible-AI-Grenze", "All": "Alle", "Download CV": "Lebenslauf herunterladen", "Read more": "Mehr lesen", "Hi there": "Hallo", "My journey": "Mein Weg", "How I got here": "Wie ich hierher kam", "CV": "Lebenslauf", "Reflection": "Reflexion", "Design principle": "Designprinzip", "In": "In", "PDF": "PDF", "DOI": "DOI"};
   const LANG = (function () {
     let l = new URLSearchParams(location.search).get('lang');
     try { if (l) localStorage.setItem('lang', l); else l = localStorage.getItem('lang'); } catch (e) {}
@@ -851,7 +868,7 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
 
   (function () {
     const sw = document.getElementById('lang-switch'), other = DE ? 'en' : 'de';
-    sw.textContent = other.toUpperCase(); sw.lang = other; sw.setAttribute('aria-label', DE ? 'English version' : 'Deutsche Version');
+    sw.innerHTML = DE ? '<svg class="flag" viewBox="0 0 60 40" aria-hidden="true"><rect width="60" height="40" fill="#012169"/><path d="M0 0 60 40M60 0 0 40" stroke="#fff" stroke-width="8"/><path d="M0 0 60 40M60 0 0 40" stroke="#c8102e" stroke-width="3"/><path d="M30 0v40M0 20h60" stroke="#fff" stroke-width="13"/><path d="M30 0v40M0 20h60" stroke="#c8102e" stroke-width="7"/></svg>' : '<svg class="flag" viewBox="0 0 24 16" aria-hidden="true"><rect width="24" height="16" fill="#000"/><rect y="5.33" width="24" height="5.34" fill="#dd0000"/><rect y="10.67" width="24" height="5.33" fill="#ffce00"/></svg>'; sw.title = DE ? 'English' : 'Deutsch'; sw.lang = other; sw.setAttribute('aria-label', DE ? 'English version' : 'Deutsche Version');
     sw.addEventListener('click', e => { e.preventDefault(); try { localStorage.setItem('lang', other); } catch (err) {} location.href = location.pathname + '?lang=' + other + location.hash; });
     localize(document.querySelector('.site-nav')); const f = document.querySelector('footer'); if (f) localize(f);
     const sk = document.querySelector('.skip-link'); if (sk) localize(sk.parentNode === document.body ? sk : sk.parentNode);
@@ -887,7 +904,7 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
         <p class="zrow__role">${soft(p.role)}</p>
         <p class="zrow__text">${soft(p.subtitle)}</p>
         <p class="zrow__outcome">${esc(p.cardOutcome)}</p>
-        <a class="btn btn--primary" href="${href}">Read case study <span class="icon icon--forward" aria-hidden="true">→</span></a>
+        <a class="btn btn--primary" href="${href}">Read more <span class="icon icon--forward" aria-hidden="true">→</span></a>
       </div></article>`;
   }
 
@@ -901,7 +918,7 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
     const featSlugs = S.featured || [];
     const featuredList = featSlugs.length ? featSlugs.map(s => published.find(p => p.slug === s)).filter(Boolean) : published;
     const moreList = published.filter(p => !featuredList.includes(p));
-    const A = S.approach;
+    const allList = featuredList.concat(moreList);
     return `
     <section class="hero container" aria-labelledby="hero-name">
       <div class="split-hero">
@@ -929,26 +946,17 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
     </section>` : ''}
 
     <section id="work" class="section container">
-      <div class="section-header"><h2 class="type-h2">Selected work</h2></div>
-      <div class="zlist">${list(featuredList, (p, n) => zRow(p, n, featuredList.length))}</div>
-      ${moreList.length ? `<h3 class="more-work__title">More work</h3>
-      <div class="more-grid">${list(moreList, p => projectCard(p))}</div>` : ''}
+      <div class="section-header"><h2 class="type-h2 work__title">Selected work</h2></div>
+      <div class="zlist">${list(allList, (p, n) => zRow(p, n, allList.length))}</div>
     </section>
-
-    ${A ? `<section id="approach" class="section container">
-      ${sectionHeader('Approach', esc(A.title), A.intro)}
-      <ol class="lens">${list(A.lens, (l, i) => `<li><span class="type-label">${pad(i + 1)}</span><h3 class="type-h4">${esc(l.title)}</h3><p class="type-body-sm text-muted">${esc(l.text)}</p></li>`)}</ol>
-    </section>` : ''}
 
     <section id="contact" class="section container">
       ${sectionHeader('Contact', 'Let’s connect')}
       <div class="split">
         <p class="type-h3 measure">I'm open to AI-native Product Manager roles, and to research or project collaborations.</p>
-        <div class="link-list">
-          <a href="mailto:${esc(P.email)}"><span class="type-label">Mail</span>${esc(P.email)}</a>
-          ${P.cv ? `<a href="${esc(P.cv)}" target="_blank"><span class="type-label">CV</span>Download CV</a>` : ''}
-          <a href="${esc(P.linkedin)}" target="_blank" rel="noopener"><span class="type-label">In</span>${esc(P.linkedin.replace(/^https?:\/\//, ''))}</a>
-          ${P.orcid ? `<a href="${esc(P.orcid)}" target="_blank" rel="noopener"><span class="type-label">iD</span>ORCID</a>` : ''}
+        <div class="contact-links">
+          <a class="btn btn--secondary" href="mailto:${esc(P.email)}">${esc(P.email)}</a>
+          <a class="contact-links__in" href="${esc(P.linkedin)}" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
         </div>
       </div>
     </section>`;
@@ -985,17 +993,18 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
     const A = S.about;
     return `<div class="container page">
       <div class="about-top">
-        <div><p class="eyebrow type-label">About</p>
+        <div><p class="eyebrow type-label">Hi there</p>
           <h1 class="page__title">From engineering to AI product thinking</h1>
           <p class="page__lead">${esc(A.short)}</p>
           <div class="page__actions cluster-lg">
             ${P.cv ? `<a href="${esc(P.cv)}" target="_blank" class="btn btn--primary">Download CV <span class="icon" aria-hidden="true">↓</span></a>` : ''}
-            <a href="mailto:${esc(P.email)}" class="btn btn--secondary">Get in touch</a>
           </div>
         </div>
         <img src="${PORTRAIT}" alt="Portrait of Roodabeh Seif">
       </div>
-      <section class="page__section"><ol class="journey">${list(A.journey, (j, i) => `<li><span class="type-label">${pad(i + 1)}</span><p class="type-h4">${esc(j.title)}</p><p class="type-body-sm text-muted">${esc(j.desc)}</p></li>`)}</ol></section>
+      <section class="page__section"><p class="eyebrow type-label">My journey</p><h2 class="type-h2">How I got here</h2>
+        <ol class="path">${list(A.path, (j, i) => `<li class="path__step"><span class="path__n">${i + 1}</span><div><p class="path__when type-label">${esc(j.when)}</p><h3 class="path__title">${esc(j.title)}</h3><p class="path__text">${esc(j.text)}</p></div></li>`)}</ol>
+      </section>
       <section class="page__section" id="skills"><p class="eyebrow type-label">Skills</p><h2 class="type-h2">What I bring to the table</h2>
         <div class="grid-3 row-gap-7">${list(S.skills, s => `<div class="skill-group"><h3 class="type-h4">${esc(s.title)}</h3><ul class="cluster">${list(s.items, x => `<li>${chip(x)}</li>`)}</ul></div>`)}</div>
       </section>

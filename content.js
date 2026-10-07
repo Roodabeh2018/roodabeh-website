@@ -35,7 +35,7 @@ window.SITE = {
     sub: "with a UX research and HCI background",
     tagline:
       "I move from complex human evidence to product requirements, prioritisation, responsible AI boundaries and defensible product decisions.",
-    focus: ["0→1 AI products", "GenAI use-case scoping", "AI evals & guardrails", "Human-in-the-loop", "Research-to-requirements"],
+    focus: ["0 to 1 AI products", "GenAI use-case scoping", "AI evals & guardrails", "Human-in-the-loop"],
     photo: "roodabeh-profile.jpg",
     email: "roodabeh.seif@gmail.com",
     linkedin: "https://linkedin.com/in/roodabeh-seif",
@@ -55,7 +55,7 @@ window.SITE = {
       { n: "3", label: "Products built end to end", note: "Retune, Ghesse Khaneh, DARA." },
       { n: "6", label: "Partners coordinated", note: "Coordinator of the CrossComITS consortium." },
       { n: "5", label: "Publications", note: "ACM, Springer and IJISA." },
-      { n: "200", plus: true, label: "Students taught a year", note: "As university lecturer and trainer." }
+      { n: "200", plus: true, label: "Students mentored a year", note: "As university lecturer and trainer." }
     ],
     cv: "Roodabeh_Seif_CV.pdf"
   },
@@ -107,6 +107,13 @@ window.SITE = {
     languages: "English C2 · German B2 · Persian native",
     // Short introduction and background facts on the About page
     short: "I'm an AI-native Product Manager with a background in UX research and HCI. Whether it's cognitive training for older adults, digital safety for people living under surveillance, or a routine companion for life under stress, I keep returning to one question: how do we build technology people don't just use, but trust?",
+    // The journey told as a story on the About page
+    path: [
+      { when: "Where I started", title: "Engineering", text: "I began in computer science and mechatronics. For my master's I worked on how a mobile robot finds its path in a changing environment, published the result, and then taught computer science at university. Engineering gave me the habit of asking how a system really works before trusting it." },
+      { when: "The turn to people", title: "UX Research", text: "I moved to Germany for a second master's in Human-Computer Interaction because I wanted to understand the people behind the technology. In the eVITA project I co-designed Bo App with older adults using a brain activity sensor at home, and learned that a product only works when people can use it on their own." },
+      { when: "From findings to decisions", title: "Product Management", text: "In CrossComITS I became project coordinator for six partners. I kept the roadmap, the backlog and the decision log, turned field research into requirements and user stories, and delivered three learning products with the team. This is where research stopped being a report and became product decisions." },
+      { when: "Today", title: "AI-native Product Management", text: "Now I build 0 to 1 AI products myself. I built Retune's working MVP with AI-assisted tools, tested it with real users, and evaluated its AI feature before any release. In NEBULA I turned research on trust into responsible AI requirements. I use AI across the whole product path, and I know where it belongs and where it does not." }
+    ],
     facts: [
       { title: "PhD candidate, Human-Computer Interaction", text: "University of Siegen, 2026 to present" },
       { title: "M.Sc. Human-Computer Interaction", text: "University of Siegen, 2019 to 2022" },
@@ -395,31 +402,6 @@ window.SITE = {
           { item: "Evidence-based iteration", detail: "Changes such as removing \"Partially done\", tracked in a Product Evidence & Evolution Log." }
         ]
       },
-      // NEW: business model & success metrics. CHECK the wording before going live:
-      // the reasons and metrics below are drafted from your notes; thresholds are deliberately left open.
-      chapters: [
-        { label: "Business model & success metrics", title: "Who it is for, who pays, and how I would know it works.",
-          intro: "Everything in this section is a plan or a hypothesis. Nothing here has been measured or sold yet.",
-          blocks: [
-            { type: "columns", cols: [
-              { label: "User · first market", accent: true, items: ["Young Persian speakers in Germany", "Students and migrants", "Routines disrupted by crisis, illness or instability"], why: "A narrow group I can reach and research directly before expanding." },
-              { label: "Buyer · B2B2C", items: ["Universities and international offices", "NGOs and community organisations", "The user never pays"], why: "Organisations that already support these users carry the cost; the product stays free of subscription pressure for people under strain." },
-              { label: "Not now", style: "cross", items: ["Direct-to-consumer subscription", "Advertising", "Selling or sharing user data", "Other language communities without research with that community"], why: "Each would work against the low-pressure, privacy-first principles." }
-            ] },
-            { type: "list", style: "check", card: true, label: "How I would measure success", title: "North-star: return rate",
-              items: [
-                "North-star, return rate: share of users who log again within 7 days after a gap of 3 or more inactive days",
-                "Activation: share of new users who log at least one activity on 3 different days in their first week",
-                "Privacy comprehension: share who set per-activity visibility correctly (78% in usability testing is the baseline)",
-                "Supportive use: share of group members who send or receive a reaction each week",
-                "Guardrail: reports of feeling pressured, ranked or exposed, target zero",
-                "AI reflection release gate: zero invented metrics, zero diagnosis or treatment advice",
-                "Business: number of partner organisations running a pilot cohort, and activation per cohort"
-              ],
-              status: "planned",
-              note: "Thresholds are set after instrumenting the MVP and reading a first baseline, not guessed in advance. The return rate is chosen over daily-active use on purpose: the product optimises for coming back, not for unbroken use." }
-          ] }
-      ],
       evidence: [
         { value: "86%", label: "Onboarding success", note: "Usability evaluation", status: "validated" },
         { value: "78%", label: "Correct understanding of per-activity privacy", note: "Usability evaluation", status: "validated" },
@@ -757,35 +739,7 @@ window.SITE = {
               { title: "Small experiments with a feedback loop", decision: "Team actions are short and paired with a follow-up pulse question.", why: "Teams can see whether a change helped, instead of committing to large programmes." },
               { title: "Clear scope", decision: "Every page states that DARA is not a medical, therapy or crisis service, and the coach points to emergency services and occupational health.", why: "A wellbeing product must be honest about what it cannot do." }
             ] }
-          ] },
-        // NEW: validation plan. CHECK: sample sizes and durations are a proposed plan, adjust to what you will really run.
-        { label: "Validation plan", title: "What has to be true, and how I would test it.",
-          intro: "DARA is a concept demo. No user has tested it yet. This is the order in which I would reduce the biggest risks before building further.",
-          blocks: [
-            { type: "list", style: "plain", card: true, label: "Riskiest assumptions", status: "hypothesis",
-              items: [
-                "Trust: employees believe the privacy promise enough to check in honestly",
-                "Action: managers act on aggregated team patterns without asking who said what",
-                "Threshold: an anonymity threshold of five still leaves small teams with useful insight",
-                "Value: employees get something for themselves, not only data for the organisation",
-                "Buyer: organisations will pay for a wellbeing tool that deliberately shows no individual data"
-              ] },
-            { type: "journey", steps: [
-              { title: "Concept interviews", text: "Separate conversations with employees and with team leads: would they use it, and what would stop them?" },
-              { title: "Privacy comprehension test", text: "Think-aloud sessions on the demo: can people correctly say who sees what?" },
-              { title: "Team pilot", text: "One team above the anonymity threshold over several weeks, with one team action run and followed up." },
-              { title: "Go / change / stop", text: "A decision against criteria written down before the pilot starts." }
-            ] },
-            { type: "list", style: "check", card: true, label: "What I would measure", status: "planned",
-              items: [
-                "Privacy comprehension: share who correctly describe what a manager can and cannot see",
-                "Check-in participation over the pilot, shown only as a team total",
-                "Loop closure: share of team actions that get a follow-up pulse answer",
-                "Manager behaviour: any attempt to identify individuals counts as a failure of the design",
-                "Guardrail: employees reporting they felt monitored, target zero"
-              ],
-              note: "Planned measures. Nothing has been measured yet." }
-          ] },
+          ] }
       ],
       evidence: [],
       outcome: [],
