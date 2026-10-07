@@ -395,6 +395,31 @@ window.SITE = {
           { item: "Evidence-based iteration", detail: "Changes such as removing \"Partially done\", tracked in a Product Evidence & Evolution Log." }
         ]
       },
+      // NEW: business model & success metrics. CHECK the wording before going live:
+      // the reasons and metrics below are drafted from your notes; thresholds are deliberately left open.
+      chapters: [
+        { label: "Business model & success metrics", title: "Who it is for, who pays, and how I would know it works.",
+          intro: "Everything in this section is a plan or a hypothesis. Nothing here has been measured or sold yet.",
+          blocks: [
+            { type: "columns", cols: [
+              { label: "User · first market", accent: true, items: ["Young Persian speakers in Germany", "Students and migrants", "Routines disrupted by crisis, illness or instability"], why: "A narrow group I can reach and research directly before expanding." },
+              { label: "Buyer · B2B2C", items: ["Universities and international offices", "NGOs and community organisations", "The user never pays"], why: "Organisations that already support these users carry the cost; the product stays free of subscription pressure for people under strain." },
+              { label: "Not now", style: "cross", items: ["Direct-to-consumer subscription", "Advertising", "Selling or sharing user data", "Other language communities without research with that community"], why: "Each would work against the low-pressure, privacy-first principles." }
+            ] },
+            { type: "list", style: "check", card: true, label: "How I would measure success", title: "North-star: return rate",
+              items: [
+                "North-star, return rate: share of users who log again within 7 days after a gap of 3 or more inactive days",
+                "Activation: share of new users who log at least one activity on 3 different days in their first week",
+                "Privacy comprehension: share who set per-activity visibility correctly (78% in usability testing is the baseline)",
+                "Supportive use: share of group members who send or receive a reaction each week",
+                "Guardrail: reports of feeling pressured, ranked or exposed, target zero",
+                "AI reflection release gate: zero invented metrics, zero diagnosis or treatment advice",
+                "Business: number of partner organisations running a pilot cohort, and activation per cohort"
+              ],
+              status: "planned",
+              note: "Thresholds are set after instrumenting the MVP and reading a first baseline, not guessed in advance. The return rate is chosen over daily-active use on purpose: the product optimises for coming back, not for unbroken use." }
+          ] }
+      ],
       evidence: [
         { value: "86%", label: "Onboarding success", note: "Usability evaluation", status: "validated" },
         { value: "78%", label: "Correct understanding of per-activity privacy", note: "Usability evaluation", status: "validated" },
@@ -732,7 +757,35 @@ window.SITE = {
               { title: "Small experiments with a feedback loop", decision: "Team actions are short and paired with a follow-up pulse question.", why: "Teams can see whether a change helped, instead of committing to large programmes." },
               { title: "Clear scope", decision: "Every page states that DARA is not a medical, therapy or crisis service, and the coach points to emergency services and occupational health.", why: "A wellbeing product must be honest about what it cannot do." }
             ] }
-          ] }
+          ] },
+        // NEW: validation plan. CHECK: sample sizes and durations are a proposed plan, adjust to what you will really run.
+        { label: "Validation plan", title: "What has to be true, and how I would test it.",
+          intro: "DARA is a concept demo. No user has tested it yet. This is the order in which I would reduce the biggest risks before building further.",
+          blocks: [
+            { type: "list", style: "plain", card: true, label: "Riskiest assumptions", status: "hypothesis",
+              items: [
+                "Trust: employees believe the privacy promise enough to check in honestly",
+                "Action: managers act on aggregated team patterns without asking who said what",
+                "Threshold: an anonymity threshold of five still leaves small teams with useful insight",
+                "Value: employees get something for themselves, not only data for the organisation",
+                "Buyer: organisations will pay for a wellbeing tool that deliberately shows no individual data"
+              ] },
+            { type: "journey", steps: [
+              { title: "Concept interviews", text: "Separate conversations with employees and with team leads: would they use it, and what would stop them?" },
+              { title: "Privacy comprehension test", text: "Think-aloud sessions on the demo: can people correctly say who sees what?" },
+              { title: "Team pilot", text: "One team above the anonymity threshold over several weeks, with one team action run and followed up." },
+              { title: "Go / change / stop", text: "A decision against criteria written down before the pilot starts." }
+            ] },
+            { type: "list", style: "check", card: true, label: "What I would measure", status: "planned",
+              items: [
+                "Privacy comprehension: share who correctly describe what a manager can and cannot see",
+                "Check-in participation over the pilot, shown only as a team total",
+                "Loop closure: share of team actions that get a follow-up pulse answer",
+                "Manager behaviour: any attempt to identify individuals counts as a failure of the design",
+                "Guardrail: employees reporting they felt monitored, target zero"
+              ],
+              note: "Planned measures. Nothing has been measured yet." }
+          ] },
       ],
       evidence: [],
       outcome: [],
