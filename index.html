@@ -338,6 +338,7 @@ a.card:focus-visible { outline-offset: 4px; border-radius: var(--radius-md); }
 .hero__name span { color: var(--color-text); }
 .hero__role { font: 400 var(--text-display)/var(--leading-tight) var(--font-serif); letter-spacing: -0.02em; color: var(--color-accent-2); margin-bottom: var(--space-3); }
 .hero__sub { margin-top: var(--space-1); }
+.hero__field { margin-top: var(--space-4); font-size: var(--text-body-lg); color: var(--color-accent); font-weight: 500; }
 .hero__statement { margin-top: var(--space-6); max-width: 34ch; }
 .hero__focus { margin-top: var(--space-7); }
 .hero__focus .type-label { display: block; margin-bottom: var(--space-3); }
@@ -647,7 +648,7 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
 .figure img { cursor: zoom-in; }
 
 /* ---------- Redesign: number band, logo row, Z work list, pages ---------- */
-.stats { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border: var(--border-1) solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: var(--space-8); }
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: var(--border-1) solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: var(--space-8); }
 .stats > li { padding: var(--space-6) var(--space-5); border-left: var(--border-1) solid var(--color-border-subtle); }
 .stats > li:first-child { border-left: 0; }
 .stats__n { display: block; font: 600 var(--text-metric)/1 var(--font-sans); color: var(--color-text); letter-spacing: -0.02em; }
@@ -675,7 +676,9 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
 .zrow__media { display: block; }
 .zrow__media img { width: 100%; border-radius: var(--radius-lg); border: var(--border-1) solid var(--color-border-subtle); transition: border-color var(--duration) var(--ease); }
 .zrow__media:hover img { border-color: var(--color-accent-border); }
-.zrow__n { color: var(--color-accent-2); }
+.zrow__n { color: var(--color-accent-2); display: flex; flex-wrap: wrap; gap: var(--space-4); }
+.zrow__ind { color: var(--color-text-muted); }
+.case-hero__ind { color: var(--color-accent-2); margin-bottom: var(--space-3); }
 .zrow__title { font-size: var(--text-h2); margin: var(--space-3) 0 var(--space-2); }
 .zrow__title a { text-decoration: none; }
 .zrow__title a:hover { color: var(--color-accent); }
@@ -732,18 +735,14 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
 .facts dt { color: var(--color-text); font-weight: 500; }
 .facts dd { color: var(--color-text-muted); font-size: var(--text-body-sm); }
 @media (max-width: 1024px) {
-  .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .stats > li:nth-child(n+4) { border-top: var(--border-1) solid var(--color-border-subtle); }
-  .stats > li:nth-child(4) { border-left: 0; }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stats > li:nth-child(n+3) { border-top: var(--border-1) solid var(--color-border-subtle); }
+  .stats > li:nth-child(3) { border-left: 0; }
   .zrow { gap: var(--space-7); }
   .quotes3 { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 860px) {
-  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .stats > li { border-top: var(--border-1) solid var(--color-border-subtle); padding: var(--space-5) var(--space-4); }
-  .stats > li:nth-child(odd) { border-left: 0; }
-  .stats > li:nth-child(4) { border-left: var(--border-1) solid var(--color-border-subtle); }
-  .stats > li:nth-child(-n+2) { border-top: 0; }
+  .stats > li { padding: var(--space-5) var(--space-4); }
   .zrow { grid-template-columns: minmax(0, 1fr); gap: var(--space-5); padding-block: var(--space-6); }
   .zrow:nth-child(even) .zrow__media { order: 0; }
   .more-grid, .teach, .facts { grid-template-columns: minmax(0, 1fr); }
@@ -904,7 +903,7 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
     return `<article class="zrow">
       <a class="zrow__media" href="${href}" tabindex="-1" aria-hidden="true">${(p.cardImage || p.cover) ? `<img src="${esc(p.cardImage || p.cover)}" alt="" loading="lazy">` : ''}</a>
       <div class="zrow__body">
-        <span class="zrow__n type-label">${pad(i + 1)} / ${pad(total)}</span>
+        <span class="zrow__n type-label">${pad(i + 1)} / ${pad(total)}${p.industry ? `<span class="zrow__ind">${esc(p.industry)}</span>` : ''}</span>
         <h3 class="zrow__title"><a href="${href}">${esc(p.title)}</a></h3>
         <p class="zrow__role">${soft(p.role)}</p>
         <p class="zrow__text">${soft(p.subtitle)}</p>
@@ -930,6 +929,7 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
         <div class="hero__content">
           <p class="hero__role">${P.roles.map(esc).join(', ')}</p>
           <p class="hero__sub type-body-sm text-muted">${esc(P.sub)}</p>
+          ${P.field ? `<p class="hero__field">${esc(P.field)}</p>` : ''}
           <h1 id="hero-name" class="hero__name">${esc(first)} <span>${esc(rest.join(' '))}</span></h1>
           <p class="hero__statement type-h3">${esc(P.tagline)}</p>
           <div class="hero__focus"><span class="type-label">Current focus</span><ul class="cluster">${list(P.focus, f => `<li>${chip(f)}</li>`)}</ul></div>
@@ -1152,6 +1152,7 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
     <section class="case-hero container" aria-labelledby="case-title">
       <a href="#work" class="btn btn--link case-hero__back"><span class="icon icon--back" aria-hidden="true">←</span> All work</a>
       <p class="eyebrow type-label">${esc(p.type)}</p>
+      ${p.industry ? `<p class="case-hero__ind type-label">${esc(p.industry)}</p>` : ''}
       <h1 id="case-title" class="case-hero__title type-h1">${esc(p.title)}${p.altTitle ? `<span class="case-hero__alt" lang="fa" dir="rtl">${esc(p.altTitle)}</span>` : ''}</h1>
       <p class="case-hero__subtitle type-h3">${esc(p.subtitle)}</p>
       ${p.lede ? `<p class="case-hero__lede type-body-lg">${esc(p.lede)}</p>` : ''}

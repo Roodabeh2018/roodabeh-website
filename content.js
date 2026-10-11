@@ -33,6 +33,7 @@ window.SITE = {
     name: "Roodabeh Seif",
     roles: ["AI-native Product Manager"],
     sub: "with a UX research and HCI background",
+    field: "I build AI products for health, learning and digital safety, from user research to launch.",
     tagline:
       "I move from complex human evidence to product requirements, prioritisation, responsible AI boundaries and defensible product decisions.",
     focus: ["0 to 1 AI products", "GenAI use-case scoping", "AI evals & guardrails", "Human-in-the-loop"],
@@ -53,7 +54,6 @@ window.SITE = {
     stats: [
       { n: "4", plus: true, label: "Years in product projects", note: "EU, EU-Japan and German federally funded." },
       { n: "3", label: "Products built end to end", note: "Retune, Ghesse Khaneh, DARA." },
-      { n: "6", label: "Partners coordinated", note: "Coordinator of the CrossComITS consortium." },
       { n: "5", label: "Publications", note: "ACM, Springer and IJISA." },
       { n: "200", plus: true, label: "Students mentored a year", note: "As university lecturer and trainer." }
     ],
@@ -99,7 +99,7 @@ window.SITE = {
       "M.Sc. Mechatronics Engineering, Azad University, Qazvin (2011–2014). Research: mobile robot path planning with RRT* in MATLAB, published in IJISA 2015",
       "B.Sc. Computer Science, Payame-Noor University (2005–2010)",
       "Microsoft AI Product Manager Professional Certificate (Coursera), in progress",
-      "AI Consulting & Integration Bootcamp, Ironhack (Oct–Dec 2026, ongoing)",
+      "AI Consulting & Integration Bootcamp, Ironhack (October to December 2026, until 4 December, ongoing)",
       "Enterprise Product Management Fundamentals (certificate)",
       "Foundations of User Experience (UX) Design (certificate)",
       "DCitizens Summer School (EU Horizon Twinning), participatory design & design justice, Lisbon (2024)"
@@ -128,7 +128,7 @@ window.SITE = {
   },
 
   skills: [
-    { title: "Product", items: ["Product Strategy", "Discovery", "MVP Scoping", "PRD-style Requirements", "User Stories & Acceptance Criteria", "Backlog Prioritisation (Kanban, GitHub)", "Roadmapping", "Decision Logs", "Personas & Journey Mapping", "Agile / Scrum", "Stakeholder Alignment"] },
+    { title: "Product", items: ["Product Strategy", "Discovery", "MVP Scoping", "PRD-style Requirements", "User Stories & Acceptance Criteria", "Backlog Prioritisation (Kanban; GitHub)", "Roadmapping", "Decision Logs", "Personas & Journey Mapping", "Agile / Scrum", "Stakeholder Alignment"] },
     { title: "AI Product", items: ["GenAI / LLM Use-case Scoping", "AI Evals", "Guardrails", "Human-in-the-Loop", "Deterministic vs. GenAI Architecture", "Prompt Evaluation", "Privacy by Design", "Explainability"] },
     { title: "UX Research", items: ["Semi-structured Interviews", "Participatory Co-design", "Think-aloud Usability Testing", "Thematic / Grounded Theory Analysis", "Trauma-informed Research", "Mixed Methods", "MAXQDA"] },
     { title: "Tools", items: ["Jira", "Confluence", "Notion", "Miro", "Figma", "Lovable", "ChatGPT", "GitHub", "MAXQDA", "Adobe CC", "Adobe XD"] },
@@ -147,6 +147,7 @@ window.SITE = {
        ================================================================ */
     {
       slug: "retune",
+      industry: "Digital Health · Consumer App (B2C)",
       cardImage: "cover-retune.webp",
       storyTitle: "A missed day should not end everything.",
       story: [
@@ -154,7 +155,7 @@ window.SITE = {
         { label: "What went wrong", text: "Habit apps reward unbroken streaks. For young Persian speakers whose routines are interrupted by illness, strain or crisis, one missed day turns into giving up. The moment that matters is not the missed day. It is whether the person comes back.", image: "retune-today.webp", caption: "The Today screen welcomes people back instead of counting what they missed." },
         { label: "The turning point", text: "The research pointed the same way three times: coming back matters more than streaks, support has to feel safe, and anything that ranks or shames works against the people Retune is for. Low pressure was not a feature. It was the product.", image: "rt-principles.webp", caption: "Three principles and what each one became in the MVP." },
         { label: "What I decided", text: "No streaks and no leaderboards. Every activity gets its own privacy setting: share it by name, share it anonymously, or keep it private. Plain logic calculates the numbers, and the AI reflection is only allowed to explain them.", image: "rt-privacy.webp", caption: "Privacy is chosen per activity, not per account." },
-        { label: "What changed", text: "I built the MVP myself and tested it. In usability testing, 86% completed onboarding and 78% understood the per-activity privacy correctly, and a four-week pilot with 18 people followed. The AI reflection passed an offline test on 60 cases with no invented numbers, and it still stays out of the live product until the next comparison is done.", image: "retune-reports.webp", caption: "Weekly and monthly reports in the working MVP." }
+        { label: "What changed", text: "I built the MVP myself and tested it. In usability testing, 86% completed onboarding and 78% understood the per-activity privacy correctly, and a four-week pilot with 5 people followed. The AI reflection passed an offline test on 60 cases with no invented numbers, and it still stays out of the live product until the next comparison is done.", image: "retune-reports.webp", caption: "Weekly and monthly reports in the working MVP." }
       ],
       track: ["product", "research"],
       title: "Retune",
@@ -184,8 +185,8 @@ window.SITE = {
       evolution: ["Paper planner", "Spreadsheets", "Google Forms", "WhatsApp / Telegram routine groups", "Mobile MVP"],
       approach: [
         { title: "Observation", text: "Observed two active WhatsApp/Telegram routine groups to see how people support each other in practice." },
-        { title: "Survey & interviews", text: "Survey with 62 respondents, followed by 8 in-depth interviews." },
-        { title: "Usability & pilot", text: "7 usability tests and a 4-week pilot with 18 people." }
+        { title: "Survey & interviews", text: "Survey with 25 respondents, followed by 5 in-depth interviews." },
+        { title: "Usability & pilot", text: "6 usability tests and a 4-week pilot with 5 people." }
       ],
       insights: [
         { title: "Return matters more than streaks", text: "The product has to make coming back feel easy, not like failure." },
@@ -338,17 +339,17 @@ window.SITE = {
             changed: "Removed \"Partially done\"; the two-state Done / Not today model now needs user validation." },
           { stage: "User research: survey & interviews", status: "validated",
             uncertainty: "How do people experience interruption and return, and when does accountability feel supportive vs. intrusive?",
-            tested: "Survey with 62 respondents and 8 follow-up interviews on interruption, return, social support and privacy needs.",
+            tested: "Survey with 25 respondents and 5 follow-up interviews on interruption, return, social support and privacy needs.",
             learned: "",
             changed: "Set the focus of the usability study: onboarding, privacy comprehension, returning after interruption, supportive reactions and reports." },
           { stage: "Usability iterations", status: "validated",
             uncertainty: "Do people understand privacy states, reactions, reports and returning after inactivity?",
-            tested: "7 mobile think-aloud tests, e.g. deactivate without deleting history, share by name or anonymously, join by invitation, read a monthly report, return after inactive days.",
+            tested: "6 mobile think-aloud tests, e.g. deactivate without deleting history, share by name or anonymously, join by invitation, read a monthly report, return after inactive days.",
             learned: "86% onboarding success; 78% correctly understood the per-activity privacy controls.",
             changed: "" },
           { stage: "4-week pilot", status: "validated",
             uncertainty: "Does the product logic hold up in everyday use?",
-            tested: "A 4-week field pilot with 18 people.",
+            tested: "A 4-week field pilot with 5 people.",
             learned: "Short-term field evidence from everyday use, not proof of long-term behaviour change or wellbeing effects.",
             changed: "" }
         ],
@@ -405,8 +406,8 @@ window.SITE = {
       evidence: [
         { value: "86%", label: "Onboarding success", note: "Usability evaluation", status: "validated" },
         { value: "78%", label: "Correct understanding of per-activity privacy", note: "Usability evaluation", status: "validated" },
-        { value: "18", label: "Pilot participants", note: "4-week field pilot", status: "validated" },
-        { value: "62", label: "Survey respondents", note: "+ 8 follow-up interviews", status: "validated" },
+        { value: "5", label: "Pilot participants", note: "4-week field pilot", status: "validated" },
+        { value: "25", label: "Survey respondents", note: "+ 5 follow-up interviews", status: "validated" },
         { value: "7", label: "Usability tests", note: "Mobile think-aloud", status: "validated" },
         { value: "0", label: "Fabricated metrics in AI reflection", note: "Offline evaluation, 60 test cases", status: "validated" }
       ],
@@ -437,6 +438,7 @@ window.SITE = {
        ================================================================ */
     {
       slug: "ghesse-khaneh",
+      industry: "EdTech · Social Impact",
       cardImage: "cover-ghesse-khaneh.webp",
       storyTitle: "The child is not the user.",
       story: [
@@ -635,6 +637,7 @@ window.SITE = {
        ================================================================ */
     {
       slug: "dara",
+      industry: "HR Tech · Workplace Wellbeing (B2B)",
       cardImage: "cover-dara.webp",
       storyTitle: "Honest check-ins need a private room.",
       story: [
@@ -753,6 +756,7 @@ window.SITE = {
        ================================================================ */
     {
       slug: "nebula",
+      industry: "AI · Trust & Safety",
       cardImage: "cover-nebula.webp",
       storyTitle: "A verdict is not an answer.",
       story: [
@@ -839,6 +843,7 @@ window.SITE = {
        ================================================================ */
     {
       slug: "surveillance-beyond-borders",
+      industry: "Privacy & Security · Social Impact",
       cardImage: "cover-surveillance.webp",
       storyTitle: "Leaving the country did not end the watching.",
       story: [
@@ -921,6 +926,7 @@ window.SITE = {
        ================================================================ */
     {
       slug: "bo-app",
+      industry: "Digital Health · Neurotech",
       cardImage: "cover-bo-app.webp",
       storyTitle: "Seven older adults, one unfamiliar headband.",
       story: [
@@ -939,7 +945,7 @@ window.SITE = {
       timeline: "~8–10 weeks",
       methods: ["Interviews", "Participatory co-design", "Observation", "Think-aloud usability testing"],
       status: "Published · OzCHI 2024 Late-Breaking Work (proceedings Sept 2025)",
-      cardOutcome: "Independent sensor setup rose from 25% to 100% after the onboarding redesign (1 of 4 users → 3 of 3 in retest).",
+      cardOutcome: "Independent sensor setup rose from 25% to 100% after the onboarding redesign.",
       cardDecision: "Step-by-step visual sensor onboarding with an always-visible Back action.",
       cover: "bo-app-screens.webp",
       glance: {
@@ -948,13 +954,13 @@ window.SITE = {
         contribution:
           "End to end: I planned and ran the research, facilitated co-design, prioritised usability problems, translated evidence into requirements, and designed, tested and retested the prototypes.",
         outcome:
-          "After redesign, independent sensor setup rose from 25% to 100% (1 of 4 → 3 of 3 in retest), with zero navigation issues. Published at OzCHI 2024."
+          "After redesign, independent sensor setup rose from 25% to 100%, with zero navigation issues. Published at OzCHI 2024."
       },
       problem: [
         "Older adults needed to use a mobile cognitive-training app and a brain-sensing device independently at home, making hardware setup, navigation and abstract brain-activity feedback understandable for users with varying digital confidence.",
         "Central question: how might we make unfamiliar brain-sensing technology feel understandable, manageable and motivating without making the experience clinical or stressful?",
         "Participants were active adults aged 60+ without dementia or MCI. Bo App was explored as a non-medical training and feedback concept, not a treatment.",
-        "In the first usability round, 75% of testers needed assistance (3 of 4) and 50% hit navigation or setup problems (2 of 4). Only 25% could set up the sensor alone (1 of 4)."
+        "In the first usability round, 75% of testers needed assistance and 50% hit navigation or setup problems. Only 25% could set up the sensor alone."
       ],
       approach: [
         { title: "01 Discover", text: "Literature review, interviews and benchmarking." },
@@ -969,20 +975,20 @@ window.SITE = {
         { title: "Simplicity helps focus", text: "Minimal interfaces helped participants concentrate on essential information." }
       ],
       decisions: [
-        { title: "Step-by-step visual onboarding", situation: "Only 25% of initial testers could set up the sensor independently (1 of 4).", evidence: "Participants struggled to connect and wear unfamiliar hardware, with unclear sequencing.", decision: "Step-by-step visual sensor onboarding with a clarified order of actions.", why: "Reducing ambiguity at each step targets the exact point where users failed." },
-        { title: "Persistent Back action", situation: "50% of testers ran into navigation or setup issues (2 of 4).", evidence: "Insufficient navigation support created uncertainty.", decision: "An always-visible Back action and a simpler hierarchy.", why: "People explore more confidently when they know they can recover." },
+        { title: "Step-by-step visual onboarding", situation: "Only 25% of initial testers could set up the sensor independently.", evidence: "Participants struggled to connect and wear unfamiliar hardware, with unclear sequencing.", decision: "Step-by-step visual sensor onboarding with a clarified order of actions.", why: "Reducing ambiguity at each step targets the exact point where users failed." },
+        { title: "Persistent Back action", situation: "50% of testers ran into navigation or setup issues.", evidence: "Insufficient navigation support created uncertainty.", decision: "An always-visible Back action and a simpler hierarchy.", why: "People explore more confidently when they know they can recover." },
         { title: "Growing-tree & garden metaphors", situation: "Abstract biofeedback was hard to interpret.", evidence: "The tree metaphor made feedback relatable; the monthly garden concept came directly from participant feedback.", decision: "A growing tree for real-time feedback and a nurturing garden for monthly feedback.", why: "Familiar metaphors turn unfamiliar data into something people understand." },
         { title: "Customisable feedback", situation: "One feedback model didn't suit everyone.", evidence: "One participant found frequent performance feedback potentially stressful.", decision: "Feedback became customisable rather than one fixed model.", why: "Motivation without pressure." }
       ],
       evidence: [
-        { value: "25% → 100%", label: "Independent sensor setup", note: "1 of 4 initial testers → 3 of 3 in retest", status: "validated" },
-        { value: "75% → 0%", label: "Users needing assistance", note: "3 of 4 initial testers → 0 of 3 in retest", status: "validated" },
+        { value: "25% → 100%", label: "Independent sensor setup", note: "Before and after the onboarding redesign", status: "validated" },
+        { value: "75% → 0%", label: "Users needing assistance", note: "Before and after the onboarding redesign", status: "validated" },
         { value: "0", label: "Navigation issues in the final retest", note: "3 retest participants", status: "validated" },
         { value: "80%", label: "High-priority issues resolved", note: "8 of 10 documented issues", status: "validated" },
         { value: "7", label: "Co-design participants (60–80)", note: "12 sessions, 4 rounds, ~22 h", status: "validated" }
       ],
       outcome: [
-        "Sensor onboarding and navigation were redesigned; 80% of high-priority usability issues were resolved (8 of 10).",
+        "Sensor onboarding and navigation were redesigned; 80% of high-priority usability issues were resolved.",
         "Participant feedback shaped real-time, daily, monthly and competitive feedback concepts, and informed the final interactive prototype and implementation coordination.",
         "Published as a Late-Breaking Work at OzCHI 2024 (proceedings published September 2025). Counts come from project evaluation notes and researcher-confirmed task records; not every count appears in the paper."
       ],
@@ -1004,6 +1010,7 @@ window.SITE = {
        ================================================================ */
     {
       slug: "crosscomits",
+      industry: "EdTech · Cybersecurity",
       cardImage: "cover-crosscomits.webp",
       storyTitle: "Correct advice that nobody could use.",
       story: [
@@ -1086,7 +1093,7 @@ window.SITE = {
      Remove an item to hide it; an item without a matching logo shows as text. */
   /* Homepage order: these case studies show first; every other published
      project appears below under "More work". Use the project slugs. */
-  featured: ["bo-app", "crosscomits", "retune", "nebula", "dara"],
+  featured: ["dara", "retune", "ghesse-khaneh", "bo-app", "crosscomits", "nebula", "surveillance-beyond-borders"],
 
   partners: {
     label: "Projects, partners and funders I've worked with",
@@ -1128,7 +1135,7 @@ window.SITE = {
         "Delivered three learning products: a cybersecurity board game, metaphor flashcards and an OER learning platform. Ran an A/B test of flashcard formats (text vs. visual metaphor); the result became the product decision: metaphor plus a short explanation.",
         "Co-authored two publications and contributed to grant proposals.",
         "eVITA (EU–Japan, 2021–2023), brain-sensor workstream: improved the existing ABC App in Unity, a cognitive-training app driven by the NeU fNIRS brain activity sensor (requirements, prototypes and implementation changes).",
-        "eVITA: designed Bo App for the same NeU sensor through interviews and real-time co-design with older adults, online and in person, with prototypes in Figma and Adobe XD. Multilingual design for German, French, Italian and Japanese users. Participants could set up and use the sensor with Bo App alone: independent setup rose from 25% to 100% (1 of 4 users in the first test, 3 of 3 in the retest).",
+        "eVITA: designed Bo App for the same NeU sensor through interviews and real-time co-design with older adults, online and in person, with prototypes in Figma and Adobe XD. Multilingual design for German, French, Italian and Japanese users. Participants could set up and use the sensor with Bo App alone: independent setup rose from 25% to 100%.",
         "NEBULA (BMBF, 2023–2025): turned research with vulnerable groups into responsible-AI requirements: explainability, multilingual access and human control.",
         "Mentored students in their master's theses and study projects."
       ] },
