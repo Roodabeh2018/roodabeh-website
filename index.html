@@ -299,6 +299,10 @@ a.card:focus-visible { outline-offset: 4px; border-radius: var(--radius-md); }
 .site-nav__brand { display: inline-flex; align-items: center; gap: var(--space-3); }
 .site-nav__brand:hover { color: var(--color-accent); }
 .site-nav__logo { font: 400 var(--text-h2)/1 var(--font-serif); letter-spacing: -0.02em; color: var(--color-accent); }
+.flag-pair { display: inline-flex; align-items: center; gap: var(--space-2); }
+.flag-opt { opacity: .35; transition: opacity var(--duration) var(--ease); padding-bottom: var(--space-1); border-bottom: var(--border-2) solid transparent; }
+.flag-opt.is-on { opacity: 1; border-bottom-color: var(--color-accent); }
+#lang-switch:hover .flag-opt { opacity: 1; }
 .flag { display: block; width: var(--space-5); height: var(--space-4); border-radius: var(--radius-sm); border: var(--border-1) solid var(--color-border); }
 .site-nav__logo i { color: var(--color-accent-2); }
 .site-nav__links { display: flex; gap: var(--space-2); margin-left: auto; }
@@ -330,10 +334,10 @@ a.card:focus-visible { outline-offset: 4px; border-radius: var(--radius-md); }
 /* 5.1 Homepage hero: split layout with portrait */
 .hero { padding-top: calc(var(--nav-h) + var(--space-8)); padding-bottom: var(--space-7); display: flex; align-items: center; }
 .hero .split-hero { width: 100%; }
-.hero__name { margin-bottom: var(--space-5); }
-.hero__name span { font-style: italic; color: var(--color-text-secondary); }
-.hero__role { font: 500 var(--text-body-lg)/1.4 var(--font-sans); color: var(--color-accent-2); }
-.hero__sub { margin-top: var(--space-1); margin-bottom: var(--space-4); }
+.hero__name { font: 500 var(--text-body-lg)/1.4 var(--font-sans); color: var(--color-text); letter-spacing: 0; margin-top: var(--space-2); }
+.hero__name span { color: var(--color-text); }
+.hero__role { font: 400 var(--text-display)/var(--leading-tight) var(--font-serif); letter-spacing: -0.02em; color: var(--color-accent-2); margin-bottom: var(--space-3); }
+.hero__sub { margin-top: var(--space-1); }
 .hero__statement { margin-top: var(--space-6); max-width: 34ch; }
 .hero__focus { margin-top: var(--space-7); }
 .hero__focus .type-label { display: block; margin-bottom: var(--space-3); }
@@ -868,7 +872,8 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
 
   (function () {
     const sw = document.getElementById('lang-switch'), other = DE ? 'en' : 'de';
-    sw.innerHTML = DE ? '<svg class="flag" viewBox="0 0 60 40" aria-hidden="true"><rect width="60" height="40" fill="#012169"/><path d="M0 0 60 40M60 0 0 40" stroke="#fff" stroke-width="8"/><path d="M0 0 60 40M60 0 0 40" stroke="#c8102e" stroke-width="3"/><path d="M30 0v40M0 20h60" stroke="#fff" stroke-width="13"/><path d="M30 0v40M0 20h60" stroke="#c8102e" stroke-width="7"/></svg>' : '<svg class="flag" viewBox="0 0 24 16" aria-hidden="true"><rect width="24" height="16" fill="#000"/><rect y="5.33" width="24" height="5.34" fill="#dd0000"/><rect y="10.67" width="24" height="5.33" fill="#ffce00"/></svg>'; sw.title = DE ? 'English' : 'Deutsch'; sw.lang = other; sw.setAttribute('aria-label', DE ? 'English version' : 'Deutsche Version');
+    const FLAG_EN = '<svg class="flag" viewBox="0 0 60 40" aria-hidden="true"><rect width="60" height="40" fill="#012169"/><path d="M0 0 60 40M60 0 0 40" stroke="#fff" stroke-width="8"/><path d="M0 0 60 40M60 0 0 40" stroke="#c8102e" stroke-width="3"/><path d="M30 0v40M0 20h60" stroke="#fff" stroke-width="13"/><path d="M30 0v40M0 20h60" stroke="#c8102e" stroke-width="7"/></svg>', FLAG_DE = '<svg class="flag" viewBox="0 0 24 16" aria-hidden="true"><rect width="24" height="16" fill="#000"/><rect y="5.33" width="24" height="5.34" fill="#dd0000"/><rect y="10.67" width="24" height="5.33" fill="#ffce00"/></svg>';
+    sw.innerHTML = '<span class="flag-pair"><span class="flag-opt' + (DE ? '' : ' is-on') + '">' + FLAG_EN + '</span><span class="flag-opt' + (DE ? ' is-on' : '') + '">' + FLAG_DE + '</span></span>'; sw.title = DE ? 'Switch to English' : 'Auf Deutsch wechseln';
     sw.addEventListener('click', e => { e.preventDefault(); try { localStorage.setItem('lang', other); } catch (err) {} location.href = location.pathname + '?lang=' + other + location.hash; });
     localize(document.querySelector('.site-nav')); const f = document.querySelector('footer'); if (f) localize(f);
     const sk = document.querySelector('.skip-link'); if (sk) localize(sk.parentNode === document.body ? sk : sk.parentNode);
@@ -925,7 +930,7 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
         <div class="hero__content">
           <p class="hero__role">${P.roles.map(esc).join(', ')}</p>
           <p class="hero__sub type-body-sm text-muted">${esc(P.sub)}</p>
-          <h1 id="hero-name" class="hero__name type-display">${esc(first)} <span>${esc(rest.join(' '))}</span></h1>
+          <h1 id="hero-name" class="hero__name">${esc(first)} <span>${esc(rest.join(' '))}</span></h1>
           <p class="hero__statement type-h3">${esc(P.tagline)}</p>
           <div class="hero__focus"><span class="type-label">Current focus</span><ul class="cluster">${list(P.focus, f => `<li>${chip(f)}</li>`)}</ul></div>
           <div class="hero__actions cluster-lg">
