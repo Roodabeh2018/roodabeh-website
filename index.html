@@ -914,6 +914,15 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
 .nc-lockform>.type-label{color:var(--color-accent-2);margin-bottom:var(--space-3)}.nc-lockform>p{margin-bottom:var(--space-4)}
 .nc-lockrow{display:flex;gap:10px;margin-bottom:var(--space-4)}.nc-lockrow input{flex:1;min-width:0;background:var(--color-bg);border:1px solid var(--color-border);border-radius:var(--radius-md);color:var(--color-text);padding:0 14px;font:inherit;height:44px}
 .nc-lockrow input:focus{outline:2px solid var(--color-accent);outline-offset:1px}.nc-lockerr{color:#ff8a8a}.nc-lockform a{color:var(--color-accent)}
+.nc-ctxblock{margin-bottom:var(--space-5)}.nc-ctxh{font:600 1.4rem var(--font-sans);color:var(--color-accent-2);margin-bottom:6px}.nc-ctxblock p{color:var(--color-text-secondary);max-width:70ch;font-size:1rem;line-height:1.6}
+.nc-cards{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)}.nc-card{background:var(--color-surface);border:1px solid var(--color-border-subtle);border-radius:var(--radius-lg);padding:var(--space-5) var(--space-6)}
+.nc-card h3{font:600 1.25rem var(--font-sans);color:var(--color-accent);margin-bottom:var(--space-3)}.nc-card p,.nc-card li{color:var(--color-text-secondary);font-size:.95rem;line-height:1.6}
+.nc-card ul:not(.cluster){list-style:none;padding:0;margin:0}.nc-card ul:not(.cluster) li{position:relative;padding-left:16px}.nc-card ul:not(.cluster) li:before{content:"";position:absolute;left:0;top:.65em;width:6px;height:6px;border-radius:50%;background:var(--color-accent)}
+.nc-tools{margin-top:var(--space-3)}
+.nc-metrics{list-style:none;padding:0;margin:var(--space-5) 0 0;display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--color-accent-2);border-radius:var(--radius-lg);overflow:hidden}
+.nc-metrics li{padding:var(--space-5) var(--space-6);border-left:1px solid var(--color-border-subtle)}.nc-metrics li:first-child{border-left:0}
+.nc-metrics__l{display:block;font:600 1.05rem/1.3 var(--font-sans);color:var(--color-accent-2);min-height:2.6em}.nc-metrics b{display:block;font:600 2.6rem/1.1 var(--font-sans);color:var(--color-text);margin:6px 0}.nc-metrics__n{display:block;color:var(--color-text-muted);font-size:.85rem}
+@media(max-width:900px){.nc-cards,.nc-metrics{grid-template-columns:1fr}.nc-metrics li{border-left:0;border-top:1px solid var(--color-border-subtle)}.nc-metrics li:first-child{border-top:0}.nc-metrics__l{min-height:0}}
 </style>
 </head>
 <body>
@@ -1347,6 +1356,9 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
       sub: 'How I designed workplace wellbeing that helps teams without turning into surveillance.',
       context: 'DARA · B2B concept · working browser demo',
       cover: 'img/dara/cover-dara.webp',
+      team: "Solo, my own idea. Two people gave early feedback on the demo.",
+      tools: ["Lovable", "AI-assisted prototyping"],
+      metrics: [["Idea to working demo", "1 day", "built with AI-assisted prototyping"], ["Views in one demo", "2", "employee and manager"], ["Responses before a manager sees anything", "5", "minimum team size for any insight"]],
       blocks: [
         ['Context', 'A wellbeing product for companies, built around four parts of working life: energy, connection, focus and growth.'],
         ['Problems', ['People will not answer honestly if a manager might see it', 'Managers still need to know when a team is struggling', 'Scores and streaks add pressure to wellbeing']],
@@ -1386,6 +1398,9 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
       sub: 'How co-design with older adults turned a brain-sensor setup from a wall into a few clear steps.',
       context: 'eVITA, EU and Japan research project · University of Siegen · published at OzCHI 2024',
       cover: 'img/bo-app/bo-app-screens.webp',
+      team: "eVITA partners in Europe and Japan. I led the Bo App research and design with seven older adults.",
+      tools: ["Figma", "Adobe XD", "Unity", "NeU fNIRS sensor"],
+      metrics: [["Set up the sensor alone", "1 of 4 → 3 of 3", "first usability round, then retest"], ["Co-design sessions", "12", "with older adults aged 60 to 80"], ["Iterative design rounds", "4", "published at OzCHI 2024"]],
       links: [['Peer-reviewed paper (DOI) ↗', 'https://doi.org/10.1145/3726986.3727033'], ['Read the paper (PDF)', 'docs/Bo_App_OzCHI2023.pdf']],
       blocks: [
         ['Context', 'A cognitive-training app paired with a headband that measures brain activity, for older adults to use at home. Non-medical training, not treatment.'],
@@ -1418,6 +1433,9 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
       sub: 'How I coordinated six partners to turn field research into three cybersecurity learning products for very different people.',
       context: 'CrossComITS & Smartphone Café · German federally funded consortium · University of Siegen · May 2023 to December 2025',
       cover: 'img/crosscomits/cc-cover.webp',
+      team: "Six partner organisations. I led the University of Siegen team, the partner team and a student assistant team.",
+      tools: ["Scrum", "GitHub Kanban", "A/B testing", "Co-design workshops"],
+      metrics: [["Learning products delivered", "3", "board game, flashcards, learning platform"], ["User groups served", "3", "older adults, migrants, young people"], ["Publications", "2", "ACM PDC and Springer, 2026"]],
       links: [['PDC 2026 paper (PDF)', 'docs/Mediating_Digital_Security_PDC2026.pdf'], ['Official project ↗', 'https://crosscomits.de/']],
       blocks: [
         ['Context', 'A six-partner programme to make digital security learnable for older adults, migrants and refugees, and young people.'],
@@ -1455,6 +1473,9 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
       sub: 'How research with the people most exposed to misinformation shaped requirements for AI they could actually trust.',
       context: 'NEBULA · German federally funded consortium · University of Siegen · May 2023 to December 2025',
       cover: 'img/nebula/cover-nebula.webp',
+      team: "A multi-partner consortium. I ran the research and wrote the requirements; partners built the AI model.",
+      tools: ["Jira", "Focus groups", "Workshops", "Prototyping"],
+      metrics: [["Responsible-AI requirements", "4", "explainable, contestable, multilingual, human-controlled"], ["Consortium products reflecting them", "3", "across the NEBULA tool suite"], ["User groups", "3", "researched in their own settings"]],
       links: [['Springer chapter (DOI) ↗', 'https://doi.org/10.1007/978-3-658-52212-4_10'], ['Official project ↗', 'https://peasec.de/projects/nebula/']],
       blocks: [
         ['Context', 'A consortium building an AI tool to help people judge questionable information. My part: what older adults, migrants and refugees, and young people needed from it.'],
@@ -1493,6 +1514,9 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
       sub: 'How I made returning, not unbroken streaks, the goal of a routine product.',
       context: 'Retune · independent product · Persian, mobile, right-to-left',
       cover: 'img/retune/retune-cover.webp',
+      team: "Solo: no separate designer or developer. Community members joined the research and the pilot.",
+      tools: ["Lovable", "AI-assisted prototyping", "Surveys", "Usability testing"],
+      metrics: [["Onboarding success", "86%", "4-week pilot with 5 people"], ["Understood per-activity privacy", "78%", "pilot participants"], ["Fabricated metrics in AI reflection", "0", "across 60 offline test cases"]],
       blocks: [
         ['Context', 'A routine companion for young Persian speakers whose lives are interrupted by crisis, illness, strain or migration. Starting with students and migrants in Germany.'],
         ['Problems', ['Habit apps reward unbroken streaks', 'One missed day turns into giving up', 'Group support lives apart from tracking', 'No control over what others see']],
@@ -1526,14 +1550,17 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
       title: 'Evidence you can trace.',
       sub: "How a bank's scattered governance documents became drafts a reviewer can check line by line.",
       context: 'Ironhack AI Consulting & Integration, 2026 · fictional bank, synthetic documents · live demo',
-      cover: 'img/ai-governance-copilot/copilot-generate.webp',
+      cover: 'img/ai-governance-copilot/cover-copilot.webp',
+      team: 'Team of 3: one teammate on ingestion, one on retrieval, and me on generation and the app.',
+      tools: ['Python', 'OpenAI API', 'Gradio', 'pytest', 'GitHub', 'Trello', 'Render'],
+      metrics: [['Uncited gap findings', '10 → 0', 'of 10 gap bullets, after 4 prompt iterations'], ['Correct placeholder types', '40% → 73%', 'final runs, 24 Oct 2026'], ['Internal documents in public output', '0', 'tested visibility filter']],
       links: [['Try the live demo ↗', 'https://project2-ai-governance-copilot.onrender.com/'], ['GitHub repository ↗', 'https://github.com/Roodabeh2018/Project2_AI_governance_Copilot']],
       pipeline: { title: 'Every draft passes a filter and a human before it counts.', steps: [['Sources', '9 docs + EU AI Act'], ['Chunk', '491 passages'], ['Embed', 'vector index'], ['Retrieve', '3 + 3, filtered'], ['Generate', 'cited, checked', 1], ['Review', 'human approves', 1]], register: 'Gap register: 8 EU AI Act requirements', note: 'Highlighted: the stages I owned. Nothing reaches the gap register without a named reviewer\'s approval.' },
       blocks: [
         ['Context', 'Northstar Digital Bank, a fictional bank, uses a credit decision support AI. Under Annex III of the EU AI Act this is generally high-risk, so the bank needs monitoring, human oversight and evidence it can show.'],
         ['Problems', ['Evidence is spread across policies, inventories, risk assessments and 144 pages of law', 'A general chatbot writes fluent text but assumes facts', 'It cannot show where a statement came from']],
         ['Deliverable', ['A RAG app that drafts monitoring plans and internal updates, with a source on every claim', 'A gap register for 8 EU AI Act requirements, updated only after human approval', 'A tested filter between internal and public outputs', 'A live deployment and 143 automated tests']],
-        ['Role & duration', 'Owner of the generation stage: prompts, LLM integration, automatic checks, human review, web app and deployment, in a team of three. A 2-day build sprint.']],
+        ['Role & duration', 'AI-native Product Manager and owner of the generation stage: prompts, LLM integration, automatic checks, human review, web app and deployment. A 2-day build sprint.']],
       secs: [
         { step: 'Problem discovery', h: 'What a reviewer needs before trusting a draft.', t: 'We wrote these rules into one shared rule file before writing code, so the whole team and our AI coding agents worked to the same standard.',
           cards5: [['Traceability', 'Every statement points to a file and a section or page.'], ['No invented facts', 'Owners, dates and thresholds come from documents or stay open.'], ['Not found is not missing', 'A missing document is a gap to review, not proof of a missing control.'], ['No verdicts', 'The tool drafts. It never says the bank is compliant or not.'], ['Public stays public', 'A public post may use only public-tagged sources.']] },
@@ -1570,6 +1597,9 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
       sub: 'How I designed a storytelling platform for the facilitator, so the session stays between people, not behind a screen.',
       context: 'Story House (قصه‌خونه) · independent product · bilingual Persian / English web app',
       cover: 'img/story-house/cover-ghesse-khaneh.webp',
+      team: "Self-initiated. I worked with two teachers and observed their sessions.",
+      tools: ["Interviews", "Session observation", "Prototyping"],
+      metrics: [["Teachers interviewed", "2", "experienced facilitators"], ["Sessions observed", "4", "real children’s sessions"], ["Stages in one session", "8", "mapped into the session builder"]],
       blocks: [
         ['Context', 'Life-skills sessions for children through stories, discussion, role-play and games. They help children recognise, regulate and express their feelings, and help parents understand them.'],
         ['Problems', ['Session knowledge lives in notes and in the facilitator\'s head', 'Hard to repeat, harder to hand over', 'A story app would put one more screen in front of children']],
@@ -1644,7 +1674,11 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
       <ul class="cluster">${(p.tags||[]).map(t => `<li>${chip(t,'accent')}</li>`).join('')}</ul>
       ${d.links ? `<div class="cluster-lg nc-links">${d.links.map((l,i)=>`<a class="btn ${i ? 'btn--secondary' : 'btn--primary'}" href="${esc(l[1])}" target="_blank" rel="noopener">${esc(l[0])}</a>`).join('')}</div>` : ''}
       <img class="nc-cover" src="${esc(d.cover)}" alt="">
-      <div class="nc-blocks">${d.blocks.map(b => `<div><h3 class="type-label">${esc(b[0])}</h3>${Array.isArray(b[1]) ? `<ul>${b[1].map(x=>`<li>${esc(x)}</li>`).join('')}</ul>` : `<p>${esc(b[1])}</p>`}</div>`).join('')}</div>
+      ${(() => { const ctx = d.blocks.find(b => b[0] === 'Context'), rest = d.blocks.filter(b => b[0] !== 'Context');
+        const cards = rest.map(b => `<div class="nc-card"><h3>${esc(b[0])}</h3>${Array.isArray(b[1]) ? `<ul>${b[1].map(x=>`<li>${esc(x)}</li>`).join('')}</ul>` : `<p>${esc(b[1])}</p>`}</div>`);
+        if (d.team || d.tools) cards.push(`<div class="nc-card"><h3>Team & tools</h3>${d.team ? `<p>${esc(d.team)}</p>` : ''}${d.tools ? `<ul class="cluster nc-tools">${d.tools.map(t=>`<li>${chip(t)}</li>`).join('')}</ul>` : ''}</div>`);
+        return `${ctx ? `<div class="nc-ctxblock"><h2 class="nc-ctxh">Context</h2><p>${esc(ctx[1])}</p></div>` : ''}<div class="nc-cards">${cards.join('')}</div>
+        ${d.metrics ? `<ul class="nc-metrics">${d.metrics.map(m=>`<li><span class="nc-metrics__l">${esc(m[0])}</span><b>${esc(m[1])}</b><span class="nc-metrics__n">${esc(m[2])}</span></li>`).join('')}</ul>` : ''}`; })()}
     </section>
     ${d.pipeline ? `<section class="container"><div class="nc-pipe"><p class="type-label">How it works</p><h2 class="nc-pipe__t">${esc(d.pipeline.title)}</h2>
       <ol class="nc-pipe__steps">${d.pipeline.steps.map(s=>`<li class="${s[2] ? 'is-mine' : ''}"><b>${esc(s[0])}</b><span>${esc(s[1])}</span></li>`).join('')}</ol>
