@@ -1,0 +1,1849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XSY363JH7F"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XSY363JH7F');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roodabeh Seif | AI-native Product Manager</title>
+<meta name="description" content="Roodabeh Seif, AI-native Product Manager with a UX research background. 0→1 AI products, requirements, AI guardrails and evaluation, human-centered AI. Case studies and publications.">
+<meta name="theme-color" content="#0d0d0f">
+<link rel="canonical" href="https://roodabehseif.com/">
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Roodabeh Seif">
+<meta property="og:title" content="Roodabeh Seif | AI-native Product Manager">
+<meta property="og:description" content="From complex human evidence to product requirements, prioritisation, responsible AI boundaries and defensible product decisions. Case studies: Retune, NEBULA, Bo App and more.">
+<meta property="og:url" content="https://roodabehseif.com/">
+<meta property="og:image" content="https://roodabehseif.com/roodabeh-profile.jpg">
+<meta property="og:image:alt" content="Portrait of Roodabeh Seif">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Roodabeh Seif | AI-native Product Manager">
+<meta name="twitter:description" content="AI-native Product Manager with a UX research background: 0→1 AI products, requirements, AI guardrails and evaluation.">
+<meta name="twitter:image" content="https://roodabehseif.com/roodabeh-profile.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* =====================================================================
+   DESIGN SYSTEM
+   1. Foundations: tokens (colour, type, space, radius, layout, motion)
+   2. Base: element defaults
+   3. Layout: primitives (container, measure, section, grids, split)
+   4. Components: button, chip, badge, card, section header,
+                      disclosure, table, navigation, figure
+   5. Patterns: hero, project card, case hero, decision log,
+                      requirements, evidence, AI boundary, rows
+   6. Responsive & motion
+   Rule: components use semantic tokens only: no raw values.
+   ===================================================================== */
+
+/* ---------- 1. FOUNDATIONS ---------- */
+:root {
+  /* Colour: primitives (referenced only by semantic tokens below) */
+  --neutral-950: #000000;
+  --neutral-900: #0b0b0d;
+  --neutral-850: #121215;
+  --neutral-800: #1a1a1f;
+  --neutral-400: #9a9a95;
+  --neutral-200: #c6c6c1;
+  --neutral-50:  #ededea;
+  --neutral-0:   #ffffff;
+  --turquoise-400: #1fbfb8;   /* Persian turquoise: primary colour */
+  --amber-300: #d8b57f;
+  --lavender-300: #b79bff;    /* second colour */
+
+  /* Colour: semantic */
+  --color-bg: var(--neutral-950);                 /* page background */
+  --color-surface: var(--neutral-900);            /* elevated surface: cards */
+  --color-surface-2: var(--neutral-850);          /* secondary surface: bands, decision cards */
+  --color-surface-hover: var(--neutral-800);      /* interactive hover fill */
+  --color-text: var(--neutral-50);                /* primary text */
+  --color-text-secondary: var(--neutral-200);     /* body copy */
+  --color-text-muted: var(--neutral-400);         /* labels, meta */
+  --color-border: rgba(255,255,255,0.16);         /* default / interactive border */
+  --color-border-subtle: rgba(255,255,255,0.08);  /* dividers, card outlines */
+  --color-accent: var(--turquoise-400);                /* primary accent */
+  --color-accent-2: var(--lavender-300);          /* second accent: labels, numbers */
+  --color-accent-surface: rgba(31,191,184,0.10);
+  --color-accent-border: rgba(31,191,184,0.40);
+  --color-on-accent: var(--neutral-950);
+  --color-focus: var(--turquoise-400);
+  --color-logo-tile: var(--neutral-0);            /* white tile: partner logos have white backgrounds */
+
+  /* Colour: evidence states (colour + marker shape + text, never colour alone) */
+  --evidence-measured: var(--turquoise-400);
+  --evidence-estimated: var(--amber-300);
+  --evidence-programme: var(--lavender-300);
+  --evidence-planned: var(--neutral-400);
+  --evidence-hypothesis: var(--neutral-200);
+
+  /* Typography: families */
+  --font-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Typography: scale */
+  --text-display: clamp(3rem, 6.4vw, 5.5rem);   /* hero name */
+  --text-h1: clamp(2.5rem, 5.2vw, 4rem);        /* case-study title */
+  --text-h2: clamp(1.875rem, 3.2vw, 2.5rem);    /* section heading */
+  --text-h3: 1.5rem;                            /* sub-section, lead statements */
+  --text-metric: clamp(2rem, 3.4vw, 2.75rem);   /* big evidence numbers */
+  --text-h4: 1.25rem;                           /* card titles */
+  --text-body-lg: 1.125rem;
+  --text-body: 1rem;
+  --text-body-sm: 0.875rem;
+  --text-label: 0.75rem;
+  --text-caption: 0.8125rem;
+
+  --leading-tight: 1.05;
+  --leading-heading: 1.2;
+  --leading-body: 1.65;
+  --tracking-label: 0.12em;
+
+  /* Spacing: 4px base */
+  --space-1: 4px;   --space-2: 8px;   --space-3: 12px;  --space-4: 16px;
+  --space-5: 24px;  --space-6: 32px;  --space-7: 48px;  --space-8: 64px;
+  --space-9: 96px;
+
+  /* Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-pill: 999px;
+
+  /* Borders */
+  --border-1: 1px;
+  --border-2: 2px;
+
+  /* Layout */
+  --container: 1160px;
+  --measure: 68ch;               /* readable line length, ~65–75 characters */
+  --gutter: var(--space-8);
+  --section-y: var(--space-8);        /* space after a section */
+  --section-top: var(--space-7);      /* space before a section heading */
+  --nav-h: 72px;
+  --control-h: 44px;             /* WCAG 2.2 target size */
+  --control-h-sm: 36px;
+  --logo-tile-h: 56px;           /* partner logo tile */
+  --portrait-w: clamp(300px, 30vw, 400px);
+
+  /* Motion */
+  --ease: cubic-bezier(.2,.6,.2,1);
+  --duration: 180ms;
+}
+
+/* ---------- 2. BASE ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); -webkit-text-size-adjust: 100%; }
+body { background: var(--color-bg); color: var(--color-text-secondary); font: 400 var(--text-body)/var(--leading-body) var(--font-sans); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+img { display: block; max-width: 100%; height: auto; }
+ul, ol { list-style: none; }
+h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 400; color: var(--color-text); line-height: var(--leading-heading); letter-spacing: -0.01em; }
+a { color: inherit; text-underline-offset: 3px; }
+button { font: inherit; color: inherit; }
+::selection { background: var(--color-accent); color: var(--color-on-accent); }
+:focus-visible { outline: var(--border-2) solid var(--color-focus); outline-offset: 3px; border-radius: var(--radius-sm); }
+[hidden] { display: none !important; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+/* Type utilities: the only places font sizes are set */
+.type-display { font: 400 var(--text-display)/var(--leading-tight) var(--font-serif); letter-spacing: -0.025em; color: var(--color-text); }
+.type-h1 { font: 400 var(--text-h1)/var(--leading-tight) var(--font-serif); letter-spacing: -0.02em; color: var(--color-text); }
+.type-h2 { font: 400 var(--text-h2)/var(--leading-heading) var(--font-serif); color: var(--color-text); }
+.type-h3 { font: 400 var(--text-h3)/1.35 var(--font-serif); color: var(--color-text); }
+.type-h4 { font: 400 var(--text-h4)/1.3 var(--font-serif); color: var(--color-text); }
+.type-body-lg { font-size: var(--text-body-lg); line-height: 1.7; }
+.type-body { font-size: var(--text-body); }
+.type-body-sm { font-size: var(--text-body-sm); line-height: 1.55; }
+.type-label { font: 500 var(--text-label)/1.4 var(--font-sans); letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--color-text-muted); }
+.type-caption { font-size: var(--text-caption); line-height: 1.5; color: var(--color-text-muted); }
+.text-primary { color: var(--color-text); }
+.text-muted { color: var(--color-text-muted); }
+.text-accent { color: var(--color-accent); }
+
+/* ---------- 3. LAYOUT PRIMITIVES ---------- */
+.container { width: 100%; max-width: calc(var(--container) + 2 * var(--gutter)); margin-inline: auto; padding-inline: var(--gutter); }
+.measure { max-width: var(--measure); }
+.section { padding-top: var(--section-top); padding-bottom: var(--section-y); }
+.section + .section, .divider-top { border-top: var(--border-1) solid var(--color-border-subtle); }
+.stack > * + * { margin-top: var(--space-4); }
+.stack-lg > * + * { margin-top: var(--space-6); }
+.grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5); }
+.grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-5); }
+.grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-5); }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: var(--space-5); }
+.split { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: var(--space-9); align-items: start; }
+.split-hero { display: grid; grid-template-columns: minmax(0, 1fr) var(--portrait-w); gap: var(--space-9); align-items: center; }
+.cluster { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center; }
+.cluster-lg { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
+
+/* ---------- 4. COMPONENTS ---------- */
+
+/* 4.1 Button: primary / secondary / ghost / link */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
+  min-height: var(--control-h); padding: 0 var(--space-5);
+  border: var(--border-1) solid transparent; border-radius: var(--radius-md);
+  font: 500 var(--text-body-sm)/1 var(--font-sans); text-decoration: none; white-space: nowrap;
+  cursor: pointer; transition: background-color var(--duration) var(--ease), border-color var(--duration) var(--ease), color var(--duration) var(--ease), transform var(--duration) var(--ease);
+}
+.btn:active { transform: translateY(1px); }
+.btn:disabled, .btn[aria-disabled="true"] { opacity: .45; cursor: not-allowed; pointer-events: none; }
+.btn--sm { min-height: var(--control-h-sm); padding: 0 var(--space-4); }
+.btn--primary { background: var(--color-accent); color: var(--color-on-accent); }
+.btn--primary:hover { background: var(--neutral-0); }
+.btn--secondary { border-color: var(--color-border); color: var(--color-text); background: transparent; }
+.btn--secondary:hover { border-color: var(--color-text); background: var(--color-surface); }
+.btn--ghost { color: var(--color-text-secondary); background: transparent; }
+.btn--ghost:hover { color: var(--color-text); background: var(--color-surface); }
+.btn--link { min-height: auto; padding: 0; border: 0; color: var(--color-text); text-decoration: underline; text-decoration-color: var(--color-accent-border); }
+.btn--link:hover { color: var(--color-accent); text-decoration-color: var(--color-accent); }
+.btn .icon { color: var(--color-accent); transition: transform var(--duration) var(--ease); }
+.btn--primary .icon { color: currentColor; }
+.btn:hover .icon--forward { transform: translateX(2px); }
+.btn:hover .icon--back { transform: translateX(-2px); }
+
+/* 4.2 Chip: neutral / accent / toggle */
+.chip {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  padding: var(--space-1) var(--space-3); border: var(--border-1) solid var(--color-border); border-radius: var(--radius-pill);
+  font: 400 var(--text-caption)/1.4 var(--font-sans); color: var(--color-text-secondary); background: transparent;
+}
+.chip--accent { border-color: var(--color-accent-border); color: var(--color-accent); }
+.chip--toggle { min-height: var(--control-h-sm); padding: 0 var(--space-4); font-weight: 500; cursor: pointer; transition: all var(--duration) var(--ease); }
+.chip--toggle:hover { color: var(--color-text); border-color: var(--color-text-muted); }
+.chip--toggle:active { transform: translateY(1px); }
+.chip--toggle[aria-pressed="true"] { background: var(--color-text); border-color: var(--color-text); color: var(--color-bg); }
+
+/* 4.3 Evidence badge: one component, five semantic variants */
+.badge { display: inline-flex; align-items: center; gap: var(--space-2); font: 500 var(--text-label)/1 var(--font-sans); letter-spacing: var(--tracking-label); text-transform: uppercase; white-space: nowrap; }
+.badge::before { content: ''; width: 8px; height: 8px; flex: none; border: var(--border-2) solid currentColor; border-radius: 50%; }
+.badge--measured { color: var(--evidence-measured); }
+.badge--measured::before { background: currentColor; }
+.badge--estimated { color: var(--evidence-estimated); }
+.badge--estimated::before { border-radius: 1px; transform: rotate(45deg); background: currentColor; width: 7px; height: 7px; }
+.badge--programme { color: var(--evidence-programme); }
+.badge--programme::before { border-radius: 1px; }
+.badge--planned { color: var(--evidence-planned); }
+.badge--planned::before { border-style: dashed; }
+.badge--hypothesis { color: var(--evidence-hypothesis); }
+.badge--hypothesis::before { border-width: var(--border-1); }
+
+/* 4.4 Card: base + variants */
+.card { background: var(--color-surface); border: var(--border-1) solid var(--color-border-subtle); border-radius: var(--radius-md); padding: var(--space-6); }
+.card__title { margin-bottom: var(--space-2); }
+.card__text { color: var(--color-text-secondary); }
+.card__footnote { margin-top: var(--space-4); padding-top: var(--space-4); border-top: var(--border-1) solid var(--color-border-subtle); }
+.card__footnote .type-label { display: block; color: var(--color-accent); margin-bottom: var(--space-2); }
+/* interactive cards (real links) share one hover/focus behaviour */
+a.card { display: flex; flex-direction: column; text-decoration: none; transition: border-color var(--duration) var(--ease), background-color var(--duration) var(--ease); }
+a.card:hover { border-color: var(--color-border); background: var(--color-surface-hover); }
+a.card:hover .card__title { color: var(--color-accent); }
+a.card:focus-visible { outline-offset: 4px; border-radius: var(--radius-md); }
+.card--principle { border-top: var(--border-2) solid var(--color-accent-border); }
+.card--decision { background: var(--color-surface-2); padding: 0; overflow: hidden; }
+.card--metric { display: flex; flex-direction: column; gap: var(--space-1); }
+.card--metric .metric__value { font: 400 var(--text-metric)/1 var(--font-serif); color: var(--color-text); margin-bottom: var(--space-3); font-variant-numeric: lining-nums; }
+.card--metric .badge { margin-top: auto; padding-top: var(--space-4); }
+.card--nav .type-h3 { margin-top: var(--space-2); }
+
+/* 4.5 Section header: eyebrow, heading, optional intro */
+.section-header { margin-bottom: var(--space-8); max-width: 820px; }
+.eyebrow { display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4); }
+.eyebrow { color: var(--color-accent-2); }
+.section-header .section-intro { margin-top: var(--space-5); color: var(--color-text-secondary); max-width: var(--measure); }
+.subsection { margin-top: var(--space-9); }
+.subsection:first-child { margin-top: 0; }
+.subsection-header { display: flex; align-items: baseline; gap: var(--space-3); padding-bottom: var(--space-4); margin-bottom: var(--space-6); border-bottom: var(--border-1) solid var(--color-border-subtle); }
+.subsection-header .type-label { color: var(--color-accent); }
+.subsection-intro { margin: calc(-1 * var(--space-2)) 0 var(--space-6); max-width: var(--measure); }
+
+/* 4.6 Disclosure: native details/summary */
+.disclosure { margin-top: var(--space-5); border: var(--border-1) solid var(--color-border-subtle); border-radius: var(--radius-md); background: var(--color-surface); }
+.disclosure > summary {
+  list-style: none; cursor: pointer; min-height: var(--control-h);
+  display: flex; align-items: center; justify-content: space-between; gap: var(--space-4);
+  padding: var(--space-3) var(--space-5); border-radius: var(--radius-md);
+  font: 500 var(--text-body-sm)/1.4 var(--font-sans); color: var(--color-text);
+  transition: background-color var(--duration) var(--ease);
+}
+.disclosure > summary::-webkit-details-marker { display: none; }
+.disclosure > summary::after { content: ''; width: 8px; height: 8px; flex: none; border-right: var(--border-2) solid var(--color-accent); border-bottom: var(--border-2) solid var(--color-accent); transform: rotate(45deg) translateY(-2px); transition: transform var(--duration) var(--ease); }
+.disclosure[open] > summary::after { transform: rotate(225deg) translateY(-2px); }
+.disclosure > summary:hover { background: var(--color-surface-hover); }
+.disclosure > summary:active { background: var(--color-surface-2); }
+.disclosure > summary .summary-meta { font-weight: 400; color: var(--color-text-muted); margin-left: var(--space-2); }
+.disclosure[open] > summary { border-bottom: var(--border-1) solid var(--color-border-subtle); border-radius: var(--radius-md) var(--radius-md) 0 0; }
+.disclosure__body { padding: var(--space-5); }
+
+/* 4.7 Table */
+.table-wrap { overflow-x: auto; }
+.table { width: 100%; border-collapse: collapse; font-size: var(--text-body-sm); line-height: 1.55; }
+.table caption { text-align: left; padding-bottom: var(--space-3); }
+.table th { text-align: left; padding: var(--space-3) var(--space-4) var(--space-3) 0; border-bottom: var(--border-1) solid var(--color-border); font: 500 var(--text-label)/1.4 var(--font-sans); letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--color-text-muted); }
+.table td { padding: var(--space-3) var(--space-4) var(--space-3) 0; border-bottom: var(--border-1) solid var(--color-border-subtle); vertical-align: top; color: var(--color-text-secondary); }
+.table td:first-child { color: var(--color-text); }
+.table th:last-child, .table td:last-child { padding-right: 0; }
+
+/* 4.8 Navigation */
+.skip-link { position: absolute; left: var(--space-4); top: calc(-1 * var(--space-9)); z-index: 200; background: var(--color-text); color: var(--color-bg); padding: var(--space-3) var(--space-4); border-radius: var(--radius-md); font-weight: 500; text-decoration: none; }
+.skip-link:focus { top: var(--space-3); }
+.site-nav { position: fixed; inset: 0 0 auto 0; z-index: 100; background: var(--color-bg); border-bottom: var(--border-1) solid var(--color-border-subtle); }
+.site-nav__inner { height: var(--nav-h); display: flex; align-items: center; justify-content: space-between; gap: var(--space-6); }
+.site-nav__brand { font: 400 var(--text-h4)/1 var(--font-serif); color: var(--color-text); text-decoration: none; }
+.site-nav__brand { display: inline-flex; align-items: center; gap: var(--space-3); }
+.site-nav__brand:hover { color: var(--color-accent); }
+.site-nav__logo { font: 400 var(--text-h2)/1 var(--font-serif); letter-spacing: -0.02em; color: var(--color-accent); }
+.flag-pair { display: inline-flex; align-items: center; gap: var(--space-2); }
+.flag-opt { opacity: .35; transition: opacity var(--duration) var(--ease); padding-bottom: var(--space-1); border-bottom: var(--border-2) solid transparent; }
+.flag-opt.is-on { opacity: 1; border-bottom-color: var(--color-accent); }
+#lang-switch:hover .flag-opt { opacity: 1; }
+.flag { display: block; width: var(--space-5); height: var(--space-4); border-radius: var(--radius-sm); border: var(--border-1) solid var(--color-border); }
+.site-nav__logo i { color: var(--color-accent-2); }
+.site-nav__links { display: flex; gap: var(--space-2); margin-left: auto; }
+.nav-link { display: inline-flex; align-items: center; min-height: var(--control-h-sm); padding: 0 var(--space-3); border-radius: var(--radius-sm); font-size: var(--text-body-sm); color: var(--color-text-muted); text-decoration: none; transition: color var(--duration) var(--ease), background-color var(--duration) var(--ease); }
+.nav-link:hover { color: var(--color-text); background: var(--color-surface); }
+.nav-link[aria-current="page"] { color: var(--color-accent); }
+.site-nav__menu { display: none; position: relative; }
+.site-nav__menu > summary { list-style: none; }
+.site-nav__menu > summary::-webkit-details-marker { display: none; }
+.site-nav__menu-panel { position: absolute; right: 0; top: calc(100% + var(--space-2)); min-width: 220px; background: var(--color-surface); border: var(--border-1) solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-2); display: flex; flex-direction: column; }
+.site-nav__menu-panel .nav-link { min-height: var(--control-h); }
+.site-nav__actions { display: flex; gap: var(--space-3); align-items: center; }
+
+/* 4.9 Figure & image */
+.figure { display: flex; flex-direction: column; gap: var(--space-3); }
+.figure img { width: 100%; border-radius: var(--radius-md); border: var(--border-1) solid var(--color-border-subtle); background: var(--color-surface); }
+.figure figcaption { font-size: var(--text-caption); color: var(--color-text-muted); max-width: var(--measure); }
+.placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-2); text-align: center; padding: var(--space-6); border: var(--border-1) dashed var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); color: var(--color-text-muted); font-size: var(--text-body-sm); aspect-ratio: 16 / 10; }
+.placeholder strong { color: var(--color-text); font-weight: 500; }
+.placeholder--warning { border-color: var(--evidence-estimated); color: var(--evidence-estimated); }
+.placeholder--warning strong { color: var(--evidence-estimated); }
+
+/* 4.10 Callout & quote */
+.callout { padding: var(--space-4) var(--space-5); border-left: var(--border-2) solid var(--color-border); color: var(--color-text-secondary); max-width: var(--measure); font-size: var(--text-body-sm); }
+.pull-quote { border-left: var(--border-2) solid var(--color-accent); padding-left: var(--space-5); max-width: var(--measure); }
+
+/* ---------- 5. PATTERNS ---------- */
+
+/* 5.1 Homepage hero: split layout with portrait */
+.hero { padding-top: calc(var(--nav-h) + var(--space-8)); padding-bottom: var(--space-7); display: flex; align-items: center; }
+.hero .split-hero { width: 100%; }
+.hero__name { font: 500 var(--text-body-lg)/1.4 var(--font-sans); color: var(--color-text); letter-spacing: 0; margin-top: var(--space-2); }
+.hero__name span { color: var(--color-text); }
+.hero__role { font: 400 var(--text-display)/var(--leading-tight) var(--font-serif); letter-spacing: -0.02em; color: var(--color-accent-2); margin-bottom: var(--space-3); }
+.hero__sub { margin-top: var(--space-1); }
+.hero__field { margin-top: var(--space-4); font-size: var(--text-body-lg); color: var(--color-accent); font-weight: 500; }
+.hero__statement { margin-top: var(--space-6); max-width: 34ch; }
+.hero__focus { margin-top: var(--space-7); }
+.hero__focus .type-label { display: block; margin-bottom: var(--space-3); }
+.hero__actions { margin-top: var(--space-7); }
+.hero__media { margin: 0; }
+.hero-portrait { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 20%; border-radius: var(--radius-lg); border: var(--border-1) solid var(--color-border-subtle); background: var(--color-surface); }
+.hero__media .placeholder { aspect-ratio: 4 / 5; border-radius: var(--radius-lg); }
+.hero__media figcaption { margin-top: var(--space-3); }
+
+/* 5.2 Project card */
+.card--project { padding: 0; overflow: hidden; }
+.card--project .card__media { aspect-ratio: 16 / 10; overflow: hidden; background: var(--color-surface-2); border-bottom: var(--border-1) solid var(--color-border-subtle); }
+.card--project .card__media img { width: 100%; height: 100%; object-fit: cover; border: 0; border-radius: 0; }
+.card--project .card__body { display: flex; flex-direction: column; flex: 1; padding: var(--space-6); }
+.card--project .card__meta { display: flex; justify-content: space-between; gap: var(--space-4); margin-bottom: var(--space-4); }
+.card--project .card__text { margin-bottom: var(--space-5); }
+.card__outcome { margin-top: auto; padding-top: var(--space-5); border-top: var(--border-1) solid var(--color-border-subtle); }
+.card__outcome .type-label { display: block; color: var(--color-accent); margin-bottom: var(--space-2); }
+.card__outcome p { color: var(--color-text); }
+.card__role { margin-top: var(--space-4); }
+.card__cta { margin-top: var(--space-5); font: 500 var(--text-body-sm)/1 var(--font-sans); color: var(--color-text); display: inline-flex; gap: var(--space-2); }
+.card__cta .icon { color: var(--color-accent); transition: transform var(--duration) var(--ease); }
+a.card:hover .card__cta .icon { transform: translateX(2px); }
+
+/* 5.3 Home: product lens, rows, meta lists */
+.lens { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-top: var(--border-1) solid var(--color-border); border-bottom: var(--border-1) solid var(--color-border-subtle); margin-bottom: 0; }
+.lens > li { padding: var(--space-5) var(--space-5) var(--space-6) 0; }
+.lens > li + li { padding-left: var(--space-5); border-left: var(--border-1) solid var(--color-border-subtle); }
+.lens .type-label { color: var(--color-accent-2); display: block; margin-bottom: var(--space-3); }
+.rows { border-top: var(--border-1) solid var(--color-border-subtle); }
+.row { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: var(--space-6); padding-block: var(--space-6); border-bottom: var(--border-1) solid var(--color-border-subtle); }
+.row__aside { padding-top: var(--space-1); }
+.row__title { margin-bottom: var(--space-1); }
+.row__sub { margin-bottom: var(--space-3); }
+.row__points { margin-top: var(--space-4); max-width: var(--measure); }
+.row__points li { position: relative; padding-left: var(--space-5); font-size: var(--text-body-sm); line-height: 1.6; }
+.row__points li + li { margin-top: var(--space-3); }
+.row__points li::before { content: ''; position: absolute; left: 0; top: 0.7em; width: var(--space-2); height: var(--border-1); background: var(--color-accent); }
+.meta-list { border-top: var(--border-1) solid var(--color-border-subtle); }
+.meta-list > div { padding-block: var(--space-5); border-bottom: var(--border-1) solid var(--color-border-subtle); }
+.meta-list dt { margin-bottom: var(--space-2); }
+.meta-list dd { color: var(--color-text); }
+.meta-list dd li + li { margin-top: var(--space-1); }
+.link-list { border-top: var(--border-1) solid var(--color-border-subtle); }
+.link-list a { display: flex; align-items: center; gap: var(--space-4); min-height: var(--control-h); padding-block: var(--space-4); border-bottom: var(--border-1) solid var(--color-border-subtle); color: var(--color-text); text-decoration: none; transition: color var(--duration) var(--ease); }
+.link-list a:hover { color: var(--color-accent); }
+.link-list .type-label { width: var(--space-7); flex: none; }
+.journey { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: var(--border-1) solid var(--color-border-subtle); margin-block: var(--space-7); }
+.journey > li { padding: var(--space-4) var(--space-4) 0 0; }
+.journey > li:last-child .type-h4 { color: var(--color-accent); }
+.journey .type-label { display: block; margin-bottom: var(--space-2); }
+.pub-links { margin-top: var(--space-3); }
+.skill-group { border-top: var(--border-1) solid var(--color-border); padding-top: var(--space-5); }
+.skill-group .type-h4 { margin-bottom: var(--space-4); }
+.interest { display: grid; grid-template-columns: var(--space-6) minmax(0, 1fr); column-gap: var(--space-2); padding-block: var(--space-4); border-bottom: var(--border-1) solid var(--color-border-subtle); }
+.interest__icon { grid-row: span 2; filter: grayscale(1); }
+
+/* 5.4 Case-study hero */
+.case-hero { padding-top: calc(var(--nav-h) + var(--space-9)); padding-bottom: var(--space-8); }
+.case-hero__back { margin-bottom: var(--space-8); }
+.case-hero__title { margin-bottom: var(--space-5); }
+.case-hero__subtitle { color: var(--color-text-secondary); max-width: 36ch; }
+.case-hero__alt { font: 400 var(--text-h3)/1.2 var(--font-serif); color: var(--color-text-muted); margin-left: var(--space-4); }
+.case-hero__lede { margin-top: var(--space-5); max-width: var(--measure); }
+.chip--draft { border-color: var(--evidence-estimated); color: var(--evidence-estimated); }
+.key-results { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-top: var(--space-8); border-block: var(--border-1) solid var(--color-border); }
+.key-results > div { padding: var(--space-5) var(--space-5) var(--space-5) 0; }
+.key-results > div + div { padding-left: var(--space-5); border-left: var(--border-1) solid var(--color-border-subtle); }
+.key-results .badge { margin-bottom: var(--space-3); }
+.key-results strong { display: block; font: 400 var(--text-h2)/1 var(--font-serif); color: var(--color-text); margin-bottom: var(--space-2); font-variant-numeric: lining-nums; }
+.case-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: var(--space-6); margin-top: var(--space-7); }
+.case-meta dt { margin-bottom: var(--space-2); }
+.case-meta dd { color: var(--color-text); font-size: var(--text-body-sm); line-height: 1.55; }
+.case-hero .callout { margin-top: var(--space-7); }
+.case-hero__cover { margin-top: var(--space-8); }
+.band { background: var(--color-surface-2); border-block: var(--border-1) solid var(--color-border-subtle); }
+.band .grid-3 { padding-block: var(--space-8); gap: var(--space-7); }
+.band .type-label { display: block; color: var(--color-accent); margin-bottom: var(--space-3); }
+.band p { color: var(--color-text); }
+
+/* 5.5 Reading blocks */
+.prose p { max-width: var(--measure); font-size: var(--text-body-lg); line-height: 1.75; color: var(--color-text-secondary); }
+.prose p + p { margin-top: var(--space-5); }
+.prose .prose__lead { font: italic 400 var(--text-h3)/1.35 var(--font-serif); color: var(--color-text); margin-bottom: var(--space-6); }
+.insights { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--space-7); }
+.insight { padding-block: var(--space-6); border-top: var(--border-1) solid var(--color-border-subtle); }
+.insight .type-label { color: var(--color-accent); display: block; margin-bottom: var(--space-3); }
+.insight .type-h4 { margin-bottom: var(--space-2); }
+.chain { margin-bottom: var(--space-6); }
+.chain .sep { color: var(--color-text-muted); }
+
+/* 5.6 Decision log */
+.decision-list > * + * { margin-top: var(--space-4); }
+.decision__head { display: flex; align-items: baseline; gap: var(--space-4); padding: var(--space-5) var(--space-6); border-bottom: var(--border-1) solid var(--color-border-subtle); }
+.decision__head .badge { margin-left: auto; }
+.decision__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.decision__grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.decision__grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.decision__cell { padding: var(--space-5) var(--space-6) var(--space-6); }
+.decision__cell + .decision__cell { border-left: var(--border-1) solid var(--color-border-subtle); }
+.decision__cell .type-label { display: block; margin-bottom: var(--space-3); }
+.decision__cell p { font-size: var(--text-body-sm); line-height: 1.6; color: var(--color-text-secondary); }
+.decision__cell--decision { background: var(--color-accent-surface); box-shadow: inset var(--border-2) 0 0 var(--color-accent); }
+.decision__cell--decision .type-label { color: var(--color-accent); }
+.decision__cell--decision p { color: var(--color-text); }
+
+/* 5.7 Requirements block */
+.requirement { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: var(--space-5); padding-block: var(--space-5); border-top: var(--border-1) solid var(--color-border-subtle); }
+.requirement:first-child { border-top: 0; padding-top: 0; }
+.requirement__area { color: var(--color-accent); }
+.requirement dl { display: grid; gap: var(--space-3); }
+.requirement dl > div { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: var(--space-4); }
+.requirement dd { font-size: var(--text-body-sm); line-height: 1.6; color: var(--color-text-secondary); }
+.requirement dl > div:first-child dd { color: var(--color-text); }
+.card--requirement { background: var(--color-surface-2); box-shadow: inset var(--border-2) 0 0 var(--color-accent); }
+.card--requirement .requirement { padding-bottom: 0; }
+
+/* 5.8 Scope, evolution, ownership */
+.scope-list li { padding-block: var(--space-2); border-bottom: var(--border-1) solid var(--color-border-subtle); font-size: var(--text-body-sm); }
+.scope-list li:last-child { border-bottom: 0; }
+.card--scope-in { border-top: var(--border-2) solid var(--color-accent); }
+.card--scope-in .card__label { color: var(--color-accent); }
+.card--scope-out .scope-list li { color: var(--color-text-muted); }
+.card__label { display: block; margin-bottom: var(--space-4); }
+.evolution-step { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: var(--space-5); padding-block: var(--space-5); border-top: var(--border-1) solid var(--color-border-subtle); }
+.evolution-step:first-child { border-top: 0; padding-top: 0; }
+.evolution-step .badge { margin-top: var(--space-3); }
+.evolution-step dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4) var(--space-6); }
+.evolution-step dt { margin-bottom: var(--space-1); }
+.evolution-step dd { font-size: var(--text-body-sm); line-height: 1.6; }
+.owned { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--space-7); border-top: var(--border-1) solid var(--color-border-subtle); }
+.owned > div { padding-block: var(--space-4); border-bottom: var(--border-1) solid var(--color-border-subtle); }
+.owned dt { color: var(--color-text); font-weight: 500; margin-bottom: var(--space-1); }
+.owned dd { font-size: var(--text-body-sm); color: var(--color-text-muted); }
+
+/* 5.9 AI boundary */
+.layers { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: stretch; }
+.layers__arrow { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-2); padding-inline: var(--space-4); text-align: center; }
+.layers__arrow .icon { color: var(--color-accent); font-size: var(--text-h3); line-height: 1; }
+.card--layer-det { border-top: var(--border-2) solid var(--color-accent); }
+.card--layer-gen { border-top: var(--border-2) dashed var(--color-border); }
+.card--layer-det .card__label, .card--layer-gen .card__label { margin-bottom: var(--space-4); }
+.card--layer-gen .badge { margin-top: var(--space-4); }
+.check-list li, .cross-list li { display: flex; gap: var(--space-3); padding-block: var(--space-2); border-top: var(--border-1) solid var(--color-border-subtle); font-size: var(--text-body-sm); }
+.check-list li::before { content: '✓'; color: var(--color-accent); flex: none; }
+.cross-list li::before { content: '✕'; color: var(--evidence-estimated); flex: none; }
+.rule { margin-top: var(--space-6); display: flex; align-items: baseline; gap: var(--space-3); flex-wrap: wrap; }
+.rule .type-label { color: var(--color-accent); }
+
+/* 5.10 Evidence area */
+.legend { margin-top: var(--space-6); padding-top: var(--space-4); border-top: var(--border-1) solid var(--color-border-subtle); gap: var(--space-5); }
+
+/* 5.11 Artifacts */
+.figure-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-7) var(--space-5); }
+.figure-grid > .figure:first-child { grid-column: 1 / -1; }
+.screens { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-5); }
+.screens .figure img { border-radius: var(--radius-lg); border-color: var(--color-border); }
+
+/* 5.12 Chapter blocks (journey, feature, columns, IA, lists) */
+.block + .block { margin-top: var(--space-8); }
+.block__label { display: block; margin-bottom: var(--space-4); }
+.journey-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: var(--space-5); }
+.journey-steps > li { padding-block: var(--space-5); border-top: var(--border-1) solid var(--color-border); }
+.journey-steps .type-label { color: var(--color-accent); display: block; margin-bottom: var(--space-2); }
+.journey-steps .type-h4 { margin-bottom: var(--space-2); }
+.feature { padding-top: var(--space-7); border-top: var(--border-1) solid var(--color-border-subtle); }
+.feature + .feature { margin-top: var(--space-9); }
+.feature__head { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: var(--space-7); margin-bottom: var(--space-6); }
+.feature__head .type-label { color: var(--color-accent); display: block; margin-bottom: var(--space-3); }
+.feature__head .type-h3 { margin-bottom: var(--space-3); }
+.feature__points li { padding-block: var(--space-2); border-bottom: var(--border-1) solid var(--color-border-subtle); font-size: var(--text-body-sm); }
+.feature__points li:first-child { border-top: var(--border-1) solid var(--color-border-subtle); }
+.feature .figure img { max-height: 760px; object-fit: contain; object-position: left top; background: var(--color-surface); }
+.ia-tree { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-4); }
+.ia-node { padding: var(--space-4) var(--space-5); border: var(--border-1) solid var(--color-border-subtle); border-radius: var(--radius-md); background: var(--color-surface); }
+.ia-node > span { color: var(--color-text); font-weight: 500; }
+.ia-node ul { margin-top: var(--space-3); padding-left: var(--space-4); border-left: var(--border-1) solid var(--color-accent-border); }
+.ia-node li { font-size: var(--text-body-sm); padding-block: var(--space-1); }
+.ia-root { margin-bottom: var(--space-4); }
+.step-list { counter-reset: step; }
+.step-list li { counter-increment: step; display: grid; grid-template-columns: var(--space-7) minmax(0, 1fr); padding-block: var(--space-3); border-bottom: var(--border-1) solid var(--color-border-subtle); }
+.step-list li::before { content: counter(step, decimal-leading-zero); font: 500 var(--text-label)/1.9 var(--font-sans); color: var(--color-accent); }
+.plain-list li { padding-block: var(--space-2); border-bottom: var(--border-1) solid var(--color-border-subtle); font-size: var(--text-body-sm); }
+
+/* 5.13 Pager */
+.pager { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5); }
+.pager a:last-child { text-align: right; align-items: flex-end; }
+
+.site-footer { border-top: var(--border-1) solid var(--color-border-subtle); }
+.site-footer .container { display: flex; justify-content: space-between; gap: var(--space-4); padding-block: var(--space-6); font-size: var(--text-caption); color: var(--color-text-muted); }
+
+/* ---------- 6. RESPONSIVE & MOTION ---------- */
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+#main > * { animation: fade-in 400ms var(--ease) both; }
+
+@media (max-width: 1024px) {
+  :root { --gutter: var(--space-6); --section-y: var(--space-8); --portrait-w: 300px; }
+  .split-hero { gap: var(--space-7); }
+  .split { gap: var(--space-7); }
+  .grid-3, .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lens { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .lens > li:nth-child(4) { border-left: 0; padding-left: 0; }
+  .lens > li:nth-child(n+4) { border-top: var(--border-1) solid var(--color-border-subtle); }
+  .case-meta { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .decision__grid, .decision__grid--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .decision__cell + .decision__cell { border-left: 0; }
+  .decision__cell:nth-child(even) { border-left: var(--border-1) solid var(--color-border-subtle); }
+  .decision__cell:nth-child(n+3) { border-top: var(--border-1) solid var(--color-border-subtle); }
+  .layers { grid-template-columns: minmax(0, 1fr); }
+  .layers__arrow { flex-direction: row; padding: var(--space-4) 0; }
+  .layers__arrow .icon { transform: rotate(90deg); }
+  .screens { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .journey-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ia-tree { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .feature__head { grid-template-columns: minmax(0, 1fr); gap: var(--space-5); }
+}
+@media (max-width: 860px) {
+  .site-nav__links { display: none; }
+  .site-nav__menu { display: block; }
+  .split-hero { grid-template-columns: minmax(0, 1fr); }
+  .hero { min-height: auto; }
+  .hero__media { order: -1; width: min(100%, 280px); }
+  .hero__statement { margin-top: var(--space-6); }
+}
+@media (max-width: 720px) {
+  :root { --gutter: var(--space-5); --section-y: var(--space-7); --section-top: var(--space-6); --nav-h: 64px; }
+  .grid-2, .grid-3, .grid-4, .split, .insights, .owned, .figure-grid, .pager, .journey { grid-template-columns: minmax(0, 1fr); }
+  .journey { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lens { grid-template-columns: minmax(0, 1fr); }
+  .lens > li, .lens > li + li { padding: var(--space-4) 0; border-left: 0; }
+  .lens > li + li { border-top: var(--border-1) solid var(--color-border-subtle); }
+  .row, .requirement, .evolution-step { grid-template-columns: minmax(0, 1fr); gap: var(--space-2); }
+  .requirement dl > div { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .evolution-step dl { grid-template-columns: minmax(0, 1fr); }
+  .decision__grid, .decision__grid--4 { grid-template-columns: minmax(0, 1fr); }
+  .decision__cell:nth-child(n) { border-left: 0; }
+  .decision__cell + .decision__cell { border-top: var(--border-1) solid var(--color-border-subtle); }
+  .decision__cell--decision { box-shadow: inset 0 var(--border-2) 0 var(--color-accent); }
+  .decision__head { flex-wrap: wrap; padding: var(--space-4) var(--space-5); }
+  .decision__head .badge { margin-left: 0; width: 100%; }
+  .decision__cell { padding: var(--space-4) var(--space-5) var(--space-5); }
+  .card { padding: var(--space-5); }
+  .card--project .card__body { padding: var(--space-5); }
+  .key-results { grid-template-columns: minmax(0, 1fr); }
+  .key-results > div, .key-results > div + div { padding: var(--space-4) 0; border-left: 0; }
+  .key-results > div + div { border-top: var(--border-1) solid var(--color-border-subtle); }
+  .band .grid-3 { gap: var(--space-6); padding-block: var(--space-7); }
+  .pager a:last-child { text-align: left; align-items: flex-start; }
+  .site-footer .container { flex-direction: column; }
+  .prose p { font-size: var(--text-body); }
+  .journey-steps, .ia-tree, .decision__grid--2 { grid-template-columns: minmax(0, 1fr); }
+  .case-hero__alt { display: block; margin: var(--space-2) 0 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+/* Partner strip */
+.partners { padding-block: var(--space-7); border-block: var(--border-1) solid var(--color-border-subtle); }
+.partners .type-label { margin-bottom: var(--space-5); }
+.partners__list { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4); list-style: none; margin: 0; padding: 0; }
+.partners__list a { text-decoration: none; }
+.partners__list span { color: var(--color-text-secondary); font-size: var(--text-body-sm); letter-spacing: 0.01em; transition: color var(--duration) var(--ease); }
+.partners__list a:hover span { color: var(--color-text); }
+.partners__list a:has(img) { display: flex; align-items: center; justify-content: center; height: var(--logo-tile-h); padding: var(--space-2) var(--space-4); background: var(--color-logo-tile); border-radius: var(--radius-md); opacity: .92; transition: opacity var(--duration) var(--ease); }
+.partners__list a:has(img):hover { opacity: 1; }
+.partners__list img { display: block; height: 100%; max-height: 40px; max-width: 150px; width: auto; object-fit: contain; }
+
+/* Testimonials */
+.quotes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-6); }
+.quote { margin: 0; padding: var(--space-6); background: var(--color-surface); border: var(--border-1) solid var(--color-border-subtle); border-radius: var(--radius-lg); display: flex; flex-direction: column; justify-content: space-between; gap: var(--space-5); }
+.quote:first-child { grid-column: 1 / -1; }
+.quote:first-child .quote__text { font-size: var(--text-h4); }
+.quote__text { margin: 0; font-family: var(--font-serif); font-size: var(--text-body-lg); line-height: 1.5; color: var(--color-text); }
+.quote figcaption { display: flex; flex-direction: column; gap: 2px; padding-top: var(--space-4); border-top: var(--border-1) solid var(--color-border-subtle); }
+.quote__name { color: var(--color-text); font-weight: 500; }
+@media (max-width: 768px) {
+  .quotes { grid-template-columns: 1fr; }
+  .quote:first-child .quote__text { font-size: var(--text-body-lg); }
+}
+
+
+/* Card decision + More work */
+.card__decision { margin-top: var(--space-3); }
+.more-work__title { margin: var(--space-8) 0 var(--space-5); color: var(--color-text-secondary); }
+
+/* 5.x Story: the case told as a short narrative, one beat per step, each with its picture */
+.story { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-8); }
+.story__beat { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: var(--space-7); align-items: center; }
+.story__beat:nth-child(even) .story__body { order: 2; }
+.story__beat--text { grid-template-columns: minmax(0, 1fr); max-width: var(--measure); }
+.story__num { display: inline-grid; place-items: center; width: var(--control-h-sm); height: var(--control-h-sm); border: var(--border-1) solid var(--color-accent-border); border-radius: var(--radius-pill); color: var(--color-accent); font: 400 var(--text-body)/1 var(--font-serif); margin-bottom: var(--space-4); }
+.story__label { color: var(--color-accent); margin-bottom: var(--space-3); }
+.story__text { font: 400 var(--text-body-lg)/var(--leading-body) var(--font-sans); color: var(--color-text-secondary); }
+.story__beat:first-child .story__text { font: 400 var(--text-h3)/var(--leading-heading) var(--font-serif); color: var(--color-text); }
+.story__media img { cursor: zoom-in; max-height: 70vh; width: auto; max-width: 100%; margin-inline: auto; }
+.story__media { align-items: center; }
+.story__media figcaption { text-align: center; }
+@media (max-width: 860px) {
+  .story { gap: var(--space-7); }
+  .story__beat { grid-template-columns: minmax(0, 1fr); gap: var(--space-5); }
+  .story__beat:nth-child(even) .story__body { order: 0; }
+}
+/* Image zoom: click any case-study image to see it large */
+.zoom { position: fixed; inset: 0; z-index: 300; display: grid; place-items: center; padding: var(--space-5); background: var(--color-bg); cursor: zoom-out; }
+.zoom img { max-width: 100%; max-height: 100%; border-radius: var(--radius-md); }
+.figure img { cursor: zoom-in; }
+
+/* ---------- Redesign: number band, logo row, Z work list, pages ---------- */
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: var(--border-1) solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: var(--space-8); }
+.stats > li { padding: var(--space-6) var(--space-5); border-left: var(--border-1) solid var(--color-border-subtle); }
+.stats > li:first-child { border-left: 0; }
+.stats__n { display: block; font: 600 var(--text-metric)/1 var(--font-sans); color: var(--color-text); letter-spacing: -0.02em; }
+.stats__n i { font-style: normal; color: var(--color-accent-2); }
+.stats__label { display: block; margin: var(--space-3) 0 var(--space-2); font-weight: 500; font-size: var(--text-body-lg); line-height: 1.3; color: var(--color-text-secondary); }
+.stats__note { display: block; font-size: var(--text-body-sm); line-height: 1.5; color: var(--color-text-muted); }
+
+.partners { overflow: hidden; }
+.partners .type-label { text-align: center; }
+.partners__track { display: flex; width: max-content; animation: marquee 48s linear infinite; }
+.partners__track:hover { animation-play-state: paused; }
+.partners__mask { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, var(--neutral-0) 10%, var(--neutral-0) 90%, transparent); mask-image: linear-gradient(90deg, transparent, var(--neutral-0) 10%, var(--neutral-0) 90%, transparent); }
+.partners__track .partners__list { flex-wrap: nowrap; gap: var(--space-7); padding-right: var(--space-7); }
+.partners__list span { white-space: nowrap; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+.zlist { display: grid; }
+.work__title { color: var(--color-accent-2); }
+.contact-links { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-5); }
+.contact-links__in { color: var(--color-accent); font-weight: 500; text-decoration: none; }
+.contact-links__in:hover { text-decoration: underline; }
+.zrow { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: var(--space-8); align-items: center; padding-block: var(--space-7); }
+.zrow:first-child { padding-top: var(--space-4); }
+.zrow:nth-child(even) .zrow__media { order: 2; }
+.zrow__media { display: block; }
+.zrow__media img { width: 100%; border-radius: var(--radius-lg); border: var(--border-1) solid var(--color-border-subtle); transition: border-color var(--duration) var(--ease); }
+.zrow__media:hover img { border-color: var(--color-accent-border); }
+.zrow__n { color: var(--color-accent-2); display: flex; flex-wrap: wrap; gap: var(--space-4); }
+.zrow__ind { color: var(--color-text-muted); }
+.case-hero__ind { color: var(--color-accent-2); margin-bottom: var(--space-3); }
+.zrow__title { font-size: var(--text-h2); margin: var(--space-3) 0 var(--space-2); }
+.zrow__title a { text-decoration: none; }
+.zrow__title a:hover { color: var(--color-accent); }
+.zrow__role { color: var(--color-accent); font-size: var(--text-body-sm); margin-bottom: var(--space-4); }
+.zrow__text { font-size: var(--text-body-lg); max-width: 46ch; margin-bottom: var(--space-4); color: var(--color-text-muted); }
+.zrow__outcome { color: var(--color-text-muted); border-left: var(--border-2) solid var(--color-accent); padding-left: var(--space-4); max-width: 46ch; margin-bottom: var(--space-5); }
+.more-work__title { margin: var(--space-7) 0 var(--space-5); padding-top: var(--space-7); border-top: var(--border-1) solid var(--color-border-subtle); color: var(--color-text); font-size: var(--text-h3); }
+.more-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5); }
+.card__role { color: var(--color-accent); }
+
+#main:focus { outline: none; }
+.page { padding-top: calc(var(--nav-h) + var(--space-8)); padding-bottom: var(--space-8); }
+.page__title { font-size: var(--text-h1); line-height: 1.08; max-width: 20ch; margin-bottom: var(--space-5); }
+.page__lead { font-size: var(--text-body-lg); max-width: 58ch; }
+.page__section { margin-top: var(--space-9); }
+.page__section > h2 { margin-bottom: var(--space-6); }
+.page__actions { margin-top: var(--space-6); }
+.pub { display: grid; grid-template-columns: 120px minmax(0, 1fr) auto; gap: var(--space-6); align-items: center; padding-block: var(--space-5); border-top: var(--border-1) solid var(--color-border-subtle); }
+.pub:last-of-type { border-bottom: var(--border-1) solid var(--color-border-subtle); }
+.pub__year { font: 600 var(--text-h3)/1.1 var(--font-sans); color: var(--color-text); }
+.pub__title { font-size: var(--text-h4); margin-bottom: var(--space-1); }
+.pub__meta { font-size: var(--text-body-sm); color: var(--color-text-muted); }
+.pub__meta b { color: var(--color-accent); font-weight: 500; }
+.pub__links { display: flex; gap: var(--space-2); }
+.teach { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5); }
+.teach__card { border: var(--border-1) solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface); padding: var(--space-6); }
+.teach__n { display: block; font: 600 var(--text-metric)/1 var(--font-sans); color: var(--color-text); }
+.teach__n i { font-style: normal; color: var(--color-accent-2); }
+.teach__title { font-size: var(--text-h3); margin: var(--space-4) 0 var(--space-1); }
+.teach__where { color: var(--color-accent); font-size: var(--text-body-sm); margin-bottom: var(--space-3); }
+.about-top { display: grid; grid-template-columns: minmax(0, 1fr) var(--portrait-w); gap: var(--space-9); align-items: center; }
+.about-top img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 20%; border-radius: var(--radius-lg); }
+.page .journey { margin-block: 0; }
+.page .journey > li:last-child .type-h4 { color: var(--color-accent); }
+.page .journey .type-label { color: var(--color-accent-2); }
+.path { display: grid; max-width: 760px; }
+.path__step { display: grid; grid-template-columns: var(--control-h) minmax(0, 1fr); gap: var(--space-5); padding-bottom: var(--space-7); position: relative; }
+.path__step::before { content: ''; position: absolute; left: calc(var(--control-h) / 2); top: var(--control-h); bottom: 0; width: var(--border-1); background: var(--color-border); }
+.path__step:last-child { padding-bottom: 0; }
+.path__step:last-child::before { display: none; }
+.path__n { display: grid; place-items: center; width: var(--control-h); height: var(--control-h); border: var(--border-1) solid var(--color-accent-border); border-radius: var(--radius-pill); color: var(--color-accent); font: 600 var(--text-body)/1 var(--font-sans); background: var(--color-bg); position: relative; }
+.path__step:last-child .path__n { background: var(--color-accent); color: var(--color-on-accent); border-color: var(--color-accent); }
+.path__when { color: var(--color-accent-2); margin-bottom: var(--space-1); }
+.path__title { font-size: var(--text-h3); margin-bottom: var(--space-2); }
+.path__text { font-size: var(--text-body-lg); color: var(--color-text-secondary); }
+.quotes3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-5); }
+.quote3 { display: flex; flex-direction: column; justify-content: space-between; gap: var(--space-5); border: var(--border-1) solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface); padding: var(--space-6); margin: 0; }
+.quote3 blockquote { font: 400 var(--text-body-lg)/1.55 var(--font-serif); color: var(--color-text); }
+.quote3 blockquote::before { content: '\201C'; display: block; font: 400 var(--text-h1)/0.7 var(--font-serif); color: var(--color-accent); margin-bottom: var(--space-2); }
+.quote3 figcaption { display: flex; flex-direction: column; gap: 2px; font-size: var(--text-body-sm); color: var(--color-text-muted); }
+.quote3 figcaption strong { color: var(--color-text); font-weight: 500; font-size: var(--text-body); }
+.facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--space-7); }
+.facts > div { padding-block: var(--space-4); border-top: var(--border-1) solid var(--color-border-subtle); }
+.facts dt { color: var(--color-text); font-weight: 500; }
+.facts dd { color: var(--color-text-muted); font-size: var(--text-body-sm); }
+@media (max-width: 1024px) {
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stats > li:nth-child(n+3) { border-top: var(--border-1) solid var(--color-border-subtle); }
+  .stats > li:nth-child(3) { border-left: 0; }
+  .zrow { gap: var(--space-7); }
+  .quotes3 { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 860px) {
+  .stats > li { padding: var(--space-5) var(--space-4); }
+  .zrow { grid-template-columns: minmax(0, 1fr); gap: var(--space-5); padding-block: var(--space-6); }
+  .zrow:nth-child(even) .zrow__media { order: 0; }
+  .more-grid, .teach, .facts { grid-template-columns: minmax(0, 1fr); }
+  .about-top { grid-template-columns: minmax(0, 1fr); gap: var(--space-6); }
+  .about-top img { order: -1; width: min(100%, 280px); }
+  .pub { grid-template-columns: minmax(0, 1fr); gap: var(--space-3); }
+  .page .journey { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: var(--space-5); }
+}
+@media (max-width: 560px) { #nav-cta { display: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .partners__track { width: auto; }
+  .partners__track .partners__list { flex-wrap: wrap; justify-content: center; gap: var(--space-4); padding-right: 0; }
+  .partners__track .partners__list[aria-hidden] { display: none; }
+}
+
+/* Spacing utilities: one-off offsets, always from the spacing scale */
+.mt-4 { margin-top: var(--space-4); } .mt-5 { margin-top: var(--space-5); } .mt-6 { margin-top: var(--space-6); } .mt-7 { margin-top: var(--space-7); }
+.mb-3 { margin-bottom: var(--space-3); } .mb-4 { margin-bottom: var(--space-4); } .mb-7 { margin-bottom: var(--space-7); }
+.row-gap-0 { row-gap: 0; } .row-gap-7 { row-gap: var(--space-7); }
+.fw-medium { font-weight: 500; }
+
+.hero__name { margin-top: var(--space-5); }
+.hero__statement { margin-top: var(--space-2) !important; }
+.hero__field { margin-top: var(--space-5); }
+.hero__keys { margin-top: var(--space-5); }
+.partners { border-block: 0 !important; }
+.zrow__tags { margin-bottom: var(--space-4); }
+.zrow__lock { color: var(--color-accent-2); font-size: var(--text-body-sm); margin-bottom: var(--space-3); }
+
+.ab-hero{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:var(--space-8);align-items:center}
+.ab-hero__title{font:400 clamp(2.6rem,5vw,4.4rem)/1.05 var(--font-serif);letter-spacing:-.02em;margin:var(--space-3) 0 var(--space-5);color:var(--color-text)}
+.ab-hero__title em,.ab-compass__t em{font-style:normal;color:var(--color-accent-2)}
+.ab-hero__img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--radius-lg);border:1px solid var(--color-border-subtle)}
+.ab-facts{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--color-border);border-radius:var(--radius-lg);margin-top:var(--space-8);list-style:none;padding:0}
+.ab-facts li{padding:var(--space-5);border-left:1px solid var(--color-border-subtle)}.ab-facts li:first-child{border-left:0}
+.ab-facts b{display:block;font:600 2rem/1 var(--font-sans);color:var(--color-text)}.ab-facts i{font-style:normal;color:var(--color-accent-2)}
+.ab-facts span{display:block;margin-top:var(--space-2);color:var(--color-text-muted);font-size:var(--text-body-sm)}
+.t2{color:var(--color-accent-2)}
+.ab-persp{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-5);margin-top:var(--space-6)}
+.ab-card{position:relative;background:var(--color-surface);border:1px solid var(--color-border-subtle);border-radius:var(--radius-lg);padding:var(--space-6);overflow:hidden}
+.ab-card__n{position:absolute;right:var(--space-5);top:var(--space-3);font:700 4rem/1 var(--font-sans);color:var(--color-border-subtle)}
+.ab-card__k{color:var(--color-accent);margin-bottom:var(--space-3)}.ab-card__t{font-size:1.25rem;font-weight:600;margin-bottom:var(--space-3);color:var(--color-text)}
+.ab-card__x{color:var(--color-text-muted);margin-bottom:var(--space-4);max-width:44ch}
+.ab-compass{display:grid;grid-template-columns:1.2fr 1fr;gap:var(--space-8);align-items:center;background:var(--color-surface);border:1px solid var(--color-border-subtle);border-radius:var(--radius-lg);padding:var(--space-8)}
+.ab-compass__t{font:400 clamp(2rem,3.4vw,3rem)/1.1 var(--font-serif);margin:var(--space-3) 0 var(--space-5)}
+.ab-super{border-left:2px solid var(--color-accent);padding-left:var(--space-4);font-size:var(--text-body-lg);margin-bottom:var(--space-4);color:var(--color-text)}
+.ab-super .type-label{display:block;color:var(--color-accent);margin-bottom:var(--space-1)}
+.ab-ring{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:auto auto auto;gap:var(--space-4);align-items:center;justify-items:center}
+.ab-ring li{border:1px solid var(--color-border);border-radius:var(--radius-md);padding:var(--space-2) var(--space-4);font-size:var(--text-body-sm);color:var(--color-text)}
+.ab-ring li span{color:var(--color-accent-2);margin-right:var(--space-2)}
+.ab-ring li:nth-child(1){grid-area:1/1}.ab-ring li:nth-child(2){grid-area:1/3}.ab-ring li:nth-child(4){grid-area:3/1}.ab-ring li:nth-child(5){grid-area:3/3}
+.ab-ring .ab-ring__c{grid-area:2/2;width:140px;height:140px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border-color:var(--color-accent);color:var(--color-text-muted);text-transform:uppercase;letter-spacing:.1em;font-size:.7rem}
+.ab-ring__c b{color:var(--color-accent);font-size:1.3rem;letter-spacing:0}
+.ab-journey{list-style:none;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-5);margin-top:var(--space-6);border-top:1px solid var(--color-border)}
+.ab-journey li{padding-top:var(--space-5);position:relative}.ab-journey li:before{content:'';position:absolute;top:-6px;left:0;width:11px;height:11px;border-radius:50%;background:var(--color-accent)}
+.ab-journey .type-label{color:var(--color-accent-2)}.ab-journey h3{font-size:1.15rem;font-weight:600;margin:var(--space-2) 0;color:var(--color-text)}
+.ab-card__t,.ab-journey h3{font-family:var(--font-sans)!important;letter-spacing:-.01em}
+.ab-ring li{white-space:nowrap}
+.ab-life{display:grid;grid-template-columns:1.1fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:var(--space-4);margin-top:var(--space-6)}
+.ab-photo{grid-row:1/3;margin:0;position:relative;border-radius:var(--radius-lg);overflow:hidden;min-height:520px}
+.ab-photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.ab-photo figcaption{position:absolute;inset:auto 0 0 0;padding:var(--space-6);background:linear-gradient(transparent,rgba(0,0,0,.6) 30%,rgba(0,0,0,.92))}
+.ab-photo figcaption .type-label{color:#fff;opacity:.85;display:block;margin-bottom:var(--space-2)}.ab-photo b{font-size:1.4rem;color:#fff;font-weight:600}
+.ab-card--sm{padding:var(--space-5)}.ab-big{position:absolute;right:var(--space-4);bottom:var(--space-2);font:700 3.4rem/1 var(--font-sans);color:var(--color-border)}
+.ab-quote{margin-top:var(--space-6);border-left:2px solid var(--color-accent);padding-left:var(--space-5);font:400 1.6rem/1.3 var(--font-serif);color:var(--color-text)}
+.ab-close{text-align:left}.ab-close .cluster-lg{margin-top:var(--space-5);align-items:center}
+@media (max-width:900px){.ab-hero,.ab-compass,.ab-persp{grid-template-columns:1fr}.ab-hero__img{max-width:320px;order:-1}.ab-facts,.ab-journey{grid-template-columns:1fr 1fr}.ab-life{grid-template-columns:1fr;grid-template-rows:auto}.ab-photo{grid-row:auto;min-height:420px}.ab-compass{padding:var(--space-6)}}
+
+.bw-head{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:2.5rem}.bw-head>p{max-width:350px;color:var(--color-text-muted);font-size:.95rem}
+.bw-grid{display:grid;grid-template-columns:1.15fr .86fr .86fr;grid-template-rows:250px 250px;gap:14px}
+.bw-tile{background:var(--color-surface);border:1px solid var(--color-border-subtle);border-radius:14px;position:relative;overflow:hidden;padding:25px}
+.bw-tile h3{font:600 1.2rem/1.3 var(--font-sans);letter-spacing:-.02em;margin:10px 0 8px;color:var(--color-text)}
+.bw-tile p{color:var(--color-text-muted);font-size:.85rem;line-height:1.6;max-width:265px;position:relative;z-index:1}
+.bw-l{font-size:.65rem;text-transform:uppercase;letter-spacing:.13em;color:var(--color-accent);font-weight:600}
+.bw-adv{grid-row:span 2;padding:0;display:flex;align-items:end}.bw-adv img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 48%;filter:saturate(.86) contrast(1.06)}
+.bw-adv:before{content:"";position:absolute;inset:23% 0 0;background:linear-gradient(transparent,rgba(3,6,9,.92));z-index:1}.bw-c{position:relative;z-index:2;padding:29px}.bw-adv h3{font-size:1.67rem;color:#fff}.bw-adv p{color:#d8dce6}
+.bw-med{background:radial-gradient(circle at 92% 15%,#1d4744 0,transparent 48%),var(--color-surface)}
+.bw-count{font:800 4rem/1 var(--font-sans);color:var(--color-accent);position:absolute;right:22px;bottom:8px;opacity:.18}
+.bw-mov{background:radial-gradient(circle at 90% 5%,#2b2d55,transparent 53%),var(--color-surface)}
+.bw-mus{background:radial-gradient(circle at 90% 30%,#3b2d4b,transparent 50%),var(--color-surface)}.bw-mus:after{content:"♪";position:absolute;right:22px;bottom:-8px;font-size:6rem;color:var(--color-accent-2);opacity:.13;font-family:serif}
+.bw-cre{background:radial-gradient(circle at 95% 15%,#5b4730,transparent 50%),var(--color-surface)}
+.bw-mini{display:flex;gap:10px;margin-top:22px}.bw-mini span{font-size:.68rem;color:var(--color-text-muted);background:rgba(255,255,255,.045);border:1px solid var(--color-border-subtle);border-radius:50px;padding:4px 9px}
+.bw-pull{margin-top:28px;border-left:2px solid var(--color-accent);padding:10px 0 10px 27px;display:grid;grid-template-columns:1fr .65fr;gap:20px;align-items:center}
+.bw-pull blockquote{margin:0;font:500 clamp(1.18rem,2.2vw,1.72rem)/1.4 var(--font-sans);letter-spacing:-.025em;color:var(--color-text)}.bw-pull span{font-size:.8rem;color:var(--color-text-muted);line-height:1.6}
+@media(max-width:1050px){.bw-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}.bw-tile{min-height:220px}.bw-adv{grid-row:span 2;min-height:454px}}
+@media(max-width:720px){.bw-head{display:block}.bw-head>p{margin-top:14px}.bw-grid{gap:10px}.bw-tile{padding:18px;min-height:240px}.bw-adv{grid-column:span 2;grid-row:auto;min-height:430px}.bw-pull{grid-template-columns:1fr}}
+@media(max-width:420px){.bw-grid{grid-template-columns:1fr}.bw-adv{grid-column:auto}}
+
+.pf{display:grid;grid-template-columns:1.03fr .97fr;gap:26px;align-items:center;min-height:355px;padding:38px 42px;border-radius:17px;border:1px solid rgba(31,191,184,.22);background:radial-gradient(ellipse at 95% 10%,rgba(183,155,255,.10),transparent 53%),linear-gradient(110deg,#0d1b1c 0%,#0e101b 68%,#131320 100%);overflow:hidden;position:relative}
+.pf:before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--color-accent),var(--color-accent-2),transparent 80%)}
+.pf-copy{position:relative;z-index:2}.pf-copy h3{font:600 clamp(1.75rem,3vw,2.65rem)/1.12 var(--font-sans);letter-spacing:-.045em;margin:14px 0 18px;color:var(--color-text)}
+.pf-copy h3 em{font-style:normal;color:var(--color-accent)}
+.pf-super{border-left:2px solid var(--color-accent);padding-left:14px;color:var(--color-text);font-size:1.02rem;margin-bottom:14px}.pf-super span{display:block;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent);font-weight:600;margin-bottom:3px}
+.pf-proof{color:var(--color-text-muted);font-size:.82rem;line-height:1.7;max-width:500px}
+.pf-map{width:100%;height:280px;max-width:430px;margin-inline:auto;position:relative;isolation:isolate}
+.pf-ring{width:60%;aspect-ratio:1;border:1px dashed rgba(183,155,255,.43);border-radius:50%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
+.pf-ring:before{content:"";position:absolute;inset:14%;border:1px solid rgba(31,191,184,.15);border-radius:50%}
+.pf-core{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:132px;height:132px;border-radius:50%;background:radial-gradient(circle at 26% 22%,#1f4446,#152530 72%);border:1px solid rgba(31,191,184,.38);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 0 90px rgba(31,191,184,.10)}
+.pf-core span{color:var(--color-text-muted);letter-spacing:.21em;font-size:.58rem;font-weight:600}.pf-core b{font:700 1.12rem var(--font-sans);letter-spacing:-.02em;color:var(--color-accent)}
+.pf-node{position:absolute;padding:10px 12px;border:1px solid rgba(255,255,255,.14);background:#151d28;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,.22);display:flex;align-items:center;gap:8px;white-space:nowrap;z-index:2}
+.pf-node small{color:var(--color-accent);font-size:.63rem}.pf-node strong{font-size:.74rem;font-weight:500;color:var(--color-text)}
+.n1{top:9px;left:8px}.n2{top:12px;right:0}.n3{bottom:12px;left:6px}.n4{bottom:9px;right:0}
+@media(max-width:900px){.pf{grid-template-columns:1fr;padding:28px 22px}.pf-map{height:240px}.pf-ring{width:65%}.pf-core{width:104px;height:104px}.pf-core b{font-size:.95rem}.pf-node{padding:8px 9px}.pf-node strong{font-size:.66rem}.n1,.n3{left:0}.n2,.n4{right:0}}
+
+.nc-hero{padding-top:calc(var(--nav-h) + var(--space-8))}.nc-back{color:var(--color-text-muted);text-decoration:none;font-size:.9rem}.nc-ind{color:var(--color-accent-2);margin:var(--space-6) 0 var(--space-3)}
+.nc-title{font:400 clamp(2.4rem,5vw,4.2rem)/1.05 var(--font-serif);letter-spacing:-.02em;max-width:18ch;color:var(--color-text)}
+.nc-sub{font-size:var(--text-body-lg);color:var(--color-text-secondary);margin:var(--space-4) 0 var(--space-2);max-width:56ch}.nc-ctx{color:var(--color-accent);font-size:.9rem;margin-bottom:var(--space-4)}
+.nc-cover{width:100%;margin:var(--space-7) 0;border-radius:var(--radius-lg);border:1px solid var(--color-border-subtle)}
+.nc-blocks{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-6)}.nc-blocks h3{color:var(--color-accent);margin-bottom:var(--space-3)}.nc-blocks p,.nc-blocks li{color:var(--color-text-secondary);font-size:.95rem;line-height:1.6}.nc-blocks ul{padding-left:1.1em;margin:0}
+.nc-map{margin-top:var(--space-8);padding:var(--space-6);border:1px solid var(--color-border);border-radius:var(--radius-lg)}.nc-map ol{list-style:none;padding:0;margin:var(--space-4) 0 0;display:flex;flex-wrap:wrap;gap:var(--space-3)}
+.nc-map a{display:flex;gap:10px;align-items:center;padding:8px 14px;border:1px solid var(--color-border-subtle);border-radius:999px;color:var(--color-text);text-decoration:none;font-size:.9rem}.nc-map a:hover{border-color:var(--color-accent)}.nc-map a span{color:var(--color-accent-2)}
+.nc-sec{padding-top:var(--space-9)}.nc-n{color:var(--color-accent-2)}.nc-h{font:400 clamp(1.9rem,3.4vw,2.8rem)/1.1 var(--font-serif);margin:var(--space-3) 0 var(--space-5);color:var(--color-text)}
+.nc-t{font-size:var(--text-body-lg);color:var(--color-text-secondary);max-width:62ch;margin-bottom:var(--space-6)}.nc-img{width:100%;border-radius:var(--radius-lg);border:1px solid var(--color-border-subtle)}
+.nc-chain{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px;margin-bottom:var(--space-6)}.nc-chain li{padding:6px 12px;border:1px solid var(--color-border);border-radius:999px;font-size:.85rem;color:var(--color-text)}.nc-chain li:not(:last-child):after{content:" →";color:var(--color-accent)}
+.nc-kpis{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));border:1px solid var(--color-border);border-radius:var(--radius-lg);margin:0 0 var(--space-6)}
+.nc-kpis li{padding:var(--space-5);border-left:1px solid var(--color-border-subtle)}.nc-kpis li:first-child{border-left:0}.nc-kpis b{display:block;font:600 2.4rem/1 var(--font-sans);color:var(--color-accent)}.nc-kpis span{display:block;margin-top:8px;color:var(--color-text-muted);font-size:.9rem}
+.nc-3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-5)}.nc-3 article{background:var(--color-surface);border:1px solid var(--color-border-subtle);border-radius:var(--radius-lg);padding:var(--space-6)}
+.nc-3 h3{font:600 1.1rem/1.3 var(--font-sans);color:var(--color-text);margin:6px 0 10px}.nc-3 p,.nc-3 li{color:var(--color-text-muted);font-size:.93rem;line-height:1.6}.nc-3 ul{padding-left:1.1em;margin:0}.nc-3 li+li{margin-top:8px}.nc-i{color:var(--color-accent-2);font-size:.8rem}
+.nc-table{border:1px solid var(--color-border);border-radius:var(--radius-lg);overflow:hidden}.nc-tr{display:grid;grid-template-columns:repeat(4,1fr)}.nc-tr span{padding:var(--space-4) var(--space-5);border-top:1px solid var(--color-border-subtle);color:var(--color-text-secondary);font-size:.93rem}
+.nc-tr span+span{border-left:1px solid var(--color-border-subtle)}.nc-th span{border-top:0;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent);background:var(--color-surface)}.nc-tr span:last-child{color:var(--color-text)}
+.nc-dec{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-6)}.nc-dec img{width:100%;max-width:230px;display:block;margin:0 auto var(--space-5);border-radius:18px;border:1px solid var(--color-border-subtle)}.nc-dec h3{font:600 1.1rem var(--font-sans);color:var(--color-text);margin-bottom:8px}.nc-dec p{color:var(--color-text-muted);font-size:.93rem;line-height:1.6}
+.nc-split{display:grid;grid-template-columns:1fr 1.2fr;gap:var(--space-7);align-items:center}
+.nc-note{color:var(--color-text-muted);font-size:.9rem;border-left:2px solid var(--color-accent);padding-left:var(--space-4);max-width:70ch}
+@media(max-width:900px){.nc-blocks,.nc-3,.nc-dec,.nc-split{grid-template-columns:1fr}.nc-tr{grid-template-columns:1fr}.nc-th{display:none}.nc-tr span+span{border-left:0}.nc-tr{border-top:2px solid var(--color-border)}.nc-tr span{border-top:0;padding:8px var(--space-4)}}
+
+.nc-blocks ul,.nc-3 ul{list-style:none;padding:0}.nc-blocks li,.nc-3 li{position:relative;padding-left:16px}.nc-blocks li:before,.nc-3 li:before{content:"";position:absolute;left:0;top:.65em;width:6px;height:6px;border-radius:50%;background:var(--color-accent)}.nc-blocks li+li{margin-top:6px}
+.nc-layers{display:flex;flex-direction:column;gap:10px}.nc-layer{border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-5);background:var(--color-surface)}.nc-layer .type-label{color:var(--color-accent)}.nc-layer h3{font:600 1.15rem var(--font-sans);margin:6px 0;color:var(--color-text)}.nc-layer p{color:var(--color-text-muted);font-size:.93rem;margin-bottom:10px}
+.nc-layer--ai{border-color:rgba(183,155,255,.4)}.nc-layer--ai .type-label{color:var(--color-accent-2)}.nc-arrow{text-align:center;color:var(--color-text-muted);font-size:.82rem}
+
+.nc-tr{grid-template-columns:repeat(var(--cols,4),1fr)}.nc-good{color:var(--color-accent)!important;font-weight:600}.nc-mt{margin-top:var(--space-6)}
+.nc-opts article.is-pick{border-color:var(--color-accent)}.nc-opts article.is-pick h3{color:var(--color-accent)}.nc-kpis+.nc-3,.nc-kpis+.nc-table{margin-top:0}
+@media(max-width:900px){.nc-tr{grid-template-columns:1fr}}
+.nc-5{display:grid;grid-template-columns:repeat(5,1fr);gap:var(--space-4)}.nc-5 article{background:var(--color-surface);border:1px solid var(--color-border-subtle);border-radius:var(--radius-lg);padding:var(--space-5)}.nc-5 h3{font:600 1rem/1.3 var(--font-sans);color:var(--color-text);margin:6px 0 8px}.nc-5 p{color:var(--color-text-muted);font-size:.88rem;line-height:1.55}
+@media(max-width:1100px){.nc-5{grid-template-columns:1fr 1fr}}@media(max-width:600px){.nc-5{grid-template-columns:1fr}}
+
+.nc-links{margin-top:var(--space-5)}
+.nc-pipe{margin-top:var(--space-8);padding:var(--space-7);border:1px solid var(--color-border);border-radius:var(--radius-lg);background:linear-gradient(110deg,#0d1b1c,#0e101b 70%)}
+.nc-pipe>.type-label{color:var(--color-accent-2)}.nc-pipe__t{font:400 clamp(1.5rem,2.6vw,2.1rem)/1.15 var(--font-serif);margin:8px 0 var(--space-6);color:var(--color-text)}
+.nc-pipe__steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(6,1fr);gap:28px}
+.nc-pipe__steps li{position:relative;border:1px solid var(--color-border);border-radius:12px;padding:14px 12px;text-align:center;background:var(--color-surface)}
+.nc-pipe__steps li:not(:last-child):after{content:"→";position:absolute;right:-21px;top:50%;transform:translateY(-50%);color:var(--color-text-muted)}
+.nc-pipe__steps b{display:block;color:var(--color-text);font-weight:600}.nc-pipe__steps span{display:block;margin-top:4px;font-size:.78rem;color:var(--color-text-muted)}
+.nc-pipe__steps li.is-mine{border-color:var(--color-accent);background:rgba(31,191,184,.10)}.nc-pipe__steps li.is-mine b{color:var(--color-accent)}
+.nc-pipe__down{display:flex;justify-content:flex-end;padding-right:calc((100% - 140px)/12);margin:10px 0}.nc-pipe__down span{font-size:.78rem;color:var(--color-text-muted)}
+.nc-pipe__reg{margin-left:auto;width:50%;text-align:center;border:1px dashed var(--color-accent-2);border-radius:12px;padding:14px;color:var(--color-text);background:rgba(183,155,255,.06)}
+.nc-cap{color:var(--color-accent-2)}.nc-cap2{color:var(--color-text-muted);font-size:.86rem;margin-top:var(--space-4);max-width:72ch}
+.nc-gal{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-5);margin-top:var(--space-4)}.nc-gal figure{margin:0}.nc-gal img{width:100%;border-radius:var(--radius-lg);border:1px solid var(--color-border-subtle)}.nc-gal figcaption{margin-top:8px;font-size:.85rem;color:var(--color-text-muted)}
+.nc-cmp{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-5);margin-top:var(--space-4)}
+.nc-cmp>div{border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-5);background:var(--color-surface);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.8rem;line-height:1.6}
+.nc-cmp>div>.type-label{font-family:var(--font-sans);color:var(--color-text-muted);display:block;margin-bottom:10px}.nc-cmp>div.is-after{border-color:var(--color-accent)}.nc-cmp>div.is-after>.type-label{color:var(--color-accent)}
+.nc-cmp ul{list-style:none;padding:0;margin:0}.nc-cmp li{color:var(--color-text-secondary);padding:6px 0;border-top:1px solid var(--color-border-subtle)}.nc-cmp li:first-child{border-top:0}
+.nc-src{color:var(--color-accent);font-weight:700}.nc-ph{color:#e6b86a;font-weight:500}
+.nc-vs{border:1px solid var(--color-border);border-radius:var(--radius-lg);overflow:hidden;margin-top:var(--space-4)}
+.nc-vs__h,.nc-vs__r{display:grid;grid-template-columns:160px 1fr 1fr}.nc-vs__h span{padding:12px 20px;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--color-text-muted);background:var(--color-surface)}.nc-vs__h span:last-child{color:var(--color-accent)}
+.nc-vs__r>*{padding:16px 20px;border-top:1px solid var(--color-border-subtle)}.nc-vs__r .type-label{color:var(--color-accent-2)}
+.nc-vs q{quotes:none;font-size:.9rem;line-height:1.55;color:var(--color-text-muted);font-style:italic}.nc-vs q.is-ours{font-style:normal;color:var(--color-text);border-left:1px solid var(--color-border-subtle)}
+@media(max-width:900px){.nc-pipe{padding:var(--space-5)}.nc-pipe__steps{grid-template-columns:1fr 1fr;gap:14px}.nc-pipe__steps li:after{display:none}.nc-pipe__down{justify-content:center;padding:0}.nc-pipe__reg{width:100%}.nc-gal,.nc-cmp{grid-template-columns:1fr}.nc-vs__h{display:none}.nc-vs__r{grid-template-columns:1fr}.nc-vs q.is-ours{border-left:0}}
+
+.nc-quotes{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-5);margin-top:var(--space-6)}.nc-quotes figure{margin:0;border-left:2px solid var(--color-accent-2);padding-left:var(--space-5)}.nc-quotes blockquote{margin:0;font:400 1.3rem/1.4 var(--font-serif);color:var(--color-text)}.nc-quotes figcaption{margin-top:8px;color:var(--color-text-muted);font-size:.85rem}
+.nc-feat{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-7) var(--space-6)}.nc-feat img{width:100%;border-radius:var(--radius-lg);border:1px solid var(--color-border-subtle);margin-bottom:var(--space-4)}.nc-feat .type-label{color:var(--color-accent)}.nc-feat h3{font:600 1.15rem var(--font-sans);color:var(--color-text);margin:6px 0}.nc-feat p{color:var(--color-text-muted);font-size:.93rem;line-height:1.6}
+@media(max-width:900px){.nc-quotes,.nc-feat{grid-template-columns:1fr}}
+.nc-duo{display:grid;grid-template-columns:1fr 120px 1fr;gap:var(--space-4);align-items:stretch}.nc-duo>div:not(.nc-duo__mid){background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-6)}
+.nc-duo>div:first-child{border-color:var(--color-accent)}.nc-duo>div:first-child .type-label{color:var(--color-accent)}.nc-duo>div:last-child{border-color:rgba(183,155,255,.45)}.nc-duo>div:last-child .type-label{color:var(--color-accent-2)}
+.nc-duo ul{list-style:none;padding:0;margin:var(--space-4) 0 0}.nc-duo li{padding:10px 0;border-top:1px solid var(--color-border-subtle);color:var(--color-text)}.nc-duo li:first-child{border-top:0}
+.nc-duo__mid{display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:2rem;color:var(--color-text-muted)}.nc-duo__mid span{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;margin-top:6px}
+@media(max-width:900px){.nc-duo{grid-template-columns:1fr}.nc-duo__mid{flex-direction:row;gap:8px;font-size:1.3rem}}
+.nc-img{width:auto;max-width:100%;display:block}.nc-feat img{aspect-ratio:16/10;object-fit:cover;object-position:top}
+.nc-lockform{margin-top:var(--space-8);max-width:560px;border:1px solid var(--color-accent-2);border-radius:var(--radius-lg);padding:var(--space-7);background:linear-gradient(110deg,#131320,#0d1b1c)}
+.nc-lockform>.type-label{color:var(--color-accent-2);margin-bottom:var(--space-3)}.nc-lockform>p{margin-bottom:var(--space-4)}
+.nc-lockrow{display:flex;gap:10px;margin-bottom:var(--space-4)}.nc-lockrow input{flex:1;min-width:0;background:var(--color-bg);border:1px solid var(--color-border);border-radius:var(--radius-md);color:var(--color-text);padding:0 14px;font:inherit;height:44px}
+.nc-lockrow input:focus{outline:2px solid var(--color-accent);outline-offset:1px}.nc-lockerr{color:#ff8a8a}.nc-lockform a{color:var(--color-accent)}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main" data-skip>Skip to content</a>
+
+<header class="site-nav">
+  <nav class="container site-nav__inner" aria-label="Main">
+    <a href="#/" class="site-nav__brand" aria-label="Roodabeh Seif, home"><span class="site-nav__logo" aria-hidden="true">R<i>S</i></span></a>
+    <ul class="site-nav__links">
+      <li><a class="nav-link" data-nav="work" href="#work">Work</a></li>
+      <li><a class="nav-link" data-nav="research" href="#/research">Research &amp; Teaching</a></li>
+      <li><a class="nav-link" data-nav="about" href="#/about">About</a></li>
+    </ul>
+    <div class="site-nav__actions">
+      <a id="lang-switch" class="btn btn--ghost btn--sm" href="?lang=de" lang="de" aria-label="Deutsche Version"><svg class="flag" viewBox="0 0 24 16" aria-hidden="true"><rect width="24" height="16" fill="#000"/><rect y="5.33" width="24" height="5.34" fill="#dd0000"/><rect y="10.67" width="24" height="5.33" fill="#ffce00"/></svg></a>
+      <a id="nav-cta" class="btn btn--secondary btn--sm" href="#contact">Get in touch</a>
+      <details class="site-nav__menu">
+        <summary class="btn btn--ghost btn--sm">Menu</summary>
+        <div class="site-nav__menu-panel">
+          <a class="nav-link" data-nav="work" href="#work">Work</a>
+          <a class="nav-link" data-nav="research" href="#/research">Research &amp; Teaching</a>
+          <a class="nav-link" data-nav="about" href="#/about">About</a>
+          <a class="nav-link" href="#contact">Get in touch</a>
+        </div>
+      </details>
+    </div>
+  </nav>
+</header>
+
+<main id="main" tabindex="-1"></main>
+
+<footer class="site-footer">
+  <div class="container"><span id="foot-name">© 2026 Roodabeh Seif</span><span>AI-native Product Manager, Berlin</span></div>
+</footer>
+
+<script src="content/content.js"></script>
+<script src="content/locked.js"></script>
+<script src="content/content.de.js"></script>
+<script>
+(function () {
+  /* ---- Language: English by default, German from the switch, a ?lang=de link or a German browser ---- */
+  const UI_DE = {"The story": "Die Geschichte", "Context & problem": "Kontext & Problem", "Research approach": "Forschungsansatz", "Key insights": "Zentrale Erkenntnisse", "Research → decisions": "Forschung → Entscheidungen", "Product strategy & execution": "Produktstrategie & Umsetzung", "Evidence": "Belege", "Outcome": "Ergebnis", "Artifacts": "Artefakte", "planned measures": "geplante Messgrößen", "release criteria": "Release-Kriterien", "stages": "Phasen", "more": "weitere", "more decisions": "weitere Entscheidungen", "AI guardrails & evaluation": "KI-Guardrails & Evaluation", "About": "Über mich", "Acceptance": "Abnahme", "All work": "Alle Projekte", "Approach": "Ansatz", "Available for new opportunities": "Offen für neue Aufgaben", "Beyond work": "Jenseits der Arbeit", "Challenge": "Herausforderung", "Changed": "Geändert", "Communicating complexity, building capability": "Komplexes vermitteln, Kompetenzen aufbauen", "Contact": "Kontakt", "Context · Timeline": "Kontext · Zeitraum", "Context": "Kontext", "Criterion": "Kriterium", "Current focus": "Aktueller Fokus", "Deliberately excluded": "Bewusst ausgeschlossen", "Education": "Ausbildung", "Estimated": "Geschätzt", "Evidence types:": "Arten von Belegen:", "Experience": "Erfahrung", "From engineering to AI product thinking": "Vom Ingenieurwesen zum KI-Produktdenken", "From the work.": "Aus der Arbeit.", "Full decision log": "Vollständiges Entscheidungsprotokoll", "Full list on ORCID ↗": "Vollständige Liste auf ORCID ↗", "Get in touch": "Kontakt aufnehmen", "Human control": "Menschliche Kontrolle", "Hypothesis": "Hypothese", "I'm open to roles in AI Product Management, UX Research and human-centered digital products, and to research or project collaborations.": "Ich bin offen für Rollen in AI Product Management, UX Research und menschzentrierten digitalen Produkten sowie für Forschungs- und Projektkooperationen.", "In the MVP": "Im MVP", "Languages": "Sprachen", "Learned": "Gelernt", "Let’s connect": "Lassen Sie uns sprechen", "Location": "Standort", "MVP scope & trade-offs": "MVP-Umfang & Abwägungen", "Mail": "E-Mail", "Measured": "Gemessen", "Menu": "Menü", "Methods": "Methoden", "More work": "Weitere Projekte", "My contribution": "Mein Beitrag", "Next →": "Weiter →", "← Previous": "← Zurück", "Note": "Hinweis", "Outside the office": "Außerhalb des Büros", "People who cultivate diverse interests tend to ask better questions, notice more, and build more human products.": "Wer vielfältige Interessen pflegt, stellt bessere Fragen, nimmt mehr wahr und baut menschlichere Produkte.", "Planned": "Geplant", "Product decision": "Produktentscheidung", "Product decision log": "Protokoll der Produktentscheidungen", "Product evidence & evolution log": "Belege & Entwicklung des Produkts", "Product mechanics & requirements": "Produktmechanik & Anforderungen", "Product principles": "Produktprinzipien", "Programme-level": "Programmebene", "Prohibited AI behaviour": "Untersagtes KI-Verhalten", "Publications": "Publikationen", "Read case study": "Fallstudie lesen", "Reason": "Grund", "Release expectation": "Release-Erwartung", "Research & writing": "Forschung & Publikationen", "Research is where I understand the problem. Product is where I decide what to do about it.": "In der Forschung verstehe ich das Problem. Im Produkt entscheide ich, was daraus folgt.", "Research matters when it changes what gets built.": "Forschung zählt, wenn sie verändert, was gebaut wird.", "Rule": "Regel", "Selected requirements": "Ausgewählte Anforderungen", "Selected work": "Ausgewählte Projekte", "Shaped": "Geprägt", "Situation": "Situation", "Skills": "Kompetenzen", "Skip to content": "Zum Inhalt springen", "Teaching & facilitation": "Lehre & Moderation", "Tested": "Getestet", "Testimonials": "Stimmen", "Uncertainty": "Unsicherheit", "Understanding the problem before designing the solution.": "Erst das Problem verstehen, dann die Lösung gestalten.", "Verified facts only": "Nur geprüfte Fakten", "View selected work": "Projekte ansehen", "What I bring to the table": "Was ich mitbringe", "What I owned": "Was ich verantwortet habe", "What changed my understanding of the problem.": "Was mein Verständnis des Problems verändert hat.", "What colleagues say": "Was Kolleginnen und Kollegen sagen", "What each transition tested and changed": "Was jeder Schritt getestet und verändert hat", "What needed to change?": "Was musste sich ändern?", "What the evidence shows, and what kind of evidence it is.": "Was die Belege zeigen und welcher Art sie sind.", "What this case demonstrates": "Was diese Fallstudie zeigt", "Where I’ve worked": "Wo ich gearbeitet habe", "Where it landed.": "Was daraus wurde.", "Why": "Warum", "Why AI": "Warum KI", "Why:": "Warum:", "Work": "Projekte", "How it unfolded.": "Wie es verlief.", "Product & AI": "Produkt & KI", "Product & AI · UX Research": "Produkt & KI · UX Research", "AI Product · UX Research · Human-Centered AI": "AI Product · UX Research · Human-Centered AI", "Filter case studies": "Fallstudien filtern", "Key results": "Wichtigste Ergebnisse", "Main": "Hauptnavigation", "More case studies": "Weitere Fallstudien", "Projects, partners and funders I've worked with": "Projekte, Partner und Förderer, mit denen ich gearbeitet habe", "Roodabeh Seif, home": "Roodabeh Seif, Startseite", "Enlarged image, click to close": "Vergrößertes Bild, zum Schließen klicken", "Decision": "Entscheidung", "Role": "Rolle", "Status": "Status", "Testimonial": "Stimme", "Responsible AI boundary": "Responsible-AI-Grenze", "All": "Alle", "Download CV": "Lebenslauf herunterladen", "Read more": "Mehr lesen", "Hi there": "Hallo", "My journey": "Mein Weg", "How I got here": "Wie ich hierher kam", "CV": "Lebenslauf", "Reflection": "Reflexion", "Design principle": "Designprinzip", "In": "In", "PDF": "PDF", "DOI": "DOI"};
+  const LANG = (function () {
+    let l = new URLSearchParams(location.search).get('lang');
+    try { if (l) localStorage.setItem('lang', l); else l = localStorage.getItem('lang'); } catch (e) {}
+    if (!l) l = (navigator.language || 'en').toLowerCase().startsWith('de') ? 'de' : 'en';
+    return l === 'de' ? 'de' : 'en';
+  })();
+  const DE = LANG === 'de';
+  document.documentElement.lang = LANG;
+  if (DE && window.SITE_DE) {
+    const D = window.SITE_DE, KEEP = { slug: 1, cover: 1, cardImage: 1, image: 1, file: 1, url: 1, pdf: 1, doi: 1, photo: 1, email: 1, linkedin: 1, orcid: 1, logo: 1, cv: 1, altTitle: 1, track: 1 };
+    (function walk(o) {
+      for (const k in o) {
+        if (KEEP[k]) continue;
+        const v = o[k];
+        if (typeof v === 'string') { if (D[v]) o[k] = D[v]; }
+        else if (v && typeof v === 'object') walk(v);
+      }
+    })(window.SITE);
+  }
+  Object.assign(UI_DE, {"Research & Teaching": "Forschung & Lehre", "Peer-reviewed": "Begutachtete Publikationen", "Thesis and work in review": "Abschlussarbeit und Arbeiten in Begutachtung", "In review": "In Begutachtung", "Teaching": "Lehre", "Where I teach, mentor and facilitate": "Wo ich lehre, betreue und moderiere", "Background": "Hintergrund", "Education and languages": "Ausbildung und Sprachen", "Key numbers": "Wichtige Zahlen", "AI-native Product Manager, Berlin": "AI-native Product Managerin, Berlin", "I'm open to AI-native Product Manager roles, and to research or project collaborations.": "Ich bin offen für Rollen als AI-native Product Managerin sowie für Forschungs- und Projektkooperationen.", "Let’s connect": "Lass uns sprechen"});
+  /* Translate the labels the page prints itself, after each render */
+  function localize(root) {
+    if (!DE) return;
+    const X = Object.assign({}, window.SITE_DE || {}, window.__EXTRA_DE || {});
+    const tr = s => UI_DE[s] || X[s] || null;
+    const tw = document.createTreeWalker(root, NodeFilter.SHOW_TEXT); let n; const nodes = [];
+    while ((n = tw.nextNode())) nodes.push(n);
+    nodes.forEach(n => {
+      const raw = n.nodeValue, t = raw.replace(/\s+/g, ' ').trim(); if (!t) return;
+      let out = tr(t);
+      if (!out) { const m = t.match(/^(\d+)( · | |\. )(.+)$/); if (m && tr(m[3])) out = m[1] + m[2] + tr(m[3]); }
+      if (out) n.nodeValue = raw.replace(raw.trim(), out);
+    });
+    root.querySelectorAll('[aria-label]').forEach(e => { const v = tr(e.getAttribute('aria-label')); if (v) e.setAttribute('aria-label', v); });
+    ['alt','placeholder'].forEach(a => root.querySelectorAll('['+a+']').forEach(e => { const v = tr(e.getAttribute(a)); if (v) e.setAttribute(a, v); }));
+  }
+  /* No dashes on the page: ranges read "2019 to 2022", compounds use a hyphen */
+  function tidy(root) {
+    const to = DE ? ' bis ' : ' to ';
+    const tw = document.createTreeWalker(root, NodeFilter.SHOW_TEXT); let n;
+    while ((n = tw.nextNode())) {
+      const v = n.nodeValue; if (!/[\u2013\u2014]/.test(v)) continue;
+      n.nodeValue = v.replace(/(\d)\s?\u2013\s?(\d)/g, '$1' + to + '$2').replace(/\s\u2013\s/g, to).replace(/\u2013/g, '-').replace(/\s?\u2014\s?/g, ', ');
+    }
+  }
+  const S = window.SITE, P = S.person, app = document.getElementById('main');
+  const showDrafts = !!window.SHOW_DRAFTS;
+  const published = S.projects.filter(p => showDrafts || !p.draft);
+  const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const pad = n => String(n).padStart(2, '0');
+  const ext = u => /^https?:/.test(u) ? ' target="_blank" rel="noopener"' : ' target="_blank"';
+  const list = (arr, fn) => (arr || []).map(fn).join('');
+  const PORTRAIT = 'img/about/roodabeh-profile.jpg';
+
+  /* ---------- component helpers (one source per component) ---------- */
+  // Evidence badge: content uses "validated" for measured evidence
+  const BADGE = { validated: ['measured', 'Measured'], estimated: ['estimated', 'Estimated'], programme: ['programme', 'Programme-level'], planned: ['planned', 'Planned'], hypothesis: ['hypothesis', 'Hypothesis'] };
+  const badge = s => BADGE[s] ? `<span class="badge badge--${BADGE[s][0]}">${BADGE[s][1]}</span>` : '';
+  const chip = (text, variant) => `<span class="chip${variant ? ' chip--' + variant : ''}">${esc(text)}</span>`;
+  const sectionHeader = (eyebrow, title, intro, level = 2) =>
+    `<div class="section-header"><p class="eyebrow type-label">${eyebrow}</p><h${level} class="type-h2">${title}</h${level}>${intro ? `<p class="section-intro type-body-lg">${esc(intro)}</p>` : ''}</div>`;
+  const disclosure = (label, meta, body) =>
+    `<details class="disclosure"><summary><span>${esc(label)}${meta ? `<span class="summary-meta">${esc(meta)}</span>` : ''}</span></summary><div class="disclosure__body">${body}</div></details>`;
+  const figure = (v) => `<figure class="figure">${v.file
+      ? `<img src="${esc(v.file)}" alt="${esc(v.caption)}" loading="lazy">`
+      : `<div class="placeholder"><strong>Image to add</strong>${esc(v.note || '')}</div>`}<figcaption>${esc(v.caption)}</figcaption></figure>`;
+
+  (function () {
+    const sw = document.getElementById('lang-switch'), other = DE ? 'en' : 'de';
+    const FLAG_EN = '<svg class="flag" viewBox="0 0 60 40" aria-hidden="true"><rect width="60" height="40" fill="#012169"/><path d="M0 0 60 40M60 0 0 40" stroke="#fff" stroke-width="8"/><path d="M0 0 60 40M60 0 0 40" stroke="#c8102e" stroke-width="3"/><path d="M30 0v40M0 20h60" stroke="#fff" stroke-width="13"/><path d="M30 0v40M0 20h60" stroke="#c8102e" stroke-width="7"/></svg>', FLAG_DE = '<svg class="flag" viewBox="0 0 24 16" aria-hidden="true"><rect width="24" height="16" fill="#000"/><rect y="5.33" width="24" height="5.34" fill="#dd0000"/><rect y="10.67" width="24" height="5.33" fill="#ffce00"/></svg>';
+    sw.innerHTML = '<span class="flag-pair"><span class="flag-opt' + (DE ? '' : ' is-on') + '">' + FLAG_EN + '</span><span class="flag-opt' + (DE ? ' is-on' : '') + '">' + FLAG_DE + '</span></span>'; sw.title = DE ? 'Switch to English' : 'Auf Deutsch wechseln';
+    sw.addEventListener('click', e => { e.preventDefault(); try { localStorage.setItem('lang', other); } catch (err) {} location.href = location.pathname + '?lang=' + other + location.hash; });
+    localize(document.querySelector('.site-nav')); const f = document.querySelector('footer'); if (f) localize(f);
+    const sk = document.querySelector('.skip-link'); if (sk) localize(sk.parentNode === document.body ? sk : sk.parentNode);
+  })();
+  document.addEventListener('click', e => {
+    const z = e.target.closest('.zoom'); if (z) { z.remove(); return; }
+    const img = e.target.closest('.figure img'); if (!img) return;
+    const o = document.createElement('div'); o.className = 'zoom'; o.setAttribute('role', 'dialog'); o.setAttribute('aria-label', 'Enlarged image, click to close');
+    const big = new Image(); big.src = img.currentSrc || img.src; big.alt = img.alt; o.appendChild(big); document.body.appendChild(o);
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { const z = document.querySelector('.zoom'); if (z) z.remove(); } });
+  document.getElementById('foot-name').textContent = '© ' + new Date().getFullYear() + ' ' + P.name;
+
+  /* ---------------- HOME ---------------- */
+  const soft = s => esc(s).replace(/ · /g, ', ');
+  function projectCard(p) {
+    return `<a class="card card--project" href="#/work/${esc(p.slug)}">
+      ${(p.cardImage || p.cover) ? `<div class="card__media"><img src="${esc(p.cardImage || p.cover)}" alt="" loading="lazy"></div>` : ''}
+      <div class="card__body">
+        <h3 class="card__title type-h3">${esc(p.title)}</h3>
+        <p class="card__role type-caption mb-3">${soft(p.role)}</p>
+        <p class="card__text">${soft(p.subtitle)}</p>
+        <span class="card__cta">Read case study <span class="icon" aria-hidden="true">→</span></span>
+      </div></a>`;
+  }
+  function zRow(p, i, total) {
+    const href = '#/work/' + esc(p.slug);
+    return `<article class="zrow">
+      <a class="zrow__media" href="${href}" tabindex="-1" aria-hidden="true">${(p.cardImage || p.cover) ? `<img src="${esc(p.cardImage || p.cover)}" alt="" loading="lazy">` : ''}</a>
+      <div class="zrow__body">
+        <span class="zrow__n type-label">${pad(i + 1)} / ${pad(total)}${p.industry ? `<span class="zrow__ind">${esc(p.industry)}</span>` : ''}</span>
+        <h3 class="zrow__title"><a href="${href}">${esc(p.title)}</a></h3>${p.slug==='surveillance-beyond-borders' ? `<p class="zrow__lock">🔒 Confidential · password on request</p>` : ''}
+        <p class="zrow__role">${soft(p.role)}</p>${p.tags ? `<ul class="cluster zrow__tags">${list(p.tags, t => `<li>${chip(t, 'accent')}</li>`)}</ul>` : ''}
+        <p class="zrow__text">${soft(p.subtitle)}</p>
+        <p class="zrow__outcome">${esc(p.cardOutcome)}</p>
+        <a class="btn btn--primary" href="${href}">Read more <span class="icon icon--forward" aria-hidden="true">→</span></a>
+      </div></article>`;
+  }
+
+  function row(aside, title, sub, body, extra) {
+    return `<li class="row"><div class="row__aside type-body-sm text-muted">${aside}</div><div>
+      <h3 class="row__title type-h4">${title}</h3>${sub ? `<p class="row__sub type-body-sm text-muted">${sub}</p>` : ''}${body ? `<p class="measure">${body}</p>` : ''}${extra || ''}</div></li>`;
+  }
+
+  const KEYS = ["AI Product Management","0 to 1 Products","UX Research","Responsible AI","EU AI Act","RAG","Prompt Design","Usability Testing","A/B Testing","Requirements","Scrum","Python"];
+  function home() {
+    const [first, ...rest] = P.name.split(' ');
+    const featSlugs = S.featured || [];
+    const featuredList = featSlugs.length ? featSlugs.map(s => published.find(p => p.slug === s)).filter(Boolean) : published;
+    const moreList = published.filter(p => !featuredList.includes(p));
+    const allList = featuredList.concat(moreList);
+    return `
+    <section class="hero container" aria-labelledby="hero-name">
+      <div class="split-hero">
+        <div class="hero__content">
+          <p class="hero__role">${P.roles.map(esc).join(', ')}</p>
+          <p class="hero__sub type-body-sm text-muted">${esc(P.sub)}</p>
+          <h1 id="hero-name" class="hero__name">${esc(first)} <span>${esc(rest.join(' '))}</span></h1>
+          <p class="hero__statement type-h3"><span>${esc(P.tagline)}</span>${P.field ? ' <span>' + esc(P.field) + '</span>' : ''}</p>
+          <div class="hero__focus"><span class="type-label">Current focus</span><ul class="cluster">${list(P.focus, f => `<li>${chip(f)}</li>`)}</ul></div>
+          <div class="hero__actions cluster-lg">
+            <a href="#work" class="btn btn--primary">View selected work <span class="icon icon--forward" aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <figure class="hero__media">
+          <img src="${PORTRAIT}" alt="Portrait of Roodabeh Seif" class="hero-portrait" data-portrait>
+        </figure>
+      </div>
+    </section>
+
+    ${P.stats && P.stats.length ? `<div class="container"><ul class="stats" aria-label="Key numbers">${list(P.stats, s => `<li><span class="stats__n">${esc(s.n)}${s.plus ? '<i>+</i>' : ''}</span><span class="stats__label">${esc(s.label)}</span><span class="stats__note">${esc(s.note)}</span></li>`)}</ul></div>` : ''}
+
+    ${S.partners ? `<section class="container partners" aria-label="${esc(S.partners.label)}">
+      <p class="type-label text-muted">${esc(S.partners.label)}</p>
+      <div class="partners__mask"><div class="partners__track"><ul class="partners__list">${list(S.partners.items, p => `<li>${p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener">` : ''}${p.logo ? `<img src="${esc(p.logo)}" alt="${esc(p.name)}" loading="lazy">` : `<span>${esc(p.name)}</span>`}${p.url ? '</a>' : ''}</li>`)}</ul><ul class="partners__list" aria-hidden="true">${list(S.partners.items, p => `<li>${p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener" tabindex="-1">` : ''}${p.logo ? `<img src="${esc(p.logo)}" alt="" loading="lazy">` : `<span>${esc(p.name)}</span>`}${p.url ? '</a>' : ''}</li>`)}</ul></div></div>
+    </section>` : ''}
+
+    <section id="work" class="section container">
+      <div class="section-header"><h2 class="type-h2 work__title">Selected work</h2></div>
+      <div class="zlist">${list(allList, (p, n) => zRow(p, n, allList.length))}</div>
+    </section>
+
+    <section id="contact" class="section container">
+      ${sectionHeader('Contact', 'Let’s connect')}
+      <div class="split">
+        <p class="type-h3 measure">I'm open to AI-native Product Manager roles, and to research or project collaborations.</p>
+        <div class="contact-links">
+          <a class="btn btn--secondary" href="mailto:${esc(P.email)}">${esc(P.email)}</a>
+          <a class="contact-links__in" href="${esc(P.linkedin)}" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>`;
+  }
+
+
+  /* ---------------- RESEARCH & TEACHING ---------------- */
+  function pubRow(pub) {
+    const label = /^\d/.test(pub.year) ? pub.year : (pub.year === 'Thesis' ? '2022' : 'In review');
+    const parts = String(pub.note || '').split(' · ');
+    return `<li class="pub"><span class="pub__year">${esc(label)}</span>
+      <div><h3 class="pub__title">${esc(pub.title)}</h3><p class="pub__meta">${esc(pub.venue)}${parts[0] ? `, <b>${esc(parts[0])}</b>` : ''}${parts.slice(1).map(x => ', ' + esc(x)).join('')}</p></div>
+      <div class="pub__links">${pub.pdf ? `<a class="btn btn--secondary btn--sm" href="${esc(pub.pdf)}" target="_blank">PDF <span class="icon" aria-hidden="true">↓</span></a>` : ''}${pub.doi ? `<a class="btn btn--secondary btn--sm" href="${esc(pub.doi)}" target="_blank" rel="noopener">DOI <span class="icon" aria-hidden="true">↗</span></a>` : ''}</div></li>`;
+  }
+  function researchPage() {
+    const R = S.research || {}, peer = S.publications.filter(p => /^\d/.test(p.year)), other = S.publications.filter(p => !/^\d/.test(p.year));
+    return `<div class="container page">
+      <p class="eyebrow type-label">Research &amp; Teaching</p>
+      <h1 class="page__title">${esc(R.title)}</h1>
+      <p class="page__lead">${esc(R.intro)}</p>
+      <section class="page__section" id="publications"><p class="eyebrow type-label">Publications</p><h2 class="type-h2">Peer-reviewed</h2>
+        <ol>${list(peer, pubRow)}</ol>
+        ${P.orcid ? `<p class="mt-5"><a class="btn btn--secondary btn--sm" href="${esc(P.orcid)}" target="_blank" rel="noopener">Full list on ORCID ↗</a></p>` : ''}
+      </section>
+      ${other.length ? `<section class="page__section"><h2 class="type-h2">Thesis and work in review</h2><ol>${list(other, pubRow)}</ol></section>` : ''}
+      <section class="page__section" id="teaching"><p class="eyebrow type-label">Teaching</p><h2 class="type-h2">Where I teach, mentor and facilitate</h2>
+        <div class="teach">${list(S.teaching, t => `<article class="teach__card"><span class="teach__n">${esc(t.n)}${t.plus ? '<i>+</i>' : ''}</span><h3 class="teach__title">${esc(t.title)}</h3><p class="teach__where">${esc(t.where)}</p><p>${esc(t.text)}</p></article>`)}</div>
+      </section>
+    </div>`;
+  }
+
+  /* ---------------- ABOUT ---------------- */
+  function aboutPage() {
+    const persp = [
+      ['The systems thinker','See the whole, not just the screen.','An engineering foundation helps me understand constraints, dependencies and what a solution needs to be feasible.',['Technical literacy','Problem framing','Systems thinking']],
+      ['The researcher','Understand the person behind the data.','Fieldwork, interviews, usability studies and participatory methods taught me to question assumptions before designing solutions.',['UX research','Co-design','Evidence synthesis']],
+      ['The people connector','I spot strengths and bring people together.','I notice what people are naturally good at and where they contribute best, and I bring complementary people together so everyone has a meaningful role.',['Seeing potential','Team building','Facilitation']],
+      ['The product builder','Turn evidence into decisions a team can build on.','I keep the roadmap, backlog and decision log, write requirements and user stories, and build AI prototypes myself.',['Roadmap & backlog','Requirements','AI prototyping']]];
+    const journey = [
+      ['Iran','Engineering','Computer science and mechatronics, a published robotics paper, and teaching computer science (2015 to 2017).'],
+      ['2019','A new chapter in Germany','M.Sc. in Human-Computer Interaction at the University of Siegen.'],
+      ['2021 to 2025','Research and coordination','University of Siegen: research, digital platforms and project coordination in EU and German federally funded projects.'],
+      ['2026','AI-native product work','Retune, and the Ironhack AI Consulting & Integration Bootcamp.']];
+    const beyond = [
+      ['Mindfulness','A practice, not a trend.','13+ years of meditation, and experience facilitating sessions for Persian speakers.','13+'],
+      ['Movement','Strength, water, balance.','The gym and swimming are part of my week. Yoga is another way I connect with my body.',''],
+      ['Music','A little more room for the flute.','I am learning the flute and want to give it more time: listening, breathing, playing without an agenda.',''],
+      ['Visual curiosity','Noticing the small things.','Photography, watercolor, nature and moments worth remembering.','']];
+    const learn = ['B.Sc. Computer Science','M.Sc. Mechatronics','M.Sc. Human-Computer Interaction, University of Siegen','PhD candidate in HCI, University of Siegen','Microsoft AI Product Manager Certificate (in progress)','Ironhack AI Consulting & Integration (October to December 2026)'];
+    return `<div class="container page ab">
+      <section class="ab-hero">
+        <div>
+          <p class="eyebrow type-label">About</p>
+          <h1 class="ab-hero__title">Engineer by training.<br><em>Human-centered by choice.</em></h1>
+          <p class="page__lead">Hi, I'm Roodabeh, an AI-native Product Manager in Berlin. I started in computer science and mechatronics, moved into human-computer interaction and participatory research, and now build AI products from user research to launch.</p>
+          <ul class="cluster mt-5">${['AI-native Product Manager','People Connector','Life Lover'].map(x=>`<li>${chip(x,'accent')}</li>`).join('')}</ul>
+          <div class="page__actions cluster-lg">${P.cv ? `<a href="${esc(P.cv)}" target="_blank" class="btn btn--primary">Download CV <span class="icon" aria-hidden="true">↓</span></a>` : ''}<a href="#beyond" class="btn btn--secondary">Beyond work</a></div>
+        </div>
+        <img class="ab-hero__img" src="img/about/about-portrait.webp" alt="Portrait of Roodabeh Seif">
+      </section>
+      <ul class="ab-facts">
+        <li><b>4<i>+</i></b><span>Years in product projects</span></li>
+        <li><b>6</b><span>Partners coordinated in CrossComITS</span></li>
+        <li><b>3</b><span>Degrees: CS, Mechatronics, HCI</span></li>
+        <li><b>Berlin</b><span>Iranian roots</span></li>
+      </ul>
+
+      <section class="page__section"><p class="eyebrow type-label">01 · What shapes my work</p><h2 class="type-h2">Four perspectives. <span class="t2">One way of working.</span></h2>
+        <div class="ab-persp">${persp.map((p,i)=>`<article class="ab-card"><span class="ab-card__n">0${i+1}</span><p class="type-label ab-card__k">${p[0]}</p><h3 class="ab-card__t">${p[1]}</h3><p class="ab-card__x">${p[2]}</p><ul class="cluster">${p[3].map(x=>`<li>${chip(x)}</li>`).join('')}</ul></article>`).join('')}</div>
+      </section>
+
+      <section class="page__section"><div class="pf" aria-label="Purpose and people are at the heart of my approach">
+        <div class="pf-copy"><p class="eyebrow type-label">02 · A personal compass</p>
+          <h3>I connect what people need<br>with <em>what the team can do</em>.</h3>
+          <p class="pf-super"><span>My superpower</span>Making complex people problems clear enough to build.</p>
+          <p class="pf-proof">I've used this while coordinating six CrossComITS partners, gathering a community around Retune, and running interdisciplinary workshops.</p></div>
+        <div class="pf-map" aria-label="How I bring people together"><div class="pf-ring"></div><div class="pf-core"><span>SHARED</span><b>PURPOSE</b></div>
+          <div class="pf-node n1"><small>01</small><strong>Notice strengths</strong></div><div class="pf-node n2"><small>02</small><strong>Connect people</strong></div>
+          <div class="pf-node n3"><small>03</small><strong>Make space</strong></div><div class="pf-node n4"><small>04</small><strong>Build together</strong></div></div>
+      </div></section>
+
+      <section class="page__section"><p class="eyebrow type-label">03 · My journey</p><h2 class="type-h2">Not a straight line. <span class="t2">A connected one.</span></h2>
+        <ol class="ab-journey">${journey.map(j=>`<li><p class="type-label">${j[0]}</p><h3>${j[1]}</h3><p class="text-muted">${j[2]}</p></li>`).join('')}</ol>
+      </section>
+
+      ${S.testimonials && S.testimonials.length ? `<section class="page__section" id="testimonials"><p class="eyebrow type-label">04 · Testimonials</p><h2 class="type-h2">What colleagues say</h2>
+        <div class="quotes3">${list(S.testimonials, q => `<figure class="quote3"><blockquote>${esc(q.short || q.quote)}</blockquote><figcaption><strong>${esc(q.name)}</strong><span>${esc(q.role)}</span>${q.relation ? `<span>${esc(q.relation)}</span>` : ''}</figcaption></figure>`)}</div></section>` : ''}
+
+      <section class="page__section" id="beyond">
+        <div class="bw-head"><div><p class="eyebrow type-label">05 · Life beyond work</p><h2 class="type-h2">I'm more than<br><span class="t2">my job title.</span></h2></div>
+          <p>Music, movement, stillness, art, and adventure are not side notes. They are part of how I explore what makes life meaningful.</p></div>
+        <div class="bw-grid">
+          <article class="bw-tile bw-adv"><img src="img/about/beyond-canyoning.webp" alt="Roodabeh descending alongside a waterfall during a canyoning adventure"><div class="bw-c"><span class="bw-l">Adventure / Canyoning</span><h3>Sometimes the best way forward is down a waterfall.</h3><p>Being outdoors, exploring unfamiliar places, and discovering what I can do.</p></div></article>
+          <article class="bw-tile bw-med"><span class="bw-l">Mindfulness</span><h3>A practice, not a trend.</h3><p>More than 13 years of meditation, and experience facilitating mindfulness sessions for Persian-speaking participants.</p><span class="bw-count" aria-hidden="true">13+</span></article>
+          <article class="bw-tile bw-mov"><span class="bw-l">Movement</span><h3>Strength, water, balance.</h3><p>The gym and swimming are part of my life. Yoga has been another way of connecting with my body.</p><div class="bw-mini"><span>Gym</span><span>Swimming</span><span>Yoga</span></div></article>
+          <article class="bw-tile bw-mus"><span class="bw-l">Music / A continuing journey</span><h3>A little more room for the flute.</h3><p>I'm learning the flute and want to devote more time to it. Music gives me a different kind of attention: listening, breathing, learning, and the pleasure of playing without an agenda.</p></article>
+          <article class="bw-tile bw-cre"><span class="bw-l">Visual curiosity</span><h3>Noticing the small things.</h3><p>Photography, watercolor, nature, and moments worth remembering.</p></article>
+        </div>
+        <div class="bw-pull"><blockquote>“A meaningful life is more than a productive one.”</blockquote><span>I make room for curiosity, connection, learning, and experiences that don't need a measurable outcome.</span></div>
+      </section>
+
+      <section class="page__section"><p class="eyebrow type-label">06 · Always learning</p><h2 class="type-h2">Education and training</h2>
+        <ul class="cluster">${learn.map(x=>`<li>${chip(x)}</li>`).join('')}</ul>
+      </section>
+
+      <section class="page__section ab-close"><h2 class="type-h2">Let's build something useful together.</h2>
+        <div class="cluster-lg">${P.cv ? `<a href="${esc(P.cv)}" target="_blank" class="btn btn--primary">Download CV ↓</a>` : ''}<a class="btn btn--secondary" href="mailto:${esc(P.email)}">${esc(P.email)}</a><a class="contact-links__in" href="${esc(P.linkedin)}" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+      </section>
+    </div>`;
+  }
+
+  /* ---------------- CASE STUDY ---------------- */
+  function caseSection(n, label, title, body, intro) {
+    return `<section class="section container">${sectionHeader(`${n} · ${label}`, title, intro)}${body}</section>`;
+  }
+  function decisionCard(d, i, level) {
+    const h = level || 3;
+    return `<article class="card card--decision">
+      <div class="decision__head"><span class="type-label">${pad(i + 1)}</span><h${h} class="type-h4">${esc(d.title)}</h${h}>${badge(d.basis)}</div>
+      ${(() => { const cells = [['Situation', d.situation], ['Evidence', d.evidence], ['Decision', d.decision, true], ['Why', d.why]].filter(c => c[1]);
+        return `<div class="decision__grid${cells.length !== 3 ? ' decision__grid--' + cells.length : ''}">${cells.map(c => `<div class="decision__cell${c[2] ? ' decision__cell--decision' : ''}"><span class="type-label">${c[0]}</span><p>${esc(c[1])}</p></div>`).join('')}</div>`; })()}
+      </article>`;
+  }
+  function requirement(r) {
+    return `<div class="requirement"><p class="requirement__area type-label">${esc(r.area)}</p><dl>
+      <div><dt class="type-label">Requirement</dt><dd>${esc(r.requirement)}</dd></div>
+      <div><dt class="type-label">Reason</dt><dd>${esc(r.reason)}</dd></div>
+      <div><dt class="type-label">Acceptance</dt><dd>${esc(r.acceptance)}</dd></div></dl></div>`;
+  }
+
+  // AI boundary pattern: reused by strategy and chapters
+  function aiBoundary(a) {
+    const layer = (L, kind) => `<div class="card card--layer-${kind}"><h4 class="card__title type-h4">${esc(L.label)}</h4><p class="card__label type-body-sm text-muted">${esc(L.role)}</p><ul class="check-list">${list(L.items, x => `<li>${esc(x)}</li>`)}</ul>${kind === 'gen' ? badge(a.status) : ''}</div>`;
+    const listCard = (L, cls) => `<div class="card"><h4 class="card__label type-label">${esc(L.label)}</h4><ul class="${cls}">${list(L.items, x => `<li>${esc(x)}</li>`)}</ul></div>`;
+    return `${a.deterministic ? `<div class="layers">${layer(a.deterministic, 'det')}<div class="layers__arrow"><span class="icon" aria-hidden="true">→</span><span class="type-label">Verified facts only</span></div>${layer(a.generative, 'gen')}</div>` : ''}
+      ${a.rule ? `<p class="rule"><span class="type-label">Rule</span><span class="type-h4">${esc(a.rule)}</span></p>` : ''}
+      ${a.may ? `<div class="grid-2 mt-6">${listCard(a.may, 'check-list')}${listCard(a.mustNot, 'cross-list')}</div>` : ''}
+      ${(a.prohibited || a.evals || a.human) ? disclosure(a.moreLabel || 'AI guardrails & evaluation', a.evals ? `${a.evals.length} ${a.evalsCount || 'release criteria'}` : '', `
+        ${(a.prohibited || a.human) ? `<div class="grid-2">${a.prohibited ? `<div><h4 class="type-label mb-3">Prohibited AI behaviour</h4><ul class="cross-list">${list(a.prohibited, x => `<li>${esc(x)}</li>`)}</ul></div>` : ''}
+          ${a.human ? `<div><h4 class="type-label mb-3">Human control</h4><ul class="check-list">${list(a.human, x => `<li>${esc(x)}</li>`)}</ul></div>` : ''}</div>` : ''}
+        ${a.evals ? `<div class="table-wrap mt-6"><table class="table"><thead><tr><th scope="col">${esc(a.evalsHead ? a.evalsHead[0] : 'Criterion')}</th><th scope="col">${esc(a.evalsHead ? a.evalsHead[1] : 'Release expectation')}</th><th scope="col">Status</th></tr></thead><tbody>
+          ${list(a.evals, e => `<tr><td>${esc(e.metric)}</td><td>${esc(e.target)}</td><td>${badge(e.status)}</td></tr>`)}</tbody></table></div>` : ''}
+        ${a.note ? `<p class="type-caption measure mt-4">${esc(a.note)}</p>` : ''}`) : ''}`;
+  }
+
+  // Chapter blocks: generic, ordered content for case studies that use `chapters`
+  function renderBlock(b) {
+    const label = b.label ? `<span class="block__label type-label">${esc(b.label)}</span>` : '';
+    switch (b.type) {
+      case 'quote': return `<blockquote class="pull-quote block">${b.label ? `<p class="type-label text-accent mb-3">${esc(b.label)}</p>` : ''}<p class="type-h3">${esc(b.text)}</p></blockquote>`;
+      case 'prose': return `<div class="prose block">${list(b.paragraphs, x => `<p>${esc(x)}</p>`)}</div>`;
+      case 'chips': return `<div class="block">${label}<ul class="cluster">${list(b.items, x => `<li>${chip(x)}</li>`)}</ul></div>`;
+      case 'list': {
+        const cls = { check: 'check-list', cross: 'cross-list', steps: 'step-list', plain: 'plain-list' }[b.style || 'plain'];
+        return `<div class="block${b.card ? ' card' : ''}">${label}${b.title ? `<h3 class="type-h4 mb-4">${esc(b.title)}</h3>` : ''}<ul class="${cls}">${list(b.items, x => `<li>${esc(x)}</li>`)}</ul>${b.status ? `<p class="mt-4">${badge(b.status)}</p>` : ''}${b.note ? `<p class="type-caption measure mt-4">${esc(b.note)}</p>` : ''}</div>`;
+      }
+      case 'columns': {
+        const col = (c, i) => `<div class="card${c.accent ? ' card--layer-det' : (c.dashed ? ' card--layer-gen' : '')}">${c.label ? `<h3 class="card__label type-label${c.accent ? ' text-accent' : ''}">${esc(c.label)}</h3>` : ''}${c.title ? `<p class="card__title type-h4">${esc(c.title)}</p>` : ''}<ul class="${c.style === 'cross' ? 'cross-list' : (c.style === 'check' ? 'check-list' : 'plain-list')}">${list(c.items, x => `<li>${esc(x)}</li>`)}</ul>${c.why ? `<p class="card__footnote type-body-sm text-muted"><span class="text-primary">Why:</span> ${esc(c.why)}</p>` : ''}</div>`;
+        if (b.connector && b.cols.length === 2) return `<div class="block layers">${col(b.cols[0])}<div class="layers__arrow"><span class="icon" aria-hidden="true">↔</span><span class="type-label">${esc(b.connector)}</span></div>${col(b.cols[1])}</div>`;
+        return `<div class="block ${b.cols.length >= 3 ? 'grid-3' : 'grid-2'}">${list(b.cols, col)}</div>`;
+      }
+      case 'journey': return `<div class="block">${label}<ol class="journey-steps">${list(b.steps, (st, i) => `<li><span class="type-label">${pad(i + 1)}</span><h3 class="type-h4">${esc(st.title)}</h3><p class="type-body-sm">${esc(st.text)}</p></li>`)}</ol></div>`;
+      case 'feature': return `<article class="feature">
+          <div class="feature__head"><div>${b.label ? `<span class="type-label">${esc(b.label)}</span>` : ''}<h3 class="type-h3">${esc(b.title)}</h3><p class="measure">${esc(b.text)}</p></div>
+          ${b.points ? `<ul class="feature__points">${list(b.points, x => `<li>${esc(x)}</li>`)}</ul>` : '<div></div>'}</div>
+          ${(b.image !== undefined) ? figure({ file: b.image, caption: b.caption || '', note: b.note }) : ''}
+          ${b.screens ? `<div class="screens mt-5">${list(b.screens, figure)}</div>` : ''}
+        </article>`;
+      case 'decisions': return `<div class="block decision-list">${list(b.items, (d, i) => decisionCard(d, i, 3))}</div>`;
+      case 'requirement': return `<div class="block card card--requirement">${requirement(b)}</div>`;
+      case 'ai': return `<div class="block">${aiBoundary(b)}</div>`;
+      case 'ia': return `<div class="block">${b.root ? `<p class="ia-root type-label">${esc(b.root)}</p>` : ''}<ul class="ia-tree">${list(b.nodes, n => `<li class="ia-node"><span>${esc(n.label)}</span>${n.children ? `<ul>${list(n.children, c => `<li>${esc(c)}</li>`)}</ul>` : ''}</li>`)}</ul></div>`;
+      case 'gallery': return `<div class="block figure-grid">${list(b.images, figure)}</div>`;
+      default: return '';
+    }
+  }
+
+  // Product strategy & execution: every block optional
+  function strategy(s) {
+    const blocks = []; let n = 0;
+    const head = (t, intro) => `<div class="subsection-header"><span class="type-label">${String.fromCharCode(65 + n++)}</span><h3 class="type-h3">${esc(t)}</h3></div>${intro ? `<p class="subsection-intro">${esc(intro)}</p>` : ''}`;
+    const block = html => blocks.push(`<div class="subsection">${html}</div>`);
+
+    if (s.principleQuote) block(`<blockquote class="pull-quote"><p class="type-label text-accent mb-3">Product principle</p><p class="type-h3">${esc(s.principleQuote)}</p></blockquote>`);
+
+    if (s.principles) block(`${head('Product principles', s.principlesIntro)}<div class="grid-2">${list(s.principles, x => `<div class="card card--principle">
+      <h4 class="card__title type-h4">${esc(x.title)}</h4><p class="card__text type-body-sm">${esc(x.text)}</p>
+      ${x.effect ? `<div class="card__footnote"><span class="type-label">Shaped</span><p class="type-body-sm text-primary">${esc(x.effect)}</p></div>` : ''}</div>`)}</div>`);
+
+    if (s.scope) {
+      const sc = s.scope;
+      const col = (label, items, kind, why) => `<div class="card card--scope-${kind}"><h4 class="card__label type-label">${esc(label)}</h4><ul class="scope-list">${list(items, x => `<li>${esc(x)}</li>`)}</ul>${why ? `<p class="card__footnote type-body-sm text-muted"><span class="text-primary">Why:</span> ${esc(why)}</p>` : ''}</div>`;
+      block(`${head(sc.title || 'MVP scope & trade-offs', sc.intro)}${sc.tiers
+        ? `<div class="grid-3">${list(sc.tiers, (t, i) => col(t.label, t.items, i === 0 ? 'in' : (t.out ? 'out' : 'later'), t.why))}</div>`
+        : `<div class="grid-2">${col('In the MVP', sc.included, 'in')}${col('Deliberately excluded', sc.excluded, 'out', sc.why)}</div>`}`);
+    }
+
+    if (s.decisionLog) {
+      const show = s.decisionShow || 3, top = s.decisionLog.slice(0, show), rest = s.decisionLog.slice(show);
+      block(`${head('Product decision log', s.decisionIntro)}<div class="decision-list">${list(top, (d, i) => decisionCard(d, i, 4))}</div>
+        ${rest.length ? disclosure('Full decision log', `${rest.length} more decisions`, `<div class="decision-list">${list(rest, (d, i) => decisionCard(d, i + show, 4))}</div>`) : ''}`);
+    }
+
+    if (s.requirements) {
+      const [first, ...others] = s.requirements;
+      block(`${head('Product mechanics & requirements', s.requirementsIntro)}<div class="card card--requirement">${requirement(first)}</div>
+        ${others.length ? disclosure('Selected requirements', `${others.length} more`, list(others, requirement)) : ''}`);
+    }
+
+    if (s.evolution) {
+      const chainItems = s.evolutionChain || s.evolution.map(e => e.stage);
+      block(`${head('Product evidence & evolution log', s.evolutionIntro)}
+        <ol class="chain cluster">${chainItems.map((c, i) => `<li class="cluster">${chip(c, i === chainItems.length - 1 ? 'accent' : '')}${i < chainItems.length - 1 ? '<span class="sep" aria-hidden="true">→</span>' : ''}</li>`).join('')}</ol>
+        ${disclosure('What each transition tested and changed', `${s.evolution.length} stages`, list(s.evolution, e => `<div class="evolution-step"><div><h4 class="type-h4">${esc(e.stage)}</h4>${badge(e.status)}</div>
+          <dl>${[['Uncertainty', e.uncertainty], ['Tested', e.tested], ['Learned', e.learned], ['Changed', e.changed]].filter(f => f[1]).map(f => `<div><dt class="type-label">${f[0]}</dt><dd>${esc(f[1])}</dd></div>`).join('')}</dl></div>`))}`);
+    }
+
+    if (s.ai) block(`${head(s.ai.title || 'Responsible AI boundary', s.ai.intro)}${aiBoundary(s.ai)}`);
+
+    if (s.owned) block(`${head(s.ownedTitle || 'What I owned', s.ownedIntro)}<dl class="owned">${list(s.owned, o => `<div><dt>${esc(o.item)}</dt>${o.detail ? `<dd>${esc(o.detail)}</dd>` : ''}</div>`)}</dl>`);
+
+    return blocks.join('');
+  }
+
+
+  const NC = {
+    dara: {
+      title: 'Honest check-ins need a private room.',
+      sub: 'How I designed workplace wellbeing that helps teams without turning into surveillance.',
+      context: 'DARA · B2B concept · working browser demo',
+      cover: 'img/dara/cover-dara.webp',
+      blocks: [
+        ['Context', 'A wellbeing product for companies, built around four parts of working life: energy, connection, focus and growth.'],
+        ['Problems', ['People will not answer honestly if a manager might see it', 'Managers still need to know when a team is struggling', 'Scores and streaks add pressure to wellbeing']],
+        ['Deliverable', 'A working browser demo with two views: a private employee view and a team-level manager view.'],
+        ['Role & duration', 'AI-native Product Manager, my own idea. From idea to working demo in one day, built with AI-assisted prototyping.']],
+      secs: [
+        { step: 'The core tension', h: 'Two needs that pull against each other.',
+          duo: { left: ['Employee needs', ['A space that is truly private', 'Tools for hard days and hard conversations', 'No judgement, no ranking']], right: ['Manager needs', ['To know when the team is struggling', 'Something small they can act on', 'Without watching individuals']], mid: 'trust' } },
+        { step: 'The turning point', h: 'Managers see patterns, not people.', t: 'I stopped trying to balance the two sides and separated them completely.',
+          cards: [['Employees see their own data', 'Check-ins, notes, coaching and badges stay private.'], ['Managers see team patterns', 'Weekly averages and themes, never a person.'], ['Under five, nothing', 'With fewer than five responses, managers see nothing at all.']] },
+        { step: 'From tension to decision', h: 'Privacy and pressure, designed out.',
+          table: { head: ['Decision', 'What it means', 'Why'], rows: [
+            ['Private by default', 'Check-ins, notes, badges and coaching are never visible to managers', 'Honest input depends on trust'],
+            ['Anonymity threshold of five', 'Team results appear only from five responses', 'Small groups make averages identifiable'],
+            ['Comments become themes', 'Open comments are summarised, never quoted or linked to a person', 'The signal without the source'],
+            ['Progress from actions, not time in app', 'No rankings or penalties; comeback milestones replace streaks', 'Pressure works against wellbeing'],
+            ['Small team experiments', 'Short actions, each with a follow-up question in the next pulse', 'Teams see whether a change helped'],
+            ['Clear scope', 'Every page says DARA is not therapy or a crisis service', 'Honest about what it cannot do']] } },
+        { step: 'The product', h: 'Two views, one privacy model.',
+          features: [
+            ['Employee · daily', 'A 30-second check-in', 'Energy, stress and focus in three taps, plus a private note.', 'img/dara/dara-checkin.webp'],
+            ['Employee · relationships', 'Difficult conversation coach', 'Four steps, starting with facts before interpretation.', 'img/dara/dara-connect.webp'],
+            ['Manager · overview', 'Four team signals', 'Energy, workload, belonging and clarity, with one suggested action.', 'img/dara/dara-manager-overview.webp'],
+            ['Manager · actions', 'Small team experiments', 'Each closes the loop with a question in the next weekly pulse.', 'img/dara/dara-team-actions.webp']] },
+        { step: 'The AI boundary', h: 'A coach that asks, not one that labels.', t: 'The reflection coach helps people think out loud. It stays private and knows its limits.',
+          layers: [['Reflection coach · employee only', 'Asks more than it answers', 'Reflective questions that separate facts from interpretation.', ['No diagnosis', 'Never labels colleagues', 'Never shared with managers']], ['serious concerns'], ['People and services', 'Points to the right help', 'Emergency services and occupational health, clearly signposted.']] },
+        { step: 'Early feedback', h: 'The first question was about trust.', t: 'Two people saw the demo. Both asked the same thing: how will employees trust that the app does not show their answers to the boss?',
+          kpis: [['1', 'Day from idea to demo'], ['2', 'Views: employee and manager'], ['5', 'Responses before managers see anything'], ['2', 'People gave early feedback']],
+          cards: [['What it confirms', 'Trust is the real problem, not a detail.'], ['What it shows', 'Privacy by design is not enough. It must be visible and believable.'], ['What is not tested yet', 'Use with real teams, and whether people answer more honestly.']],
+          note: 'A concept demo with early feedback from two people. No user testing yet, so there are no results on usage or wellbeing.' }],
+      learned: { worked: ['Separating the two sides was simpler and stronger than balancing them.', 'Building a working demo in one day made the idea easy to show and discuss.'],
+        different: ['Design for believability, not only privacy: show people the proof.', 'Talk to an HR lead and a works council early, since they decide whether teams can use it.'],
+        next: ['Test with a small team: do people trust the privacy model, and does it change how honestly they answer?', 'Make the privacy proof visible, for example a team view that shows employees exactly what their manager sees.'] }
+    },
+    'bo-app': {
+      title: 'The product starts when someone picks up the headband.',
+      sub: 'How co-design with older adults turned a brain-sensor setup from a wall into a few clear steps.',
+      context: 'eVITA, EU and Japan research project · University of Siegen · published at OzCHI 2024',
+      cover: 'img/bo-app/bo-app-screens.webp',
+      links: [['Peer-reviewed paper (DOI) ↗', 'https://doi.org/10.1145/3726986.3727033'], ['Read the paper (PDF)', 'docs/Bo_App_OzCHI2023.pdf']],
+      blocks: [
+        ['Context', 'A cognitive-training app paired with a headband that measures brain activity, for older adults to use at home. Non-medical training, not treatment.'],
+        ['Problems', ['Unfamiliar hardware had to be set up alone', 'Abstract brain feedback was hard to read', 'Feedback that motivates some people stresses others']],
+        ['Deliverable', 'A redesigned onboarding, navigation and feedback concept, tested and retested with the real sensor, and a peer-reviewed paper.'],
+        ['Role & duration', 'Research for product requirements: I planned and ran the research, facilitated co-design, prioritised problems and designed and retested the prototypes. About 8 to 10 weeks.']],
+      secs: [
+        { step: 'Co-design', h: 'Seven older adults, one unfamiliar headband.', t: 'People between 60 and 80 shaped the app with me, from early ideas to tested prototypes.',
+          kpis: [['7', 'Older adults, aged 60 to 80'], ['12', 'Co-design sessions'], ['4', 'Iterative rounds'], ['~22 h', 'Of co-design']],
+          chain: ['Interviews', 'Co-design', 'Prototype', 'Think-aloud test', 'Redesign', 'Retest'] },
+        { step: 'What went wrong', h: 'Most failures happened before training started.', t: 'In the first usability round, with the real sensor and the app:',
+          kpis: [['1 of 4', 'Set up the sensor alone'], ['3 of 4', 'Needed my help'], ['2 of 4', 'Got lost in the app']] },
+        { step: 'The turning point', h: 'Setup is part of the product.', t: 'I had been designing a training app. The participants showed me that the product begins the moment someone picks up the headband.',
+          cards: [['Hardware onboarding matters', 'Wearing and connecting the sensor needed as much design as the training.'], ['Pictures beat numbers', 'A growing tree made brain activity easy to understand.'], ['One size does not fit all', 'Frequent performance feedback felt stressful to one participant.']] },
+        { step: 'From pain to decision', h: 'Every change answers an observed problem.',
+          table: { head: ['What we saw', 'What I decided', 'Why'], rows: [
+            ['People could not set up the sensor alone', 'Visual onboarding, one step at a time, in a fixed order', 'Less guessing at the exact point people failed'],
+            ['People got lost in the app', 'A Back action visible on every screen, and a simpler structure', 'People explore when they know they can return'],
+            ['Brain feedback was abstract', 'A growing tree, and a monthly garden suggested by a participant', 'Familiar pictures make unfamiliar data clear'],
+            ['Feedback stressed some people', 'Feedback became adjustable', 'Motivation without pressure']] } },
+        { step: 'Measuring impact', h: 'Everyone in the retest set up the sensor alone.',
+          img: 'img/bo-app/bo-before-after.webp', imgTop: true,
+          note: 'Two small, different groups, so this shows a clear direction, not a statistical result. The work was published as a Late-Breaking Work at OzCHI 2024.' }],
+      learned: { worked: ['Testing with the real hardware, not only screens, showed where people actually failed.', 'Ideas from participants, like the monthly garden, made the feedback feel like theirs.'],
+        different: ['Retest with the same and more participants, to make the comparison stronger.'],
+        next: ['Accessibility for older adults is not bigger fonts. It is less uncertainty and more confidence.', 'I carry this into every product: setting up the technology is part of the experience.'] }
+    },
+    crosscomits: {
+      title: 'Correct advice that nobody could use.',
+      sub: 'How I coordinated six partners to turn field research into three cybersecurity learning products for very different people.',
+      context: 'CrossComITS & Smartphone Café · German federally funded consortium · University of Siegen · May 2023 to December 2025',
+      cover: 'img/crosscomits/cc-cover.webp',
+      links: [['PDC 2026 paper (PDF)', 'docs/Mediating_Digital_Security_PDC2026.pdf'], ['Official project ↗', 'https://crosscomits.de/']],
+      blocks: [
+        ['Context', 'A six-partner programme to make digital security learnable for older adults, migrants and refugees, and young people.'],
+        ['Problems', ['Security advice is correct but abstract', 'Three groups with different languages and digital confidence', 'Research risked staying in reports']],
+        ['Deliverable', 'Three learning products: a board game, metaphor flashcards and an open learning platform, plus two publications in 2026.'],
+        ['Role & duration', 'Product Manager and project coordinator. I led the University of Siegen team and the partner team, ran the research and kept the roadmap, backlog and decision log. May 2023 to December 2025.']],
+      secs: [
+        { step: 'The programme', h: 'One goal, three very different audiences.', t: 'I joined the running programme in May 2023 as its coordinator.',
+          kpis: [['6', 'Partner organisations'], ['3', 'User groups'], ['~200', 'Participants across the programme'], ['3', 'Learning products']],
+          img: 'img/crosscomits/cc-glance.webp' },
+        { step: 'What I saw', h: 'People got stuck on words and trust, not screens.', t: 'In interviews, workshops and Smartphone Café sessions, the barrier was rarely the interface.',
+          cards: [['Words, not buttons', 'Abstract security terms stopped people before any screen did.'], ['Trust travels through people', 'People learned more openly from someone they knew, or someone a friend introduced.'], ['Shared moments first', 'At one event, everyone cooked and ate together before any security topic came up.']],
+          img: 'img/crosscomits/cc-playtest.webp' },
+        { step: 'The A/B test', h: 'Neither format won alone.', t: 'We tested two kinds of flashcards side by side with participants.',
+          duo: { left: ['A · Text explanation', ['Clear and precise', 'Abstract, hard to remember', 'Hard to discuss in a group']], right: ['B · Visual metaphor', ['Tangible and memorable', 'Opened conversation', 'Not equally clear for everyone']], mid: 'A / B' },
+          note: 'Decision: every card became a visual metaphor plus one short explanation. The test, not opinion, decided the product.' },
+        { step: 'How I ran it', h: 'From field research to a prioritised backlog.', t: 'I led both teams in Scrum-based iterations, so research findings became ordered, visible work.',
+          chain: ['User needs', 'Requirement', 'Increment', 'Usability test', 'Stakeholder feedback', 'Prioritisation', 'Next iteration'],
+          cards5: [['Personas & journeys', 'For the three user groups.'], ['User stories', 'With acceptance criteria for the platform.'], ['Kanban backlog', 'In GitHub, shared by both teams.'], ['Roadmap & decision log', 'Trade-offs visible across partners.'], ['Team lead', 'For the University of Siegen student team.']] },
+        { step: 'The products', h: 'Three ways to learn security together.',
+          features: [
+            ['Product 1', 'Cybersecurity board game', 'A short collaborative game that turns security into something a group does together.', 'img/crosscomits/cc-boardgame.webp'],
+            ['Product 1 · digital', 'Virtual game cards', 'I wrote the questions as printed cards and as virtual cards, in German and English.', 'img/crosscomits/cc-quiz-phone.webp'],
+            ['Product 2', 'Metaphor flashcards', 'Each card pairs a visual metaphor with one short explanation, as the A/B test showed.', 'img/crosscomits/cc-flashcards.webp'],
+            ['Product 3', 'Open learning platform', 'A social platform for security mediators, built from the research requirements.', 'img/crosscomits/cc-oer-home.webp']] },
+        { step: 'Outcome', h: 'Research that became products, and papers.',
+          kpis: [['3', 'Learning products delivered'], ['2', 'Publications in 2026'], ['1st', 'Author of the Springer chapter']],
+          note: 'About 200 people took part across the whole programme, not only in my own studies. There was no controlled measurement of learning gains.' }],
+      learned: { worked: ['Testing two formats side by side ended a debate with evidence.', 'Meeting people where trust already exists: through people they know and shared events.'],
+        different: ['Measure learning before and after, not only engagement during the session.'],
+        next: ['I carry the pattern forward: a familiar picture plus one plain sentence beats either alone.', 'Requirements written from field research keep a product honest to its users.'] }
+    },
+    nebula: {
+      title: 'A verdict is not an answer.',
+      sub: 'How research with the people most exposed to misinformation shaped requirements for AI they could actually trust.',
+      context: 'NEBULA · German federally funded consortium · University of Siegen · May 2023 to December 2025',
+      cover: 'img/nebula/cover-nebula.webp',
+      links: [['Springer chapter (DOI) ↗', 'https://doi.org/10.1007/978-3-658-52212-4_10'], ['Official project ↗', 'https://peasec.de/projects/nebula/']],
+      blocks: [
+        ['Context', 'A consortium building an AI tool to help people judge questionable information. My part: what older adults, migrants and refugees, and young people needed from it.'],
+        ['Problems', ['Misinformation is not simply true or false', 'Checking takes time, language and confidence', 'A bare AI verdict gives no reason to trust it']],
+        ['Deliverable', 'Responsible-AI requirements, a Springer chapter, and my own interaction prototype built from the requirements.'],
+        ['Role & duration', 'Research for product requirements. I ran the research and wrote the requirements; the AI model and detection engine belonged to the consortium.']],
+      secs: [
+        { step: 'The research', h: 'Three groups, three settings.', t: 'I worked with municipalities as partners for recruitment and workshops.',
+          kpis: [['7', 'Focus-group participants'], ['6', 'Months of fieldwork with older adults'], ['3', 'Municipalities, youth workshops'], ['3', 'User groups']],
+          cards: [['Migrants & refugees', 'A focus group with seven Ukrainian refugee women, plus interviews.'], ['Older adults', 'Six months of observation in Smartphone Cafés, with group interviews.'], ['Young people', 'Participatory fake-news workshops in three towns.']] },
+        { step: 'What I saw', h: 'Nobody checks a claim in one place.', t: 'People compared messaging apps, videos, official sites, friends and relatives.',
+          cards: [['Checking is spread out', 'People compare many sources and ask others.'], ['Trust is social', 'People they know can matter more than any automated result.'], ['Explanations, not commands', 'People want reasons, sources and the right to disagree.']],
+          img: 'img/nebula/nb-ecosystem.webp' },
+        { step: 'The turning point', h: 'From a verdict to evidence.',
+          duo: { left: ['A verdict: fake or not fake', ['No reason to trust it', 'Nothing to discuss', 'No way to disagree']], right: ['Evidence people can inspect', ['Reasons and sources', 'Uncertainty shown openly', 'Easy to question and to share']], mid: 'trust' } },
+        { step: 'From pain to requirement', h: 'Every requirement protects a value.',
+          table: { head: ['What research showed', 'Requirement', 'Value it protects'], rows: [
+            ['People want reasons and sources', 'Show the evidence and fact-checking sources behind each assessment', 'Agency and explainability'],
+            ['People distrust what they cannot question', 'Let people inspect the evidence and disagree with the result', 'Trust through control'],
+            ['Language and literacy limit access', 'Several languages and a plain-language option', 'Access for those who need it most'],
+            ['People check through trusted others', 'Make results easy to share and discuss', 'Fits how trust already works']] } },
+        { step: 'My prototype', h: 'Requirements made visible.', t: 'I built my own interaction prototype from the requirements, to show what they mean in an interface.',
+          features: [
+            ['Explainability', 'Evidence stays inspectable', 'Claim by claim, with sources, uncertainty and a way to disagree.', 'img/nebula/nebula-prototype-explainability.webp'],
+            ['Safeguards', 'Principles you can see', 'Privacy limits and responsible-AI rules shown in the interface.', 'img/nebula/nebula-prototype-safeguards.webp']],
+          note: 'This is my own concept prototype, not the consortium\'s official interface or a running detection system.' },
+        { step: 'Outcome', h: 'Research that shaped the products.',
+          kpis: [['4', 'Responsible-AI requirements'], ['3', 'Consortium products reflecting them'], ['2026', 'Springer chapter, second author']],
+          note: 'The consortium reflected these directions in its smartphone app, browser plugin and web application. I did not own the AI model or detection engine, and the platform is not running today.' }],
+      learned: { worked: ['Researching in people\'s own settings showed how checking really happens.', 'Writing findings as requirements, each tied to a value, made them usable for builders.'],
+        different: ['Test the explanation designs with users, not only derive them from research.'],
+        next: ['Trust in AI is not a confidence score. It is evidence, uncertainty, the right to question and the final decision staying human.'] }
+    },
+    retune: {
+      title: 'A missed day should not end everything.',
+      sub: 'How I made returning, not unbroken streaks, the goal of a routine product.',
+      context: 'Retune · independent product · Persian, mobile, right-to-left',
+      cover: 'img/retune/retune-cover.webp',
+      blocks: [
+        ['Context', 'A routine companion for young Persian speakers whose lives are interrupted by crisis, illness, strain or migration. Starting with students and migrants in Germany.'],
+        ['Problems', ['Habit apps reward unbroken streaks', 'One missed day turns into giving up', 'Group support lives apart from tracking', 'No control over what others see']],
+        ['Deliverable', 'A working Persian MVP with Today, Activities, private groups and Reports, plus an AI reflection evaluated offline before any release.'],
+        ['Role & duration', 'AI-native Product Manager, no separate designer or developer. About 2 years of field research and community, then about 2 months to build and test.']],
+      secs: [
+        { step: 'Where it started', h: 'Two separate practices, one product.', t: 'Retune began with tools I already used: a paper planner, then spreadsheets and forms, and two WhatsApp and Telegram groups where people encouraged each other. Tracking and support lived in different places.',
+          chain: ['Paper planner', 'Spreadsheets', 'Google Forms', 'Routine groups', 'Mobile MVP'], img: 'img/retune/rt-evolution.webp' },
+        { step: 'Problem discovery', h: 'What the research showed.', t: 'A survey with 25 respondents and 5 follow-up interviews on interruption, return, social support and privacy.',
+          kpis: [['25', 'Survey respondents'], ['5', 'Interviews'], ['6', 'Usability tests'], ['5', 'Pilot participants, 4 weeks']],
+          cards: [['Return matters more than streaks', 'Coming back has to feel easy, not like failure.'], ['Support must feel safe', 'People want encouragement, and control over what is visible.'], ['Low pressure is the product', 'Anything that ranks or shames works against these users.']] },
+        { step: 'From pain to decision', h: 'From user pain to product direction.',
+          table: { head: ['What research showed', 'What I heard', 'What I decided', 'What I built'], rows: [
+            ['One missed day ends the habit', 'The product punishes the moment that matters most', 'Optimise for returning', 'No streaks; neutral welcome back; history kept'],
+            ['Some routines feel too private to share', 'All-or-nothing sharing blocks participation', 'Privacy per activity', 'Share by name, anonymously, or keep private'],
+            ['Group support felt useful but scattered', 'Accountability needs a safe, contained space', 'Private groups, no comparison', 'Invitation-only groups, reactions never ranked']] } },
+        { step: 'Product decisions', h: 'Every decision tied to a problem.', phones: [
+            ['Calm by default', 'Two neutral states, Done and Not today. "Partially done" was removed because its meaning varied too much between activities.', 'img/retune/retune-today.webp'],
+            ['Privacy you choose', 'Each activity has its own visibility. Sensitive details like mood, sleep or medication never reach the group view.', 'img/retune/retune-activities.webp'],
+            ['Facts you can trust', 'Weekly and monthly reports are calculated by fixed logic, so the same data always gives the same numbers.', 'img/retune/retune-reports.webp']] },
+        { step: 'The AI boundary', h: 'AI explains the facts. It never calculates them.', t: 'An optional weekly reflection may only describe metrics the product has already verified. No diagnosis, no treatment advice, no invented numbers.',
+          kpis: [['60', 'Offline test cases'], ['68%', 'Numeric accuracy'], ['0', 'Invented metrics']],
+          layers: [['Fixed logic · built', 'Calculates the facts', 'Time, percentages, active days and trends. Same data, same numbers.'], ['verified metrics only'], ['Generative AI · opt-in, tested offline', 'Explains the facts', 'A short weekly reflection in plain language.', ['No diagnosis', 'No treatment advice', 'No invented numbers']]] },
+        { step: 'Measuring impact', h: 'Measuring impact.', kpis: [['86%', 'Onboarding success'], ['78%', 'Understood per-activity privacy'], ['0', 'Fabricated metrics in AI reflection']],
+          note: 'Results from usability testing and a 4-week pilot with 5 people. They show usability and understanding in this study, not effects on wellbeing or long-term routines.' }],
+      learned: { worked: ['Writing principles first made it easy to say no to streaks, rankings and early GenAI.', 'Separating fixed logic from AI gave a clear reference to evaluate the AI against.', 'Testing privacy comprehension directly showed where the concept was understood.'],
+        different: ['Validate starting hypotheses earlier: several decisions still rest on them.', 'Link every decision to its evidence from day one, not afterwards.'],
+        next: ['Compare 2 to 3 prompt variants on the same verified weekly report.', 'Then decide whether the AI reflection joins the live product.'] }
+    },
+    'ai-governance-copilot': {
+      title: 'Evidence you can trace.',
+      sub: "How a bank's scattered governance documents became drafts a reviewer can check line by line.",
+      context: 'Ironhack AI Consulting & Integration, 2026 · fictional bank, synthetic documents · live demo',
+      cover: 'img/ai-governance-copilot/copilot-generate.webp',
+      links: [['Try the live demo ↗', 'https://project2-ai-governance-copilot.onrender.com/'], ['GitHub repository ↗', 'https://github.com/Roodabeh2018/Project2_AI_governance_Copilot']],
+      pipeline: { title: 'Every draft passes a filter and a human before it counts.', steps: [['Sources', '9 docs + EU AI Act'], ['Chunk', '491 passages'], ['Embed', 'vector index'], ['Retrieve', '3 + 3, filtered'], ['Generate', 'cited, checked', 1], ['Review', 'human approves', 1]], register: 'Gap register: 8 EU AI Act requirements', note: 'Highlighted: the stages I owned. Nothing reaches the gap register without a named reviewer\'s approval.' },
+      blocks: [
+        ['Context', 'Northstar Digital Bank, a fictional bank, uses a credit decision support AI. Under Annex III of the EU AI Act this is generally high-risk, so the bank needs monitoring, human oversight and evidence it can show.'],
+        ['Problems', ['Evidence is spread across policies, inventories, risk assessments and 144 pages of law', 'A general chatbot writes fluent text but assumes facts', 'It cannot show where a statement came from']],
+        ['Deliverable', ['A RAG app that drafts monitoring plans and internal updates, with a source on every claim', 'A gap register for 8 EU AI Act requirements, updated only after human approval', 'A tested filter between internal and public outputs', 'A live deployment and 143 automated tests']],
+        ['Role & duration', 'Owner of the generation stage: prompts, LLM integration, automatic checks, human review, web app and deployment, in a team of three. A 2-day build sprint.']],
+      secs: [
+        { step: 'Problem discovery', h: 'What a reviewer needs before trusting a draft.', t: 'We wrote these rules into one shared rule file before writing code, so the whole team and our AI coding agents worked to the same standard.',
+          cards5: [['Traceability', 'Every statement points to a file and a section or page.'], ['No invented facts', 'Owners, dates and thresholds come from documents or stay open.'], ['Not found is not missing', 'A missing document is a gap to review, not proof of a missing control.'], ['No verdicts', 'The tool drafts. It never says the bank is compliant or not.'], ['Public stays public', 'A public post may use only public-tagged sources.']] },
+        { step: 'Problem framing', h: 'Three risks to design against.',
+          cards: [['Broken trust', 'A fluent answer with no source, confident guesses for missing owners or thresholds, and hidden compliance verdicts.'], ['Leakage', 'Internal findings reaching a public post, including through side paths around the main filter.'], ['Integration', 'Three builders, one pipeline: parts that pass their own tests can still break when joined.']] },
+        { step: 'Design decisions', h: 'Every decision resolves a risk.',
+          table: { head: ['Decision', 'How it works', 'Resolves'], rows: [
+            ['Evidence before words', 'Company documents and the EU AI Act are searched separately, 3 passages each. Every claim carries a [P#] or [S#] label mapped to file, section and page.', 'Broken trust'],
+            ['Say what is missing', 'Typed placeholders such as [OWNER TO CONFIRM]. An unknown AI system returns "insufficient source", never borrowed details.', 'Broken trust'],
+            ['Filter before the prompt', 'Non-public passages are removed before the prompt is built, on every path. Nothing public left means "insufficient source".', 'Leakage'],
+            ['Humans decide', 'A draft that states compliance is blocked. Only a named reviewer can approve, and only then does the gap register change.', 'Broken trust'],
+            ['One contract, three builders', 'Shared data structures, every change reviewed in a pull request, every review finding turned into a regression test.', 'Integration']] },
+          img: 'img/ai-governance-copilot/copilot-review.webp',
+          gallery: { label: 'Team workflow: one board, every change reviewed', imgs: [['img/ai-governance-copilot/copilot-trello-board.webp', 'The team board during the build'], ['img/ai-governance-copilot/copilot-trello-final.webp', 'Final state: every task done and reviewed']] } },
+        { step: 'Iteration', h: 'More rules did not fix the prompt. One short example did.', t: 'Each row is one prompt change, measured on a real run.',
+          table: { head: ['Iteration', 'Change', 'Result'], rows: [
+            ['1', 'First grounding rules and fixed sections', '0 invented values, but 10 of 10 gap bullets had no source'],
+            ['2', 'Every gap must end with its source label', 'Uncited gaps 10/10 → 0/10; sources cited 2/6 → 5/6'],
+            ['3', 'A longer rule on which placeholder to use', 'No change: correct placeholders stayed 4/10'],
+            ['4', 'A short worked example and an automatic check', 'Correct placeholders 4/10 → 8/11; proposals now cite the law']] },
+          compare: { label: 'The same gap list, first draft vs. after iteration 4', cols: [['First draft', ['Error or uncertainty criteria for escalation: [THRESHOLD TO CONFIRM]', 'Escalation response time: [THRESHOLD TO CONFIRM]', 'Procedure for restricting or disabling the system: [OWNER TO CONFIRM]', 'Frequency for testing oversight effectiveness: [MONITORING FREQUENCY TO CONFIRM]', 'Records to retain when an analyst overrides an output: [evidence_not_found]']], ['After iteration 4', ['Error or uncertainty criteria for escalation: [OWNER TO CONFIRM] [P1], [S1]', 'Escalation response time: [THRESHOLD TO CONFIRM] [P1], [S1]', 'Procedure for restricting or disabling the system: [EVIDENCE TO PROVIDE] [P1], [S1]', 'Frequency for testing oversight effectiveness: [MONITORING FREQUENCY TO CONFIRM] [P1], [S1]', 'Records to retain when an analyst overrides an output: [EVIDENCE TO PROVIDE] [P1]']]], note: 'Every gap now ends with its source label. The first line still uses the wrong placeholder type, which is why the automatic check and human review stay in place.' },
+          note: 'Side effect: the model copied two example lines almost word for word, so human review still checks every draft.' },
+        { step: 'Measuring impact', h: 'Risk reduced, measured on the prototype.', t: 'Results from the final runs on 24 October 2026 and the test suite.',
+          kpis: [['10 → 0', 'Uncited gap findings, of 10'], ['40% → 73%', 'Correct placeholder types'], ['0', 'Internal documents in public output'], ['143', 'Automated tests, all passing']],
+          vs: { label: 'Same request: an AI System Monitoring Plan for the bank', rows: [['Ownership', 'Credit Risk / Model Risk: owns credit outcome monitoring, validation, benchmark comparison, overrides, drift review and model approval.', 'Business owner: [OWNER TO CONFIRM] [P3]. Technical owner: [OWNER TO CONFIRM] [P3]. Monitoring owner: [OWNER TO CONFIRM] [P3].'], ['Thresholds', 'Proposed starting triggers for internal calibration … material population shift (proposed PSI > 0.20).', 'Acceptance thresholds: [THRESHOLD TO CONFIRM] [P2].'], ['What is known', 'Role assumption: Northstar is the deployer; a third-party vendor is the provider. Confirm this against the contract.', 'The Credit Decision Support AI supports analysts in reviewing credit applications. [P3]']] },
+          cards: [['No fabrication', '0 invented owners, dates or thresholds in the tested runs.'], ['Checked by hand', '4+ bank-specific facts verified; 5 regulation citations opened at their page, 4 correct and 1 weak.'], ['Compared with ChatGPT', 'The same request gave a good but generic plan with assumed roles. The Copilot reported what the bank\'s documents record and what they do not.']],
+          note: 'A prototype with fictional data and no real users, so there is no before and after measure of time saved. One miss is documented: retrieval did not find an existing oversight procedure and the draft overstated that gap. Human review caught it.' }],
+      learned: { worked: ['Show, don\'t just tell: one short example beat a page of rules, though the model also copied it.', 'A placeholder is more honest than a confident guess.', 'Turning every review finding into a test kept three builders in sync.'],
+        different: ['Test the checker too: once every check said "all passed" while the problem was still there.', 'Retrieve more passages for oversight topics, so existing documents are not missed.'],
+        next: ['A timed test: one analyst drafting the same plan by hand and with the Copilot.', 'Stricter checks for placeholder types and conflicting sources.', 'Access control, security review and legal sign-off before any real bank data.'] }
+    },
+    'ghesse-khaneh': {
+      title: 'The child is not the user.',
+      sub: 'How I designed a storytelling platform for the facilitator, so the session stays between people, not behind a screen.',
+      context: 'Story House (قصه‌خونه) · independent product · bilingual Persian / English web app',
+      cover: 'img/story-house/cover-ghesse-khaneh.webp',
+      blocks: [
+        ['Context', 'Life-skills sessions for children through stories, discussion, role-play and games. They help children recognise, regulate and express their feelings, and help parents understand them.'],
+        ['Problems', ['Session knowledge lives in notes and in the facilitator\'s head', 'Hard to repeat, harder to hand over', 'A story app would put one more screen in front of children']],
+        ['Deliverable', 'A bilingual prototype: session builder, story library, programs, reflections, a parent take-home card and a research view.'],
+        ['Role & duration', 'Product Manager, self-initiated. I led discovery and designed the prototype. About 3 months of problem discovery and testing with teachers.']],
+      secs: [
+        { step: 'Problem discovery', h: 'One session, eight moving parts.', t: 'I worked with teachers and observed real sessions. Running one session means coordinating every stage below, mostly from memory.',
+          kpis: [['2', 'Teachers interviewed'], ['4', 'Sessions observed'], ['8', 'Stages in one session'], ['~3', 'Months of discovery']],
+          chain: ['Prepare', 'Story', 'Discuss', 'Practice', 'Create', 'Reflect', 'Observe', 'Plan next'],
+          quotes: [] },
+        { step: 'The turning point', h: 'Not another screen for children.', t: 'The obvious product was a story app for children. I decided against it.',
+          cards: [['The child benefits', 'The learning happens in the child, through people and play.'], ['The facilitator needs help', 'Preparation, structure and follow-up are where the work is.'], ['The value is in the room', 'Stories, conversation and play stay between people.']],
+          img: 'img/story-house/gk-flow.webp' },
+        { step: 'From pain to decision', h: 'From what I observed to what I built.',
+          table: { head: ['What I observed', 'What it meant', 'What I decided', 'What I built'], rows: [
+            ['Session knowledge scattered across notes and memory', 'Sessions are hard to repeat and to hand over', 'Build each session as a journey', 'A session builder with eight stages and a live outline'],
+            ['The facilitator\'s attention belongs to the children', 'A busy screen competes with the room', 'Show only what is needed right now', 'A facilitator mode: current stage, next step, quick notes'],
+            ['Learning stops when the session ends', 'Parents need one small next step', 'Continue at home, away from screens', 'A printable take-home card for parents']] } },
+        { step: 'The product', h: 'Support before, during and after the session.',
+          features: [
+            ['Before', 'Session builder', 'Turns a learning objective into a complete session: story, questions, activity, materials and reflection.', 'img/story-house/gk-session-builder.webp'],
+            ['Before', 'Story and activity library', 'Reusable stories, games and role-play, organised by age, theme, skill and emotion.', 'img/story-house/gk-library.webp'],
+            ['After', 'Observation and reflection', 'Five guided questions after each session. No scoring, no diagnosis.', 'img/story-house/gk-reflections.webp'],
+            ['After', 'Parent take-home', 'One conversation prompt and one offline activity for the family.', 'img/story-house/gk-parent-takehome.webp']] },
+        { step: 'The AI boundary', h: 'AI → Facilitator → Child. Never AI → Child.', t: 'The AI assistant is a concept, defined before any model work. It helps with preparation and reflection only.',
+          layers: [['AI assistant · concept', 'Prepares and reflects', 'Discussion prompts, activity ideas, checklists and note summaries.', ['Never talks to children', 'No diagnosis', 'No therapy']], ['the facilitator reviews every suggestion'], ['Facilitator · human', 'Leads the live session', 'Stories, conversation, role-play and observation stay human-led.']] },
+        { step: 'What is validated', h: 'What is tested, and what is not yet.',
+          cards: [['Tested with teachers', 'The problem, the session structure and the facilitator workflow, with 2 teachers and 4 observed sessions.'], ['Not yet tested', 'Use with children, and the AI assistant, which is a mocked concept.'], ['Never in scope', 'Diagnosis, ranking children, leaderboards, streaks or rewards for sharing private feelings.']],
+          table: { head: ['Planned measure', 'What it tells us'], rows: [['Preparation time', 'Whether the platform saves facilitator effort'], ['Usefulness', 'Whether AI suggestions are worth using'], ['Edit or reject rate', 'How often facilitators override suggestions'], ['Method consistency', 'Whether sessions stay true to the method'], ['Safety violations', 'Any unsafe suggestion counts as a failure']] },
+          note: 'Planned measures. Nothing has been measured yet.' }],
+      learned: { worked: ['Asking who needs help, not only who benefits, changed the whole product.', 'Designing the offline moments as carefully as the screens.'],
+        different: ['Test with more facilitators before building screens.', 'Bring parents into testing, not only teachers.'],
+        next: ['Reconstruct real sessions with current facilitators to test the prototype\'s assumptions.', 'Measure preparation time with and without the platform.'] }
+    }
+  };
+  function nedaCase(p, d) {
+    const seq = (S.featured || []).map(s => published.find(x => x.slug === s)).filter(Boolean).concat(published.filter(x => !(S.featured || []).includes(x.slug))), idx = seq.indexOf(p), prev = seq[(idx - 1 + seq.length) % seq.length], next = seq[(idx + 1) % seq.length];
+    const kp = a => `<ul class="nc-kpis">${a.map(k => `<li><b>${esc(k[0])}</b><span>${esc(k[1])}</span></li>`).join('')}</ul>`;
+    const cards = a => `<div class="nc-3">${a.map((f,i)=>`<article><span class="nc-i">0${i+1}</span><h3>${esc(f[0])}</h3><p>${esc(f[1])}</p></article>`).join('')}</div>`;
+    const table = t => `<div class="nc-table" style="--cols:${t.head.length}"><div class="nc-tr nc-th">${t.head.map(x=>`<span>${esc(x)}</span>`).join('')}</div>${t.rows.map(r=>`<div class="nc-tr">${r.map(c=>`<span>${esc(c)}</span>`).join('')}</div>`).join('')}</div>`;
+    const layers = L => `<div class="nc-layers">${L.map(l => l.length === 1 ? `<div class="nc-arrow">↓ ${esc(l[0])}</div>` : `<div class="nc-layer${l[3] ? ' nc-layer--ai' : ''}"><span class="type-label">${esc(l[0])}</span><h3>${esc(l[1])}</h3><p>${esc(l[2])}</p>${l[3] ? `<ul class="cluster">${l[3].map(x=>`<li><span class="chip">${esc(x)}</span></li>`).join('')}</ul>` : ''}</div>`).join('')}</div>`;
+    const lbl = x => esc(x).replace(/\[(P\d|S\d)\]/g,'<b class="nc-src">[$1]</b>').replace(/\[([A-Z_ ]+TO [A-Z ]+|evidence_not_found)\]/g,'<b class="nc-ph">[$1]</b>');
+    const body = s => {
+      let o = '';
+      if (s.layers) return `<div class="nc-split"><div>${s.t ? `<p class="nc-t">${esc(s.t)}</p>` : ''}${s.kpis ? kp(s.kpis) : ''}</div>${layers(s.layers)}</div>`;
+      if (s.t) o += `<p class="nc-t">${esc(s.t)}</p>`;
+      if (s.chain) o += `<ol class="nc-chain">${s.chain.map(c=>`<li>${esc(c)}</li>`).join('')}</ol>`;
+      if (s.kpis) o += kp(s.kpis);
+      if (s.cards5) o += `<div class="nc-5">${s.cards5.map((f,i)=>`<article><span class="nc-i">0${i+1}</span><h3>${esc(f[0])}</h3><p>${esc(f[1])}</p></article>`).join('')}</div>`;
+      if (s.quotes && s.quotes.length) o += `<div class="nc-quotes">${s.quotes.map(q=>`<figure><blockquote>“${esc(q[0])}”</blockquote><figcaption>${esc(q[1])}</figcaption></figure>`).join('')}</div>`;
+      if (s.features) o += `<div class="nc-feat">${s.features.map(f=>`<article><img src="${f[3]}" alt="" loading="lazy"><span class="type-label">${esc(f[0])}</span><h3>${esc(f[1])}</h3><p>${esc(f[2])}</p></article>`).join('')}</div>`;
+      if (s.cards) o += (s.kpis ? '<div class="nc-mt"></div>' : '') + cards(s.cards);
+      if (s.options) o += `<div class="nc-3 nc-opts">${s.options.map(f=>`<article class="${/✓/.test(f[0]) ? 'is-pick' : ''}"><h3>${esc(f[0])}</h3><p>${esc(f[1])}</p></article>`).join('')}</div>`;
+      if (s.duo) o += `<div class="nc-duo"><div><span class="type-label">${esc(s.duo.left[0])}</span><ul>${s.duo.left[1].map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div><div class="nc-duo__mid">↔<span>${esc(s.duo.mid)}</span></div><div><span class="type-label">${esc(s.duo.right[0])}</span><ul>${s.duo.right[1].map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div></div>`;
+      if (s.table) o += (s.cards ? '<div class="nc-mt"></div>' : '') + table(s.table);
+      if (s.ba) o += `<div class="nc-table" style="--cols:3"><div class="nc-tr nc-th"><span>Check</span><span>${esc((s.baHead||[])[0]||"Before")}</span><span>${esc((s.baHead||[])[1]||"After")}</span></div>${s.ba.map(r=>`<div class="nc-tr"><span>${esc(r[0])}</span><span>${esc(r[1] || '·')}</span><span class="nc-good">${esc(r[2])}</span></div>`).join('')}</div>`;
+      if (s.phones) o += `<div class="nc-dec">${s.phones.map(it=>`<article><img src="${it[2]}" alt=""><div><h3>${esc(it[0])}</h3><p>${esc(it[1])}</p></div></article>`).join('')}</div>`;
+      if (s.img) o += `<img class="nc-img nc-mt" src="${s.img}" alt="">`;
+      if (s.gallery) o += `<p class="type-label nc-cap nc-mt">${esc(s.gallery.label)}</p><div class="nc-gal">${s.gallery.imgs.map(g=>`<figure><img src="${g[0]}" alt="${esc(g[1])}" loading="lazy"><figcaption>${esc(g[1])}</figcaption></figure>`).join('')}</div>`;
+      if (s.compare) o += `<p class="type-label nc-cap nc-mt">${esc(s.compare.label)}</p><div class="nc-cmp">${s.compare.cols.map((c,i)=>`<div class="${i ? 'is-after' : ''}"><span class="type-label">${esc(c[0])}</span><ul>${c[1].map(x=>`<li>${lbl(x)}</li>`).join('')}</ul></div>`).join('')}</div><p class="nc-cap2">${esc(s.compare.note)}</p>`;
+      if (s.vs) o += `<p class="type-label nc-cap nc-mt">${esc(s.vs.label)}</p><div class="nc-vs"><div class="nc-vs__h"><span></span><span>ChatGPT, no company documents</span><span>AI Governance Copilot</span></div>${s.vs.rows.map(r=>`<div class="nc-vs__r"><span class="type-label">${esc(r[0])}</span><q>${esc(r[1])}</q><q class="is-ours">${lbl(r[2])}</q></div>`).join('')}</div>`;
+      if (s.note) o += `<p class="nc-note nc-mt">${esc(s.note)}</p>`;
+      return o;
+    };
+    return `
+    <section class="container nc-hero">
+      <a class="nc-back" href="#work">← All work</a>
+      <p class="type-label nc-ind">${esc(p.industry)}</p>
+      <h1 class="nc-title">${esc(d.title)}</h1>
+      <p class="nc-sub">${esc(d.sub)}</p>
+      <p class="nc-ctx">${esc(d.context)}</p>
+      <ul class="cluster">${(p.tags||[]).map(t => `<li>${chip(t,'accent')}</li>`).join('')}</ul>
+      ${d.links ? `<div class="cluster-lg nc-links">${d.links.map((l,i)=>`<a class="btn ${i ? 'btn--secondary' : 'btn--primary'}" href="${esc(l[1])}" target="_blank" rel="noopener">${esc(l[0])}</a>`).join('')}</div>` : ''}
+      <img class="nc-cover" src="${esc(d.cover)}" alt="">
+      <div class="nc-blocks">${d.blocks.map(b => `<div><h3 class="type-label">${esc(b[0])}</h3>${Array.isArray(b[1]) ? `<ul>${b[1].map(x=>`<li>${esc(x)}</li>`).join('')}</ul>` : `<p>${esc(b[1])}</p>`}</div>`).join('')}</div>
+    </section>
+    ${d.pipeline ? `<section class="container"><div class="nc-pipe"><p class="type-label">How it works</p><h2 class="nc-pipe__t">${esc(d.pipeline.title)}</h2>
+      <ol class="nc-pipe__steps">${d.pipeline.steps.map(s=>`<li class="${s[2] ? 'is-mine' : ''}"><b>${esc(s[0])}</b><span>${esc(s[1])}</span></li>`).join('')}</ol>
+      <div class="nc-pipe__down"><span>only if approved ↓</span></div><div class="nc-pipe__reg">${esc(d.pipeline.register)}</div>
+      <p class="nc-cap2">${esc(d.pipeline.note)}</p></div></section>` : ''}
+    <section class="container"><div class="nc-map"><p class="type-label">The process</p><ol>${d.secs.map((s,i)=>`<li><a href="#/work/${p.slug}" onclick="document.getElementById('nc-${i}').scrollIntoView({behavior:'smooth'});return false"><span>${i}</span>${esc(s.step)}</a></li>`).join('')}</ol></div></section>
+    ${d.secs.map((s,i)=>`<section class="nc-sec container" id="nc-${i}"><p class="type-label nc-n">${i}. ${esc(s.step)}</p><h2 class="nc-h">${esc(s.h)}</h2>${body(s)}</section>`).join('')}
+    <section class="nc-sec container"><p class="type-label nc-n">Reflection</p><h2 class="nc-h">What I learned</h2><div class="nc-3">
+      <article><h3>What worked</h3><ul>${d.learned.worked.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></article>
+      <article><h3>What I'd do differently</h3><ul>${d.learned.different.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></article>
+      <article><h3>Next steps</h3><ul>${d.learned.next.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></article></div></section>
+    <nav class="section container" aria-label="More case studies"><div class="pager">
+      <a class="card card--nav" href="#/work/${esc(prev.slug)}"><span class="type-label">← Previous</span><span class="card__title type-h3">${esc(prev.title)}</span></a>
+      <a class="card card--nav" href="#/work/${esc(next.slug)}"><span class="type-label">Next →</span><span class="card__title type-h3">${esc(next.title)}</span></a></div></nav>`;
+  }
+
+  async function unlockCase(slug, pw) {
+    const L = (window.LOCKED || {})[slug]; if (!L) return null;
+    const b = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+    const base = await crypto.subtle.importKey('raw', new TextEncoder().encode(pw), 'PBKDF2', false, ['deriveKey']);
+    const key = await crypto.subtle.deriveKey({ name: 'PBKDF2', salt: b(L.salt), iterations: L.it, hash: 'SHA-256' }, base, { name: 'AES-GCM', length: 256 }, false, ['decrypt']);
+    const plain = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: b(L.iv) }, key, b(L.ct));
+    const o = JSON.parse(new TextDecoder().decode(plain));
+    const fix = v => typeof v === 'string' ? (o.imgs[v] || v) : Array.isArray(v) ? v.map(fix) : (v && typeof v === 'object') ? Object.fromEntries(Object.entries(v).map(([k, x]) => [k, fix(x)])) : v;
+    const r = fix(o.data); if (o.de) r.de = o.de; return r;
+  }
+  function lockedPage(p) {
+    return `<section class="container nc-hero nc-lock">
+      <a class="nc-back" href="#work">← All work</a>
+      <p class="type-label nc-ind">${esc(p.industry)}</p>
+      <h1 class="nc-title">${esc(p.title)}</h1>
+      <p class="nc-sub">${esc(p.subtitle)}</p>
+      <form class="nc-lockform" data-slug="${esc(p.slug)}">
+        <p class="type-label">🔒 Confidential case study</p>
+        <p class="text-muted">This work involves vulnerable participants, so it is shared on request. Please enter the password you received.</p>
+        <div class="nc-lockrow"><input type="password" name="pw" autocomplete="current-password" aria-label="Password" placeholder="Password" required><button class="btn btn--primary" type="submit">Unlock</button></div>
+        <p class="nc-lockerr" role="alert" hidden>That password did not work. Please try again.</p>
+        <p class="type-body-sm text-muted">No password? <a href="mailto:${esc(P.email)}?subject=Password%20request%3A%20${encodeURIComponent(p.title)}">Request access</a></p>
+      </form></section>`;
+  }
+  document.addEventListener('submit', async e => {
+    const f = e.target.closest('.nc-lockform'); if (!f) return;
+    e.preventDefault();
+    const slug = f.dataset.slug, pw = f.pw.value, err = f.querySelector('.nc-lockerr'), btn = f.querySelector('button');
+    btn.disabled = true; btn.textContent = 'Unlocking…';
+    try {
+      const d = await unlockCase(slug, pw);
+      const p = S.projects.find(x => x.slug === slug);
+      try { sessionStorage.setItem('unlock:' + slug, pw); } catch (_) {}
+      const main = f.closest('main') || document.getElementById('main');
+      if (d.de) window.__EXTRA_DE = d.de;
+      const host = main || f.parentElement.parentElement; host.innerHTML = nedaCase(p, d); localize(host); tidy(host);
+      window.scrollTo(0, 0);
+    } catch (_) { err.hidden = false; btn.disabled = false; btn.textContent = 'Unlock'; }
+  });
+  function caseStudy(p) {
+    if (p.locked && window.LOCKED && window.LOCKED[p.slug]) {
+      let saved = null; try { saved = sessionStorage.getItem('unlock:' + p.slug); } catch (_) {}
+      if (saved) setTimeout(() => { const f = document.querySelector('.nc-lockform'); if (f) { f.pw.value = saved; f.requestSubmit(); } }, 0);
+      return lockedPage(p);
+    }
+    if (NC[p.slug]) return nedaCase(p, NC[p.slug]);
+    const seq = published.includes(p) ? published : S.projects;
+    const idx = seq.indexOf(p), total = seq.length;
+    const prev = seq[(idx - 1 + total) % total], next = seq[(idx + 1) % total];
+    let k = 0; const num = () => pad(++k);
+    const out = [];
+    const keyResults = (p.evidence || []).slice(0, 3);
+
+    out.push(`
+    <section class="case-hero container" aria-labelledby="case-title">
+      <a href="#work" class="btn btn--link case-hero__back"><span class="icon icon--back" aria-hidden="true">←</span> All work</a>
+      <p class="eyebrow type-label">${esc(p.type)}</p>
+      ${p.industry ? `<p class="case-hero__ind type-label">${esc(p.industry)}</p>` : ''}
+      <h1 id="case-title" class="case-hero__title type-h1">${esc(p.title)}${p.altTitle ? `<span class="case-hero__alt" lang="fa" dir="rtl">${esc(p.altTitle)}</span>` : ''}</h1>
+      <p class="case-hero__subtitle type-h3">${esc(p.subtitle)}</p>
+      ${p.lede ? `<p class="case-hero__lede type-body-lg">${esc(p.lede)}</p>` : ''}
+      ${keyResults.length ? `<div class="key-results" role="list" aria-label="Key results">${list(keyResults, e => `<div role="listitem">${badge(e.status)}<strong>${esc(e.value)}</strong><span class="type-body-sm">${esc(e.label)}</span></div>`)}</div>` : ''}
+      <dl class="case-meta">${list((p.meta || [
+          { label: 'Role', value: p.role },
+          { label: 'Context' + (p.timeline ? ' · Timeline' : ''), value: [p.context, p.timeline].filter(Boolean).join('\n') },
+          { label: 'Methods', value: (p.methods || []).join(' · ') },
+          { label: 'Status', value: p.status }
+        ]).filter(m => m.value), m => `<div><dt class="type-label">${esc(m.label)}</dt><dd>${esc(m.value).replace(/\n/g, '<br>')}</dd></div>`)}
+      </dl>
+      ${p.privacyNote ? `<p class="callout"><span class="type-label">Note</span><br>${esc(p.privacyNote)}</p>` : ''}
+      ${p.cover ? `<figure class="figure case-hero__cover"><img src="${esc(p.cover)}" alt="${esc(p.title)} overview"></figure>` : ''}
+    </section>
+    <div class="band"><div class="container grid-3">
+      <div><h2 class="type-label">Challenge</h2><p>${esc(p.glance.challenge)}</p></div>
+      <div><h2 class="type-label">My contribution</h2><p>${esc(p.glance.contribution)}</p></div>
+      <div><h2 class="type-label">Outcome</h2><p>${esc(p.glance.outcome)}</p></div>
+    </div></div>`);
+
+    if (p.story && p.story.length) out.push(caseSection(num(), 'The story', esc(p.storyTitle || 'How it unfolded.'),
+      `<ol class="story">${list(p.story, (b, i) => `<li class="story__beat${b.image ? '' : ' story__beat--text'}"><div class="story__body"><span class="story__num" aria-hidden="true">${i + 1}</span><p class="story__label type-label">${esc(b.label)}</p><p class="story__text">${esc(b.text)}</p></div>${b.image ? `<figure class="figure story__media"><img src="${esc(b.image)}" alt="${esc(b.alt || b.caption || '')}" loading="lazy">${b.caption ? `<figcaption>${esc(b.caption)}</figcaption>` : ''}</figure>` : ''}</li>`)}</ol>`));
+
+    out.push(caseSection(num(), 'Context &amp; problem', 'What needed to change?',
+      `<div class="prose">${list(p.problem, (x, i) => `<p${i === 0 && (p.problemLead || p.slug === 'retune') ? ' class="prose__lead"' : ''}>${esc(x)}</p>`)}</div>`));
+
+    if (p.approach && p.approach.length) out.push(caseSection(num(), 'Research approach', 'Understanding the problem before designing the solution.',
+      (p.evolution ? `<ol class="chain cluster">${p.evolution.map((e, i, arr) => `<li class="cluster">${chip(e, i === arr.length - 1 ? 'accent' : '')}${i < arr.length - 1 ? '<span class="sep" aria-hidden="true">→</span>' : ''}</li>`).join('')}</ol>` : '') +
+      `<div class="grid-3">${list(p.approach, a => `<div class="card"><h3 class="card__title type-h4">${esc(a.title)}</h3><p class="card__text type-body-sm">${esc(a.text)}</p></div>`)}</div>`));
+
+    if (p.insights && p.insights.length) out.push(caseSection(num(), 'Key insights', esc(p.insightsTitle || 'What changed my understanding of the problem.'),
+      `<div class="insights">${list(p.insights, (x, i) => `<div class="insight"><span class="type-label">${pad(i + 1)}</span><h3 class="type-h4">${esc(x.title)}</h3><p class="type-body-sm">${esc(x.text)}</p></div>`)}</div>`));
+
+    if (p.decisions && p.decisions.length) out.push(caseSection(num(), 'Research → decisions', 'Research matters when it changes what gets built.',
+      `<div class="decision-list">${list(p.decisions, (d, i) => decisionCard(d, i, 3))}</div>`));
+
+    if (p.strategy) out.push(caseSection(num(), p.strategy.label || 'Product strategy &amp; execution', esc(p.strategy.title), strategy(p.strategy)));
+
+    list(p.chapters, ch => out.push(caseSection(num(), esc(ch.label), esc(ch.title), list(ch.blocks, renderBlock), ch.intro)));
+
+    const used = [...new Set((p.evidence || []).map(e => e.status).filter(Boolean))];
+    if (p.evidence && p.evidence.length) out.push(caseSection(num(), 'Evidence', 'What the evidence shows, and what kind of evidence it is.',
+      `<div class="grid-3">${list(p.evidence, e => `<div class="card card--metric"><span class="metric__value">${esc(e.value)}</span><span class="text-primary">${esc(e.label)}</span>${e.note ? `<span class="type-body-sm text-muted">${esc(e.note)}</span>` : ''}${badge(e.status)}</div>`)}</div>` +
+      (used.length > 1 ? `<div class="legend cluster"><span class="type-label">Evidence types:</span>${used.map(badge).join('')}</div>` : '')));
+
+    out.push(caseSection(num(), 'Outcome', 'Where it landed.',
+      (p.outcome && p.outcome.length ? `<div class="prose">${list(p.outcome, x => `<p>${esc(x)}</p>`)}</div>` : '') +
+      (p.reflection ? `<blockquote class="pull-quote mt-7"><p class="type-label mb-3">Reflection</p><p class="type-h4">${esc(p.reflection)}</p></blockquote>` : '') +
+      (p.demonstrates ? `<div class="mt-7"><p class="type-label mb-3">What this case demonstrates</p><ul class="cluster">${list(p.demonstrates, d => `<li>${chip(d)}</li>`)}</ul></div>` : '') +
+      (p.links && p.links.length ? `<div class="cluster-lg mt-7">${list(p.links, l => `<a class="btn btn--secondary btn--sm" href="${esc(l.url)}"${ext(l.url)}>${esc(l.label)}</a>`)}</div>` : '')));
+
+    if ((p.visuals && p.visuals.length) || p.screens) out.push(caseSection(num(), 'Artifacts', 'From the work.',
+      `<div class="figure-grid">${list(p.visuals, figure)}${p.screens ? `<div class="screens">${list(p.screens, figure)}</div>` : ''}</div>`));
+
+    out.push(`<nav class="section container" aria-label="More case studies"><div class="pager">
+      <a class="card card--nav" href="#/work/${esc(prev.slug)}"><span class="type-label">← Previous</span><span class="card__title type-h3">${esc(prev.title)}</span></a>
+      <a class="card card--nav" href="#/work/${esc(next.slug)}"><span class="type-label">Next →</span><span class="card__title type-h3">${esc(next.title)}</span></a>
+    </div></nav>`);
+    return out.join('');
+  }
+
+  /* ---------------- PORTRAIT: visible when missing ---------------- */
+  function bindPortrait() {
+    const img = app.querySelector('[data-portrait]');
+    if (!img) return;
+    const fail = () => {
+      console.warn('[portfolio] Portrait image missing: ' + PORTRAIT + ': place it next to index.html.');
+      const ph = document.createElement('div');
+      ph.className = 'placeholder placeholder--warning';
+      ph.setAttribute('role', 'img');
+      ph.setAttribute('aria-label', 'Portrait image missing: ' + PORTRAIT);
+      ph.innerHTML = '<strong>Portrait image missing:</strong><span>' + PORTRAIT + '</span>';
+      img.replaceWith(ph);
+    };
+    if (img.complete && img.naturalWidth === 0) fail(); else img.addEventListener('error', fail, { once: true });
+  }
+
+  /* ---------------- ROUTER ---------------- */
+  // #/work/<slug> → case study; anything else → home (and scroll to #section if given)
+  let onHome = false;
+  const OLD = { publications: 'research', teaching: 'research', about: 'about', skills: 'about', testimonials: 'about', beyond: 'about', experience: 'about' };
+  function setCurrent(key) {
+    document.querySelectorAll('.nav-link').forEach(a => { if (a.dataset.nav === key) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
+  }
+  function closeMenu() { const m = document.querySelector('.site-nav__menu'); if (m) m.open = false; }
+  function show(html, key, title) {
+    app.innerHTML = html; localize(app); tidy(app); onHome = false; setCurrent(key);
+    document.title = title + ' | ' + P.name;
+    window.scrollTo(0, 0);
+    app.focus({ preventScroll: true });
+  }
+  function route() {
+    closeMenu();
+    let h = location.hash;
+    const old = OLD[h.replace(/^#\/?/, '')];
+    if (old && !/^#\/(research|about)$/.test(h)) { history.replaceState(null, '', '#/' + old); h = '#/' + old; }
+    const m = h.match(/^#\/work\/([\w-]+)/);
+    if (m) {
+      const p = S.projects.find(x => x.slug === m[1]);
+      if (p) { show(caseStudy(p), 'work', p.title); return; }
+    }
+    if (h === '#/research') { show(researchPage(), 'research', DE ? 'Forschung & Lehre' : 'Research & Teaching'); return; }
+    if (h === '#/about') { show(aboutPage(), 'about', DE ? 'Über mich' : 'About'); return; }
+    if (!onHome) { app.innerHTML = home(); localize(app); tidy(app); onHome = true; bindPortrait(); }
+    setCurrent('');
+    document.title = P.name + ' | ' + P.roles.join(' & ');
+    const id = h.replace(/^#\/?/, '');
+    const el = id && document.getElementById(id);
+    if (el) requestAnimationFrame(() => el.scrollIntoView()); else if (h === '#/' || !h) window.scrollTo(0, 0);
+  }
+  // in-page section links on the home view scroll in place; skip link focuses main
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    if (a.hasAttribute('data-skip')) { e.preventDefault(); app.focus(); return; }
+    const id = a.getAttribute('href').slice(1);
+    if (id && !id.startsWith('/') && onHome) {
+      const el = document.getElementById(id);
+      if (el) { e.preventDefault(); closeMenu(); el.scrollIntoView(); history.replaceState(null, '', '#' + id); }
+    }
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+  window.addEventListener('hashchange', route);
+  route();
+})();
+</script>
+</body>
+</html>
