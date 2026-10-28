@@ -873,7 +873,7 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
 .nc-layer--ai{border-color:rgba(183,155,255,.4)}.nc-layer--ai .type-label{color:var(--color-accent-2)}.nc-arrow{text-align:center;color:var(--color-text-muted);font-size:.82rem}
 
 .nc-tr{grid-template-columns:repeat(var(--cols,4),1fr)}.nc-good{color:var(--color-accent)!important;font-weight:600}.nc-mt{margin-top:var(--space-6)}
-.nc-opts article.is-pick{border-color:var(--color-accent)}.nc-opts article.is-pick h3{color:var(--color-accent)}.nc-kpis+.nc-3,.nc-kpis+.nc-table{margin-top:0}
+@media(min-width:901px){.nc-opts--2{grid-template-columns:repeat(2,1fr)}}.nc-opts article.is-pick{border-color:var(--color-accent)}.nc-opts article.is-pick h3{color:var(--color-accent)}.nc-kpis+.nc-3,.nc-kpis+.nc-table{margin-top:0}
 @media(max-width:900px){.nc-tr{grid-template-columns:1fr}}
 .nc-5{display:grid;grid-template-columns:repeat(5,1fr);gap:var(--space-4)}.nc-5 article{background:var(--color-surface);border:1px solid var(--color-border-subtle);border-radius:var(--radius-lg);padding:var(--space-5)}.nc-5 h3{font:600 1rem/1.3 var(--font-sans);color:var(--color-text);margin:6px 0 8px}.nc-5 p{color:var(--color-text-muted);font-size:.88rem;line-height:1.55}
 @media(max-width:1100px){.nc-5{grid-template-columns:1fr 1fr}}@media(max-width:600px){.nc-5{grid-template-columns:1fr}}
@@ -1365,11 +1365,16 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
         ['Deliverable', 'A working browser demo with two views: a private employee view and a team-level manager view.'],
         ['Role & duration', 'AI-native Product Manager, my own idea. From idea to working demo in one day, built with AI-assisted prototyping.']],
       secs: [
-        { step: 'The core tension', h: 'Two needs that pull against each other.',
-          duo: { left: ['Employee needs', ['A space that is truly private', 'Tools for hard days and hard conversations', 'No judgement, no ranking']], right: ['Manager needs', ['To know when the team is struggling', 'Something small they can act on', 'Without watching individuals']], mid: 'trust' } },
-        { step: 'The turning point', h: 'Managers see patterns, not people.', t: 'I stopped trying to balance the two sides and separated them completely.',
-          cards: [['Employees see their own data', 'Check-ins, notes, coaching and badges stay private.'], ['Managers see team patterns', 'Weekly averages and themes, never a person.'], ['Under five, nothing', 'With fewer than five responses, managers see nothing at all.']] },
-        { step: 'From tension to decision', h: 'Privacy and pressure, designed out.',
+        { step: 'What we know', h: 'One early question shaped the trust focus.', t: 'The documented feedback is limited, so each card separates what someone asked from the product risk and the design response.',
+          cards: [['“Can my manager see my results?”', 'Both people who saw the demo asked whether a manager could see an employee\'s individual results. Informal feedback, not formal research.'], ['Wellbeing data is sensitive', 'If employees are unsure who can see their answers, they may not answer honestly. A risk to test, not a research finding.'], ['Show team patterns, not people', 'The manager view shows only anonymised team patterns, and nothing below five responses. This still needs user and technical validation.']] },
+        { step: 'Problem framing', h: 'Useful reflection that never feels monitored.', t: 'My hypothesis: employees need a private space to reflect, and managers need just enough team context to offer support. DARA must protect the first while serving the second.',
+          duo: { left: ['Employee needs · hypothesis', ['A space that is truly private', 'Tools for hard days and hard conversations', 'No judgement, no ranking']], right: ['Manager needs · hypothesis', ['To know when the team is struggling', 'Something small they can act on', 'Without watching individuals']], mid: 'trust' },
+          table: { head: ['Problem', 'What it looks like', 'How I would know it is solved'], rows: [
+            ['Honesty needs privacy', 'People hold back if a manager might see their answers', 'Employees can explain correctly who sees what'],
+            ['Managers still need signals', 'A manager cannot tell when the team is struggling', 'Managers find a useful team action without guessing who answered'],
+            ['Pressure works against wellbeing', 'Scores and streaks turn a check-in into a task', 'People feel comfortable completing a check-in']] } },
+        { step: 'Design decisions', h: 'Managers see patterns, not people.', t: 'I first tried to balance the two sides. Then I separated them completely.',
+          options: [['Balance both sides', 'Where I started: weighing employee privacy against manager visibility, screen by screen.'], ['✓ Separate them completely', 'Employees see their own data. Managers see team patterns, never a person, and nothing below five responses.']],
           table: { head: ['Decision', 'What it means', 'Why'], rows: [
             ['Private by default', 'Check-ins, notes, badges and coaching are never visible to managers', 'Honest input depends on trust'],
             ['Anonymity threshold of five', 'Team results appear only from five responses', 'Small groups make averages identifiable'],
@@ -1385,13 +1390,17 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
             ['Manager · actions', 'Small team experiments', 'Each closes the loop with a question in the next weekly pulse.', 'img/dara/dara-team-actions.webp']] },
         { step: 'The AI boundary', h: 'A coach that asks, not one that labels.', t: 'The reflection coach helps people think out loud. It stays private and knows its limits.',
           layers: [['Reflection coach · employee only', 'Asks more than it answers', 'Reflective questions that separate facts from interpretation.', ['No diagnosis', 'Never labels colleagues', 'Never shared with managers']], ['serious concerns'], ['People and services', 'Points to the right help', 'Emergency services and occupational health, clearly signposted.']] },
-        { step: 'Early feedback', h: 'The first question was about trust.', t: 'Two people saw the demo. Both asked the same thing: how will employees trust that the app does not show their answers to the boss?',
+        { step: 'Measuring impact', h: 'Success defined before impact is claimed.', t: 'No outcomes are measured yet. What exists is a working demo, and four measures for the first test.',
           kpis: [['1', 'Day from idea to demo'], ['2', 'Views: employee and manager'], ['5', 'Responses before managers see anything'], ['2', 'People gave early feedback']],
-          cards: [['What it confirms', 'Trust is the real problem, not a detail.'], ['What it shows', 'Privacy by design is not enough. It must be visible and believable.'], ['What is not tested yet', 'Use with real teams, and whether people answer more honestly.']],
-          note: 'A concept demo with early feedback from two people. No user testing yet, so there are no results on usage or wellbeing.' }],
+          table: { head: ['Planned measure', 'What it tells us'], rows: [
+            ['Privacy understanding', 'Can employees explain who sees individual and team-level information?'],
+            ['Perceived trust', 'Do employees feel comfortable checking in after seeing the visibility rules?'],
+            ['Perceived usefulness', 'Do reflection and conversation coaching help with a real task?'],
+            ['Manager insight quality', 'Can managers find a useful team action without inferring who answered?']] },
+          note: 'A concept demo with informal feedback from two people. No user testing yet, so there are no results on usage or wellbeing.' }],
       learned: { worked: ['Separating the two sides was simpler and stronger than balancing them.', 'Building a working demo in one day made the idea easy to show and discuss.'],
         different: ['Design for believability, not only privacy: show people the proof.', 'Talk to an HR lead and a works council early, since they decide whether teams can use it.'],
-        next: ['Test with a small team: do people trust the privacy model, and does it change how honestly they answer?', 'Make the privacy proof visible, for example a team view that shows employees exactly what their manager sees.'] }
+        next: ['Test the privacy promise before a pilot: in moderated sessions, ask people to explain who can see each type of information.', 'Then revise the privacy wording and the team-level rules before any workplace pilot.'] }
     },
     'bo-app': {
       title: 'The product starts when someone picks up the headband.',
@@ -1562,11 +1571,17 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
         ['Deliverable', ['A RAG app that drafts monitoring plans and internal updates, with a source on every claim', 'A gap register for 8 EU AI Act requirements, updated only after human approval', 'A tested filter between internal and public outputs', 'A live deployment and 143 automated tests']],
         ['Role & duration', 'AI-native Product Manager and owner of the generation stage: prompts, LLM integration, automatic checks, human review, web app and deployment. A 2-day build sprint.']],
       secs: [
-        { step: 'Problem discovery', h: 'What a reviewer needs before trusting a draft.', t: 'We wrote these rules into one shared rule file before writing code, so the whole team and our AI coding agents worked to the same standard.',
-          cards5: [['Traceability', 'Every statement points to a file and a section or page.'], ['No invented facts', 'Owners, dates and thresholds come from documents or stay open.'], ['Not found is not missing', 'A missing document is a gap to review, not proof of a missing control.'], ['No verdicts', 'The tool drafts. It never says the bank is compliant or not.'], ['Public stays public', 'A public post may use only public-tagged sources.']] },
-        { step: 'Problem framing', h: 'Three risks to design against.',
-          cards: [['Broken trust', 'A fluent answer with no source, confident guesses for missing owners or thresholds, and hidden compliance verdicts.'], ['Leakage', 'Internal findings reaching a public post, including through side paths around the main filter.'], ['Integration', 'Three builders, one pipeline: parts that pass their own tests can still break when joined.']] },
-        { step: 'Design decisions', h: 'Every decision resolves a risk.',
+        { step: 'Problem discovery', h: 'Three signals before one line of code.', t: 'Before building, we compared what a general AI assistant gives with what a governance reviewer actually needs. Three signals pointed the same way.',
+          cards: [['A general assistant knows no company', 'Asked for the same monitoring plan, ChatGPT wrote a sound but generic plan with 0 facts from the bank\'s own documents.'], ['Not found is not missing', 'A document the tool cannot find is a gap to review, not proof that a control is missing. Treating it as proof would be a false compliance claim.'], ['Internal must stay internal', 'The same pipeline also writes public posts, so internal findings must never reach them.']],
+          note: 'These signals come from the course brief and our own tests, not from interviews with governance analysts. A test with a real analyst is the first next step.' },
+        { step: 'Problem framing', h: 'Three risks, five rules.', t: 'For each risk we set a measure of success. Then we wrote five rules into one shared rule file before writing code, so the whole team and our AI coding agents worked to the same standard.',
+          cards5: [['Traceability', 'Every statement points to a file and a section or page.'], ['No invented facts', 'Owners, dates and thresholds come from documents or stay open.'], ['Not found is not missing', 'A missing document is a gap to review, not proof of a missing control.'], ['No verdicts', 'The tool drafts. It never says the bank is compliant or not.'], ['Public stays public', 'A public post may use only public-tagged sources.']],
+          table: { head: ['Risk', 'What it looks like', 'How we know it is solved'], rows: [
+            ['Broken trust', 'A fluent answer with no source, confident guesses for missing owners or thresholds, and hidden compliance verdicts', 'Every gap cites its source; 0 invented values'],
+            ['Leakage', 'Internal findings reaching a public post, including through side paths around the main filter', '0 internal passages in public output'],
+            ['Integration', 'Three builders, one pipeline: parts that pass their own tests can still break when joined', 'All automated tests pass on the merged code']] } },
+        { step: 'Design decisions', h: 'Every decision resolves a risk.', t: 'The first decision was how the model gets its knowledge. We compared three options against traceability, the split between internal and public sources, and a €5 API budget.',
+          options: [['Whole corpus in every prompt', 'Fastest to set up, but a repeated token cost and no reliable source for each claim.'], ['Fine-tune a model', 'Can shape style, but does not keep company facts current or give citations. Too much for a 2-day build.'], ['✓ Retrieval with citations', 'Finds the relevant passages, cites them and can filter internal from public sources. Fits the budget.']],
           table: { head: ['Decision', 'How it works', 'Resolves'], rows: [
             ['Evidence before words', 'Company documents and the EU AI Act are searched separately, 3 passages each. Every claim carries a [P#] or [S#] label mapped to file, section and page.', 'Broken trust'],
             ['Say what is missing', 'Typed placeholders such as [OWNER TO CONFIRM]. An unknown AI system returns "insufficient source", never borrowed details.', 'Broken trust'],
@@ -1652,9 +1667,9 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
       if (s.quotes && s.quotes.length) o += `<div class="nc-quotes">${s.quotes.map(q=>`<figure><blockquote>“${esc(q[0])}”</blockquote><figcaption>${esc(q[1])}</figcaption></figure>`).join('')}</div>`;
       if (s.features) o += `<div class="nc-feat">${s.features.map(f=>`<article><img src="${f[3]}" alt="" loading="lazy"><span class="type-label">${esc(f[0])}</span><h3>${esc(f[1])}</h3><p>${esc(f[2])}</p></article>`).join('')}</div>`;
       if (s.cards) o += (s.kpis ? '<div class="nc-mt"></div>' : '') + cards(s.cards);
-      if (s.options) o += `<div class="nc-3 nc-opts">${s.options.map(f=>`<article class="${/✓/.test(f[0]) ? 'is-pick' : ''}"><h3>${esc(f[0])}</h3><p>${esc(f[1])}</p></article>`).join('')}</div>`;
+      if (s.options) o += `<div class="nc-3 nc-opts${s.options.length === 2 ? ' nc-opts--2' : ''}">${s.options.map(f=>`<article class="${/✓/.test(f[0]) ? 'is-pick' : ''}"><h3>${esc(f[0])}</h3><p>${esc(f[1])}</p></article>`).join('')}</div>`;
       if (s.duo) o += `<div class="nc-duo"><div><span class="type-label">${esc(s.duo.left[0])}</span><ul>${s.duo.left[1].map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div><div class="nc-duo__mid">↔<span>${esc(s.duo.mid)}</span></div><div><span class="type-label">${esc(s.duo.right[0])}</span><ul>${s.duo.right[1].map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div></div>`;
-      if (s.table) o += (s.cards ? '<div class="nc-mt"></div>' : '') + table(s.table);
+      if (s.table) o += (s.cards || s.cards5 || s.options || s.duo ? '<div class="nc-mt"></div>' : '') + table(s.table);
       if (s.ba) o += `<div class="nc-table" style="--cols:3"><div class="nc-tr nc-th"><span>Check</span><span>${esc((s.baHead||[])[0]||"Before")}</span><span>${esc((s.baHead||[])[1]||"After")}</span></div>${s.ba.map(r=>`<div class="nc-tr"><span>${esc(r[0])}</span><span>${esc(r[1] || '·')}</span><span class="nc-good">${esc(r[2])}</span></div>`).join('')}</div>`;
       if (s.phones) o += `<div class="nc-dec">${s.phones.map(it=>`<article><img src="${it[2]}" alt=""><div><h3>${esc(it[0])}</h3><p>${esc(it[1])}</p></div></article>`).join('')}</div>`;
       if (s.img) o += `<img class="nc-img nc-mt" src="${s.img}" alt="">`;
