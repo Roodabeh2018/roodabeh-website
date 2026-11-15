@@ -100,7 +100,7 @@ window.SITE_DE = {
 "Grounding": "Grounding",
 "Evidence checks": "Belegprüfung",
 "AI agents": "KI-Agenten",
- "Presenting the CrossComITS community learning model at Hochschule Bonn-Rhein-Sieg.": "Vorstellung des CrossComITS-Lernmodells an der Hochschule Bonn-Rhein-Sieg.",
+ "Presenting the CrossComITS community learning model at the project's final consortium meeting, Hochschule Bonn-Rhein-Sieg. CrossComITS worked on cybersecurity for vulnerable groups.": "Vorstellung des CrossComITS-Lernmodells beim abschließenden Konsortialtreffen des Projekts an der Hochschule Bonn-Rhein-Sieg. CrossComITS befasste sich mit Cybersicherheit für vulnerable Gruppen.",
 "I build AI products from user research to launch.": "Ich baue KI-Produkte von der Nutzerforschung bis zum Launch.",
  "My superpower": "Meine Superkraft",
  "2021 to 2025": "2021 bis 2025",

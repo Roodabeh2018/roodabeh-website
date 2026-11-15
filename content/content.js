@@ -128,7 +128,7 @@ window.SITE = {
     photo: {
       src: "img/research/talk-crosscomits.webp",
       alt: "Roodabeh Seif presenting the CrossComITS community learning model to an audience in a lecture hall",
-      caption: "Presenting the CrossComITS community learning model at Hochschule Bonn-Rhein-Sieg."
+      caption: "Presenting the CrossComITS community learning model at the project's final consortium meeting, Hochschule Bonn-Rhein-Sieg. CrossComITS worked on cybersecurity for vulnerable groups."
     }
   },
 
