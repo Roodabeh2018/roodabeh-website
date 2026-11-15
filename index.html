@@ -343,6 +343,9 @@ a.card:focus-visible { outline-offset: 4px; border-radius: var(--radius-md); }
 .hero__focus { margin-top: var(--space-7); }
 .hero__focus .type-label { display: block; margin-bottom: var(--space-3); }
 .hero__actions { margin-top: var(--space-7); }
+.research-photo { margin: var(--space-7) 0 0; max-width: 760px; }
+.research-photo img { width: 100%; aspect-ratio: 32 / 21; object-fit: cover; border-radius: var(--radius-lg); border: var(--border-1) solid var(--color-border-subtle); }
+.research-photo figcaption { margin-top: var(--space-3); }
 .hero__media { margin: 0; }
 .hero-portrait { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 20%; border-radius: var(--radius-lg); border: var(--border-1) solid var(--color-border-subtle); background: var(--color-surface); }
 .hero__media .placeholder { aspect-ratio: 4 / 5; border-radius: var(--radius-lg); }
@@ -1098,6 +1101,7 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
           <div class="hero__focus"><span class="type-label">Current focus</span><ul class="cluster">${list(P.focus, f => `<li>${chip(f)}</li>`)}</ul></div>
           <div class="hero__actions cluster-lg">
             <a href="#work" class="btn btn--primary">View selected work <span class="icon icon--forward" aria-hidden="true">→</span></a>
+            ${P.cv ? `<a href="${esc(P.cv)}" target="_blank" class="btn btn--secondary">Download CV <span class="icon" aria-hidden="true">↓</span></a>` : ''}
           </div>
         </div>
         <figure class="hero__media">
@@ -1145,6 +1149,7 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
       <p class="eyebrow type-label">Research &amp; Teaching</p>
       <h1 class="page__title">${esc(R.title)}</h1>
       <p class="page__lead">${esc(R.intro)}</p>
+      ${R.photo ? `<figure class="research-photo"><img src="${esc(R.photo.src)}" alt="${esc(R.photo.alt)}" loading="lazy"><figcaption class="type-body-sm text-muted">${esc(R.photo.caption)}</figcaption></figure>` : ''}
       <section class="page__section" id="publications"><p class="eyebrow type-label">Publications</p><h2 class="type-h2">Peer-reviewed</h2>
         <ol>${list(peer, pubRow)}</ol>
         ${P.orcid ? `<p class="mt-5"><a class="btn btn--secondary btn--sm" href="${esc(P.orcid)}" target="_blank" rel="noopener">Full list on ORCID ↗</a></p>` : ''}

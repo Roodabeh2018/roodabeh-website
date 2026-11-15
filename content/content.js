@@ -124,7 +124,12 @@ window.SITE = {
   },
   research: {
     title: "Research that ends up in products. Teaching that makes it stick.",
-    intro: "Five peer-reviewed publications with ACM, Springer and IJISA, alongside university teaching, thesis mentoring and community workshops."
+    intro: "Five peer-reviewed publications with ACM, Springer and IJISA, alongside university teaching, thesis mentoring and community workshops.",
+    photo: {
+      src: "img/research/talk-crosscomits.webp",
+      alt: "Roodabeh Seif presenting the CrossComITS community learning model to an audience in a lecture hall",
+      caption: "Presenting the CrossComITS community learning model at Hochschule Bonn-Rhein-Sieg."
+    }
   },
 
   skills: [

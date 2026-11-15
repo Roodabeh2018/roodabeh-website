@@ -1,7 +1,8 @@
 /* German text for the site. Each English sentence from content.js maps to its German version.
    If a sentence in content.js is changed and has no entry here, the English text is shown. */
 window.SITE_DE = {
- "I build AI products from user research to launch.": "Ich baue KI-Produkte von der Nutzerforschung bis zum Launch.",
+ "Presenting the CrossComITS community learning model at Hochschule Bonn-Rhein-Sieg.": "Vorstellung des CrossComITS-Lernmodells an der Hochschule Bonn-Rhein-Sieg.",
+"I build AI products from user research to launch.": "Ich baue KI-Produkte von der Nutzerforschung bis zum Launch.",
  "My superpower": "Meine Superkraft",
  "2021 to 2025": "2021 bis 2025",
  "AI prototyping": "KI-Prototyping",
