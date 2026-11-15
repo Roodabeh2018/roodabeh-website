@@ -1612,6 +1612,46 @@ a.card:hover .card__cta .icon { transform: translateX(2px); }
         different: ['Test the checker too: once every check said "all passed" while the problem was still there.', 'Retrieve more passages for oversight topics, so existing documents are not missed.'],
         next: ['A timed test: one analyst drafting the same plan by hand and with the Copilot.', 'Stricter checks for placeholder types and conflicting sources.', 'Access control, security review and legal sign-off before any real bank data.'] }
     },
+    'interview-prep-agent': {
+      title: 'Every claim, traced.',
+      sub: 'How a job ad and a CV become an interview brief that the candidate can check, line by line.',
+      context: 'Independent build, November 2026 · n8n workflow · tested with real job ads and a fictional CV',
+      cover: 'img/interview-prep/cover-interview-prep.webp',
+      team: 'Solo: product decisions, workflow, prompts, checks and testing.',
+      tools: ['n8n', 'OpenAI API', 'Tavily', 'GNews', 'GitHub API', 'JavaScript'],
+      metrics: [['Time per report', '≈ 4 min', 'from form to finished brief'], ['AI cost per report', '≈ $0.003', 'estimate, gpt-4o-mini'], ['Report sections', '9', 'each backed by a source or a CV quote']],
+      links: [['GitHub repository ↗', 'https://github.com/Roodabeh2018/interview-prep-report-agent']],
+      blocks: [
+        ['Context', 'Preparing for an interview takes hours: researching the company, rereading the job ad, deciding which experiences to mention. People with little interview experience often do not know where to start. AI can help, but it also produces confident claims with nothing behind them.'],
+        ['Problems', ['Company research, the job ad and the CV live in different places', 'Candidates walk in with generic answers', 'A general AI assistant can invent facts and sound sure about them']],
+        ['Deliverable', ['A web form: company, job ad as text or link, CV as text or file, GitHub profile', 'A formatted interview brief with sources, CV quotes, gaps, likely questions and STAR answers', 'Similar employers to explore, as suggestions, not confirmed openings', 'A Save as PDF button']],
+        ['Role & duration', 'Product owner and builder of the whole workflow, from scoping to testing. About one week.']],
+      secs: [
+        { step: 'Problem framing', h: 'A wrong fact is worse than no fact.', t: 'In an interview, the candidate has to stand behind every sentence. So the product question was not how much the AI could write, but how much of it the candidate could trust.',
+          cards: [['Trust before features', 'Every claim must trace back to the CV, a GitHub repository or a search result.'], ['Help, do not replace', 'The brief prepares the candidate. The answers stay theirs, built from their own experience.'], ['Honest about gaps', 'Missing skills and missing sources are shown, not hidden.']] },
+        { step: 'How it works', h: 'One form, one checked brief.', t: 'The AI writes the brief only from the collected data. Then code checks every claim and removes what it cannot trace, before the user sees anything.',
+          chain: ['Form', 'Read the job ad', 'Collect CV and GitHub', 'Research company and news', 'Write the brief', 'Check every claim', 'Deliver with Save as PDF'] },
+        { step: 'Design decisions', h: 'Saying no on purpose.',
+          table: { head: ['Decision', 'How it works', 'Why'], rows: [
+            ['A fixed workflow, not an autonomous agent', 'The same steps run in the same order every time', 'Cheaper, more predictable and easier to test'],
+            ['No vector database', 'The CV and the job ad are sent in full', 'They are short, so retrieval would add cost without a better report'],
+            ['Code checks, not AI checks', 'CV quotes must appear in the CV, links must come from the search results', 'The model cannot approve its own claims'],
+            ['STAR answers from the CV only', 'An answer with a number that is not in the CV is removed', 'Ready answers must not invent achievements'],
+            ['Errors that help', 'Every error says whether the input or the system is the problem, and what to do next', 'The user is never left guessing']] } },
+        { step: 'Testing & iteration', h: 'Real links, wrong conclusions.', t: 'I tested the agent like a user, with real job ads. The links were always real, but the AI sometimes read a source wrongly.',
+          table: { head: ['Problem found', 'Change', 'Type of fix'], rows: [
+            ['Some job pages only expose a short summary', 'A clear message asks the user to paste the job text instead', 'Error design'],
+            ['The company description mixed in the job title', 'The company is described only from company research', 'Prompt rule'],
+            ['A client named in a job ad was listed as a similar employer', 'The employer must be named in its own search result', 'Prompt rule and code check'],
+            ['A STAR answer could add numbers that are not in the CV', 'Answers with numbers that are not in the CV are removed', 'Code check']] },
+          note: 'Prompt rules reduce these problems but cannot guarantee them away. A typo in the company name, or two companies with the same name, can still lead the research astray.' },
+        { step: 'Measuring impact', h: 'What I can show, and what I cannot yet.',
+          kpis: [['≈ 4 min', 'Per report'], ['≈ $0.003', 'AI cost per report, estimated'], ['9', 'Report sections'], ['4', 'Problems found in testing and fixed']],
+          note: 'Tested with real job ads and a fictional CV. Not yet validated with real users, so there is no measure of usefulness or time saved yet.' }],
+      learned: { worked: ['Writing the trust rule first made the build decisions easy.', 'Code checks gave a clear line between what the AI suggests and what the user sees.', 'Testing like a user found problems that no test case had covered.'],
+        different: ['Disambiguate the company early, for example from the website in the job ad.', 'Collect a fixed set of test job ads from day one, to compare every change.'],
+        next: ['Feedback from 20 job seekers, with the goal that at least 70% rate the brief as useful.', 'Interview practice with feedback grounded in the CV.', 'A self-correcting loop that rewrites rejected claims.'] }
+    },
     'ghesse-khaneh': {
       title: 'The child is not the user.',
       sub: 'How I designed a storytelling platform for the facilitator, so the session stays between people, not behind a screen.',

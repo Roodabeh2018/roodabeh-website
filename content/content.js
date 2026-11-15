@@ -159,6 +159,18 @@ window.SITE = {
       cardOutcome: "Uncited gap findings fell from 10 of 10 to 0, no internal document reached a public output, and 143 automated tests pass.",
       locked: false
     },
+    {
+      slug: "interview-prep-agent",
+      tags: ["n8n", "AI agents", "Grounding", "Evidence checks"],
+      industry: "Career services · AI Agents",
+      cardImage: "img/interview-prep/cover-interview-prep.webp",
+      track: ["product"],
+      title: "Interview Prep Agent",
+      subtitle: "An n8n agent that turns a job ad and a CV into an interview brief, and removes every claim it cannot trace.",
+      role: "AI-native Product Manager & builder",
+      cardOutcome: "A 9-part interview brief in about 4 minutes, with every claim checked against the CV or a source before the user sees it.",
+      locked: false
+    },
     /* ================================================================
        RETUNE
        ================================================================ */
@@ -1049,7 +1061,7 @@ window.SITE = {
      Remove an item to hide it; an item without a matching logo shows as text. */
   /* Homepage order: these case studies show first; every other published
      project appears below under "More work". Use the project slugs. */
-  featured: ["dara", "retune", "ai-governance-copilot", "ghesse-khaneh", "bo-app", "crosscomits", "nebula", "surveillance-beyond-borders"],
+  featured: ["dara", "retune", "ai-governance-copilot", "interview-prep-agent", "ghesse-khaneh", "bo-app", "crosscomits", "nebula", "surveillance-beyond-borders"],
 
   partners: {
     label: "Projects, partners and funders I've worked with",
