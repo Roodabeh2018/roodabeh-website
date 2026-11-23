@@ -2,6 +2,8 @@
    If a sentence in content.js is changed and has no entry here, the English text is shown. */
 window.SITE_DE = {
 /* BrainBite */
+"Project Coordinator & Product Manager": "Projektkoordinatorin & Product Managerin",
+"BMBF-funded research consortium · University of Siegen · official title: research assistant": "BMBF-gefördertes Forschungskonsortium · Universität Siegen · offizielle Bezeichnung: wissenschaftliche Mitarbeiterin",
 "Reading a full research paper takes focused time that many learners do not have.": "Einen ganzen Fachartikel zu lesen braucht konzentrierte Zeit, die viele Lernende nicht haben.",
 "A summary written for reading does not work when it is spoken: the script had to be rewritten for the ear, not just shortened.": "Eine Zusammenfassung zum Lesen funktioniert gesprochen nicht: Das Skript musste fürs Hören neu geschrieben werden, nicht nur gekürzt.",
 "EdTech · Generative AI · Audio": "EdTech · Generative KI · Audio",
@@ -128,7 +130,7 @@ window.SITE_DE = {
 "Evidence checks": "Belegprüfung",
 "AI agents": "KI-Agenten",
  "Presenting the CrossComITS community learning model at the project's final consortium meeting, Hochschule Bonn-Rhein-Sieg. CrossComITS worked on cybersecurity for vulnerable groups.": "Vorstellung des CrossComITS-Lernmodells beim abschließenden Konsortialtreffen des Projekts an der Hochschule Bonn-Rhein-Sieg. CrossComITS befasste sich mit Cybersicherheit für vulnerable Gruppen.",
-"I build AI products from user research to launch.": "Ich baue KI-Produkte von der Nutzerforschung bis zum Launch.",
+"I build AI products from user research to working MVP.": "Ich baue KI-Produkte von der Nutzerforschung bis zum funktionierenden MVP.",
  "My superpower": "Meine Superkraft",
  "2021 to 2025": "2021 bis 2025",
  "AI prototyping": "KI-Prototyping",
