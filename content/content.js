@@ -177,7 +177,6 @@ window.SITE = {
        ================================================================ */
     {
       slug: "brainbite",
-      draft: true,
       tags: ["GenAI", "Text-to-speech", "Prompt design", "Python"],
       industry: "EdTech · Generative AI · Audio",
       cardImage: "img/brainbite/cover-brainbite.webp",
