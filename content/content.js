@@ -173,7 +173,6 @@ window.SITE = {
     },
     /* ================================================================
        BRAINBITE
-       draft: true until the numbers below are confirmed  // CHECK
        ================================================================ */
     {
       slug: "brainbite",
@@ -188,14 +187,14 @@ window.SITE = {
       context: "Ironhack AI Consulting & Integration Bootcamp · team of three",
       timeline: "Autumn 2026",
       methods: ["Prompt design", "Output quality review", "Python", "PyPDF", "GPT-4o-mini", "OpenAI TTS", "Gradio"],
-      cardOutcome: "Turns a 20-page paper into a 3-minute audio summary.", // CHECK: confirm page count and audio length
+      cardOutcome: "Turns an 18 to 21-page research paper into an audio summary of about 3 minutes.",
       glance: {
         challenge:
           "Research papers and long PDFs are dense and slow to read. Many people would learn more if they could listen to the key ideas while commuting or between tasks.",
         contribution:
           "I owned the script-generation step: the LLM prompt that turns a dense paper into a clear, spoken-style summary. The team built the full pipeline together; this step was my part.",
         outcome:
-          "A working prototype that goes from PDF upload to a podcast-style audio summary." // CHECK
+          "A working prototype that goes from PDF upload to a podcast-style audio summary."
       },
       problem: [
         "Reading a full research paper takes focused time that many learners do not have.",
@@ -208,7 +207,7 @@ window.SITE = {
         { title: "Use", text: "A Gradio interface lets anyone upload a PDF and play the result." }
       ],
       evidence: [
-        { value: "20 → 3", label: "Pages in, minutes of audio out", note: "Typical paper in our tests", status: "estimated" } // CHECK
+        { value: "18–21 → ~3", label: "Pages in, minutes of audio out", note: "Measured on 2 test papers", status: "validated" }
       ],
       demonstrates: ["Prompt design for a specific medium", "Shipping a GenAI prototype in a team", "Choosing a clear, narrow user problem"],
       locked: false
