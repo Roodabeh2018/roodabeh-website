@@ -172,6 +172,49 @@ window.SITE = {
       locked: false
     },
     /* ================================================================
+       BRAINBITE
+       draft: true until the numbers below are confirmed  // CHECK
+       ================================================================ */
+    {
+      slug: "brainbite",
+      draft: true,
+      tags: ["GenAI", "Text-to-speech", "Prompt design", "Python"],
+      industry: "EdTech · Generative AI · Audio",
+      cardImage: "img/brainbite/cover-brainbite.webp",
+      cover: "img/brainbite/cover-brainbite.webp",
+      track: ["product"],
+      title: "BrainBite",
+      subtitle: "Turns long PDFs and research papers into short, podcast-style audio summaries, so busy people can learn on the go.",
+      role: "AI-native Product Manager · team project",
+      context: "Ironhack AI Consulting & Integration Bootcamp · team of three",
+      timeline: "Autumn 2026",
+      methods: ["Prompt design", "Output quality review", "Python", "PyPDF", "GPT-4o-mini", "OpenAI TTS", "Gradio"],
+      cardOutcome: "Turns a 20-page paper into a 3-minute audio summary.", // CHECK: confirm page count and audio length
+      glance: {
+        challenge:
+          "Research papers and long PDFs are dense and slow to read. Many people would learn more if they could listen to the key ideas while commuting or between tasks.",
+        contribution:
+          "I owned the script-generation step: the LLM prompt that turns a dense paper into a clear, spoken-style summary. The team built the full pipeline together; this step was my part.",
+        outcome:
+          "A working prototype that goes from PDF upload to a podcast-style audio summary." // CHECK
+      },
+      problem: [
+        "Reading a full research paper takes focused time that many learners do not have.",
+        "A summary written for reading does not work when it is spoken: the script had to be rewritten for the ear, not just shortened."
+      ],
+      approach: [
+        { title: "Extract", text: "PyPDF pulls the text out of the uploaded paper." },
+        { title: "Write for the ear", text: "A GPT-4o-mini prompt rewrites the paper as a short script written to be heard, in plain language." },
+        { title: "Speak", text: "OpenAI text-to-speech turns the script into audio." },
+        { title: "Use", text: "A Gradio interface lets anyone upload a PDF and play the result." }
+      ],
+      evidence: [
+        { value: "20 → 3", label: "Pages in, minutes of audio out", note: "Typical paper in our tests", status: "estimated" } // CHECK
+      ],
+      demonstrates: ["Prompt design for a specific medium", "Shipping a GenAI prototype in a team", "Choosing a clear, narrow user problem"],
+      locked: false
+    },
+    /* ================================================================
        RETUNE
        ================================================================ */
     {
@@ -1061,7 +1104,7 @@ window.SITE = {
      Remove an item to hide it; an item without a matching logo shows as text. */
   /* Homepage order: these case studies show first; every other published
      project appears below under "More work". Use the project slugs. */
-  featured: ["dara", "retune", "ai-governance-copilot", "interview-prep-agent", "ghesse-khaneh", "bo-app", "crosscomits", "nebula", "surveillance-beyond-borders"],
+  featured: ["ai-governance-copilot", "crosscomits", "retune", "interview-prep-agent", "brainbite", "dara", "ghesse-khaneh", "bo-app", "nebula", "surveillance-beyond-borders"],
 
   partners: {
     label: "Projects, partners and funders I've worked with",
